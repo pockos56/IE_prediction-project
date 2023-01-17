@@ -59,47 +59,50 @@ odds = findall(x -> x!=1, len)
 odd_names = hcat(data_minus[odds,1], len[odds])
 =#
 
-## RF regression ##
-X_train, X_test, y_train, y_test = train_test_split(FP_saved, data_minus[:,3], test_size=0.20, random_state=21);
+## Parameter optimization ##
 coarseness_r = collect(100:100:5000)
 leaf_r = collect(4:2:20)
 tree_r = vcat(collect(50:50:300),collect(400:100:1000))
 MaxFeat = 80   #Int64(ceil(size(desc_temp,2)/3))
-itr = 20
+itr = 5
 
-z = zeros(itr,5)
+z = zeros(itr,6)
 for i = 1:itr
     leaf = rand(leaf_r)
     tree = rand(tree_r)
     coarseness = rand(coarseness_r)
+    state = rand(1:10)
 
     ## Fingerprint calculation ##
     results = pcp.get_compounds(data_minus[1,1], "name")[1]
     m = rdk.MolFromSmiles(results.isomeric_smiles)
     FP = rdk.RDKFingerprint(m, fpSize=coarseness)
     FP1 = [FP[i] for i = 1:coarseness]';
-for j = 2:length(data_minus[:,1])
+for j = 2:50          #length(data_minus[:,1])
     results = pcp.get_compounds(data_minus[j,1], "name")[1]
     m = rdk.MolFromSmiles(results.isomeric_smiles)
     FP = rdk.RDKFingerprint(m, fpSize=coarseness)
     FP1_temp = [FP[i] for i = 1:coarseness]';
     FP1 = vcat(FP1, FP1_temp)
-    println(j)
+    println("Itr $i, Compound $j")
 end
 
 
-
-
 ## Regression ##
-    reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=21)
-    fit!(reg, X_train, y_train)
+X_train, X_test, y_train, y_test = train_test_split(FP_saved, data_minus[:,3], test_size=0.20, random_state=state);
+reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=21)
+fit!(reg, X_train, y_train)
     z[i,1] = leaf
     z[i,2] = tree
     z[i,3] = coarseness
-    z[i,4] = score(reg, X_train, y_train)
-    z[i,5] = score(reg, X_test, y_test)
-    println(i)
+    z[i,4] = state
+    z[i,5] = score(reg, X_train, y_train)
+    z[i,6] = score(reg, X_test, y_test)
+    println("End of $i")
 end    
 
-z_df = DataFrame(leaves = z[:,1], trees = z[:,2], accuracy_train = z[:,4], accuracy_test = z[:,5])
+z_df = DataFrame(leaves = z[:,1], trees = z[:,2], coarseness = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
 z_df_sorted = sort(z_df, :accuracy_test, rev=true)
+
+BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\optim", z_df_sorted)
+BSON.@load("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\optim")
