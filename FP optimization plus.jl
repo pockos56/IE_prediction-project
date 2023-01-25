@@ -7,6 +7,7 @@ using BSON
 using LinearAlgebra
 using Statistics
 using DataFrames
+using Plots
 using CSV
 using ScikitLearn.CrossValidation: cross_val_score
 using ScikitLearn.CrossValidation: train_test_split
@@ -22,9 +23,7 @@ pcp = pyimport("pubchempy")
 
 
 ## load files ##
-data1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\MOESM4_ESM_ESI-_fixedseparator.csv", DataFrame)
 data2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\MOESM4_ESM_ESI+_fixedseparator.csv", DataFrame)
-data_minus = (unique(data1,3))[!,[2,3,26]]
 data_plus = (unique(data2,3))[!,[2,3,26]]
 
 
@@ -88,21 +87,37 @@ for j = 2:50          #length(data_minus[:,1])
 end
 
 
-## Regression ##
-X_train, X_test, y_train, y_test = train_test_split(FP_saved, data_minus[:,3], test_size=0.20, random_state=state);
-reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=21)
-fit!(reg, X_train, y_train)
-    z[i,1] = leaf
-    z[i,2] = tree
-    z[i,3] = coarseness
-    z[i,4] = state
-    z[i,5] = score(reg, X_train, y_train)
-    z[i,6] = score(reg, X_test, y_test)
-    println("End of $i")
+## Parameter optimization ##
+coarseness_r = vcat(collect(100:100:1000), collect(1200:300:3000))
+leaf_r = collect(4:2:12)
+tree_r = vcat(collect(50:50:300),collect(400:100:1000))
+itr = 50
+z = zeros(itr*length(coarseness_r),6)
+for i = 1:length(coarseness_r)
+    coarseness = coarseness_r[i]
+    FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\FP_plus_$coarseness.csv", DataFrame))
+    for j = 1:itr
+        leaf = rand(leaf_r)
+        tree = rand(tree_r)
+        state = rand(1:3)
+        MaxFeat = Int64(ceil(coarseness/3))
+
+    ## Regression ##
+        X_train, X_test, y_train, y_test = train_test_split(FP1, data_plus[1:end,3], test_size=0.20, random_state=state);
+        reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
+        fit!(reg, X_train, y_train)
+        z[((i-1)*itr+j),1] = leaf
+        z[((i-1)*itr+j),2] = tree
+        z[((i-1)*itr+j),3] = coarseness
+        z[((i-1)*itr+j),4] = state
+        z[((i-1)*itr+j),5] = score(reg, X_train, y_train)
+        z[((i-1)*itr+j),6] = score(reg, X_test, y_test)
+    end
+    println("End of $coarseness coarseness")
 end    
 
 z_df = DataFrame(leaves = z[:,1], trees = z[:,2], coarseness = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
-z_df_sorted = sort(z_df, :accuracy_test, rev=true)
+z_df_sorted_plus = sort(z_df, :accuracy_test, rev=true)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\z_df_sorted_plus", z_df_sorted_plus)
 
-BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\optim", z_df_sorted)
-BSON.@load("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\optim")
+scatter(z_df_sorted_plus[:,:coarseness],z_df_sorted_plus[:,:accuracy_test],ylims=(0.4,0.5))
