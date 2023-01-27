@@ -21,6 +21,9 @@ pd = pyimport("padelpy")
 ## load files ##
 data1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\MOESM4_ESM_ESI-.csv", DataFrame)
 data_minus = (unique(data1,3))[!,[2,3,26]]
+data2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\MOESM4_ESM_ESI+_fixedseparator.csv", DataFrame)
+data_plus = (unique(data2,3))[!,[2,3,26]]
+
 
 ## Fingerprint calculation ##
 coarseness = 1048
@@ -120,45 +123,94 @@ scatter(z_df_sorted_minus[:,:coarseness],z_df_sorted_minus[:,:accuracy_test], yl
 
 
 ## General descriptors optimization ##
-
-leaf_r = collect(4:2:10)
-tree_r = vcat(collect(50:50:300),collect(400:100:1000))
-itr = 50
-
-z = zeros(itr*13,6)
-for i = 0:12
-    FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_minus_$i.csv", DataFrame))[:,2:end]
-    for j = 1:itr
-        leaf = rand(leaf_r)
-        tree = rand(tree_r)
-        state = rand(1:3)
-        MaxFeat = Int64(ceil(size(FP1,2)/3))
-
-    ## Regression ##
-        X_train, X_test, y_train, y_test = train_test_split(FP1, data_minus[:,3], test_size=0.20, random_state=state);
-        reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
-        fit!(reg, X_train, y_train)
-        z[(i*itr+j),1] = leaf
-        z[(i*itr+j),2] = tree
-        z[(i*itr+j),3] = i
-        z[(i*itr+j),4] = state
-        z[(i*itr+j),5] = score(reg, X_train, y_train)
-        z[(i*itr+j),6] = score(reg, X_test, y_test)
+function optim(output, ESI, iterations=50)
+    leaf_r = collect(4:2:10)
+    tree_r = vcat(collect(50:50:300),collect(400:100:1000))
+    itr = iterations
+    if ESI == -1
+        ESI_name = "minus"
+    elseif ESI == 1
+        ESI_name = "plus"
+    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
-    println("End of $i FP type (see descriptors.xml)")
-end    
 
-z_df = DataFrame(leaves = z[:,1], trees = z[:,2], FP_type = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
-z_df_sorted_minus = sort(z_df, :accuracy_test, rev=true)
+    z = zeros(itr*13,6)
+    for i = 0:12
+        FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_$(ESI_name)_$i.csv", DataFrame))[:,2:end]
+        for j = 1:itr
+            leaf = rand(leaf_r)
+            tree = rand(tree_r)
+            state = rand(1:3)
+            MaxFeat = Int64(ceil(size(FP1,2)/3))
+        ## Regression ##
+            X_train, X_test, y_train, y_test = train_test_split(FP1, output, test_size=0.20, random_state=state);
+            reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
+            fit!(reg, X_train, y_train)
+            z[(i*itr+j),1] = leaf
+            z[(i*itr+j),2] = tree
+            z[(i*itr+j),3] = i
+            z[(i*itr+j),4] = state
+            z[(i*itr+j),5] = score(reg, X_train, y_train)
+            z[(i*itr+j),6] = score(reg, X_test, y_test)
+        end
+        println("End of $i FP type (see descriptors.xml)")
+    end    
+    z_df = DataFrame(leaves = z[:,1], trees = z[:,2], FP_type = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
+    z_df_sorted = sort(z_df, :accuracy_test, rev=true)
+    return z_df_sorted
+end
 
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results.csv", z_df_sorted_minus)
-zzz = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results.csv", DataFrame)
-zzz1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\z_df_sorted_minus", DataFrame)
-zzz2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_plus_12.csv", DataFrame)
+z_df_sorted_plus = optim(data_plus[:,3],+1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", z_df_sorted_plus)
 
-padel_plus_12
+opt_res_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_minus.csv", DataFrame)
+opt_res_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", DataFrame)
+
+scatter(opt_res_minus[:,3], opt_res_minus[:,end])
+
+## Morgan fingerprints optimization ##
+function optim_morgan(output, ESI, iterations=50)
+    leaf_r = collect(4:2:10)
+    tree_r = vcat(collect(50:50:300),collect(400:100:1000))
+    itr = iterations
+    if ESI == -1
+        ESI_name = "minus"
+    elseif ESI == 1
+        ESI_name = "plus"
+    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+    end
+
+    z = zeros(itr,5)
+        FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\morgan_$(ESI_name).csv", DataFrame))[:,2:end]
+        for j = 1:itr
+            leaf = rand(leaf_r)
+            tree = rand(tree_r)
+            state = rand(1:3)
+            MaxFeat = Int64(ceil(size(FP1,2)/3))
+        ## Regression ##
+            X_train, X_test, y_train, y_test = train_test_split(FP1, output, test_size=0.20, random_state=state);
+            reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
+            fit!(reg, X_train, y_train)
+            z[j,1] = leaf
+            z[j,2] = tree
+            z[j,3] = state
+            z[j,4] = score(reg, X_train, y_train)
+            z[j,5] = score(reg, X_test, y_test)
+            println("End of $j / $itr iterations")
+        end
+    z_df = DataFrame(leaves = z[:,1], trees = z[:,2], state=z[:,3], accuracy_train = z[:,4], accuracy_test = z[:,5])
+    z_df_sorted = sort(z_df, :accuracy_test, rev=true)
+    return z_df_sorted
+end
+
+z_df_sorted_minus = optim_morgan(data_minus[:,3],-1)
+z_df_sorted_plus = optim_morgan(data_plus[:,3],+1)
+
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_minus.csv", z_df_sorted_minus)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_plus.csv", z_df_sorted_plus)
+
 ## Meeting notes ##
-#  Morgan Fingerprints (if time)
+#  Morgan Fingerprints (if time) --> DONE
 ## Importance
 ## Inter-Correlation
 ## Positive mode
