@@ -1,6 +1,3 @@
-import Pkg
-Pkg.add("Plots")
-
 ## import packages ##
 using ScikitLearn
 using BSON
@@ -24,69 +21,7 @@ data_minus = (unique(data1,3))[!,[2,3,26]]
 data2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\MOESM4_ESM_ESI+_fixedseparator.csv", DataFrame)
 data_plus = (unique(data2,3))[!,[2,3,26]]
 
-
-## Fingerprint calculation ##
-coarseness = 1048
-results = pcp.get_compounds(data_minus[1,1], "name")[1]
-m = rdk.MolFromSmiles(results.isomeric_smiles)
-FP = rdk.RDKFingerprint(m, fpSize=coarseness)
-FP1 = [FP[i] for i = 1:coarseness]';
-for j = 2:length(data_minus[:,1])
-    results = pcp.get_compounds(data_minus[j,1], "name")[1]
-    m = rdk.MolFromSmiles(results.isomeric_smiles)
-    FP = rdk.RDKFingerprint(m, fpSize=coarseness)
-    FP1_temp = [FP[i] for i = 1:coarseness]';
-    FP1 = vcat(FP1, FP1_temp)
-    println(j)
-end
-
-
-# Finding compounds with multiple Pubchem CIDs
-results = pcp.get_compounds(data_minus[1,1], "name")
-len = length(results)
-for j = 2:length(data_minus[:,1])
-    len_temp = -1
-    results = pcp.get_compounds(data_minus[j,1], "name")
-    len_temp = length(results)
-    len = vcat(len, len_temp)
-    println(j)
-end
-
-odds = findall(x -> x!=1, len)
-odd_names = hcat(data_minus[odds,1], len[odds])
-odd_comps = data_minus[odds,:]
-
-    ## Fingerprint calculation ##
-    results = pcp.get_compounds(data_minus[1,1], "name")[1]
-    m = rdk.MolFromSmiles(results.isomeric_smiles)
-    FP = rdk.RDKFingerprint(m, fpSize=coarseness)
-    FP1 = [FP[i] for i = 1:coarseness]';
-    for j = 2:length(data_minus[:,1])
-        results = pcp.get_compounds(data_minus[j,1], "name")[1]
-        m = rdk.MolFromSmiles(results.isomeric_smiles)
-        FP = rdk.RDKFingerprint(m, fpSize=coarseness)
-        FP1_temp = [FP[i] for i = 1:coarseness]';
-        FP1 = vcat(FP1, FP1_temp)
-        println("Itr $i, Compound $j")
-    end
-
-
-j=1             ###########
-
-results = pcp.get_compounds(odd_comps[j,1], "name")[1]
-m = rdk.MolFromSmiles(results.isomeric_smiles)
-FP = rdk.RDKFingerprint(m, fpSize=1048)
-FP1 = [FP[i] for i = 1:1048]';
-for k=2:(len[odds])[j]
-    results = pcp.get_compounds(odd_comps[j,1], "name")[k]
-    m = rdk.MolFromSmiles(results.isomeric_smiles)
-    FP = rdk.RDKFingerprint(m, fpSize=1048)
-    FP1_temp = [FP[i] for i = 1:1048]';
-    FP1 = vcat(FP1, FP1_temp)
-    println("FP $k")
-end
-
-## Parameter optimization ##
+## Custom FP parameter optimization ##
 coarseness_r = vcat(collect(100:100:1000), collect(1200:300:3000))
 leaf_r = collect(4:2:12)
 tree_r = vcat(collect(50:50:300),collect(400:100:1000))
@@ -122,7 +57,7 @@ CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\z_df_sorted_minus
 scatter(z_df_sorted_minus[:,:coarseness],z_df_sorted_minus[:,:accuracy_test], ylims =(0.5,0.6))
 
 
-## General descriptors optimization ##
+## Padel fingerprints optimization ##
 function optim(output, ESI, iterations=50)
     leaf_r = collect(4:2:10)
     tree_r = vcat(collect(50:50:300),collect(400:100:1000))
@@ -208,6 +143,59 @@ z_df_sorted_plus = optim_morgan(data_plus[:,3],+1)
 
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_minus.csv", z_df_sorted_minus)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_plus.csv", z_df_sorted_plus)
+
+## Importance for Padel-12 ##
+function par_importance(ESI)
+    if ESI == -1
+        ESI_name = "minus"
+        output = data_minus[:,3]
+    elseif ESI == 1
+        ESI_name = "plus"
+        output = data_plus[:,3]
+    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+    end
+    FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_$(ESI_name)_12.csv", DataFrame)[:,2:end])
+    X_train, X_test, y_train, y_test = train_test_split(FP1, output, test_size=0.20, random_state=2);
+    reg = RandomForestRegressor(n_estimators=600, min_samples_leaf=4, max_features=(Int64(ceil(size(FP1,2)/3))), n_jobs=-1, oob_score =true, random_state=2)
+    fit!(reg, X_train, y_train)
+    importance = 100 .* sort(reg.feature_importances_, rev=true)
+    importance_index = sortperm(reg.feature_importances_, rev=true)
+    significant_columns = importance_index[importance .>=1]
+    important_desc = names(FP1[:,:])[significant_columns]   
+end
+par_importance(+1)
+ESI_name = "plus"
+FP1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_$(ESI_name)_12.csv", DataFrame)[:,2:end]
+X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), output, test_size=0.20, random_state=2);
+reg = RandomForestRegressor(n_estimators=600, min_samples_leaf=4, max_features=(Int64(ceil(size(FP1,2)/3))), n_jobs=-1, oob_score =true, random_state=2)
+fit!(reg, X_train, y_train)
+
+## Calculation of R2
+accuracy_train = score(reg, X_train, y_train)
+accuracy_test = score(reg, X_test, y_test)
+
+## Prediction of IEs
+y_hat_test = predict(reg,X_test)
+y_hat_train = predict(reg,X_train)
+
+scatter(y_train,y_hat_train,label="Training set", legend=:topleft, title = "IE from FP-all descriptors", color = :magenta, xlabel = "Experimental IE", ylabel = "Predicted IE")
+scatter!(y_test,y_hat_test,label="Test set",legend=:topleft, color=:orange)
+plot!([-0.5,2.5],[-0.5,2.5],label="1:1 line",linecolor ="black",width=2)
+savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Regression_$ESI_name.png")
+
+## Residuals
+res_train = y_hat_train - y_train
+res_test = y_hat_test - y_test
+
+## Cross Validation
+CV = cross_val_score(reg, X_train, y_train, cv=5)
+CV_mean = mean(CV)
+
+## Importance ##
+importance = 100 .* sort(reg.feature_importances_, rev=true)
+importance_index = sortperm(reg.feature_importances_, rev=true)
+significant_columns = importance_index[importance .>=1]
+important_desc = names(FP1[:,:])[significant_columns]   
 
 ## Meeting notes ##
 #  Morgan Fingerprints (if time) --> DONE
