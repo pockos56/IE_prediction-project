@@ -196,7 +196,8 @@ end
 importance_minus, accuracy_tr_minus, accuracy_te_minus, y_hat_train_minus, y_hat_test_minus, res_train_minus, res_test_minus = parameter(-1, allowplots=true, allowsave=true)
 importance_plus, accuracy_tr_plus, accuracy_te_plus, y_hat_train_plus, y_hat_test_plus, res_train_plus, res_test_plus = parameter(+1, allowplots=true, allowsave=true)
 
-
+FP1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_minus_12.csv", DataFrame)[:,2:end]
+sort(unique(Matrix(FP1)[:,:]))
 importance_minus
 importance_plus
 
