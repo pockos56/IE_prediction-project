@@ -1,0 +1,1287 @@
+﻿SMILES;pH_aq;name;logIE;instrument;source;solvent;doi
+OC(=O)c1ccccc1;10.5;benzoic acid;0.11;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.26;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;10.5;3-trifluoromethylbenzoic acid;1.37;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;10.5;pentafluorophenol;1.55;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;10.5;4-tert-butylbenzoic acid;1.36;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.69;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;10.5;pentakis(trifluoromethyl)phenol;2.6;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.62;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;10.5;2-phenylphenol;0.45;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;10.5;3-chlorobenzoic acid;0.77;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.08;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.37;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;10.5;3-aminobenzoic acid;0.21;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;10.5;pentafluorobenzoic acid;0.95;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.2;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;10.5;3-dimethylaminobenzoic acid;1.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;10.5;4-isopropylbenzoic acid;0.67;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;10.5;2-tert-butylphenol;-0.09;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,5-dinitrophenol;1.45;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;10.5;3-chlorophenol;0.36;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;10.5;2-isopropylphenol;-0.17;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;10.5;3-bromophenol;0.8;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,6-dinitrophenol;1.51;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;10.5;2-nitrophenol;-0.37;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;1.01;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.48;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;10.5;2,3,5,6-tetrafluorophenol;1.7;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;10.5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;2.78;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;10.5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;2.63;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;10.5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;2.52;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;10.5;3-trifluoromethylsulfonylbenzoic acid;2.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;10.5;3-[tris(trifluoromethyl)methyl]benzoic acid;2.75;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;10.5;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.43;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;10.5;pentachlorophenol;2.58;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;10.5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;4.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.72;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;10.5;2-cyanophenol;0.76;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;10.5;4-phenylazophenol;1.27;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.14;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.77;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrosalicylic acid;1.67;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrobenzoic acid;0.06;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;10.5;4-chlorophenol;0.26;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;10.5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.09;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;10.5;heptafluorornapht-2-ol;1.71;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitro-benzenesulfonic acid;1.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;10.5;naphthalene-1-sulfonic acid;1.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;10.5;2-anthraquinonesulfonic acid;1.97;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.17;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;2.56;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.48;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;10.5;myristic acid;1.83;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;1.96;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.31;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.55;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;-0.67;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+NCCCC(O)=O;10.5;4-aminobutanoic acid;-1.57;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+NCCC(O)=O;10.5;beta-alanine;-2.32;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;10.5;benzoic acid;0.07;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;0.62;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;10.5;3-trifluoromethylbenzoic acid;1.37;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;10.5;pentafluorophenol;1.41;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;10.5;4-tert-butylbenzoic acid;1.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.66;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;10.5;pentakis(trifluoromethyl)phenol;3.06;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.95;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;10.5;2-phenylphenol;0.63;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;10.5;3-chlorobenzoic acid;0.85;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.04;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.23;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;10.5;3-aminobenzoic acid;0.17;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;10.5;pentafluorobenzoic acid;1.28;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.47;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;10.5;3-dimethylaminobenzoic acid;1.13;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;10.5;4-isopropylbenzoic acid;0.62;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;10.5;2-tert-butylphenol;0.03;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;10.5;2,4,6-tri-tert-butylphenol;0.73;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,5-dinitrophenol;1.37;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;10.5;3-chlorophenol;0.27;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;10.5;2-isopropylphenol;-0.08;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;10.5;3-bromophenol;0.72;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;10.5;2-bromophenol;-0.98;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,6-dinitrophenol;1.38;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;10.5;2-nitrophenol;-0.71;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;1.07;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.1;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;10.5;2,3,5,6-tetrafluorophenol;1.48;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;10.5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;2.4;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;10.5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;2.38;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;10.5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;2.03;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;10.5;3-trifluoromethylsulfonylbenzoic acid;1.81;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;10.5;3-[tris(trifluoromethyl)methyl]benzoic acid;2.45;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;10.5;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.12;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;10.5;pentachlorophenol;2.35;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;10.5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;3.98;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.64;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;10.5;2-cyanophenol;0.83;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;10.5;4-phenylazophenol;1.66;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.28;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.85;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrosalicylic acid;1.76;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrobenzoic acid;0.4;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;10.5;4-chlorophenol;0.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;10.5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.84;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;10.5;heptafluorornapht-2-ol;1.9;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitro-benzenesulfonic acid;1.87;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;10.5;naphthalene-1-sulfonic acid;1.77;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;10.5;2-anthraquinonesulfonic acid;2.31;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.48;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;3.06;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.72;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;10.5;myristic acid;2.01;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.44;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.5;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.29;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;-0.23;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+NCCCC(O)=O;10.5;4-aminobutanoic acid;-1.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;10.5;benzoic acid;0;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;0.79;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;10.5;3-trifluoromethylbenzoic acid;1.16;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;10.5;pentafluorophenol;0.91;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;10.5;4-tert-butylbenzoic acid;1.2;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.17;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;10.5;pentakis(trifluoromethyl)phenol;2.3;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.35;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;10.5;2-phenylphenol;-0.01;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;10.5;3-chlorobenzoic acid;0.48;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.06;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.13;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;10.5;3-aminobenzoic acid;0.09;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;10.5;pentafluorobenzoic acid;0.61;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;0.84;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;10.5;3-dimethylaminobenzoic acid;0.71;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;10.5;4-isopropylbenzoic acid;0.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;10.5;2-tert-butylphenol;-0.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;10.5;2,4,6-tri-tert-butylphenol;0.55;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,5-dinitrophenol;0.98;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;10.5;3-chlorophenol;0.22;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;10.5;2-isopropylphenol;-0.61;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;10.5;3-bromophenol;0.63;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;10.5;2-bromophenol;-0.8;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,6-dinitrophenol;1.06;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;10.5;2-nitrophenol;-0.62;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.78;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.97;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;10.5;2,3,5,6-tetrafluorophenol;0.97;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;10.5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;2.2;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;10.5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;2.15;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;10.5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;1.84;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;10.5;3-trifluoromethylsulfonylbenzoic acid;1.69;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;10.5;3-[tris(trifluoromethyl)methyl]benzoic acid;2.14;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;10.5;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.28;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(Br)c(Br)c(Br)c(Br)c1Br;10.5;pentabromophenol;1.96;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;10.5;pentachlorophenol;1.97;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;10.5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;3.14;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.39;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;10.5;2-cyanophenol;0.28;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;10.5;4-phenylazophenol;1.02;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.07;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrosalicylic acid;1.22;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrobenzoic acid;0.07;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;10.5;4-chlorophenol;0.03;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;10.5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.49;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;10.5;heptafluorornapht-2-ol;1.94;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitro-benzenesulfonic acid;1.68;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;10.5;naphthalene-1-sulfonic acid;1.6;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;10.5;2-anthraquinonesulfonic acid;2.1;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.5;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;2.77;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.54;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;10.5;myristic acid;1.91;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.29;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.4;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;-0.43;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+NCCCC(O)=O;10.5;4-aminobutanoic acid;-1.52;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+NCCC(O)=O;10.5;beta-alanine;-2.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;10.5;benzoic acid;-0.02;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.43;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;10.5;3-trifluoromethylbenzoic acid;1.5;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;10.5;pentafluorophenol;1.67;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;10.5;4-tert-butylbenzoic acid;0.83;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.84;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;10.5;pentakis(trifluoromethyl)phenol;3.01;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.51;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;10.5;2-phenylphenol;-0.07;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;10.5;3-chlorobenzoic acid;0.95;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.83;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;10.5;3-aminobenzoic acid;0.03;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.71;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;10.5;3-dimethylaminobenzoic acid;0.38;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;10.5;4-isopropylbenzoic acid;0.39;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;10.5;2-tert-butylphenol;-0.19;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;10.5;2,4,6-tri-tert-butylphenol;-0.45;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,5-dinitrophenol;1.34;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;10.5;3-chlorophenol;0.29;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;10.5;2-isopropylphenol;-1.42;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;10.5;3-bromophenol;0.65;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;10.5;2-bromophenol;-0.4;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,6-dinitrophenol;1.38;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;10.5;2-nitrophenol;-0.78;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.84;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.89;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;10.5;2,3,5,6-tetrafluorophenol;0.87;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;10.5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;2.26;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;10.5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;2.18;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;10.5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;1.71;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;10.5;3-trifluoromethylsulfonylbenzoic acid;1.63;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;10.5;3-[tris(trifluoromethyl)methyl]benzoic acid;1.9;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;10.5;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.37;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(Br)c(Br)c(Br)c(Br)c1Br;10.5;pentabromophenol;1.25;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;10.5;pentachlorophenol;1.77;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;10.5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;3.44;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.56;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;10.5;2-cyanophenol;0.43;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;10.5;4-phenylazophenol;0.64;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.01;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.79;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrosalicylic acid;1.75;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrobenzoic acid;0.57;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;10.5;4-chlorophenol;-0.08;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;10.5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.08;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;10.5;heptafluorornapht-2-ol;1.73;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitro-benzenesulfonic acid;1.83;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;10.5;naphthalene-1-sulfonic acid;1.66;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;10.5;2-anthraquinonesulfonic acid;2.04;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.23;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;2.91;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.64;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.5;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.63;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;-1.58;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;0.43;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;2.78;benzoic acid;-1.52;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;2.78;3,5-dinitrobenzoic acid;0.54;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;2.78;3-trifluoromethylbenzoic acid;0.66;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;2.78;pentafluorophenol;0.19;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;2.78;4-tert-butylbenzoic acid;-0.22;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;2.78;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.12;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;2.78;4-phenylphenol;-1.45;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;2.78;3-chlorobenzoic acid;-0.12;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;2.78;4-aminobenzoic acid;-2.32;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;2.78;4-hydroxybenzoic acid;-0.44;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;2.78;3-aminobenzoic acid;-1.86;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;2.78;pentafluorobenzoic acid;0.47;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,4-dinitrophenol;0.79;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;2.78;3-dimethylaminobenzoic acid;-1.35;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;2.78;4-isopropylbenzoic acid;-0.83;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,5-dinitrophenol;0.44;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;2.78;3-chlorophenol;-1.03;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;2.78;3-bromophenol;-0.44;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,6-dinitrophenol;0.61;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;2.78;3-nitrophenol;0.39;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;2.78;4-nitrophenol;0.46;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;2.78;2,3,5,6-tetrafluorophenol;-0.42;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;2.78;3-[(heptafluoropropyl)sulphonyl]benzoic acid;1.45;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;2.78;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;1.3;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;2.78;3-[(heptafluoropropyl)sulphanyl]benzoic acid;0.99;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;2.78;3-trifluoromethylsulfonylbenzoic acid;1.02;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;2.78;3-[tris(trifluoromethyl)methyl]benzoic acid;1.28;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;2.78;3-[(trifluoromethyl)sulphanyl]benzoic acid;0.68;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(Br)c(Br)c(Br)c(Br)c1Br;2.78;pentabromophenol;1.35;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;2.78;pentachlorophenol;1.46;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;2.78;salicylic acid;-0.11;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;2.78;2-cyanophenol;-0.17;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;2.78;4-phenylazophenol;0.76;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;2.78;3,5-diiodosalicylic acid;1.35;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;2.78;2,4,6-trinitro-1,3-benzenediol;1.01;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;2.78;3,5-dinitrosalicylic acid;0.84;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,4-dinitrobenzoic acid;-0.36;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;2.78;4-chlorophenol;-1.28;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;2.78;heptafluorornapht-2-ol;1.31;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,4-dinitro-benzenesulfonic acid;0.91;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;2.78;naphthalene-1-sulfonic acid;0.47;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;2.78;2-anthraquinonesulfonic acid;1.32;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;2.78;3-nitrobenzenesulphonamide;0.5;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;2.78;perfluorooctanesulfonic acid;2.34;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;2.78;perfluoro-tert-butanol;-0.41;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;2.78;myristic acid;-0.71;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;2.78;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;1.76;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;2.78;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;1.85;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;2.78;N-hydroxy-phthalimide;-1.46;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;2.78;benzoic acid;-0.84;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;2.78;3,5-dinitrobenzoic acid;1.01;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;2.78;3-trifluoromethylbenzoic acid;1.01;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;2.78;pentafluorophenol;1.02;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;2.78;4-tert-butylbenzoic acid;-0.14;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;2.78;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.57;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;2.78;pentakis(trifluoromethyl)phenol;2.96;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;2.78;4-phenylphenol;-0.48;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;2.78;2-phenylphenol;-1.79;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;2.78;3-chlorobenzoic acid;0.35;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;2.78;4-aminobenzoic acid;-1.43;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;2.78;4-hydroxybenzoic acid;-0.04;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;2.78;3-aminobenzoic acid;-1.1;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;2.78;pentafluorobenzoic acid;1.1;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,4-dinitrophenol;1.59;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;2.78;3-dimethylaminobenzoic acid;-0.7;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;2.78;4-isopropylbenzoic acid;-0.47;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;2.78;2-tert-butylphenol;-2.67;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;2.78;2,4,6-tri-tert-butylphenol;-1.13;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,5-dinitrophenol;1.09;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;2.78;3-chlorophenol;-0.36;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;2.78;3-bromophenol;0.22;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;2.78;2-bromophenol;-2.21;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,6-dinitrophenol;0.85;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;2.78;2-nitrophenol;-2.08;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;2.78;3-nitrophenol;0.75;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;2.78;4-nitrophenol;1.03;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;2.78;2,3,5,6-tetrafluorophenol;0.36;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;2.78;3-[(heptafluoropropyl)sulphonyl]benzoic acid;1.91;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;2.78;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;1.72;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;2.78;3-[(heptafluoropropyl)sulphanyl]benzoic acid;1.31;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;2.78;3-trifluoromethylsulfonylbenzoic acid;1.25;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;2.78;3-[tris(trifluoromethyl)methyl]benzoic acid;1.7;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;2.78;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.11;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Br)c(Br)c(Br)c(Br)c1Br;2.78;pentabromophenol;1.91;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;2.78;pentachlorophenol;2.34;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;2.78;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;4;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;2.78;salicylic acid;0.35;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;2.78;2-cyanophenol;0.33;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;2.78;4-phenylazophenol;1.24;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;2.78;3,5-diiodosalicylic acid;2.27;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;2.78;2,4,6-trinitro-1,3-benzenediol;1.48;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;2.78;3,5-dinitrosalicylic acid;1.48;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,4-dinitrobenzoic acid;-0.07;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;2.78;4-chlorophenol;-0.37;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;2.78;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.58;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;2.78;heptafluorornapht-2-ol;2.06;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;2.78;2,4-dinitro-benzenesulfonic acid;1.67;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;2.78;naphthalene-1-sulfonic acid;1.19;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;2.78;2-anthraquinonesulfonic acid;1.59;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;2.78;3-nitrobenzenesulphonamide;1.11;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;2.78;perfluorooctanesulfonic acid;2.74;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;2.78;perfluoro-tert-butanol;0.34;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;2.78;myristic acid;0.28;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;2.78;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.68;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;2.78;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.6;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;2.78;sorbic acid;-1.98;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;2.78;phthalimide;-1.99;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;2.78;N-hydroxy-phthalimide;-0.36;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+NCCCC(O)=O;2.78;4-aminobutanoic acid;-2.13;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+NCCC(O)=O;2.78;beta-alanine;-2.57;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;5;benzoic acid;-0.65;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrobenzoic acid;0.86;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;5;3-trifluoromethylbenzoic acid;1.03;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;5;pentafluorophenol;0.65;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;5;4-tert-butylbenzoic acid;0.78;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.49;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;5;pentakis(trifluoromethyl)phenol;2.53;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;5;4-phenylphenol;0.57;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;5;2-phenylphenol;0.05;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;5;3-chlorobenzoic acid;0.36;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;5;4-aminobenzoic acid;-1.26;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;5;4-hydroxybenzoic acid;0.02;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;5;3-aminobenzoic acid;-0.86;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;5;pentafluorobenzoic acid;0.9;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrophenol;1.56;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;5;3-dimethylaminobenzoic acid;0.17;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;5;4-isopropylbenzoic acid;-0.53;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;5;2-tert-butylphenol;-1.05;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;5;2,5-dinitrophenol;0.94;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;5;3-chlorophenol;-0.03;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;5;2-isopropylphenol;-1.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;5;3-bromophenol;0.29;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;5;2,6-dinitrophenol;1.04;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;5;2-nitrophenol;-1.06;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;5;3-nitrophenol;1.21;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;5;4-nitrophenol;1.31;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;5;2,3,5,6-tetrafluorophenol;0.04;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;1.7;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;1.88;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;1.33;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;5;3-trifluoromethylsulfonylbenzoic acid;1.35;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;5;3-[tris(trifluoromethyl)methyl]benzoic acid;1.66;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;5;3-[(trifluoromethyl)sulphanyl]benzoic acid;0.93;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;5;pentachlorophenol;1.81;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;3.79;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;5;salicylic acid;0.33;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;5;2-cyanophenol;0.58;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;5;4-phenylazophenol;1.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;5;3,5-diiodosalicylic acid;2.04;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;5;2,4,6-trinitro-1,3-benzenediol;1.6;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrosalicylic acid;1.76;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrobenzoic acid;-0.24;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;5;4-chlorophenol;-0.14;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.34;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;5;heptafluorornapht-2-ol;1.01;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitro-benzenesulfonic acid;1.1;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;5;naphthalene-1-sulfonic acid;0.79;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;5;2-anthraquinonesulfonic acid;1.06;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;0.8;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;1.98;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.33;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;5;myristic acid;0.83;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;1.96;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;1.73;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;5;sorbic acid;-2.07;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;5;phthalimide;-1.85;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;-1.13;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;5;benzoic acid;-0.25;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrobenzoic acid;1.13;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;5;3-trifluoromethylbenzoic acid;1.15;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;5;pentafluorophenol;1.24;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;5;4-tert-butylbenzoic acid;1.02;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.66;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;5;pentakis(trifluoromethyl)phenol;2.94;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;5;4-phenylphenol;0.85;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;5;2-phenylphenol;0.55;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;5;3-chlorobenzoic acid;0.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;5;4-aminobenzoic acid;-0.61;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;5;4-hydroxybenzoic acid;-0.06;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;5;3-aminobenzoic acid;-0.37;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;5;pentafluorobenzoic acid;0.82;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrophenol;1.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;5;3-dimethylaminobenzoic acid;0.52;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;5;4-isopropylbenzoic acid;0.13;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;5;2-tert-butylphenol;0.32;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;5;2,4,6-tri-tert-butylphenol;0.79;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;5;2,5-dinitrophenol;1.21;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;5;3-chlorophenol;0.44;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;5;2-isopropylphenol;-0.19;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;5;3-bromophenol;0.81;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;5;2-bromophenol;-0.91;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;5;2,6-dinitrophenol;0.8;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;5;2-nitrophenol;-0.92;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;5;3-nitrophenol;0.87;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;5;4-nitrophenol;0.83;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;5;2,3,5,6-tetrafluorophenol;0.5;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;1.89;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;1.82;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;1.46;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;5;3-trifluoromethylsulfonylbenzoic acid;1.48;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;5;3-[tris(trifluoromethyl)methyl]benzoic acid;1.87;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;5;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.03;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Br)c(Br)c(Br)c(Br)c1Br;5;pentabromophenol;1.84;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;5;pentachlorophenol;2.17;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;3.79;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;5;salicylic acid;0.24;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;5;2-cyanophenol;0.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;5;4-phenylazophenol;1.42;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;5;3,5-diiodosalicylic acid;2.22;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;5;2,4,6-trinitro-1,3-benzenediol;1.29;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrosalicylic acid;1.58;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrobenzoic acid;0.33;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;5;4-chlorophenol;0.29;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.3;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;5;heptafluorornapht-2-ol;1.82;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitro-benzenesulfonic acid;1.24;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;5;naphthalene-1-sulfonic acid;1.07;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;5;2-anthraquinonesulfonic acid;1.61;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;1.05;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;2.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.68;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;5;myristic acid;1.2;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.3;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.41;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;5;sorbic acid;-0.56;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;5;phthalimide;-0.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;0.27;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+NCCCC(O)=O;5;4-aminobutanoic acid;-1.6;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+NCCC(O)=O;5;beta-alanine;-2.04;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;5;benzoic acid;-0.1;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrobenzoic acid;1.2;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;5;3-trifluoromethylbenzoic acid;1.26;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;5;pentafluorophenol;1.32;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;5;4-tert-butylbenzoic acid;1.03;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.8;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;5;pentakis(trifluoromethyl)phenol;3.06;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;5;4-phenylphenol;0.68;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;5;2-phenylphenol;0.39;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;5;3-chlorobenzoic acid;0.55;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;5;4-aminobenzoic acid;-0.66;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;5;4-hydroxybenzoic acid;0.13;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;5;3-aminobenzoic acid;-0.3;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;5;pentafluorobenzoic acid;1.14;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrophenol;1.66;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;5;3-dimethylaminobenzoic acid;0.45;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;5;4-isopropylbenzoic acid;-0.01;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;5;2-tert-butylphenol;0.31;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;5;2,4,6-tri-tert-butylphenol;0.44;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;5;2,5-dinitrophenol;1.6;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;5;3-chlorophenol;0.74;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;5;2-isopropylphenol;-0.14;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;5;3-bromophenol;0.96;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;5;2-bromophenol;-0.64;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;5;2,6-dinitrophenol;1.44;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;5;2-nitrophenol;-0.52;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;5;3-nitrophenol;1.51;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;5;4-nitrophenol;1.63;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;5;2,3,5,6-tetrafluorophenol;0.92;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;2.14;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;2.06;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;1.62;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;5;3-trifluoromethylsulfonylbenzoic acid;1.73;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;5;3-[tris(trifluoromethyl)methyl]benzoic acid;1.96;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;5;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.28;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Br)c(Br)c(Br)c(Br)c1Br;5;pentabromophenol;1.17;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;5;pentachlorophenol;2.33;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;4.02;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;5;salicylic acid;0.63;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;5;2-cyanophenol;0.86;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;5;4-phenylazophenol;1.82;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;5;3,5-diiodosalicylic acid;2.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;5;2,4,6-trinitro-1,3-benzenediol;1.7;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrosalicylic acid;2.04;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrobenzoic acid;0.48;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;5;4-chlorophenol;0.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.61;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;5;heptafluorornapht-2-ol;1.54;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitro-benzenesulfonic acid;1.81;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;5;naphthalene-1-sulfonic acid;1.29;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;5;2-anthraquinonesulfonic acid;1.92;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;1.46;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;2.82;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.81;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;5;myristic acid;1.44;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.53;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.63;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;5;sorbic acid;-0.51;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;5;phthalimide;-0.54;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;0.35;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;5;benzoic acid;0.1;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrobenzoic acid;1.2;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;5;3-trifluoromethylbenzoic acid;1.31;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;5;pentafluorophenol;1.25;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;5;4-tert-butylbenzoic acid;1.32;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.7;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;5;pentakis(trifluoromethyl)phenol;2.84;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;5;4-phenylphenol;0.85;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;5;2-phenylphenol;0.49;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;5;3-chlorobenzoic acid;0.76;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;5;4-aminobenzoic acid;-0.3;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;5;4-hydroxybenzoic acid;0.21;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;5;3-aminobenzoic acid;-0.05;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;5;pentafluorobenzoic acid;1.26;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrophenol;1.45;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;5;3-dimethylaminobenzoic acid;0.82;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;5;4-isopropylbenzoic acid;0.43;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;5;2-tert-butylphenol;0.35;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;5;2,4,6-tri-tert-butylphenol;1;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;5;2,5-dinitrophenol;1.44;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;5;3-chlorophenol;0.66;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;5;2-isopropylphenol;-0.05;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;5;3-bromophenol;0.99;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;5;2-bromophenol;-0.53;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;5;2,6-dinitrophenol;1.37;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;5;2-nitrophenol;-0.82;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;5;3-nitrophenol;1.2;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;5;4-nitrophenol;1.22;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;5;2,3,5,6-tetrafluorophenol;1;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;5;3-[(heptafluoropropyl)sulphonyl]benzoic acid;2.43;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;5;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;2.46;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;5;3-[(heptafluoropropyl)sulphanyl]benzoic acid;2.12;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;5;3-trifluoromethylsulfonylbenzoic acid;1.96;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;5;3-[tris(trifluoromethyl)methyl]benzoic acid;2.4;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;5;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.35;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Br)c(Br)c(Br)c(Br)c1Br;5;pentabromophenol;1.88;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;5;pentachlorophenol;2.53;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;5;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;4.11;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;5;salicylic acid;0.69;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;5;2-cyanophenol;0.92;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;5;4-phenylazophenol;1.76;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;5;3,5-diiodosalicylic acid;2.42;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;5;2,4,6-trinitro-1,3-benzenediol;1.68;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;5;3,5-dinitrosalicylic acid;1.83;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitrobenzoic acid;0.43;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;5;4-chlorophenol;0.67;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;5;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;4.03;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;5;heptafluorornapht-2-ol;2.11;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;5;2,4-dinitro-benzenesulfonic acid;1.88;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;5;naphthalene-1-sulfonic acid;1.63;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;5;2-anthraquinonesulfonic acid;2.16;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;1.57;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;3;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.81;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;5;myristic acid;1.83;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.65;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.75;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;5;sorbic acid;-0.15;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;5;phthalimide;-0.11;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;0.57;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;7.8;benzoic acid;-0.14;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7.8;3,5-dinitrobenzoic acid;1.16;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;7.8;3-trifluoromethylbenzoic acid;1.61;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;7.8;pentafluorophenol;1.35;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;7.8;4-tert-butylbenzoic acid;0.9;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7.8;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.6;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;7.8;pentakis(trifluoromethyl)phenol;2.8;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;7.8;4-phenylphenol;0.91;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;7.8;2-phenylphenol;0.47;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;7.8;3-chlorobenzoic acid;0.42;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;7.8;4-aminobenzoic acid;-0.55;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;7.8;4-hydroxybenzoic acid;-0.15;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;7.8;3-aminobenzoic acid;-0.33;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;7.8;pentafluorobenzoic acid;1.1;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7.8;2,4-dinitrophenol;1.44;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;7.8;3-dimethylaminobenzoic acid;0.43;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;7.8;4-isopropylbenzoic acid;-0.15;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;7.8;2-tert-butylphenol;0.23;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;7.8;2,4,6-tri-tert-butylphenol;0.32;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;7.8;2,5-dinitrophenol;1.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;7.8;3-chlorophenol;0.56;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccccc1O;7.8;2-isopropylphenol;-0.21;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;7.8;3-bromophenol;0.76;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1Br;7.8;2-bromophenol;-0.66;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;7.8;2,6-dinitrophenol;1.19;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;7.8;2-nitrophenol;-0.56;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;7.8;3-nitrophenol;1.26;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;7.8;4-nitrophenol;1.22;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)cc(F)c1F;7.8;2,3,5,6-tetrafluorophenol;0.94;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;7.8;3-[(heptafluoropropyl)sulphonyl]benzoic acid;1.96;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;7.8;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;1.99;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;7.8;3-[(heptafluoropropyl)sulphanyl]benzoic acid;1.53;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;7.8;3-trifluoromethylsulfonylbenzoic acid;1.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;7.8;3-[tris(trifluoromethyl)methyl]benzoic acid;1.88;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;7.8;3-[(trifluoromethyl)sulphanyl]benzoic acid;1.07;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;7.8;pentachlorophenol;2.18;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;7.8;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;3.83;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;7.8;salicylic acid;0.51;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;7.8;2-cyanophenol;0.8;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;7.8;4-phenylazophenol;1.75;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;7.8;3,5-diiodosalicylic acid;2.14;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7.8;2,4,6-trinitro-1,3-benzenediol;2.04;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;7.8;3,5-dinitrosalicylic acid;1.77;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7.8;2,4-dinitrobenzoic acid;0.23;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;7.8;4-chlorophenol;0.65;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;7.8;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.47;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;7.8;heptafluorornapht-2-ol;1.32;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7.8;2,4-dinitro-benzenesulfonic acid;1.53;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;7.8;naphthalene-1-sulfonic acid;1.36;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;7.8;2-anthraquinonesulfonic acid;1.92;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7.8;3-nitrobenzenesulphonamide;1.42;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;7.8;perfluorooctanesulfonic acid;2.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;7.8;perfluoro-tert-butanol;0.75;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;7.8;myristic acid;1.62;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;7.8;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.23;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;7.8;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.39;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;7.8;sorbic acid;-0.61;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;7.8;phthalimide;-0.55;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;7.8;N-hydroxy-phthalimide;0.29;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;3.45;benzoic acid;-0.81;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;3.45;3,5-dinitrobenzoic acid;0.63;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)C(F)(F)F;3.45;3-trifluoromethylbenzoic acid;0.62;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(F)c(F)c1F;3.45;pentafluorophenol;0.49;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccc(cc1)C(O)=O;3.45;4-tert-butylbenzoic acid;-0.32;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;3.45;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.26;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(c(c(c(c1C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;3.45;pentakis(trifluoromethyl)phenol;2.66;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)c2ccccc2;3.45;4-phenylphenol;-0.78;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1c2ccccc2;3.45;2-phenylphenol;-1.27;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(Cl)c1;3.45;3-chlorobenzoic acid;-0.12;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;3.45;4-aminobenzoic acid;-1.67;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;3.45;4-hydroxybenzoic acid;-0.6;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1cccc(c1)C(O)=O;3.45;3-aminobenzoic acid;-1.43;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1c(F)c(F)c(F)c(F)c1F;3.45;pentafluorobenzoic acid;0.79;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;3.45;2,4-dinitrophenol;1.36;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CN(C)c1cccc(c1)C(O)=O;3.45;3-dimethylaminobenzoic acid;-0.57;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)c1ccc(cc1)C(O)=O;3.45;4-isopropylbenzoic acid;-0.44;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1ccccc1O;3.45;2-tert-butylphenol;-2.75;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CC(C)(C)c1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C;3.45;2,4,6-tri-tert-butylphenol;-1.24;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cc(ccc1[N+]([O-])=O)[N+]([O-])=O;3.45;2,5-dinitrophenol;0.79;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Cl)c1;3.45;3-chlorophenol;-0.9;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(Br)c1;3.45;3-bromophenol;-0.45;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cccc1[N+]([O-])=O)[N+]([O-])=O;3.45;2,6-dinitrophenol;0.85;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1[N+]([O-])=O;3.45;2-nitrophenol;-2.38;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1cccc(c1)[N+]([O-])=O;3.45;3-nitrophenol;0.75;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(cc1)[N+]([O-])=O;3.45;4-nitrophenol;0.98;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(F)(C(F)(C(F)(F)F)F)F)=O)=C1)=O;3.45;3-[(heptafluoropropyl)sulphonyl]benzoic acid;1.35;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(S(=O)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)=O)=C1)=O;3.45;3-[tris(trifluoromethyl)methylsulphonyl]benzoic acid;1.34;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(C(F)(C(F)(F)F)F)F)=C1)=O;3.45;3-[(heptafluoropropyl)sulphanyl]benzoic acid;0.95;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;3.45;3-trifluoromethylsulfonylbenzoic acid;0.84;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC(F)(F)C(c1cccc(c1)C(=O)O)(C(F)(F)F)C(F)(F)F;3.45;3-[tris(trifluoromethyl)methyl]benzoic acid;1.29;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C1=CC=CC(SC(F)(F)F)=C1)=O;3.45;3-[(trifluoromethyl)sulphanyl]benzoic acid;0.42;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl;3.45;pentachlorophenol;1.68;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(F)F)=O)=CC(S(=O)(OCC(F)(F)F)=O)=C1)(OCC(F)(F)F)=O;3.45;2-hydroxy-1,3,5-tris(2,2,2-trifluoroethyl)-1,3,5-benzenetrisulfonic acid ester;3.52;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;3.45;salicylic acid;0.01;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;3.45;2-cyanophenol;0.13;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1N=Nc2cc(ccc2O)c3ccccc3;3.45;4-phenylazophenol;1.08;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(I)cc(I)c1O;3.45;3,5-diiodosalicylic acid;1.68;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;3.45;2,4,6-trinitro-1,3-benzenediol;1.43;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1cc(cc(c1O)[N+]([O-])=O)[N+]([O-])=O;3.45;3,5-dinitrosalicylic acid;1.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;3.45;2,4-dinitrobenzoic acid;-0.36;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccc(Cl)cc1;3.45;4-chlorophenol;-0.89;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=C(O)C(S(=O)(OCC(F)(C(F)F)F)=O)=CC(S(=O)(OCC(F)(C(F)F)F)=O)=C1)(OCC(F)(C(F)F)F)=O;3.45;2-hydroxy-, 1,3,5-tris(2,2,3,3-tetrafluoro-propyl) 1,3,5-benzenetrisulfonic acid ester;3.2;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(O)C(F)=C(F)C2=C(F)C(F)=C(F)C(F)=C21;3.45;heptafluorornapht-2-ol;0.89;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;3.45;2,4-dinitro-benzenesulfonic acid;1.32;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(C1=CC=CC2=CC=CC=C21)(O)=O;3.45;naphthalene-1-sulfonic acid;0.73;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;3.45;2-anthraquinonesulfonic acid;1.16;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;3.45;3-nitrobenzenesulphonamide;0.79;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;3.45;perfluorooctanesulfonic acid;2.46;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;3.45;perfluoro-tert-butanol;0.35;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+CCCCCCCCCCCCCC(O)=O;3.45;myristic acid;-0.06;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;3.45;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.1;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;3.45;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.02;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+C/C=C/C=C/C(O)=O;3.45;sorbic acid;-3.08;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=C1NC(=O)c2ccccc12;3.45;phthalimide;-2.39;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+ON1C(=O)c2ccccc2C1=O;3.45;N-hydroxy-phthalimide;-1.24;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)CCc1ccccn1;10.5;2-pyridinepropionic acid;-0.07;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1[N+]([O-])=O;10.5;2-nitrobenzoic acid;-0.58;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1C(O)=O;10.5;phthalic acid;0.32;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.36;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccccc1C(O)=O;10.5;2-aminobenzoic acid;0.01;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(O)cc1;10.5;4-aminophenol;-1.47;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)CCc1ccncc1;10.5;4-pyridinepropionic acid;-0.08;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccccc1O;10.5;2-aminophenol;-0.62;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(cc1)C(O)=O;10.5;terephthalic acid;0.11;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.02;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.2;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+Oc1ccccc1C#N;10.5;2-cyanophenol;0.28;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)c1ccccc1;10.5;benzoic acid;0;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+N[C@@H](CC(N)=O)C(O)=O;10.5;asparagine;-0.49;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+O=C(O)C[C@H](N)C(=O)O;10.5;aspartic acid;-0.49;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+N[C@@H](CCC(N)=O)C(O)=O;10.5;glutamine;-0.58;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+N[C@@H](CCC(O)=O)C(O)=O;10.5;glutamic acid;-0.31;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+N[C@@H](Cc1c[nH]cn1)C(O)=O;10.5;histidine;-0.69;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+CC[C@H](C)[C@H](N)C(O)=O;10.5;isoleucine;-0.09;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+CC(C)C[C@H](N)C(O)=O;10.5;leucine;-0.12;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+CSCC[C@H](N)C(O)=O;10.5;methionine;-0.62;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+N[C@@H](Cc1ccccc1)C(O)=O;10.5;phenylalanine;0.69;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+N[C@@H](CO)C(O)=O;10.5;serine;-0.49;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+C[C@@H](O)[C@H](N)C(O)=O;10.5;threonine;-0.52;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+N[C@@H](Cc1c[nH]c2ccccc12)C(O)=O;10.5;tryptophan;-0.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+N[C@@H](Cc1ccc(O)cc1)C(O)=O;10.5;tyrosine;0.3;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+CC(C)[C@H](N)C(O)=O;10.5;valine;-0.16;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00096
+Oc1ccccc1[N+]([O-])=O;7;2-nitrophenol;-1.04;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.5;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccccc1O;7;2-hydroxyphenol;-0.07;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccc(O)cc1;7;4-hydroxyphenol;-2.76;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Nc1ccccc1O;7;2-aminophenol;-1.17;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Nc1ccc(O)cc1;7;4-aminophenol;-2.76;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+COc1ccccc1O;7;2-methoxyphenol;-2.6;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+COc1ccc(O)cc1;7;4-methoxyphenol;-2.6;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccccc1C=O;7;2-hydroxybenzaldehyde;-1.02;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccc(C=O)cc1;7;4-hydroxybenzaldehyde;0.14;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccccc1c2ccccc2;7;2-phenylphenol;0.39;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.75;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Nc1ccccc1C(O)=O;7;2-aminobenzoic acid;-0.39;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-1.21;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)c1ccccc1O;7;salicylic acid;0.09;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.14;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)c1ccccc1[N+]([O-])=O;7;2-nitrobenzoic acid;-0.69;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)c1ccc(cc1)[N+]([O-])=O;7;4-nitrobenzoic acid;0.02;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)c1ccccc1C(O)=O;7;phthalic acid;-0.09;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)c1ccc(cc1)C(O)=O;7;terephthalic acid;-0.33;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)CCc1ccccn1;7;2-pyridinepropionic acid;-1.02;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)CCc1ccncc1;7;4-pyridinepropionic acid;-0.81;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+Oc1ccccc1[N+]([O-])=O;10.5;2-nitrophenol;-1.18;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.5;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Oc1ccccc1O;10.5;2-hydroxyphenol;-0.22;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Oc1ccc(O)cc1;10.5;4-hydroxyphenol;-2.45;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Nc1ccccc1O;10.5;2-aminophenol;-0.49;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Nc1ccc(O)cc1;10.5;4-aminophenol;-1.2;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+COc1ccccc1O;10.5;2-methoxyphenol;-1.09;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+COc1ccc(O)cc1;10.5;4-methoxyphenol;-0.82;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Oc1ccccc1C=O;10.5;2-hydroxybenzaldehyde;-1.44;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Oc1ccc(C=O)cc1;10.5;4-hydroxybenzaldehyde;0.06;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Oc1ccccc1c2ccccc2;10.5;2-phenylphenol;-0.01;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.29;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Nc1ccccc1C(O)=O;10.5;2-aminobenzoic acid;0.07;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.19;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.33;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.08;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)c1ccccc1[N+]([O-])=O;10.5;2-nitrobenzoic acid;-0.44;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)c1ccc(cc1)[N+]([O-])=O;10.5;4-nitrobenzoic acid;0.28;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)c1ccccc1C(O)=O;10.5;phthalic acid;0.28;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)c1ccc(cc1)C(O)=O;10.5;terephthalic acid;0.27;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)CCc1ccccn1;10.5;2-pyridinepropionic acid;-0.01;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)CCc1ccncc1;10.5;4-pyridinepropionic acid;0;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.54;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.99;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;0.48;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.84;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;0.37;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;0.96;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;1.09;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.63;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.56;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;0.9;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;0.98;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.41;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;0.95;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.92;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.43;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.5;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;0.81;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.68;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.08;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;1.61;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.99;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;0.43;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;1.06;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;1.36;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.75;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.68;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.16;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.15;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.75;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.23;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.98;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.5;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.64;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.24;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 20/80;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.77;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.35;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;1.87;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;1.15;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;0.43;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;1.24;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;1.58;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.82;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.75;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.38;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.24;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.97;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.43;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;1.12;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.41;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.59;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.59;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.72;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.47;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.07;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;1.25;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;0.53;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;1.31;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;1.82;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.83;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.74;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.56;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.31;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.14;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.63;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;1.33;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.28;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.57;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.8;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.75;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.67;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.28;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;1.3;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;0.59;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;1.33;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.03;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.98;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.77;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.73;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.37;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.35;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.84;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;1.53;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.37;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.59;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.93;Agilent 6495;ESI;MeOH/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;1.03;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.95;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.82;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;1.67;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;0.79;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;1.78;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.03;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;1.28;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.93;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.96;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.64;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.75;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;2.32;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;1.88;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.28;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;0.68;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;2.16;Agilent 6495;ESI;MeOH 0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.6;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;1.36;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;1.27;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;1.26;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.34;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;1.13;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;0.92;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.19;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;-0.2;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.37;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.31;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.46;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.03;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.38;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;-0.06;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.51;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.03;Agilent 6495;ESI;0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.17;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.93;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.27;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.63;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.19;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;0.85;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;1.82;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.15;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.13;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.29;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.41;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.99;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.11;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.7;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;-0.43;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.22;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;1.98;Agilent 6495;ESI;MeCN/0.1% ammonia 20/80;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0.02;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.77;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.39;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.63;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.16;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;0.83;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;1.78;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.15;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.19;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.49;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.4;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.98;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.07;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.72;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;-0.43;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.24;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;2.06;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 40/60;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.86;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.54;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.48;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.42;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;0.81;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;1.92;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.1;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;-0.06;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.44;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.5;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.02;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.09;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.69;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;-0.54;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.35;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;2.15;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;0;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 60/40;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.88;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.71;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.65;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.46;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;0.8;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.14;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;0.08;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;0.03;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.64;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.68;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.07;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.27;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.72;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;-0.51;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+Nc1ccc(cc1)C(O)=O;10.5;4-aminobenzoic acid;-0.36;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;2.27;Agilent 6495;ESI;MeCN/0.1% ammonia(aq) 80/20;Measured in this study
+OC(=O)c1ccccc1;10.5;benzoic acid;-2.13;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.75;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+Oc1cccc(c1)C(F)(F)F;10.5;3-(trifluoromethyl)phenol;2.62;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.76;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulfonic acid;-0.14;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;10.5;3,5-diiodosalicylic acid;2.2;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+Oc1ccc(cc1)c2ccccc2;10.5;4-phenylphenol;-2.39;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+OC(=O)c1ccc(O)cc1;10.5;4-hydroxybenzoic acid;-1.65;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;10.5;3,5-dinitrobenzoic acid;1.61;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;10.5;naphthalenesulfonic acid;1.51;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;10.5;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.49;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;10.5;2,4-dinitrophenol;1.41;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;10.5;3-nitrophenol;0.6;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+O=C1NC(=O)c2ccccc12;10.5;phthalimide;-3;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;10.5;2,4,6-trinitro-1,3-benzenediol;2.17;Agilent 6495;ESI;MeCN 0.1% ammonia;Measured in this study
+OC(=O)c1ccccc1;7;benzoic acid;-0.29;Agilent 6495;ESI;water;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.02;Agilent 6495;ESI;water;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.13;Agilent 6495;ESI;water;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;0.68;Agilent 6495;ESI;water;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.37;Agilent 6495;ESI;water;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.9;Agilent 6495;ESI;water;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.62;Agilent 6495;ESI;water;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.33;Agilent 6495;ESI;water;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;-0.1;Agilent 6495;ESI;water;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.07;Agilent 6495;ESI;water;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;0.77;Agilent 6495;ESI;water;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.14;Agilent 6495;ESI;water;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.05;Agilent 6495;ESI;water;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.85;Agilent 6495;ESI;water;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-1.21;Agilent 6495;ESI;water;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.56;Agilent 6495;ESI;water;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.78;Agilent 6495;ESI;water;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.42;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.36;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.48;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;1.03;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;0.09;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.15;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;2.03;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.27;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.27;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.48;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.2;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.53;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.5;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.26;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.72;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.08;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.91;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.1;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.16;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.37;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;0.84;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.27;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.95;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.84;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.16;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.06;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.23;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;0.98;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.15;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.17;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.92;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.99;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.36;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.73;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.45;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.46;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.76;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;1.16;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;0.11;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.29;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;2.3;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.09;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.48;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.58;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.54;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.5;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.63;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.26;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.8;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;0.03;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;2.15;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.64;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.45;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.82;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;1.27;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;0.02;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.22;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;2.42;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.01;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.54;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.6;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.7;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.6;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.56;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.17;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.98;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;0.05;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;2.18;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;-3.4;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.34;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.6;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;0.13;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-3.02;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.08;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.9;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-2.56;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;-1.7;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;0.98;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.14;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.78;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.17;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;-0.39;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-2.69;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-2.31;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;2.18;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;-0.29;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.29;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;0.62;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;0.24;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.67;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.33;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;0.65;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.85;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;-0.28;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;0.53;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;0.51;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.32;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;0.66;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.25;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-1.23;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.71;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;0.93;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;-0.03;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.27;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;1.51;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;0.43;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.39;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.73;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.1;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.34;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;-0.06;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;0.88;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;0.92;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.64;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;0.89;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.62;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-1.19;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.39;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.25;Agilent 6495;ESI;MeCN/water 20/80;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.22;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.72;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;1.74;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;0.7;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.25;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.93;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.31;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.14;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.18;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;0.96;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.05;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.83;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.17;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.75;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-1;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.18;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.41;Agilent 6495;ESI;MeCN/water 40/60;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.24;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.84;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;1.9;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;0.81;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.14;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.87;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.35;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.1;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.12;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.12;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.11;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.94;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.2;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.84;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.87;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.18;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.49;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.33;Agilent 6495;ESI;MeCN/water 60/40;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.15;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.15;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;1;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.23;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.93;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.65;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.12;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.39;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.24;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.29;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.14;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.49;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.09;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.65;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.26;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.9;Agilent 6495;ESI;MeCN/water 80/20;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;0.42;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.5;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.69;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccccc1O;7;salicylic acid;1.36;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.42;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.05;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.9;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.21;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.5;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.52;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.45;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.44;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.75;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.26;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.45;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;2.24;Agilent 6495;ESI;MeCN;10.1002/jms.3790
+OC(=O)c1ccccc1;7;benzoic acid;-0.29;Agilent 6495;ESI;water;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.29;Agilent 6495;ESI;water;Measured in this study
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;0.62;Agilent 6495;ESI;water;Measured in this study
+OC(=O)c1ccccc1O;7;salicylic acid;0.24;Agilent 6495;ESI;water;Measured in this study
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.67;Agilent 6495;ESI;water;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.33;Agilent 6495;ESI;water;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;0.65;Agilent 6495;ESI;water;Measured in this study
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.85;Agilent 6495;ESI;water;Measured in this study
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;-0.28;Agilent 6495;ESI;water;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;0.53;Agilent 6495;ESI;water;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;0.51;Agilent 6495;ESI;water;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.32;Agilent 6495;ESI;water;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;0.66;Agilent 6495;ESI;water;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.25;Agilent 6495;ESI;water;Measured in this study
+O=C1NC(=O)c2ccccc12;7;phthalimide;-1.23;Agilent 6495;ESI;water;Measured in this study
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.71;Agilent 6495;ESI;water;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;0.93;Agilent 6495;ESI;water;Measured in this study
+OC(=O)c1ccccc1;7;benzoic acid;0.01;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;0.97;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;1.27;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+OC(=O)c1ccccc1O;7;salicylic acid;0.79;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.34;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;0.84;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.15;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;-0.02;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.13;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;0.94;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;0.73;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.71;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.17;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;0.95;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+O=C1NC(=O)c2ccccc12;7;phthalimide;-1.15;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.31;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.48;Agilent 6495;ESI;MeOH/water 20/80;Measured in this study
+OC(=O)c1ccccc1;7;benzoic acid;0.19;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.32;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;1.75;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+OC(=O)c1ccccc1O;7;salicylic acid;1.1;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.25;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.16;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.42;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.17;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.28;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.18;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;0.92;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;1.98;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.57;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.23;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.87;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.28;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.58;Agilent 6495;ESI;MeOH/water 40/60;Measured in this study
+OC(=O)c1ccccc1;7;benzoic acid;0.34;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.46;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;1.87;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+OC(=O)c1ccccc1O;7;salicylic acid;1.21;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+C/C=C/C=C/C(O)=O;7;sorbic acid;-0.01;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.34;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.6;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.34;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.28;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.37;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.03;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.12;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.7;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.4;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.73;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;-0.11;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.52;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+OC(=O)c1ccccc1;7;benzoic acid;0.55;Agilent 6495;ESI;MeOH/water 60/40;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.69;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.24;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+OC(=O)c1ccccc1O;7;salicylic acid;1.33;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+C/C=C/C=C/C(O)=O;7;sorbic acid;0.21;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.35;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;1.77;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.67;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.41;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.42;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.17;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.31;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;1.78;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.58;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+O=C1NC(=O)c2ccccc12;7;phthalimide;-0.45;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;0.05;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.48;Agilent 6495;ESI;MeOH/water 80/20;Measured in this study
+OC(=O)c1ccccc1;7;benzoic acid;0.65;Agilent 6495;ESI;MeOH;Measured in this study
+Oc1ccc(cc1)[N+]([O-])=O;7;4-nitrophenol;1.89;Agilent 6495;ESI;MeOH;Measured in this study
+Oc1cccc(c1)C(F)(F)F;7;3-(trifluoromethyl)phenol;2.63;Agilent 6495;ESI;MeOH;Measured in this study
+OC(=O)c1ccccc1O;7;salicylic acid;1.58;Agilent 6495;ESI;MeOH;Measured in this study
+C/C=C/C=C/C(O)=O;7;sorbic acid;0.36;Agilent 6495;ESI;MeOH;Measured in this study
+O[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7;3-nitrobenzenesulfonic acid;1.51;Agilent 6495;ESI;MeOH;Measured in this study
+OC(=O)c1cc(I)cc(I)c1O;7;3,5-diiodosalicylic acid;2.14;Agilent 6495;ESI;MeOH;Measured in this study
+Oc1ccc(cc1)c2ccccc2;7;4-phenylphenol;0.98;Agilent 6495;ESI;MeOH;Measured in this study
+OC(=O)c1ccc(O)cc1;7;4-hydroxybenzoic acid;0.51;Agilent 6495;ESI;MeOH;Measured in this study
+OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;7;3,5-dinitrobenzoic acid;1.68;Agilent 6495;ESI;MeOH;Measured in this study
+O[S](=O)(=O)c1cccc2ccccc12;7;naphthalenesulfonic acid;1.64;Agilent 6495;ESI;MeOH;Measured in this study
+Oc1c(F)c(F)c(c(F)c1F)c2c(F)c(F)c(F)c(F)c2F;7;4-(pentafluorophenyl)-2,3,5,6-tetrafluorophenol;2.73;Agilent 6495;ESI;MeOH;Measured in this study
+Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O;7;2,4-dinitrophenol;2.12;Agilent 6495;ESI;MeOH;Measured in this study
+Oc1cccc(c1)[N+]([O-])=O;7;3-nitrophenol;1.69;Agilent 6495;ESI;MeOH;Measured in this study
+O=C1NC(=O)c2ccccc12;7;phthalimide;0.38;Agilent 6495;ESI;MeOH;Measured in this study
+Nc1ccc(cc1)C(O)=O;7;4-aminobenzoic acid;0.37;Agilent 6495;ESI;MeOH;Measured in this study
+Oc1c(cc(c(O)c1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitro-1,3-benzenediol;1.18;Agilent 6495;ESI;MeOH;Measured in this study
+OC(=O)c1ccccc1O;10.5;salicylic acid;0.61;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+OC(=O)c1ccccc1;10.5;benzoic acid;0;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+CCCC1CC(N(C)C1)C(=O)NC(C(C)O)C2OC(SC)C(O)C(O)C2O;10.5;lincomycin;0.36;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+CC(=O)CC(c1ccccc1)C2=C(O)Oc3ccccc3C2=O;10.5;warfarin;1.92;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+COc1ccc2cc(ccc2c1)C(C)C(O)=O;10.5;naproxen;0.22;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+OC(=O)/C=C/C(O)=O;10.5;fumaric acid;-1.08;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+CCCCCCCCCCCC(O)=O;10.5;dodecanoic acid;0.43;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+C[C@H](CCC(=O)NCC[S](O)(=O)=O)[C@H]1CC[C@H]2[C@@H]3[C@H](O)C[C@@H]4C[C@H](O)CC[C@]4(C)[C@H]3C[C@H](O)[C@]12C;10.5;taurocholic acid;1.74;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.65;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
+OC(=O)c1cccc(c1)[S](=O)(=O)C(F)(F)F;10.5;3-trifluoromethylsulfonylbenzoic acid;1.49;Thermo LTQ;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1016/j.aca.2018.05.072
