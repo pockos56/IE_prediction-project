@@ -16,10 +16,17 @@ pcp = pyimport("pubchempy")
 pd = pyimport("padelpy")
 
 ## load files ##
-data1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\MOESM4_ESM_ESI-.csv", DataFrame)
-data_minus = (unique(data1,3))[!,[2,3,26]]
-data2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\MOESM4_ESM_ESI+_fixedseparator.csv", DataFrame)
-data_plus = (unique(data2,3))[!,[2,3,26]]
+data1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM4_ESM_ESI-.csv", DataFrame)
+data2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM4_ESM_ESI+.csv", DataFrame)
+data3 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM2_ESM_ESI-.csv", DataFrame)
+data4 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM2_ESM_ESI+.csv", DataFrame)
+
+data_M4_minus = (unique(data1,2))[!,[2,3,27,28,29,30,31]]
+data_M4_plus = (unique(data2,2))[!,[2,3,27,28,29,30,31]]
+data_M2_minus = data3[!,[:name,:pH_aq,:logIE,:instrument,:source,:solvent,:doi]]
+data_M2_plus = data4[!,[:name,:pH_aq,:logIE,:instrument,:source,:solvent,:doi]]
+data_minus = vcat(data_M4_minus, data_M2_minus)
+data_plus = vcat(data_M4_plus, data_M2_plus)
 
 ## Custom FP parameter optimization ##
 coarseness_r = vcat(collect(100:100:1000), collect(1200:300:3000))
@@ -103,10 +110,10 @@ opt_res_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Gen
 
 scatter(opt_res_minus[:,3], opt_res_minus[:,end])
 
-## Morgan fingerprints optimization ##
-function optim_morgan(output, ESI, iterations=50)
+## Type-12 fingerprints optimization ##
+function optim_type12(ESI, iterations=50)
     leaf_r = collect(4:2:10)
-    tree_r = vcat(collect(50:50:300),collect(400:100:1000))
+    tree_r = vcat(collect(50:50:400),collect(500:100:1000))
     itr = iterations
     if ESI == -1
         ESI_name = "minus"
@@ -116,14 +123,15 @@ function optim_morgan(output, ESI, iterations=50)
     end
 
     z = zeros(itr,5)
-        FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\morgan_$(ESI_name).csv", DataFrame))[:,2:end]
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12.csv", DataFrame)
+        FP1 = Matrix(hcat(FP[!,:pH_aq],FP[!,8:end]))
         for j = 1:itr
             leaf = rand(leaf_r)
             tree = rand(tree_r)
             state = rand(1:3)
             MaxFeat = Int64(ceil(size(FP1,2)/3))
         ## Regression ##
-            X_train, X_test, y_train, y_test = train_test_split(FP1, output, test_size=0.20, random_state=state);
+            X_train, X_test, y_train, y_test = train_test_split(FP1, FP[!,:logIE], test_size=0.20, random_state=state);
             reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
             fit!(reg, X_train, y_train)
             z[j,1] = leaf
@@ -144,6 +152,7 @@ z_df_sorted_plus = optim_morgan(data_plus[:,3],+1)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_minus.csv", z_df_sorted_minus)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_plus.csv", z_df_sorted_plus)
 
+z = optim_type12(-1,20)
 ## Importance for Padel-12 ##
 function parameter(ESI; allowplots=false, allowsave=false)
     if ESI == -1

@@ -22,20 +22,19 @@ pcp = pyimport("pubchempy")
 pd = pyimport("padelpy")
 alc = pyimport("rdkit.Chem.AllChem")
 
-
 data1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM4_ESM_ESI-.csv", DataFrame)
-data_minus = (unique(data1,3))[!,[2,3,26]]
 data2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM4_ESM_ESI+.csv", DataFrame)
-data_plus = (unique(data2,3))[!,[2,3,26]]
 data3 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM2_ESM_ESI-.csv", DataFrame)
-data_M2_minus = data3[!,[:name,:pH_aq,:logIE,:instrument,:source,:solvent,:doi]]
 data4 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MOESM2_ESM_ESI+.csv", DataFrame)
+
+data_M4_minus = (unique(data1,2))[!,[2,3,27,28,29,30,31]]
+data_M4_plus = (unique(data2,2))[!,[2,3,27,28,29,30,31]]
+data_M2_minus = data3[!,[:name,:pH_aq,:logIE,:instrument,:source,:solvent,:doi]]
 data_M2_plus = data4[!,[:name,:pH_aq,:logIE,:instrument,:source,:solvent,:doi]]
+data_minus = vcat(data_M4_minus, data_M2_minus)
+data_plus = vcat(data_M4_plus, data_M2_plus)
 
-histogram(data_M2_minus[:,3],bins=100,xlims=(-3,4.5))
-histogram!(data_minus[:,3],bins=100,c=:orange,xlims=(-3,4.5))
-
-## Fingerprint calculation (function)##
+## Fingerprint calculation (function) ##
 function padel_desc(rep)
     results = pcp.get_compounds(rep[1,1], "name")[1]
     desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
@@ -56,12 +55,43 @@ function padel_desc(rep)
     return desc_full
 end
 
+## Fingerprint calculation (function)## (2nd try)
+function padel_desc(rep)
+    results = pcp.get_compounds(rep[1,1], "name")[1]
+    desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
+    joined = hcat(DataFrame(rep[1,:]), desc_p)
+    for i = 2:size(rep,1)
+        if size(desc_p,1) >= i
+            println("Error on compound $i by $(size(desc_p,1)-i)")
+        end
+        try
+            results = pcp.get_compounds(rep[i,1], "name")[1]
+            desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
+            joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
+            joined = vcat(joined,joined_p)
+            println(i)
+        catch
+            continue
+        end
+    end
+    return joined
+end
+
+
 ## Fingerprint calculation (calc)##
-desc_minus_12 = padel_desc(data_M2_minus[:,:])
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\padel_minus_12.csv", desc_minus_12)
+desc_minus_12 = padel_desc(data_minus)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12.csv", desc_minus_12)
 desc_plus_12 = padel_desc(data_plus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\padel_plus_12.csv", desc_plus_12)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12.csv", desc_plus_12)
 wavplay(y, fs)
+
+#  Remove after complettion
+z_type12_minus = optim_type12(-1,100)
+z_type12_plus = optim_type12(+1,100)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Type12_FP_optimisation_results_minus.csv", z_type12_minus)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Type12_FP_optimisation_results_plus.csv", z_type12_plus)
+
+#
 
 ## Morgan FP ##    
 function morgan(rep)
