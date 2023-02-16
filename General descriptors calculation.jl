@@ -1,23 +1,14 @@
-import Pkg
-Pkg.add("RDKit")
-
 # General descriptors calculation
-using ScikitLearn
 using BSON
-using LinearAlgebra
 using Statistics
 using DataFrames
 using CSV
-using ScikitLearn.CrossValidation: cross_val_score
-using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
 using WAV
 using Plots
 y, fs = wavread(raw"C:\Windows\Media\Ring01.wav")
 
-@sk_import ensemble: RandomForestRegressor
-rdk = pyimport("rdkit.Chem")
 pcp = pyimport("pubchempy")
 pd = pyimport("padelpy")
 alc = pyimport("rdkit.Chem.AllChem")
@@ -34,29 +25,9 @@ data_M2_plus = data4[!,[:name,:pH_aq,:logIE,:instrument,:source,:solvent,:doi]]
 data_minus = vcat(data_M4_minus, data_M2_minus)
 data_plus = vcat(data_M4_plus, data_M2_plus)
 
-## Fingerprint calculation (function) ##
-function padel_desc(rep)
-    results = pcp.get_compounds(rep[1,1], "name")[1]
-    desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-    for i = 2:size(rep,1)
-        if size(desc_p,1) >= i
-            println("Error on compound $i by $(size(desc_p,1)-i)")
-        end
-        try
-            results = pcp.get_compounds(rep[i,1], "name")[1]
-            desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-            desc_p = vcat(desc_p,desc_p_temp)
-            println(i)
-        catch
-            continue
-        end
-    end
-    desc_full = hcat(rep[:,:],desc_p)
-    return desc_full
-end
 
-## Fingerprint calculation (function)## (2nd try)
-function padel_desc(rep)
+## Fingerprint calculation (function)##  (from name)
+function padel_fp(rep)
     results = pcp.get_compounds(rep[1,1], "name")[1]
     desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
     joined = hcat(DataFrame(rep[1,:]), desc_p)
@@ -77,21 +48,77 @@ function padel_desc(rep)
     return joined
 end
 
+## Fingerprint calculation (function)## (from name with sids)
+function padel_fromname(rep)
+    sids = pcp.get_sids(rep[1,1], "name")
+    results = pcp.Compound.from_cid(sids[1]["CID"])
+    desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
+    joined = hcat(DataFrame(rep[1,:]), desc_p)
+    for i = 2:size(rep,1)
+        if size(desc_p,1) >= i
+            println("Error on compound $i by $(size(desc_p,1)-i)")
+        end
+        try
+            sids = pcp.get_sids(rep[i,1], "name")
+            results = pcp.Compound.from_cid(sids[1]["CID"])
+            desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
+            joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
+            joined = vcat(joined,joined_p)
+            println(i)
+        catch
+            continue
+        end
+    end
+    return joined
+end
+
+## Fingerprint calculation (function)## (from SMILES)
+function padel_fromSMILES(rep,smilesvec)
+    sids = pcp.get_sids(smilesvec[1], "smiles")
+    results = pcp.Compound.from_cid(sids[1]["CID"])
+    desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
+    joined = hcat(DataFrame(rep[1,:]), desc_p)
+    for i = 2:size(rep,1)
+        if size(desc_p,1) >= i
+            println("Error on compound $i by $(size(desc_p,1)-i)")
+        end
+        try
+            sids = pcp.get_sids(smilesvec[i], "smiles")
+            results = pcp.Compound.from_cid(sids[1]["CID"])
+            desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
+            joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
+            joined = vcat(joined,joined_p)
+            println(i)
+        catch
+            continue
+        end
+    end
+    return joined
+end
+
 
 ## Fingerprint calculation (calc)##
-desc_minus_12 = padel_desc(data_minus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12.csv", desc_minus_12)
-desc_plus_12 = padel_desc(data_plus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12.csv", desc_plus_12)
-wavplay(y, fs)
+fp_minus_12_name = padel_fromname(data_minus)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new.csv", fp_minus_12_name)
+fp_plus_12_name = padel_fromname(data_plus)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new.csv", fp_plus_12_name)
 
-#  Remove after complettion
-z_type12_minus = optim_type12(-1,100)
-z_type12_plus = optim_type12(+1,100)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Type12_FP_optimisation_results_minus.csv", z_type12_minus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Type12_FP_optimisation_results_plus.csv", z_type12_plus)
+fp_minus_12_1 = padel_fromname(data_M4_minus)
+fp_minus_12_2= padel_fromSMILES(data_M2_minus[:,:],data3[:,:SMILES])
+fp_minus_12_nameSMILES = vcat(fp_minus_12_1,fp_minus_12_2)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES_new.csv", fp_minus_12_nameSMILES)
+fp_plus_12_1 = padel_fromname(data_M4_plus)
+fp_plus_12_2= padel_fromSMILES(data_M2_plus[:,:],data4[:,:SMILES])
+fp_plus_12_nameSMILES = vcat(fp_plus_12_1,fp_plus_12_2)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new.csv", fp_plus_12_nameSMILES)
 
-#
+## Comparison ##
+fromnamecids = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromsids.csv", DataFrame)[:,1:7]
+fromSMILES = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES.csv", DataFrame)
+
+big = data_minus
+setdiff(eachrow(big),eachrow(small))
+setdiff(eachrow(fromnamecids),eachrow(fromSMILES))
 
 ## Morgan FP ##    
 function morgan(rep)

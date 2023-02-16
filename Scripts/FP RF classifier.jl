@@ -18,9 +18,7 @@ pd = pyimport("padelpy")
 
 #
 # Create vector of pH-dependent and pH independent compounds (0=Unknown, 1=Unstable, 2=Stable)
-
-
-function diff_classes(ESI, threshold=0.1)
+function diff_classes(ESI; threshold=0.1)
 
     if ESI == -1
         ESI_name = "minus"
@@ -53,14 +51,19 @@ function diff_classes(ESI, threshold=0.1)
 end
 
 
-classes_minus, unknown_minus, unstable_minus, stable_minus = diff_classes(-1);
-classes_plus, unknown_plus, unstable_plus, stable_plus = diff_classes(+1);
+classes_minus, unknown_minus, unstable_minus, stable_minus = diff_classes(-1,threshold=0.7)
+classes_plus, unknown_plus, unstable_plus, stable_plus = diff_classes(+1,threshold=0.7);
 
 
+#Names of the compounds that are stable
+minus_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12.csv", DataFrame)
+plus_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12.csv", DataFrame)
+sort(minus_raw[stable_minus,:])
+plus_raw[stable_plus,:]
 # Create classifier
 
 X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), FP[!,:logIE], test_size=0.20, random_state=2);
-reg = RandomForestRegressor(n_estimators=300, min_samples_leaf=4, max_features=(Int64(ceil(size(Matrix(FP1),2)/3))), n_jobs=-1, oob_score =true, random_state=2)
+reg = RandomForestClassifier(n_estimators=300, min_samples_leaf=4, max_features=0, n_jobs=-1, oob_score =true, random_state=2)
 fit!(reg, X_train, y_train)
 
 
