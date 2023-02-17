@@ -51,8 +51,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.17;Agilent 
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;2.56;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.48;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;10.5;myristic acid;1.83;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;1.96;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.31;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;1.96;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.31;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.55;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;-0.67;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
 NCCCC(O)=O;10.5;4-aminobutanoic acid;-1.57;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 20/80;10.1021/acs.analchem.7b00595
@@ -111,8 +111,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.48;Agilent 
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;3.06;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.72;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;10.5;myristic acid;2.01;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.44;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.5;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.44;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.5;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.29;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;-0.23;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
 NCCCC(O)=O;10.5;4-aminobutanoic acid;-1.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 50/50;10.1021/acs.analchem.7b00595
@@ -171,8 +171,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.5;Agilent X
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;2.77;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.54;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;10.5;myristic acid;1.91;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.29;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.29;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.46;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;10.5;sorbic acid;-0.4;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;10.5;phthalimide;0.05;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;-0.43;Agilent XCT;ESI;MeCN/0.1% ammonia(aq);10.1021/acs.analchem.7b00595
@@ -230,8 +230,8 @@ O[S](=O)(=O)c1ccc2C(=O)c3ccccc3C(=O)c2c1;10.5;2-anthraquinonesulfonic acid;2.04;
 N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;10.5;3-nitrobenzenesulphonamide;1.23;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;10.5;perfluorooctanesulfonic acid;2.91;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;10.5;perfluoro-tert-butanol;1.64;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.5;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.63;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;10.5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.5;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;10.5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.63;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;10.5;phthalimide;-1.58;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;10.5;N-hydroxy-phthalimide;0.43;Agilent XCT;ESI;MeCN 0.1% ammonia;10.1021/acs.analchem.7b00595
 OC(=O)c1ccccc1;2.78;benzoic acid;-1.52;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
@@ -280,8 +280,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;2.78;3-nitrobenzenesulphonamide;0.5;Agilent X
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;2.78;perfluorooctanesulfonic acid;2.34;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;2.78;perfluoro-tert-butanol;-0.41;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;2.78;myristic acid;-0.71;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;2.78;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;1.76;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;2.78;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;1.85;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;2.78;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;1.76;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;2.78;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];1.85;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;2.78;N-hydroxy-phthalimide;-1.46;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1021/acs.analchem.7b00595
 OC(=O)c1ccccc1;2.78;benzoic acid;-0.84;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(=O)c1cc(cc(c1)[N+]([O-])=O)[N+]([O-])=O;2.78;3,5-dinitrobenzoic acid;1.01;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
@@ -337,8 +337,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;2.78;3-nitrobenzenesulphonamide;1.11;Agilent 
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;2.78;perfluorooctanesulfonic acid;2.74;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;2.78;perfluoro-tert-butanol;0.34;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;2.78;myristic acid;0.28;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;2.78;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.68;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;2.78;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.6;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;2.78;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.68;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;2.78;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.6;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;2.78;sorbic acid;-1.98;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;2.78;phthalimide;-1.99;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;2.78;N-hydroxy-phthalimide;-0.36;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00595
@@ -396,8 +396,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;0.8;Agilent XCT;
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;1.98;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.33;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;5;myristic acid;0.83;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;1.96;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;1.73;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;1.96;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];1.73;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;5;sorbic acid;-2.07;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;5;phthalimide;-1.85;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;-1.13;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 20/80;10.1021/acs.analchem.7b00595
@@ -456,8 +456,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;1.05;Agilent XCT
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;2.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.68;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;5;myristic acid;1.2;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.3;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.41;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.3;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.41;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;5;sorbic acid;-0.56;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;5;phthalimide;-0.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;0.27;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
@@ -518,8 +518,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;1.46;Agilent XCT
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;2.82;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.81;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;5;myristic acid;1.44;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.53;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.63;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.53;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.63;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;5;sorbic acid;-0.51;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;5;phthalimide;-0.54;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;0.35;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
@@ -578,8 +578,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;5;3-nitrobenzenesulphonamide;1.57;Agilent XCT
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;5;perfluorooctanesulfonic acid;3;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;5;perfluoro-tert-butanol;0.81;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;5;myristic acid;1.83;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.65;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.75;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;5;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.65;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;5;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.75;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;5;sorbic acid;-0.15;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;5;phthalimide;-0.11;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;5;N-hydroxy-phthalimide;0.57;Agilent XCT;ESI;MeCN/1mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
@@ -637,8 +637,8 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;7.8;3-nitrobenzenesulphonamide;1.42;Agilent X
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;7.8;perfluorooctanesulfonic acid;2.59;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;7.8;perfluoro-tert-butanol;0.75;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;7.8;myristic acid;1.62;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;7.8;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.23;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;7.8;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.39;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;7.8;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.23;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;7.8;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.39;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;7.8;sorbic acid;-0.61;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;7.8;phthalimide;-0.55;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;7.8;N-hydroxy-phthalimide;0.29;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
@@ -693,12 +693,12 @@ N[S](=O)(=O)c1cccc(c1)[N+]([O-])=O;3.45;3-nitrobenzenesulphonamide;0.79;Agilent 
 O=S(O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)=O;3.45;perfluorooctanesulfonic acid;2.46;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(C(F)(F)F)(C(F)(F)F)C(F)(F)F;3.45;perfluoro-tert-butanol;0.35;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 CCCCCCCCCCCCCC(O)=O;3.45;myristic acid;-0.06;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;3.45;2,3,4,5,6-pentafluoro-N-[(2,3,4,5,6-pentafluorophenyl)sulfonyl]-benzenesulfonamide;2.1;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;3.45;4-methyl-N-[(4-nitrophenyl)sulfonyl]-benzenesulfonamide;2.02;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+FC1=C(S(NS(C2=C(F)C(F)=C(F)C(F)=C2F)(=O)=O)(=O)=O)C(F)=C(F)C(F)=C1F;3.45;2,3,4,5,6-pentafluoro-N-(2,3,4,5,6-pentafluorophenyl)sulfonylbenzenesulfonamide;2.1;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
+O=S(NS(C1=CC=C([N+]([O-])=O)C=C1)(=O)=O)(C2=CC=C(C)C=C2)=O;3.45;4-Methyl-4'-nitro[1,1'-iminobis(sulfonyl)bis(benzene)];2.02;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 C/C=C/C=C/C(O)=O;3.45;sorbic acid;-3.08;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 O=C1NC(=O)c2ccccc12;3.45;phthalimide;-2.39;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
 ON1C(=O)c2ccccc2C1=O;3.45;N-hydroxy-phthalimide;-1.24;Agilent XCT;ESI;MeCN/5mM ammonium acetate(aq) 80/20;10.1021/acs.analchem.7b00595
-OC(=O)CCc1ccccn1;10.5;2-pyridinepropionic acid;-0.07;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
+OC(=O)CCc1ccccn1;10.5;3-(Pyridin-2-yl)propanoic acid;-0.07;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(=O)c1ccccc1[N+]([O-])=O;10.5;2-nitrobenzoic acid;-0.58;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(=O)c1ccccc1C(O)=O;10.5;phthalic acid;0.32;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
 OC(=O)c1ccccc1O;10.5;salicylic acid;0.36;Agilent XCT;ESI;MeCN/0.1% ammonia(aq) 80/20;10.1021/acs.analchem.7b00595
@@ -745,7 +745,7 @@ OC(=O)c1ccccc1[N+]([O-])=O;7;2-nitrobenzoic acid;-0.69;Agilent 6495;JetStream;Me
 OC(=O)c1ccc(cc1)[N+]([O-])=O;7;4-nitrobenzoic acid;0.02;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
 OC(=O)c1ccccc1C(O)=O;7;phthalic acid;-0.09;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
 OC(=O)c1ccc(cc1)C(O)=O;7;terephthalic acid;-0.33;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
-OC(=O)CCc1ccccn1;7;2-pyridinepropionic acid;-1.02;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
+OC(=O)CCc1ccccn1;7;3-(Pyridin-2-yl)propanoic acid;-1.02;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
 OC(=O)CCc1ccncc1;7;4-pyridinepropionic acid;-0.81;Agilent 6495;JetStream;MeCN/5mM ammonium acetate(aq) 80/20;Measured in this study
 Oc1ccccc1[N+]([O-])=O;10.5;2-nitrophenol;-1.18;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
 Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.5;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
@@ -767,7 +767,7 @@ OC(=O)c1ccccc1[N+]([O-])=O;10.5;2-nitrobenzoic acid;-0.44;Agilent 6495;JetStream
 OC(=O)c1ccc(cc1)[N+]([O-])=O;10.5;4-nitrobenzoic acid;0.28;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
 OC(=O)c1ccccc1C(O)=O;10.5;phthalic acid;0.28;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
 OC(=O)c1ccc(cc1)C(O)=O;10.5;terephthalic acid;0.27;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
-OC(=O)CCc1ccccn1;10.5;2-pyridinepropionic acid;-0.01;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
+OC(=O)CCc1ccccn1;10.5;3-(Pyridin-2-yl)propanoic acid;-0.01;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
 OC(=O)CCc1ccncc1;10.5;4-pyridinepropionic acid;0;Agilent 6495;JetStream;MeCN/0.1% ammonia 80/20;Measured in this study
 OC(=O)c1ccccc1;10.5;benzoic acid;0.54;Agilent 6495;ESI;0.1% ammonia;Measured in this study
 Oc1ccc(cc1)[N+]([O-])=O;10.5;4-nitrophenol;0.99;Agilent 6495;ESI;0.1% ammonia;Measured in this study

@@ -11,8 +11,8 @@ Nc1ccccc1O;3.7;2-aminophenol;3.65;Agilent 3Q;JetStream;0.1 mM formic acid;10.100
 COc1ccc(N)cc1;3.7;4-methoxyaniline;3.87;Agilent 3Q;JetStream;0.1 mM formic acid;10.1002/slct.201702269
 Cc1ccc2cccc(N)c2n1;3.7;8-aminoquinaldine;3.84;Agilent 3Q;JetStream;0.1 mM formic acid;10.1002/slct.201702269
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;3.51;Agilent XCT;ESI;0.1% formic acid;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);3.81;Agilent XCT;ESI;0.1% formic acid;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);3.75;Agilent XCT;ESI;0.1% formic acid;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;3.81;Agilent XCT;ESI;0.1% formic acid;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;3.75;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;3.3;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;3.41;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 c1ccncc1;2.7;pyridine;2.47;Agilent XCT;ESI;0.1% formic acid;Measured in this study
@@ -20,14 +20,14 @@ C1CCNC1;2.7;pyrrolidine;2.4;Agilent XCT;ESI;0.1% formic acid;Measured in this st
 CCNCC;2.7;diethylamine;2.53;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;3.4;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;1.94;Agilent XCT;ESI;0.1% formic acid;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;2.55;Agilent XCT;ESI;0.1% formic acid;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.55;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;3.27;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2.7;glutamine;1.33;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 CC(N)C(=O)O;2.7;alpha-alanine;1.35;Agilent XCT;ESI;0.1% formic acid;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;3.96;Agilent XCT;ESI;0.1% formic acid;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.96;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;2.72;Agilent XCT;ESI;0.1% formic acid;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;2.38;Agilent XCT;ESI;0.1% formic acid;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;3.25;Agilent XCT;ESI;0.1% formic acid;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;2.38;Agilent XCT;ESI;0.1% formic acid;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;3.25;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 COc1cccc(O)c1O;2.7;3-methoxycatechol;0.77;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;2.82;Agilent XCT;ESI;0.1% formic acid;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;1.11;Agilent XCT;ESI;0.1% formic acid;Measured in this study
@@ -627,8 +627,8 @@ COC1=CC2=C(C=CN=C2C=C1)C(C3CC4CCN3CC4C=C)O;3.44;quinine;3.13;Thermo LTQ;ESI;Isop
 CC(C)NCC(COC1=CC=C(C=C1)CC(=O)N)O;3.44;atenolol;2.25;Thermo LTQ;ESI;Isopropanol/10 mM oxalic acid(aq) 90/10;10.1002/rcm.8352
 CCN1C=C(C(=O)C2=CC(=C(C=C21)N3CCNCC3)F)C(=O)O;3.44;norfloxacin;1.03;Thermo LTQ;ESI;Isopropanol/10 mM oxalic acid(aq) 90/10;10.1002/rcm.8352
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;4.45;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);5.91;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);5.33;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;5.91;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;5.33;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;4.8;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;4.68;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 c1ccncc1;2.7;pyridine;2.98;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
@@ -636,12 +636,12 @@ C1CCNC1;2.7;pyrrolidine;3.17;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in t
 CCNCC;2.7;diethylamine;3.25;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;4.02;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;2.95;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;3.57;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.57;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;4.44;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;2.88;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;7.49;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;7.16;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;5.43;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;7.49;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;7.16;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;5.43;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;3.69;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;1.21;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
 Nc1ccc(O)cc1;2.7;4-aminophenol;3.04;Agilent XCT;ESI;MeCN 0.1% formic acid;Measured in this study
@@ -670,17 +670,17 @@ CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl;3.2;thiamethoxam;1.9;Agilent XCT;ESI;
 COC(=O)CCCC(=O)OC;3.2;dimethyl glutarate;1.7;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 OC(=O)C(\C)=C(\C)C(=O)O;3.2;dimethylmaleate;1.7;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CCC(=O)OC;3.2;dimethyl succinate;1.7;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(Oc1ccccc1)c2ccccc2;3.2;phenylbenzoate;1.3;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(Oc1ccccc1)c2ccccc2;3.2;Diphenylcarboxylate;1.3;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 CC(=O)OCCOC(=O)C;3.2;ethylene glycol diacetate;1.5;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CC(=O)OC;3.2;dimethyl malonate;1.4;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 O=C(c1ccccc1)c2ccccc2;3.2;benzophenone;2.2;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;3.2;2-(trifluoromethane)sulfonylbenzoic acid;0.4;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;3.2;2-(Trifluoromethylsulfonyl)benzoic acid;0.4;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 NC(=O)c1ccccc1;3.2;benzamide;2.4;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COc1ccc(cc1)C(O)=O;3.2;4-methoxybenzoic acid;1.9;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 Oc1ccccc1C#N;3.2;2-cyanophenol;1.7;Agilent XCT;ESI;MeCN/0.1% acetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;3.58;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);4.42;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);3.87;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.42;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;3.87;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;3.57;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;4.05;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 c1ccncc1;2.7;pyridine;2.32;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
@@ -688,15 +688,15 @@ C1CCNC1;2.7;pyrrolidine;2.46;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measure
 CCNCC;2.7;diethylamine;2.47;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;3.42;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;2.04;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;2.73;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.73;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;3.74;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2.7;glutamine;1.37;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 CC(N)C(=O)O;2.7;alpha-alanine;1.26;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;3.66;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.66;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;2.53;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.02;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;3.71;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.23;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.02;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;3.71;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.23;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 COc1cccc(O)c1O;2.7;3-methoxycatechol;1.15;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;3.03;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;0.89;Agilent XCT;ESI;MeCN/0.1% formic acid 20/80;Measured in this study
@@ -765,8 +765,8 @@ C1CCNC1;2.7;pyrrolidine;2.17;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.
 COC(=O)c1ccccc1C(=O)OC;2.7;dimethyl phthalate;3.14;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1007/s13361-015-1219-6
 c1ccncc1;2.7;pyridine;2.25;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 20/80;10.1007/s13361-015-1219-6
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;3.93;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);4.96;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);4.19;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.96;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.19;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;4.03;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;3.93;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 c1ccncc1;2.7;pyridine;2.59;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
@@ -774,15 +774,15 @@ C1CCNC1;2.7;pyrrolidine;2.57;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measure
 CCNCC;2.7;diethylamine;2.65;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;3.68;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;2.31;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;2.67;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.67;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;3.96;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2.7;glutamine;1.68;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 CC(N)C(=O)O;2.7;alpha-alanine;1.67;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;4.16;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;4.16;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;2.83;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.55;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.62;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.72;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.55;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.62;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.72;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 COc1cccc(O)c1O;2.7;3-methoxycatechol;0.3;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;3.26;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;0.88;Agilent XCT;ESI;MeCN/0.1% formic acid 50/50;Measured in this study
@@ -813,10 +813,10 @@ C1CCNCC1;2.7;pyridine;3.21;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 50/50;10.10
 C1CCNC1;2.7;pyrrolidine;2.34;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 50/50;10.1007/s13361-014-0969-x
 COC(=O)c1ccccc1C(=O)OC;2.7;dimethyl phthalate;3.22;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 50/50;10.1007/s13361-014-0969-x
 c1ccncc1;2.7;pyridine;2.25;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 50/50;10.1007/s13361-014-0969-x
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);6.15;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;6.15;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 CCCCCC[N+](CCCCCC)(CCCCCC)CCCCCC;2.7;tetrahexylammonium;5.61;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);5.58;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
-Clc1ccc(Cl)c(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)c1;2.7;2,5-Cl2-C6H3-P(pyrr);5.52;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;5.58;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
+Clc1ccc(Cl)c(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)c1;2.7;N-(2,5-Dichlorophenyl)tripyrrolizinophosphine imide;5.52;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 CN(C)P(=Nc1ccccc1)(N(C)C)N(C)C;2.7;((CH3)2N)3-P=N-C6H5;5.18;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 CCCC[N+](CCCC)(CCCC)CCCC;2.7;tetrabutylammonium;5.22;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;4.89;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
@@ -857,7 +857,7 @@ COC(=O)CCCC(=O)OC;2.7;dimethyl glutarate;2.58;Agilent XCT;ESI;MeCN/0.1% formic a
 NC(=O)c1ccccc1;2.7;benzamide;2.42;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 C1CCNC1;2.7;pyrrolidine;2.99;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 CCNCC;2.7;diethylamine;3.16;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
-O=C(Oc1ccccc1)c2ccccc2;2.7;phenylbenzoate;1.7;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
+O=C(Oc1ccccc1)c2ccccc2;2.7;Diphenylcarboxylate;1.7;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 Nc1ccccc1[N+]([O-])=O;2.7;2-nitroaniline;1.83;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 Nc1ccc(Cl)cc1[N+]([O-])=O;2.7;4-chloro-2-nitroaniline;2.32;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
 C[N+](C)(C)C;2.7;tetramethylammonium;2.61;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/ac902856t
@@ -887,7 +887,7 @@ c1ccc(N2CC3CC(C2)CN(c2ccccc2)C3)cc1;2.7;N,N-diphenylbispidine;4.72;Agilent XCT;E
 Nc1cccc(O)c1;2.7;3-aminophenol;2.5;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
 Nc1c(cc(cc1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;2.7;2,4,6-trinitroaniline;1.11;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
 Nc1ccccn1;2.7;2-aminopyridine;3.04;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;3.66;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.66;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
 NC(CO)(CO)CO;2.7;trizma base;2.47;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
 CN(C)c1ccc(N)cc1;2.7;4-amino-N,N-dimethylaniline;3.28;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
 Oc1cccnc1;2.7;3-hydroxypyridine;2.76;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-016-1563-1
@@ -938,7 +938,7 @@ N[C@@H](CO)C(O)=O;2.7;serine;2.14;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/2
 N[C@@H](CC(N)=O)C(O)=O;2.7;asparagine;2.12;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
 NCC(O)=O;2.7;glycine;1.3;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
 N[C@@H](CS)C(O)=O;2.7;cysteine;1.24;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;4.69;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;4.69;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
 NCC(=O)NCC(=O)NCC(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(N)=O;2.7;Gly-Gly-Gly-Phe-Phe-NH2;3.85;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
 COC(=O)C(CCCCN)NC(=O)CNC(C)=O;2.7;Ac-Gly-Lys-OMe;3.79;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
 NCC(=O)N1CCC[C@H]1C(=O)NCC(=O)NCC(O)=O;2.7;Gly-Pro-Gly-Gly;3.79;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1021/acs.analchem.7b00096
@@ -951,26 +951,26 @@ CC(=O)OCC(COC(=O)C)OC(=O)C;2.7;glyceryl triacetate;1.62;Agilent XCT;ESI;MeCN/0.1
 CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl;2.7;thiamethoxam;1.57;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-017-1626-y
 OC(=O)C(\C)=C(\C)C(=O)O;2.7;dimethylmaleate;1.88;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-017-1626-y
 CC(=O)OCCOC(=O)C;2.7;ethylene glycol diacetate;1.26;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;2.7;2-(trifluoromethane)sulfonylbenzoic acid;0.09;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;2.7;2-(Trifluoromethylsulfonyl)benzoic acid;0.09;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COc1ccc(cc1)C(O)=O;2.7;4-methoxybenzoic acid;1.34;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-017-1626-y
 c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;4-(2-phenyldiazenyl)-N- (triphenylphosphoranylidene)benzeneamine;6.15;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N-(diphenyl-1-pyrrolidinylphosphoranylidene)-4-(2-phenyldiazenyl)benzenamine;6.23;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-(2-phenyldiazenyl)-N-(phenyldi-1-pyrrolidinylphosphoranylidene) benzenamine;6.17;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 CN(C)P(=Nc1ccc(N=Nc2ccccc2)cc1)(c1ccccc1)N(C)C;2.7;4-(2-phenyldiazenyl)-N-(phenylbis-1-(dimethylamino)phosphoranylidene) benzenamine;6.04;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(triphenylphosphoranylidene)benzenamine;5.56;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;6.27;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;6.36;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.94;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;6.27;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;6.36;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.94;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 C(NCc1ccccc1)c2ccccc2;2.7;dibenzylamine;5;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 CCN(CC)CC(=O)Nc1c(C)cccc1C;2.7;lidocaine;5.12;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 CC(C)NCC(COC1=CC=C(C=C1)CC(=O)N)O;2.7;atenolol;4.95;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 CCN(CC)C(=O)c1cccnc1;2.7;N,N-diethylnicotinamide;4.46;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
-C=C[C@H]1C[N+]2(Cc3ccccc3)CC[C@H]1C[C@H]2C(O)c1ccnc2ccccc12;2.7;(8S,9R)-(-)-N-benzylcinchonidinium;5.65;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
+C=CC1C[N+]2(CCC1CC2C(C3=CC=NC4=CC=CC=C34)O)CC5=CC=CC=C5;2.7;(8S,9R)-(-)-N-benzylcinchonidinium;5.65;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 CCN(CC)C(=S)SSC(=S)N(CC)CC;2.7;tetraethylthiuram disulfide;3.52;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 CC(C)NCc1ccccc1;2.7;N-isopropylbenzylamine;4.77;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 COC1=CC2=C(C=CN=C2C=C1)C(C3CC4CCN3CC4C=C)O;2.7;quinine;5.05;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 O=C1CN(C(=O)N1c2ccccc2)c3ccccc3;2.7;diphenylhydantoin;2.44;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
-CCC1CN2CCC1CC2C(OC1C=CC(OC(c2ccnc3ccc(OC)cc32)C2CC3CCN2CC3CC)C2=C1C(=O)c1ccccc1C2=O)c1ccnc2ccc(OC)cc21;2.7;1,4-bis(dihydroquinidine)anthraquinone;5.14;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
+CCC1CN2CCC1CC2C(C3=C4C=C(C=CC4=NC=C3)OC)OC5=C6C(=C(C=C5)OC(C7CC8CCN7CC8CC)C9=C1C=C(C=CC1=NC=C9)OC)C(=O)C1=CC=CC=C1C6=O;2.7;1,4-bis(dihydroquinidine)anthraquinone;5.14;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 CC1=C(SC=[N+]1CC2=CN=C(N=C2N)C)CCO;2.7;thiamine;3.19;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 Cc1ncc(CO)c(C=O)c1O;2.7;pyridoxal;2.42;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
 Cc1ncc(CO)c(CN)c1O;2.7;pyridoxamine;2.96;Agilent XCT;ESI;MeCN/0.1% formic acid(aq) 80/20;Measured in this study
@@ -1283,7 +1283,7 @@ C1CCNCC1;2.7;pyridine;3.37;Agilent 1Q;JetStream;MeCN/0.1% formic acid(aq) 80/20;
 COC(=O)c1ccccc1C(=O)OC;2.7;dimethyl phthalate;3.37;Agilent 1Q;JetStream;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
 C1CCNC1;2.7;pyrrolidine;3.47;Agilent 1Q;JetStream;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
 c1ccncc1;2.7;pyridine;2.97;Agilent 1Q;JetStream;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;4.06;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;4.06;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
 O=[N+]([O-])c1cccc([N+](=O)[O-])c1N=P(N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2,6(NO2)2phenyl-P(pyrr);4.73;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;5.07;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;4.63;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
@@ -1299,8 +1299,8 @@ c1ccncc1;2.7;pyridine;3.02;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1
 N[C@@H](CS)C(O)=O;2.7;cysteine;0.63;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
 NCC(O)=O;2.7;glycine;1.39;Varian J-320;ESI;MeCN/0.1% formic acid(aq) 80/20;10.1007/s13361-015-1219-6
 CC[N+](CC)(CC)CC;10.7;tetraethylammonium;3.93;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;10.7;2-Cl-C6H4-P2(pyrr);4.66;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;10.7;4-CF3-C6H4-P(pyrr);4.5;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;10.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.66;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;10.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.5;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;10.7;tetrapropylammonium;4.1;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 CCCN(CCC)CCC;10.7;tripropylamine;1.65;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 c1ccncc1;10.7;pyridine;0.24;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
@@ -1308,15 +1308,15 @@ C1CCNC1;10.7;pyrrolidine;2.47;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured i
 CCNCC;10.7;diethylamine;2.27;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 COc1cccc(c1)N(C)C;10.7;3-methoxy-N,N-dimethylaniline;1.48;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 Nc1ccccn1;10.7;2-aminopyridine;2.24;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;10.7;4-dimethylamino-N,N-dimethylaniline;3.63;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;10.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.63;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;10.7;reserpine;4.04;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;10.7;glutamine;1.69;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 CC(N)C(=O)O;10.7;alpha-alanine;0.98;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;10.7;Phe-Phe-Phe-Phe;3.97;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;10.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.97;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;10.7;1,10-phenanthroline;3.62;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;10.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.73;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;10.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.88;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;10.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.97;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;10.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.73;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;10.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.88;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;10.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.97;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 COc1cccc(O)c1O;10.7;3-methoxycatechol;-1.24;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 COc1ccncc1;10.7;4-methoxypyridine;2.18;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;10.7;phthalic acid;0.63;Agilent XCT;ESI;MeCN/0.1% ammonia 50/50;Measured in this study
@@ -1398,7 +1398,7 @@ O=[N+]([O-])c1cccc([N+](=O)[O-])c1N=P(N1CCCC1)(N1CCCC1)N1CCCC1;1.9;2,6(NO2)2phen
 c1ccc(N2CC3CC(C2)CN(c2ccccc2)C3)cc1;1.9;N,N-diphenylbispidine;3.8;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
 Nc1ccccn1;1.9;2-aminopyridine;2.62;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
 Nc1cccc(O)c1;1.9;3-aminophenol;1.99;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;1.9;4-dimethylamino-N,N-dimethylaniline;3.24;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;1.9;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.24;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
 CN(C)c1ccc(N)cc1;1.9;4-amino-N,N-dimethylaniline;2.41;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
 Oc1cccnc1;1.9;3-hydroxypyridine;2.5;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
 CN(C)c1cccc(c1)C(O)=O;1.9;3-dimethylaminobenzoic acid;2.84;Agilent 3Q;JetStream;MeCN/0.1% trifluoroacetic acid(aq) 20/80;Measured in this study
@@ -1411,11 +1411,11 @@ CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl;1.9;thiamethoxam;1.8;Agilent XCT;ESI;
 COC(=O)CCCC(=O)OC;1.9;dimethyl glutarate;2;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 OC(=O)C(\C)=C(\C)C(=O)O;1.9;dimethylmaleate;1.8;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CCC(=O)OC;1.9;dimethyl succinate;1.9;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(Oc1ccccc1)c2ccccc2;1.9;phenylbenzoate;1;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(Oc1ccccc1)c2ccccc2;1.9;Diphenylcarboxylate;1;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 CC(=O)OCCOC(=O)C;1.9;ethylene glycol diacetate;1.4;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CC(=O)OC;1.9;dimethyl malonate;1.2;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 O=C(c1ccccc1)c2ccccc2;1.9;benzophenone;1.6;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;1.9;2-(trifluoromethane)sulfonylbenzoic acid;0.1;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;1.9;2-(Trifluoromethylsulfonyl)benzoic acid;0.1;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 NC(=O)c1ccccc1;1.9;benzamide;2.1;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COc1ccc(cc1)C(O)=O;1.9;4-methoxybenzoic acid;1.8;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
 Oc1ccccc1C#N;1.9;2-cyanophenol;1.5;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-017-1626-y
@@ -1445,7 +1445,7 @@ Nc1ccccn1;1.9;2-aminopyridine;2.99;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic aci
 Nc1cccc(O)c1;1.9;3-aminophenol;2.45;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
 Nc1c(cc(cc1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;1.9;2,4,6-trinitroaniline;1.06;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
 Nc1ccc(cc1)[N+]([O-])=O;1.9;4-nitroaniline;2.38;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
-CN(C)c1ccc(cc1)N(C)C;1.9;4-dimethylamino-N,N-dimethylaniline;3.61;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
+CN(C)c1ccc(cc1)N(C)C;1.9;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.61;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
 CN(C)c1ccc(N)cc1;1.9;4-amino-N,N-dimethylaniline;3.24;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
 Oc1cccnc1;1.9;3-hydroxypyridine;2.72;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
 CN(C)c1cccc(c1)C(O)=O;1.9;3-dimethylaminobenzoic acid;2.43;Agilent XCT;ESI;MeCN/0.1% trifluoroacetic acid(aq) 80/20;10.1007/s13361-016-1563-1
@@ -1507,8 +1507,8 @@ C1CCNC1;9.75;pyrrolidine;1.71;Agilent XCT;ESI;MeCN/1 mM ammonia(aq) 80/20;10.100
 COC(=O)c1ccccc1C(=O)OC;9.75;dimethyl phthalate;2.74;Agilent XCT;ESI;MeCN/1 mM ammonia(aq) 80/20;10.1007/s13361-014-0969-x
 c1ccncc1;9.75;pyridine;-0.82;Agilent XCT;ESI;MeCN/1 mM ammonia(aq) 80/20;10.1007/s13361-014-0969-x
 CC[N+](CC)(CC)CC;6.77;tetraethylammonium;3.93;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.77;2-Cl-C6H4-P2(pyrr);5.27;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.77;4-CF3-C6H4-P(pyrr);4.6;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.77;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;5.27;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.77;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.6;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;6.77;tetrapropylammonium;4.34;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 CCCN(CCC)CCC;6.77;tripropylamine;2.24;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 c1ccncc1;6.77;pyridine;0.82;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
@@ -1516,15 +1516,15 @@ C1CCNC1;6.77;pyrrolidine;2.66;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;
 CCNCC;6.77;diethylamine;2.72;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 COc1cccc(c1)N(C)C;6.77;3-methoxy-N,N-dimethylaniline;2;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 Nc1ccccn1;6.77;2-aminopyridine;1.56;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;6.77;4-dimethylamino-N,N-dimethylaniline;2.46;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;6.77;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.46;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;6.77;reserpine;3.69;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;6.77;glutamine;1.44;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 CC(N)C(=O)O;6.77;alpha-alanine;0.97;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.77;Phe-Phe-Phe-Phe;3.4;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.77;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.4;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;6.77;1,10-phenanthroline;3.6;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.77;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.41;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.77;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.6;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.77;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.79;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.77;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.41;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.77;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.6;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.77;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.79;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 COc1cccc(O)c1O;6.77;3-methoxycatechol;-0.33;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 COc1ccncc1;6.77;4-methoxypyridine;1.71;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;6.77;phthalic acid;0.82;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
@@ -1547,8 +1547,8 @@ CCc1cccc(CC)c1N(COC)C(=O)CCl;6.77;alachlor;2.3;Agilent XCT;ESI;MeCN/10 mM ammoni
 COc1cc(ccc1O)C(O)CN;6.77;normetanephrine;0.7;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 FC(F)C(F)(F)OCC(Cn1cncn1)c2ccc(Cl)cc2Cl;6.77;tetraconazole;2.34;Agilent XCT;ESI;MeCN/10 mM ammonium acetate 50/50;Measured in this study
 CC[N+](CC)(CC)CC;6.8;tetraethylammonium;3.93;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.8;2-Cl-C6H4-P2(pyrr);5.24;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.8;4-CF3-C6H4-P(pyrr);3.89;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.8;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;5.24;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.8;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;3.89;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;6.8;tetrapropylammonium;3.97;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 CCCN(CCC)CCC;6.8;tripropylamine;3.88;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 c1ccncc1;6.8;pyridine;0.66;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
@@ -1556,15 +1556,15 @@ C1CCNC1;6.8;pyrrolidine;2.88;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;M
 CCNCC;6.8;diethylamine;3;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 COc1cccc(c1)N(C)C;6.8;3-methoxy-N,N-dimethylaniline;1.77;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 Nc1ccccn1;6.8;2-aminopyridine;2.27;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;6.8;4-dimethylamino-N,N-dimethylaniline;3.04;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;6.8;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.04;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;6.8;reserpine;4.04;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;6.8;glutamine;1.47;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 CC(N)C(=O)O;6.8;alpha-alanine;1.04;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.8;Phe-Phe-Phe-Phe;3.65;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.8;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.65;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;6.8;1,10-phenanthroline;3.65;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.8;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.81;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.8;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.66;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.8;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.85;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.8;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.81;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.8;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.66;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.8;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.85;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 COc1cccc(O)c1O;6.8;3-methoxycatechol;-0.01;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 COc1ccncc1;6.8;4-methoxypyridine;1.73;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;6.8;phthalic acid;0.96;Agilent XCT;ESI;MeCN/10 mM ammonium formate 50/50;Measured in this study
@@ -1667,8 +1667,8 @@ CC12CCC3C(C1CCC2O)CCC4=CC(=O)CCC34C;2.91;testosterone;1.92;Waters Synapt G.2;Z-s
 CCN1C=C(C(=O)C2=CC(=C(C=C21)N3CCNCC3)F)C(=O)O;2.91;norfloxacin;2.59;Waters Synapt G.2;Z-spray;MeCN/10 mM formic acid(aq) 90/10;10.1002/rcm.8352
 CN1C=NC2=C1C(=O)N(C(=O)N2C)C;2.91;caffeine;0.92;Waters Synapt G.2;Z-spray;MeCN/10 mM formic acid(aq) 90/10;10.1002/rcm.8352
 CC[N+](CC)(CC)CC;5.52;tetraethylammonium;3.93;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;5.52;2-Cl-C6H4-P2(pyrr);4.8;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;5.52;4-CF3-C6H4-P(pyrr);4.2;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;5.52;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.8;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;5.52;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.2;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;5.52;tetrapropylammonium;3.65;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 CCCN(CCC)CCC;5.52;tripropylamine;3.75;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 c1ccncc1;5.52;pyridine;0.5;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
@@ -1676,15 +1676,15 @@ C1CCNC1;5.52;pyrrolidine;2.65;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50
 CCNCC;5.52;diethylamine;2.75;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 COc1cccc(c1)N(C)C;5.52;3-methoxy-N,N-dimethylaniline;1.48;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 Nc1ccccn1;5.52;2-aminopyridine;1.7;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;5.52;4-dimethylamino-N,N-dimethylaniline;2.78;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;5.52;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.78;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;5.52;reserpine;4.33;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;5.52;glutamine;2.13;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 CC(N)C(=O)O;5.52;alpha-alanine;1.41;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;5.52;Phe-Phe-Phe-Phe;3.77;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;5.52;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.77;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;5.52;1,10-phenanthroline;3.16;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;5.52;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.46;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;5.52;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.19;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;5.52;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.43;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;5.52;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.46;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;5.52;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.19;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;5.52;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.43;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 COc1cccc(O)c1O;5.52;3-methoxycatechol;-0.62;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 COc1ccncc1;5.52;4-methoxypyridine;1.71;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;5.52;phthalic acid;1.37;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
@@ -1707,8 +1707,8 @@ CCc1cccc(CC)c1N(COC)C(=O)CCl;5.52;alachlor;2.48;Agilent XCT;ESI;MeCN/10 mM ammon
 COc1cc(ccc1O)C(O)CN;5.52;normetanephrine;1.54;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 FC(F)C(F)(F)OCC(Cn1cncn1)c2ccc(Cl)cc2Cl;5.52;tetraconazole;3.82;Agilent XCT;ESI;MeCN/10 mM ammonium fluoride 50/50;Measured in this study
 CC[N+](CC)(CC)CC;7.8;tetraethylammonium;3.93;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;7.8;2-Cl-C6H4-P2(pyrr);5.18;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;7.8;4-CF3-C6H4-P(pyrr);4.54;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;7.8;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;5.18;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;7.8;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.54;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;7.8;tetrapropylammonium;4.04;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 CCCN(CCC)CCC;7.8;tripropylamine;3.29;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 c1ccncc1;7.8;pyridine;0.2;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
@@ -1716,15 +1716,15 @@ C1CCNC1;7.8;pyrrolidine;2.7;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/5
 CCNCC;7.8;diethylamine;2.78;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 COc1cccc(c1)N(C)C;7.8;3-methoxy-N,N-dimethylaniline;1.52;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 Nc1ccccn1;7.8;2-aminopyridine;2.22;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;7.8;4-dimethylamino-N,N-dimethylaniline;3.36;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;7.8;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.36;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;7.8;reserpine;3.85;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;7.8;glutamine;2.26;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 CC(N)C(=O)O;7.8;alpha-alanine;1.11;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;7.8;Phe-Phe-Phe-Phe;3.42;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;7.8;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.42;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;7.8;1,10-phenanthroline;3.61;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;7.8;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;3.91;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;7.8;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;3.25;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;7.8;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.28;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;7.8;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;3.91;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;7.8;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;3.25;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;7.8;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.28;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 COc1cccc(O)c1O;7.8;3-methoxycatechol;-0.75;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 COc1ccncc1;7.8;4-methoxypyridine;2.41;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;7.8;phthalic acid;1.67;Agilent XCT;ESI;MeCN/10 mM ammonium bicarbonate 50/50;Measured in this study
@@ -1847,8 +1847,8 @@ CC12CCC3C(C1CCC2O)CCC4=CC(=O)CCC34C;3.44;testosterone;2.28;Thermo LTQ;ESI;MeCN/1
 CCN1C=C(C(=O)C2=CC(=C(C=C21)N3CCNCC3)F)C(=O)O;3.44;norfloxacin;2.92;Thermo LTQ;ESI;MeCN/10 mM propionic acid(aq) 90/10;10.1002/rcm.8352
 CN1C=NC2=C1C(=O)N(C(=O)N2C)C;3.44;caffeine;2.02;Thermo LTQ;ESI;MeCN/10 mM propionic acid(aq) 90/10;10.1002/rcm.8352
 CC[N+](CC)(CC)CC;2;tetraethylammonium;3.93;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2;2-Cl-C6H4-P2(pyrr);4.67;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2;4-CF3-C6H4-P(pyrr);3.97;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.67;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;3.97;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2;tetrapropylammonium;3.76;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 CCCN(CCC)CCC;2;tripropylamine;4.08;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 c1ccncc1;2;pyridine;2.16;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
@@ -1856,15 +1856,15 @@ C1CCNC1;2;pyrrolidine;2.41;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50
 CCNCC;2;diethylamine;2.78;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 COc1cccc(c1)N(C)C;2;3-methoxy-N,N-dimethylaniline;3.66;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 Nc1ccccn1;2;2-aminopyridine;2.27;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2;4-dimethylamino-N,N-dimethylaniline;3.34;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.34;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2;reserpine;3.78;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2;glutamine;1.14;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 CC(N)C(=O)O;2;alpha-alanine;0.87;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2;Phe-Phe-Phe-Phe;3.03;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.03;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2;1,10-phenanthroline;3.22;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.49;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.38;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.59;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.49;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.38;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.59;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 COc1cccc(O)c1O;2;3-methoxycatechol;-0.1;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 COc1ccncc1;2;4-methoxypyridine;3.26;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2;phthalic acid;0.67;Agilent XCT;ESI;MeCN/10 mM trifluoroacetic acid 50/50;Measured in this study
@@ -2043,7 +2043,7 @@ NC(CO)(CO)CO;6.5;trizma base;1.78;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq)
 Nc1ccccn1;6.5;2-aminopyridine;2.35;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
 Nc1cccc(O)c1;6.5;3-aminophenol;1.64;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
 Nc1c(cc(cc1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;6.5;2,4,6-trinitroaniline;-0.16;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
-CN(C)c1ccc(cc1)N(C)C;6.5;4-dimethylamino-N,N-dimethylaniline;2.99;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
+CN(C)c1ccc(cc1)N(C)C;6.5;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.99;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
 CN(C)c1ccc(N)cc1;6.5;4-amino-N,N-dimethylaniline;2.77;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
 Oc1cccnc1;6.5;3-hydroxypyridine;2.19;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
 CN(C)c1cccc(c1)C(O)=O;6.5;3-dimethylaminobenzoic acid;2.46;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 20/80;10.1007/s13361-016-1563-1
@@ -2085,7 +2085,7 @@ CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl;6.7;thiamethoxam;2.2;Agilent XCT;ESI;
 COC(=O)CCCC(=O)OC;6.7;dimethyl glutarate;2.4;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
 OC(=O)C(\C)=C(\C)C(=O)O;6.7;dimethylmaleate;2.1;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CCC(=O)OC;6.7;dimethyl succinate;2.3;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(Oc1ccccc1)c2ccccc2;6.7;phenylbenzoate;1.6;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(Oc1ccccc1)c2ccccc2;6.7;Diphenylcarboxylate;1.6;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
 CC(=O)OCCOC(=O)C;6.7;ethylene glycol diacetate;0.8;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CC(=O)OC;6.7;dimethyl malonate;1.2;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
 O=C(c1ccccc1)c2ccccc2;6.7;benzophenone;1.6;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-017-1626-y
@@ -2276,7 +2276,7 @@ Nc1ccccn1;7;2-aminopyridine;2.64;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 
 Nc1cccc(O)c1;7;3-aminophenol;2.13;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
 Nc1c(cc(cc1[N+]([O-])=O)[N+]([O-])=O)[N+]([O-])=O;7;2,4,6-trinitroaniline;0.75;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
 Nc1ccc(cc1)[N+]([O-])=O;7;4-nitroaniline;2.35;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
-CN(C)c1ccc(cc1)N(C)C;7;4-dimethylamino-N,N-dimethylaniline;3.47;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
+CN(C)c1ccc(cc1)N(C)C;7;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.47;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
 CN(C)c1ccc(N)cc1;7;4-amino-N,N-dimethylaniline;2.96;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
 Oc1cccnc1;7;3-hydroxypyridine;2.43;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
 CN(C)c1cccc(c1)C(O)=O;7;3-dimethylaminobenzoic acid;2.46;Agilent XCT;ESI;MeCN/5 mM ammonium acetate(aq) 80/20;10.1007/s13361-016-1563-1
@@ -2320,11 +2320,11 @@ CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl;2.1;thiamethoxam;2.3;Agilent XCT;ESI;
 COC(=O)CCCC(=O)OC;2.1;dimethyl glutarate;1.8;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 OC(=O)C(\C)=C(\C)C(=O)O;2.1;dimethylmaleate;1.9;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CCC(=O)OC;2.1;dimethyl succinate;2;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(Oc1ccccc1)c2ccccc2;2.1;phenylbenzoate;1.1;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(Oc1ccccc1)c2ccccc2;2.1;Diphenylcarboxylate;1.1;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 CC(=O)OCCOC(=O)C;2.1;ethylene glycol diacetate;1.4;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COC(=O)CC(=O)OC;2.1;dimethyl malonate;1.3;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 O=C(c1ccccc1)c2ccccc2;2.1;benzophenone;2.4;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
-O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;2.1;2-(trifluoromethane)sulfonylbenzoic acid;0.6;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
+O=C(O)c1ccccc1S(=O)(=O)C(F)(F)F;2.1;2-(Trifluoromethylsulfonyl)benzoic acid;0.6;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 NC(=O)c1ccccc1;2.1;benzamide;2.3;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 COc1ccc(cc1)C(O)=O;2.1;4-methoxybenzoic acid;2;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
 Oc1ccccc1C#N;2.1;2-cyanophenol;1.6;Agilent XCT;ESI;MeCN/5 mM oxalic acid(aq) 80/20;10.1007/s13361-017-1626-y
@@ -2337,7 +2337,7 @@ CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl;5.8;thiamethoxam;2.5;Agilent XCT;ESI;
 COC(=O)CCCC(=O)OC;5.8;dimethyl glutarate;2.6;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
 OC(=O)C(\C)=C(\C)C(=O)O;5.8;dimethylmaleate;2.2;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
 COC(=O)CCC(=O)OC;5.8;dimethyl succinate;2.6;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
-O=C(Oc1ccccc1)c2ccccc2;5.8;phenylbenzoate;1.7;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
+O=C(Oc1ccccc1)c2ccccc2;5.8;Diphenylcarboxylate;1.7;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
 CC(=O)OCCOC(=O)C;5.8;ethylene glycol diacetate;1.3;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
 COC(=O)CC(=O)OC;5.8;dimethyl malonate;1.5;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
 O=C(c1ccccc1)c2ccccc2;5.8;benzophenone;2.1;Agilent XCT;ESI;MeCN/water 80/20;10.1007/s13361-017-1626-y
@@ -2356,8 +2356,8 @@ Nc1ccccc1O;6.64;2-aminophenol;3.4;Agilent 3Q;JetStream;MeOH 0.1 mM formic acid;1
 COc1ccc(N)cc1;6.64;4-methoxyaniline;3.62;Agilent 3Q;JetStream;MeOH 0.1 mM formic acid;10.1002/slct.201702269
 Cc1ccc2cccc(N)c2n1;6.64;8-aminoquinaldine;4.21;Agilent 3Q;JetStream;MeOH 0.1 mM formic acid;10.1002/slct.201702269
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;4.3;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);5.89;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);5.31;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;5.89;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;5.31;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;4.83;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;4.7;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 c1ccncc1;2.7;pyridine;3.18;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
@@ -2365,12 +2365,12 @@ C1CCNC1;2.7;pyrrolidine;3.12;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in t
 CCNCC;2.7;diethylamine;3.15;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;4.07;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;2.87;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;3.43;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.43;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;4.34;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;3.25;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.25;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;3.61;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;5.3;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;5.34;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;5.3;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;5.34;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;3.79;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;0.81;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
 Nc1ccc(O)cc1;2.7;4-aminophenol;3.14;Agilent XCT;ESI;MeOH 0.1% formic acid;Measured in this study
@@ -2534,8 +2534,8 @@ Nc1ccccc1O;3.63;2-aminophenol;3.98;Agilent 3Q;JetStream;MeOH 5 mM trifluoroaceti
 COc1ccc(N)cc1;3.63;4-methoxyaniline;4.04;Agilent 3Q;JetStream;MeOH 5 mM trifluoroacetic acid;10.1002/slct.201702269
 Cc1ccc2cccc(N)c2n1;3.63;8-aminoquinaldine;4.78;Agilent 3Q;JetStream;MeOH 5 mM trifluoroacetic acid;10.1002/slct.201702269
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;3.61;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);4.29;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);4.05;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.29;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.05;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;3.64;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;3.75;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 c1ccncc1;2.7;pyridine;2.4;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
@@ -2543,15 +2543,15 @@ C1CCNC1;2.7;pyrrolidine;2.57;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measure
 CCNCC;2.7;diethylamine;2.65;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;3.47;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;2.24;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;2.82;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.82;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;4.14;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2.7;glutamine;1.57;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 CC(N)C(=O)O;2.7;alpha-alanine;1.45;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;3.84;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.84;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;2.91;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;3.33;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;3.11;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.01;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;3.33;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;3.11;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.01;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 COc1cccc(O)c1O;2.7;3-methoxycatechol;0.4;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;3.1;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;1.27;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
@@ -2574,8 +2574,8 @@ CCc1cccc(CC)c1N(COC)C(=O)CCl;2.7;alachlor;2.23;Agilent XCT;ESI;MeOH/0.1% formic 
 COc1cc(ccc1O)C(O)CN;2.7;normetanephrine;1.58;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 FC(F)C(F)(F)OCC(Cn1cncn1)c2ccc(Cl)cc2Cl;2.7;tetraconazole;3.28;Agilent XCT;ESI;MeOH/0.1% formic acid 20/80;Measured in this study
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;3.83;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);5.12;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);4.25;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;5.12;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.25;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;3.82;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;3.91;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 c1ccncc1;2.7;pyridine;2.6;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
@@ -2583,15 +2583,15 @@ C1CCNC1;2.7;pyrrolidine;2.61;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measure
 CCNCC;2.7;diethylamine;2.89;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;3.6;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;2.34;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;2.59;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.59;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;4.21;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2.7;glutamine;1.53;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 CC(N)C(=O)O;2.7;alpha-alanine;1.56;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;4.13;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;4.13;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;2.91;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.45;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.21;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.6;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.45;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.21;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.6;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 COc1cccc(O)c1O;2.7;3-methoxycatechol;0.34;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;3.27;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;1.05;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
@@ -2614,8 +2614,8 @@ CCc1cccc(CC)c1N(COC)C(=O)CCl;2.7;alachlor;2.02;Agilent XCT;ESI;MeOH/0.1% formic 
 COc1cc(ccc1O)C(O)CN;2.7;normetanephrine;1.93;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 FC(F)C(F)(F)OCC(Cn1cncn1)c2ccc(Cl)cc2Cl;2.7;tetraconazole;3.11;Agilent XCT;ESI;MeOH/0.1% formic acid 50/50;Measured in this study
 CC[N+](CC)(CC)CC;2.7;tetraethylammonium;3.99;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;2-Cl-C6H4-P2(pyrr);5.22;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;4-CF3-C6H4-P(pyrr);4.85;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2.7;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;5.22;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.85;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2.7;tetrapropylammonium;3.83;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 CCCN(CCC)CCC;2.7;tripropylamine;3.87;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 c1ccncc1;2.7;pyridine;2.31;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
@@ -2623,15 +2623,15 @@ C1CCNC1;2.7;pyrrolidine;2.57;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measure
 CCNCC;2.7;diethylamine;2.79;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 COc1cccc(c1)N(C)C;2.7;3-methoxy-N,N-dimethylaniline;3.35;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 Nc1ccccn1;2.7;2-aminopyridine;1.89;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2.7;4-dimethylamino-N,N-dimethylaniline;2.34;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.34;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2.7;reserpine;3.89;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2.7;glutamine;1.42;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 CC(N)C(=O)O;2.7;alpha-alanine;1.47;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;Phe-Phe-Phe-Phe;3.94;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.94;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2.7;1,10-phenanthroline;2.05;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.03;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.04;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.69;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.03;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.04;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.69;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 COc1cccc(O)c1O;2.7;3-methoxycatechol;-0.01;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 COc1ccncc1;2.7;4-methoxypyridine;2.82;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2.7;phthalic acid;0.39;Agilent XCT;ESI;MeOH/0.1% formic acid 80/20;Measured in this study
@@ -2687,7 +2687,7 @@ COC(=O)CCCC(=O)OC;2.7;dimethyl glutarate;2.53;Agilent XCT;ESI;MeOH/0.1% formic a
 Cc1onc(N[S](=O)(=O)c2ccc(N)cc2)c1;2.7;SMX;2.86;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
 CNC(=O)Oc1cc(C)c(SC)c(C)c1;2.7;methiocarb;2.97;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
 COC(=O)c1ccccc1C(=O)OC;2.7;dimethyl phthalate;3.51;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
-O=C(Oc1ccccc1)c2ccccc2;2.7;phenylbenzoate;1.86;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
+O=C(Oc1ccccc1)c2ccccc2;2.7;Diphenylcarboxylate;1.86;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
 O=C(O)CNC(=O)OCC1c2ccccc2-c2ccccc21;2.7;GlyFmoc;2.25;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
 c1ccc(cc1)N(c2ccccc2)c3ccccc3;2.7;triphenylamine;2.28;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
 CCOC=C(C(=O)OCC)C(=O)OCC;2.7;diethyl ethoxymethylenemalonate;1.38;Agilent XCT;ESI;MeOH/0.1% formic acid(aq) 80/20;10.1002/rcm.8545
@@ -2723,7 +2723,7 @@ CC12CCC3C(C1CCC2O)CCC4=CC(=O)CCC34C;2.7;testosterone;3.05;Thermo LTQ;ESI;MeOH/0.
 CCN1C=C(C(=O)C2=CC(=C(C=C21)N3CCNCC3)F)C(=O)O;2.7;norfloxacin;3.44;Thermo LTQ;ESI;MeOH/0.1% formic acid(aq) 90/10;10.1002/rcm.8352
 CN1C=NC2=C1C(=O)N(C(=O)N2C)C;2.7;caffeine;2.55;Thermo LTQ;ESI;MeOH/0.1% formic acid(aq) 90/10;10.1002/rcm.8352
 CC[N+](CC)(CC)CC;10.7;tetraethylammonium;3.83;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;10.7;4-CF3-C6H4-P(pyrr);3.91;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;10.7;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;3.91;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;10.7;tetrapropylammonium;3.66;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 CCCN(CCC)CCC;10.7;tripropylamine;1.51;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 c1ccncc1;10.7;pyridine;0.66;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
@@ -2731,15 +2731,15 @@ C1CCNC1;10.7;pyrrolidine;2.56;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured i
 CCNCC;10.7;diethylamine;2.19;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 COc1cccc(c1)N(C)C;10.7;3-methoxy-N,N-dimethylaniline;1.57;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 Nc1ccccn1;10.7;2-aminopyridine;1.86;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;10.7;4-dimethylamino-N,N-dimethylaniline;3.02;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;10.7;N,N,N',N'-Tetramethyl-P-phenylenediamine;3.02;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;10.7;reserpine;3.7;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;10.7;glutamine;1.76;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 CC(N)C(=O)O;10.7;alpha-alanine;1.31;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;10.7;Phe-Phe-Phe-Phe;3.53;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;10.7;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.53;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;10.7;1,10-phenanthroline;3.32;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;10.7;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;3.75;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;10.7;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.16;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;10.7;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.23;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;10.7;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;3.75;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;10.7;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.16;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;10.7;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.23;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 COc1ccncc1;10.7;4-methoxypyridine;1.85;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;10.7;phthalic acid;0.8;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 Nc1ccc(O)cc1;10.7;4-aminophenol;-0.28;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
@@ -2759,8 +2759,8 @@ CCc1cccc(CC)c1N(COC)C(=O)CCl;10.7;alachlor;1.96;Agilent XCT;ESI;MeOH/0.1% ammoni
 COc1cc(ccc1O)C(O)CN;10.7;normetanephrine;1.35;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 FC(F)C(F)(F)OCC(Cn1cncn1)c2ccc(Cl)cc2Cl;10.7;tetraconazole;2.95;Agilent XCT;ESI;MeOH/0.1% ammonia 50/50;Measured in this study
 CC[N+](CC)(CC)CC;6.77;tetraethylammonium;3.83;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.77;2-Cl-C6H4-P2(pyrr);4.5;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.77;4-CF3-C6H4-P(pyrr);4.16;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.77;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.5;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.77;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.16;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;6.77;tetrapropylammonium;3.39;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 CCCN(CCC)CCC;6.77;tripropylamine;2.07;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 c1ccncc1;6.77;pyridine;1.23;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
@@ -2768,15 +2768,15 @@ C1CCNC1;6.77;pyrrolidine;2.43;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;
 CCNCC;6.77;diethylamine;2.45;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 COc1cccc(c1)N(C)C;6.77;3-methoxy-N,N-dimethylaniline;1.96;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 Nc1ccccn1;6.77;2-aminopyridine;1.17;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;6.77;4-dimethylamino-N,N-dimethylaniline;2.15;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;6.77;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.15;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;6.77;reserpine;3.88;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;6.77;glutamine;1.32;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 CC(N)C(=O)O;6.77;alpha-alanine;1;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.77;Phe-Phe-Phe-Phe;3.26;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.77;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.26;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;6.77;1,10-phenanthroline;2.82;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.77;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;3.54;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.77;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;3.84;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.77;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;3.95;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.77;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;3.54;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.77;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;3.84;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.77;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;3.95;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 COc1cccc(O)c1O;6.77;3-methoxycatechol;0.27;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 COc1ccncc1;6.77;4-methoxypyridine;1.57;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;6.77;phthalic acid;1.09;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
@@ -2799,8 +2799,8 @@ CCc1cccc(CC)c1N(COC)C(=O)CCl;6.77;alachlor;2.31;Agilent XCT;ESI;MeOH/10 mM ammon
 COc1cc(ccc1O)C(O)CN;6.77;normetanephrine;1.13;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 FC(F)C(F)(F)OCC(Cn1cncn1)c2ccc(Cl)cc2Cl;6.77;tetraconazole;2.3;Agilent XCT;ESI;MeOH/10 mM ammonium acetate 50/50;Measured in this study
 CC[N+](CC)(CC)CC;6.8;tetraethylammonium;3.83;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.8;2-Cl-C6H4-P2(pyrr);4.34;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.8;4-CF3-C6H4-P(pyrr);4.01;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;6.8;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.34;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;6.8;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.01;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;6.8;tetrapropylammonium;3.74;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 CCCN(CCC)CCC;6.8;tripropylamine;3.56;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 c1ccncc1;6.8;pyridine;1.26;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
@@ -2808,15 +2808,15 @@ C1CCNC1;6.8;pyrrolidine;2.4;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Me
 CCNCC;6.8;diethylamine;2.42;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 COc1cccc(c1)N(C)C;6.8;3-methoxy-N,N-dimethylaniline;1.78;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 Nc1ccccn1;6.8;2-aminopyridine;1.91;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;6.8;4-dimethylamino-N,N-dimethylaniline;2.49;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;6.8;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.49;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;6.8;reserpine;4.07;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;6.8;glutamine;1.16;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 CC(N)C(=O)O;6.8;alpha-alanine;0.84;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.8;Phe-Phe-Phe-Phe;3.44;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;6.8;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.44;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;6.8;1,10-phenanthroline;3.15;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.8;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;3.74;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.8;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;3.34;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.8;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;3.86;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;6.8;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;3.74;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;6.8;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;3.34;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;6.8;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;3.86;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 COc1cccc(O)c1O;6.8;3-methoxycatechol;0.08;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 COc1ccncc1;6.8;4-methoxypyridine;1.55;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;6.8;phthalic acid;1.2;Agilent XCT;ESI;MeOH/10 mM ammonium formate 50/50;Measured in this study
@@ -2919,8 +2919,8 @@ CC12CCC3C(C1CCC2O)CCC4=CC(=O)CCC34C;2.91;testosterone;1.62;Waters Synapt G.2;Z-s
 CCN1C=C(C(=O)C2=CC(=C(C=C21)N3CCNCC3)F)C(=O)O;2.91;norfloxacin;1.51;Waters Synapt G.2;Z-spray;MeOH/10 mM formic acid(aq) 90/10;10.1002/rcm.8352
 CN1C=NC2=C1C(=O)N(C(=O)N2C)C;2.91;caffeine;1.33;Waters Synapt G.2;Z-spray;MeOH/10 mM formic acid(aq) 90/10;10.1002/rcm.8352
 CC[N+](CC)(CC)CC;5.52;tetraethylammonium;3.83;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;5.52;2-Cl-C6H4-P2(pyrr);4.66;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;5.52;4-CF3-C6H4-P(pyrr);4.2;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;5.52;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.66;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;5.52;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.2;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;5.52;tetrapropylammonium;3.51;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 CCCN(CCC)CCC;5.52;tripropylamine;3.4;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 c1ccncc1;5.52;pyridine;1.07;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
@@ -2928,15 +2928,15 @@ C1CCNC1;5.52;pyrrolidine;2.59;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50
 CCNCC;5.52;diethylamine;2.69;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 COc1cccc(c1)N(C)C;5.52;3-methoxy-N,N-dimethylaniline;1.68;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 Nc1ccccn1;5.52;2-aminopyridine;1.19;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;5.52;4-dimethylamino-N,N-dimethylaniline;2.38;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;5.52;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.38;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;5.52;reserpine;4.44;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;5.52;glutamine;1.96;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 CC(N)C(=O)O;5.52;alpha-alanine;1.36;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;5.52;Phe-Phe-Phe-Phe;4.08;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;5.52;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;4.08;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;5.52;1,10-phenanthroline;2.27;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;5.52;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;3.61;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;5.52;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;3.86;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;5.52;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.23;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;5.52;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;3.61;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;5.52;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;3.86;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;5.52;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.23;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 COc1cccc(O)c1O;5.52;3-methoxycatechol;0.15;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 COc1ccncc1;5.52;4-methoxypyridine;1.23;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;5.52;phthalic acid;1.82;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
@@ -2959,8 +2959,8 @@ CCc1cccc(CC)c1N(COC)C(=O)CCl;5.52;alachlor;2.54;Agilent XCT;ESI;MeOH/10 mM ammon
 COc1cc(ccc1O)C(O)CN;5.52;normetanephrine;1.96;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 FC(F)C(F)(F)OCC(Cn1cncn1)c2ccc(Cl)cc2Cl;5.52;tetraconazole;3.85;Agilent XCT;ESI;MeOH/10 mM ammonium fluoride 50/50;Measured in this study
 CC[N+](CC)(CC)CC;7.8;tetraethylammonium;3.83;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;7.8;2-Cl-C6H4-P2(pyrr);4.64;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;7.8;4-CF3-C6H4-P(pyrr);4.16;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;7.8;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.64;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;7.8;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.16;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;7.8;tetrapropylammonium;3.58;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 CCCN(CCC)CCC;7.8;tripropylamine;2.61;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 c1ccncc1;7.8;pyridine;1.25;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
@@ -2968,15 +2968,15 @@ C1CCNC1;7.8;pyrrolidine;2.6;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/5
 CCNCC;7.8;diethylamine;2.74;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 COc1cccc(c1)N(C)C;7.8;3-methoxy-N,N-dimethylaniline;1.81;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 Nc1ccccn1;7.8;2-aminopyridine;1.98;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;7.8;4-dimethylamino-N,N-dimethylaniline;2.39;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;7.8;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.39;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;7.8;reserpine;4.05;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;7.8;glutamine;1.98;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 CC(N)C(=O)O;7.8;alpha-alanine;1.28;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;7.8;Phe-Phe-Phe-Phe;3.68;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;7.8;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;3.68;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;7.8;1,10-phenanthroline;3.56;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;7.8;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;3.2;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;7.8;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;3.61;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;7.8;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;3.92;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;7.8;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;3.2;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;7.8;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;3.61;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;7.8;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;3.92;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 COc1cccc(O)c1O;7.8;3-methoxycatechol;-0.57;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 COc1ccncc1;7.8;4-methoxypyridine;1.52;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;7.8;phthalic acid;1.89;Agilent XCT;ESI;MeOH/10 mM ammonium bicarbonate 50/50;Measured in this study
@@ -3099,8 +3099,8 @@ CC12CCC3C(C1CCC2O)CCC4=CC(=O)CCC34C;3.44;testosterone;2.21;Thermo LTQ;ESI;MeOH/1
 CCN1C=C(C(=O)C2=CC(=C(C=C21)N3CCNCC3)F)C(=O)O;3.44;norfloxacin;2.98;Thermo LTQ;ESI;MeOH/10 mM propionic acid(aq) 90/10;10.1002/rcm.8352
 CN1C=NC2=C1C(=O)N(C(=O)N2C)C;3.44;caffeine;1.83;Thermo LTQ;ESI;MeOH/10 mM propionic acid(aq) 90/10;10.1002/rcm.8352
 CC[N+](CC)(CC)CC;2;tetraethylammonium;3.83;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
-Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2;2-Cl-C6H4-P2(pyrr);4.79;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
-FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2;4-CF3-C6H4-P(pyrr);4.13;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
+Clc1ccccc1N=P(N=P(N1CCCC1)(N1CCCC1)N1CCCC1)(N1CCCC1)N1CCCC1;2;1,1,1,3,3-Pentapyrrolizino-4-(2-chlorophenyl)-1,3-diphospha(V)-2,4-diaza-1,3-butadiene;4.79;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
+FC(F)(F)c1ccc(N=P(N2CCCC2)(N2CCCC2)N2CCCC2)cc1;2;N-[4-(Trifluoromethyl)phenyl]-P,P,P-tripyrrolizinophosphazene;4.13;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 CCC[N+](CCC)(CCC)CCC;2;tetrapropylammonium;3.64;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 CCCN(CCC)CCC;2;tripropylamine;3.81;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 c1ccncc1;2;pyridine;2.55;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
@@ -3108,15 +3108,15 @@ C1CCNC1;2;pyrrolidine;2.71;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50
 CCNCC;2;diethylamine;2.88;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 COc1cccc(c1)N(C)C;2;3-methoxy-N,N-dimethylaniline;3.74;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 Nc1ccccn1;2;2-aminopyridine;2.36;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
-CN(C)c1ccc(cc1)N(C)C;2;4-dimethylamino-N,N-dimethylaniline;2.98;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
+CN(C)c1ccc(cc1)N(C)C;2;N,N,N',N'-Tetramethyl-P-phenylenediamine;2.98;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 CO[C@H]1[C@@H](C[C@@H]2CN3CCc4c([nH]c5cc(OC)ccc45)[C@H]3C[C@@H]2[C@@H]1C(=O)OC)OC(=O)c6cc(OC)c(OC)c(OC)c6;2;reserpine;3.77;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 N[C@@H](CCC(N)=O)C(O)=O;2;glutamine;1.1;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 CC(N)C(=O)O;2;alpha-alanine;0.82;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
-NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2;Phe-Phe-Phe-Phe;2.83;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
+NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)NC(Cc1ccccc1)C(=O)O;2;DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanyl-DL-phenylalanine;2.83;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 c1cnc2c(c1)ccc3cccnc23;2;1,10-phenanthroline;3.29;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2;N,N-dimethyl-4-[2-[4-[(triphenylphosphoranylidene)amino]phenyl]diazenyl]-benzenamine;4.3;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
-CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2;4-[2-[4-[(diphenyl-1-pyrrolidinylphosphoranylidene)amino]phenyl]diazenyl]-N,N-dimethyl-benzenamine;4.16;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
-O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2;4-[2-(4-nitrophenyl)diazenyl]-N-(phenyldi-1-pyrrolidinylphosphoranylidene)benzenamine;4.4;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)c3ccccc3)cc2)cc1;2;N,N-Dimethyl-4'-[(triphenylphosphoranylidene)amino]azobenzene-4-amine;4.3;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
+CN(C)c1ccc(N=Nc2ccc(N=P(c3ccccc3)(c3ccccc3)N3CCCC3)cc2)cc1;2;N,N-Dimethyl-4'-[(pyrrolizinodiphenylphosphoranylidene)amino]azobenzene-4-amine;4.16;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
+O=[N+]([O-])c1ccc(N=Nc2ccc(N=P(c3ccccc3)(N3CCCC3)N3CCCC3)cc2)cc1;2;4-[(Phenyldipyrrolizinophosphoranylidene)amino]-4'-nitroazobenzene;4.4;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 COc1cccc(O)c1O;2;3-methoxycatechol;0.11;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 COc1ccncc1;2;4-methoxypyridine;3.3;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study
 OC(=O)c1ccccc1C(O)=O;2;phthalic acid;0.72;Agilent XCT;ESI;MeOH/10 mM trifluoroacetic acid 50/50;Measured in this study

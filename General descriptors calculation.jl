@@ -39,7 +39,7 @@ function padel_fp(rep)
             results = pcp.get_compounds(rep[i,1], "name")[1]
             desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
             joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
-            joined = vcat(joined,joined_p)
+            joined = append!(joined,joined_p)
             println(i)
         catch
             continue
@@ -63,7 +63,7 @@ function padel_fromname(rep)
             results = pcp.Compound.from_cid(sids[1]["CID"])
             desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
             joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
-            joined = vcat(joined,joined_p)
+            joined = append!(joined,joined_p)
             println(i)
         catch
             continue
@@ -87,7 +87,7 @@ function padel_fromSMILES(rep,smilesvec)
             results = pcp.Compound.from_cid(sids[1]["CID"])
             desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
             joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
-            joined = vcat(joined,joined_p)
+            joined = append!(joined,joined_p)
             println(i)
         catch
             continue
@@ -99,26 +99,57 @@ end
 
 ## Fingerprint calculation (calc)##
 fp_minus_12_name = padel_fromname(data_minus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new.csv", fp_minus_12_name)
-fp_plus_12_name = padel_fromname(data_plus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new.csv", fp_plus_12_name)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new(2).csv",p_minus_12_name)
+#fp_plus_12_name = padel_fromname(data_plus)
+#CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnamecid_new.csv", fp_plus_12_name)
 
-fp_minus_12_1 = padel_fromname(data_M4_minus)
-fp_minus_12_2= padel_fromSMILES(data_M2_minus[:,:],data3[:,:SMILES])
-fp_minus_12_nameSMILES = vcat(fp_minus_12_1,fp_minus_12_2)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES_new.csv", fp_minus_12_nameSMILES)
+#fp_minus_12_1 = padel_fromname(data_M4_minus)
+#fp_minus_12_2= padel_fromSMILES(data_M2_minus[:,:],data3[:,:SMILES])
+#fp_minus_12_nameSMILES = vcat(fp_minus_12_1,fp_minus_12_2)
+#CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES_new.csv", fp_minus_12_nameSMILES)
 fp_plus_12_1 = padel_fromname(data_M4_plus)
 fp_plus_12_2= padel_fromSMILES(data_M2_plus[:,:],data4[:,:SMILES])
 fp_plus_12_nameSMILES = vcat(fp_plus_12_1,fp_plus_12_2)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new.csv", fp_plus_12_nameSMILES)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new(2).csv", fp_plus_12_nameSMILES)
 
 ## Comparison ##
 fromnamecids = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromsids.csv", DataFrame)[:,1:7]
 fromSMILES = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES.csv", DataFrame)
-
 big = data_minus
 setdiff(eachrow(big),eachrow(small))
 setdiff(eachrow(fromnamecids),eachrow(fromSMILES))
+
+#minus comparison
+minus_big = data_minus
+minus_cid_old = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12.csv", DataFrame)
+minus_cid_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new.csv", DataFrame)
+minus_smiles_old = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES.csv", DataFrame)
+minus_smiles_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES_new.csv", DataFrame)
+minus_best = minus_cid_new[:,1:7]
+
+setdiff(minus_big[:,1],minus_best[:,1])
+
+#plus comparison
+plus_big = data_plus
+plus_cid_old = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12.csv", DataFrame)
+plus_cid_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnamecid_new.csv", DataFrame)
+plus_smiles_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new.csv", DataFrame)
+
+name_issues = setdiff(plus_big[:,1],plus_smiles_new[:,1])
+println(name_issues[1:10])
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Morgan FP ##    
 function morgan(rep)
