@@ -99,7 +99,7 @@ end
 
 ## Fingerprint calculation (calc)##
 fp_minus_12_name = padel_fromname(data_minus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new(2).csv",p_minus_12_name)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new(2).csv",fp_minus_12_name)
 #fp_plus_12_name = padel_fromname(data_plus)
 #CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnamecid_new.csv", fp_plus_12_name)
 
@@ -123,9 +123,9 @@ setdiff(eachrow(fromnamecids),eachrow(fromSMILES))
 minus_big = data_minus
 minus_cid_old = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12.csv", DataFrame)
 minus_cid_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new.csv", DataFrame)
+minus_cid_new_2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new(2).csv", DataFrame)
 minus_smiles_old = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES.csv", DataFrame)
 minus_smiles_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnameSMILES_new.csv", DataFrame)
-minus_best = minus_cid_new[:,1:7]
 
 setdiff(minus_big[:,1],minus_best[:,1])
 
@@ -134,6 +134,7 @@ plus_big = data_plus
 plus_cid_old = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12.csv", DataFrame)
 plus_cid_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnamecid_new.csv", DataFrame)
 plus_smiles_new = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new.csv", DataFrame)
+plus_smiles_new_2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new(2).csv", DataFrame)
 
 name_issues = setdiff(plus_big[:,1],plus_smiles_new[:,1])
 println(name_issues[1:10])

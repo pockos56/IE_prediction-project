@@ -123,7 +123,7 @@ function optim_type12(ESI, iterations=50)
     end
 
     z = zeros(itr,5)
-        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12.csv", DataFrame)
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12_new.csv", DataFrame)
         FP1 = Matrix(hcat(FP[!,:pH_aq],FP[!,8:end]))
         for j = 1:itr
             leaf = rand(leaf_r)
@@ -152,7 +152,12 @@ z_df_sorted_plus = optim_morgan(data_plus[:,3],+1)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_minus.csv", z_df_sorted_minus)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_plus.csv", z_df_sorted_plus)
 
-z = optim_type12(-1,20)
+z = optim_type12(-1,50)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Type12_Optimisation_results_minus.csv", z)
+
+x = optim_type12(+1,50)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Type12_Optimisation_results_plus.csv", x)
+
 ## Importance for Padel-12 ##
 function parameter(ESI; allowplots=false, allowsave=false)
     if ESI == -1

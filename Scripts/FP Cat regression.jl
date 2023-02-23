@@ -19,7 +19,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
         ESI_name = "plus"
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12.csv", DataFrame)
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12_new.csv", DataFrame)
     FP1 = hcat(FP[!,:pH_aq],FP[!,8:end])
     n_trees = 600
     learn_rate = 0.1
@@ -45,7 +45,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
         scatter!(y_test,z5,label="Test set", color=:orange)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2)
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Cat_Regression_M2M4_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Regression_M2M4_$ESI_name.png")
         end
 
         plot2 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual")
@@ -55,7 +55,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
         plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2) #-3 sigma
 
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Cat_Residuals_M2M4_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Residuals_M2M4_$ESI_name.png")
         end
         display(plot1)
         display(plot2)
@@ -73,7 +73,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
             scatter!(y_test[:,2],z5,label="Test set", marker_z = y_test[:,1] , markershape = :rect,color=:jet)
             plot!([minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))],[minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))], label="1:1 line",width=2)
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Cat_Regression_pHcolor_M2M4_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Regression_pHcolor_M2M4_$ESI_name.png")
             end
 
             plot_pH_res = scatter(y_train[:,2],z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals",markershape=:circle, marker_z=y_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual")
@@ -83,7 +83,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
             plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2) #-3 sigma
     
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Cat_Residuals_pHcolor_M2M4_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Residuals_pHcolor_M2M4_$ESI_name.png")
             end
             display(plot_pH)
             display(plot_pH_res)
@@ -107,26 +107,3 @@ savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_pH dist
 ## Cross Validation
 CV = cross_val_score(reg, X_train, y_train, cv=5)
 CV_mean = mean(CV)
-
-
-
-
-####### Meeting notes #######
-## DONE ##
-# Morgan Fingerprints (if time)
-# Positive mode
-# Residuals + plots
-
-## IN PROGRESS ##
-# Importance --> WRITE IN TABLE
-
-## TO DO ##
-# Inter-Correlation
-# Find abnormalities to show model strengths and weaknesses
-# Different types of models (CATBOOST, XgBoost)
-# CATBOOST -> Learning rate, LU1_reg, LU2_reg
-# XgBoost -> Learning rate & RandomForestRegressor
-
-## CNL ##
-# InChI keys creation
-# Talk with Denice

@@ -38,7 +38,7 @@ function optim_type12(ESI, iterations=50)
     end
 
     z = zeros(itr,6)
-        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12.csv", DataFrame)
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12_new.csv", DataFrame)
         FP1 = Matrix(hcat(FP[!,:pH_aq],FP[!,8:end]))
         for j = 1:itr
             leaf = rand(leaf_r)
@@ -63,28 +63,10 @@ function optim_type12(ESI, iterations=50)
     return z_df_sorted
 end
 
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_plus.csv", z_df_sorted_plus)
 
 z = optim_type12(-1,50)     # Default
 z = optim_type12(-1,49)     # Lossguide, min_samples_leaf -> default
 z = optim_type12(-1,48)     # Lossguide, min_samples_leaf -> 4:10
 scatter(z[:,:learn_rate], z[:,:accuracy_test],ylims=(0.7,0.8),xlims=(0,0.2))
-####### Meeting notes #######
-## DONE ##
-# Morgan Fingerprints (if time)
-# Positive mode
-# Residuals + plots
 
-## IN PROGRESS ##
-# Importance --> WRITE IN TABLE
-
-## TO DO ##
-# Inter-Correlation
-# Find abnormalities to show model strengths and weaknesses
-# Different types of models (CATBOOST, XgBoost)
-# CATBOOST -> Learning rate, LU1_reg, LU2_reg
-# XgBoost -> Learning rate & RandomForestRegressor
-
-## CNL ##
-# InChI keys creation
-# Talk with Denice
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Morgan_FP_optimisation_results_plus.csv", z_df_sorted_plus)
