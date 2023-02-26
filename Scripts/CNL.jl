@@ -2,10 +2,10 @@
 using ScikitLearn
 using BSON
 using Plots
-using Statistics
+#using Statistics
 using DataFrames
 using CSV
-using ScikitLearn.CrossValidation: cross_val_score
+#using ScikitLearn.CrossValidation: cross_val_score
 using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
@@ -16,52 +16,59 @@ pcp = pyimport("pubchempy")
 pd = pyimport("padelpy")
 
 ## load files ##
-M2M4_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_new.csv", DataFrame)
-M2M4_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_new.csv", DataFrame)
+M2M4_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_w_inchikey.csv", DataFrame)
+M2M4_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_w_inchikey.csv", DataFrame)
 amide_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Amide_CNLs.csv", DataFrame)
 norman_raw_0 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs_0.csv", DataFrame)
+norman_raw_1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs_1.csv", DataFrame))
+norman_raw_2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs_2.csv", DataFrame)
 
-rep = M2M4_minus
-sids = pcp.get_sids(rep[1,1], "name")
-results = pcp.Compound.from_cid(sids[1]["CID"])
-inchi = DataFrame(INCHIKEY=[results.inchikey])
-
-unique(amide_raw,4)
-
-intersect(amide_raw[:,:INCHIKEY],M2M4_plus[:,:INCHIKEY])
-intersect(amide_raw[:,:INCHIKEY],M2M4_minus[:,:INCHIKEY])
-
-function inchi_fromname(rep)
-    sids = pcp.get_sids(rep[1,1], "name")
-    results = pcp.Compound.from_cid(sids[1]["CID"])
-    desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-    joined = hcat(DataFrame(rep[1,:]), desc_p)
-    for i = 2:size(rep,1)
-        if size(desc_p,1) >= i
-            println("Error on compound $i by $(size(desc_p,1)-i)")
-        end
-        try
-            sids = pcp.get_sids(rep[i,1], "name")
-            results = pcp.Compound.from_cid(sids[1]["CID"])
-            desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-            joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
-            joined = append!(joined,joined_p)
-            println(i)
-        catch
-            continue
-        end
+norman_raw = append!(append!(norman_raw_0,norman_raw_1),norman_raw_2);
+# Find differences in M2M4_minus with and without inchikey
+vec1 = M2M4_minus[:,1]
+vec2 = M2M4_minus_experim[:,1]
+i = 1
+while i <= min(length(vec1), length(vec2))
+    if vec1[i] != vec2[i]
+        println("First non-matching element found at index ", i)
+        break
     end
-    return joined
+    i += 1
+end
+M2M4_minus[1210,:]
+M2M4_minus_experim[1210,:]      # Here is the difference
+
+# Extract the CNL from the raw files (Note: not all of these are CNLs)
+
+CNL_amide = amide_raw[1:5,8:100008]
+CNL_norman_0 = norman_raw_0[1:5,9:100009]
+sulfa = norman_raw_0[norman_raw_0[:,2] .== "Sulfamoxole",:]
+sulfa[1,:] .== sulfa[2,:]
+
+# Find similar elements in CNL dataset and IE dataset to create a CNL-IE training set for the models
+M2M4_inchikeys = vcat(M2M4_plus[:,:INCHIKEY],M2M4_minus[:,:INCHIKEY])
+
+v1 = intersect(Vector(amide_raw[:,:INCHIKEY]),M2M4_inchikeys)
+v2 = intersect(Vector(norman_raw_0[:,:INCHIKEY]),M2M4_inchikeys)
+v3 = intersect(Vector(norman_raw_1[:,:INCHIKEY]),M2M4_inchikeys)
+v4 = intersect(Vector(norman_raw_2[:,:INCHIKEY]),M2M4_inchikeys)
+#common_inchikeys = vcat(vcat(v1,v2), vcat(v3,v4))
+common_inchikeys = vcat(v1,v2)
+
+unique(amide_raw, :NAME)
+unique(norman_raw_0, :NAME)
+
+for i = 1:length(common_inchikeys)
+    key = common_inchikeys[i]
+    amide = findall(x -> x .== key, amide_raw)
+    findall(x -> x .== key, amide_raw)
+    findall(x -> x .== key, amide_raw)
+    findall(x -> x .== key, amide_raw)
+
+
 end
 
 
-## Fingerprint calculation (calc)##
-fp_minus_12_name = padel_fromname(data_minus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new(2).csv",fp_minus_12_name)
-fp_plus_12_1 = padel_fromname(data_M4_plus)
-fp_plus_12_2= padel_fromSMILES(data_M2_plus[:,:],data4[:,:SMILES])
-fp_plus_12_nameSMILES = vcat(fp_plus_12_1,fp_plus_12_2)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new(2).csv", fp_plus_12_nameSMILES)
 
 
 
@@ -71,7 +78,10 @@ CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\pad
 
 
 
-## Padel fingerprints optimization ##
+
+
+
+## ??Padel fingerprints optimization ##
 function optim(output, ESI, iterations=50)
     leaf_r = collect(4:2:10)
     tree_r = vcat(collect(50:50:300),collect(400:100:1000))

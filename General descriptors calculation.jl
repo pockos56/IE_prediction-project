@@ -53,7 +53,8 @@ function padel_fromname(rep)
     sids = pcp.get_sids(rep[1,1], "name")
     results = pcp.Compound.from_cid(sids[1]["CID"])
     desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-    joined = hcat(DataFrame(rep[1,:]), desc_p)
+    inchi = DataFrame(INCHIKEY=[results.inchikey])
+    joined = hcat(hcat(DataFrame(rep[1,:]), inchi),desc_p)
     for i = 2:size(rep,1)
         if size(desc_p,1) >= i
             println("Error on compound $i by $(size(desc_p,1)-i)")
@@ -62,7 +63,8 @@ function padel_fromname(rep)
             sids = pcp.get_sids(rep[i,1], "name")
             results = pcp.Compound.from_cid(sids[1]["CID"])
             desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-            joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
+            inchi = DataFrame(INCHIKEY=[results.inchikey])
+            joined_p = hcat(hcat(DataFrame(rep[i,:]), inchi), desc_p_temp)
             joined = append!(joined,joined_p)
             println(i)
         catch
@@ -77,7 +79,8 @@ function padel_fromSMILES(rep,smilesvec)
     sids = pcp.get_sids(smilesvec[1], "smiles")
     results = pcp.Compound.from_cid(sids[1]["CID"])
     desc_p = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-    joined = hcat(DataFrame(rep[1,:]), desc_p)
+    inchi = DataFrame(INCHIKEY=[results.inchikey])
+    joined = hcat(hcat(DataFrame(rep[1,:]), inchi),desc_p)
     for i = 2:size(rep,1)
         if size(desc_p,1) >= i
             println("Error on compound $i by $(size(desc_p,1)-i)")
@@ -86,7 +89,8 @@ function padel_fromSMILES(rep,smilesvec)
             sids = pcp.get_sids(smilesvec[i], "smiles")
             results = pcp.Compound.from_cid(sids[1]["CID"])
             desc_p_temp = DataFrame(pd.from_smiles(results.isomeric_smiles,fingerprints=true, descriptors=false))
-            joined_p = hcat(DataFrame(rep[i,:]), desc_p_temp)
+            inchi = DataFrame(INCHIKEY=[results.inchikey])
+            joined_p = hcat(hcat(DataFrame(rep[i,:]), inchi), desc_p_temp)
             joined = append!(joined,joined_p)
             println(i)
         catch
@@ -99,7 +103,7 @@ end
 
 ## Fingerprint calculation (calc)##
 fp_minus_12_name = padel_fromname(data_minus)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromnamecid_new(2).csv",fp_minus_12_name)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_w_inchikey2.csv",fp_minus_12_name)
 #fp_plus_12_name = padel_fromname(data_plus)
 #CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnamecid_new.csv", fp_plus_12_name)
 
@@ -110,7 +114,7 @@ CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\pad
 fp_plus_12_1 = padel_fromname(data_M4_plus)
 fp_plus_12_2= padel_fromSMILES(data_M2_plus[:,:],data4[:,:SMILES])
 fp_plus_12_nameSMILES = vcat(fp_plus_12_1,fp_plus_12_2)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_fromnameSMILES_new(2).csv", fp_plus_12_nameSMILES)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_w_inchikey.csv", fp_plus_12_nameSMILES)
 
 ## Comparison ##
 fromnamecids = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_fromsids.csv", DataFrame)[:,1:7]
