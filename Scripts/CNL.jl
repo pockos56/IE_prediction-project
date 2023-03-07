@@ -2,28 +2,24 @@
 using ScikitLearn
 using BSON
 using Plots
-#using Statistics
+using Statistics
 using DataFrames
 using CSV
-#using ScikitLearn.CrossValidation: cross_val_score
-using ScikitLearn.CrossValidation: train_test_split
+#using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
-
-@sk_import ensemble: RandomForestRegressor
-rdk = pyimport("rdkit.Chem")
-pcp = pyimport("pubchempy")
-pd = pyimport("padelpy")
 
 ## load files ##
 M2M4_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_w_inchikey.csv", DataFrame)
 M2M4_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_w_inchikey.csv", DataFrame)
 amide_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Amide_CNLs.csv", DataFrame)
-norman_raw_0 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs_0.csv", DataFrame)
-norman_raw_1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs_1.csv", DataFrame))
-norman_raw_2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs_2.csv", DataFrame)
+norman_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs.csv", DataFrame)
 
-norman_raw = append!(append!(norman_raw_0,norman_raw_1),norman_raw_2);
+# Preprocessing
+norman_original = norman_raw        #Keeping the original Norman dataset
+select!(norman_raw, Not([:leverage, :Pred_RTI_Pos_ESI, :Pred_RTI_Neg_ESI])) #Changing the norman dataset to the Amide format
+
+
 # Find differences in M2M4_minus with and without inchikey
 vec1 = M2M4_minus[:,1]
 vec2 = M2M4_minus_experim[:,1]
@@ -40,34 +36,79 @@ M2M4_minus_experim[1210,:]      # Here is the difference
 
 # Extract the CNL from the raw files (Note: not all of these are CNLs)
 
-CNL_amide = amide_raw[1:5,8:100008]
-CNL_norman_0 = norman_raw_0[1:5,9:100009]
+#CNL_amide = amide_raw[:,8:100008]
+#CNL_norman = norman_raw[:,9:100009]
 sulfa = norman_raw_0[norman_raw_0[:,2] .== "Sulfamoxole",:]
 sulfa[1,:] .== sulfa[2,:]
 
 # Find similar elements in CNL dataset and IE dataset to create a CNL-IE training set for the models
-M2M4_inchikeys = vcat(M2M4_plus[:,:INCHIKEY],M2M4_minus[:,:INCHIKEY])
+M2M4_names = unique(vcat(M2M4_plus[:,:name],M2M4_minus[:,:name]))
+M2M4_inchikeys = unique(vcat(M2M4_plus[:,:INCHIKEY],M2M4_minus[:,:INCHIKEY]))
+unique(M2M4_minus,1)            # 335 
+unique(M2M4_minus,8)            # 331
+unique(M2M4_plus,1)             # 880
+unique(M2M4_plus,8)             # 841
 
-v1 = intersect(Vector(amide_raw[:,:INCHIKEY]),M2M4_inchikeys)
-v2 = intersect(Vector(norman_raw_0[:,:INCHIKEY]),M2M4_inchikeys)
-v3 = intersect(Vector(norman_raw_1[:,:INCHIKEY]),M2M4_inchikeys)
-v4 = intersect(Vector(norman_raw_2[:,:INCHIKEY]),M2M4_inchikeys)
-#common_inchikeys = vcat(vcat(v1,v2), vcat(v3,v4))
-common_inchikeys = vcat(v1,v2)
+v1_inchi = intersect(Vector(amide_raw[:,:INCHIKEY]),M2M4_inchikeys)
+v1_name = intersect(Vector(amide_raw[:,:NAME]),M2M4_names)
+v2_inchi = intersect(Vector(norman_raw[:,:INCHIKEY]),M2M4_inchikeys)
+v2_name = intersect(Vector(norman_raw[:,:NAME]),M2M4_names)
+common_inchikeys = unique(vcat(v1_inchi,v2_inchi))                      # Common InChiKeys between the CNL and IE datasets
 
-unique(amide_raw, :NAME)
-unique(norman_raw_0, :NAME)
+unique(amide_raw, :NAME)                # 133 compounds in the amide dataset
+unique(norman_raw, :INCHIKEY)               # 3217 compounds in the NORMAN dataset
 
-for i = 1:length(common_inchikeys)
-    key = common_inchikeys[i]
-    amide = findall(x -> x .== key, amide_raw)
-    findall(x -> x .== key, amide_raw)
-    findall(x -> x .== key, amide_raw)
-    findall(x -> x .== key, amide_raw)
+function createCNLIEdataset(mode=:sum)
+    #z = zeros(length(common_inchikeys),size(amide_raw,2))
+    if mode != :sum
+        error("Please use :sum or ... for the mode argument!")
+    end
+
+    for i = 1:length(common_inchikeys)
+        key = common_inchikeys[i]
+        amide = amide_raw[amide_raw[:,:INCHIKEY] .== key, :]
+        norman = norman_raw[norman_raw[:,:INCHIKEY] .== key,:]
+        CNL_set_temp = vcat(amide,norman)
+        if size(CNL_set_temp,1) == 0
+            error("Compound with INCHIKEY at index $i has no match")
+        elseif size(CNL_set_temp,1) == 1
+            z = CNL_set_temp[:,1:100008]
+        elseif size(CNL_set_temp,1) > 1
+            if mode == :sum
+                cnl_first_row = CNL_set_temp[1,1:100008]
+                cnl_only = CNL_set_temp[:,8:100008]
+                sum_row = sum(Matrix(cnl_only), dims=1)
+                cnl_first_row[8:end] = sum_row
+                z = cnl_first_row
+            end
+        end
+
+        # Finding the IE in the IE dataset
+        minus = M2M4_minus[M2M4_minus[:,:INCHIKEY] .== key, :]
+        plus = M2M4_plus[M2M4_plus[:,:INCHIKEY] .== key, :]
+        IE_set_temp = vcat(minus,plus)
+
+        z[3] = 
 
 
+        # Recording
+        if i == 1           
+
+        elseif i > 1
+
+            if i ==length(common_inchikeys)
+                rename!(z, :RI_pred => :logIE)
+            end
+        end
+        return z
+    end
 end
 
+
+target = 3
+sum(sum(Matrix(cnl_only[:,8:end]) .== target, dims=1))
+
+# 94 ones, 1241758 minus ones, 
 
 
 
