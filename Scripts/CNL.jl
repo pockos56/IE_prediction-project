@@ -11,6 +11,7 @@ using Conda
 
 ## load files ##
 M2M4_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_w_inchikey.csv", DataFrame)
+# What is going on with this? # M2M4_minus_2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_w_inchikey2.csv", DataFrame)
 M2M4_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_w_inchikey.csv", DataFrame)
 amide_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Amide_CNLs.csv", DataFrame)
 norman_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs.csv", DataFrame)
@@ -22,7 +23,7 @@ select!(norman_raw, Not([:leverage, :Pred_RTI_Pos_ESI, :Pred_RTI_Neg_ESI])) #Cha
 
 # Find differences in M2M4_minus with and without inchikey
 vec1 = M2M4_minus[:,1]
-vec2 = M2M4_minus_experim[:,1]
+vec2 = M2M4_minus_2[:,1]
 i = 1
 while i <= min(length(vec1), length(vec2))
     if vec1[i] != vec2[i]
@@ -31,8 +32,7 @@ while i <= min(length(vec1), length(vec2))
     end
     i += 1
 end
-M2M4_minus[1210,:]
-M2M4_minus_experim[1210,:]      # Here is the difference
+M2M4_minus_2[1210,:]      # Here is the difference
 
 # Extract the CNL from the raw files (Note: not all of these are CNLs)
 
@@ -42,20 +42,22 @@ sulfa = norman_raw_0[norman_raw_0[:,2] .== "Sulfamoxole",:]
 sulfa[1,:] .== sulfa[2,:]
 
 # Find similar elements in CNL dataset and IE dataset to create a CNL-IE training set for the models
-M2M4_names = unique(vcat(M2M4_plus[:,:name],M2M4_minus[:,:name]))
-M2M4_inchikeys = unique(vcat(M2M4_plus[:,:INCHIKEY],M2M4_minus[:,:INCHIKEY]))
+M2M4_names = unique(vcat(M2M4_plus[:,:name],M2M4_minus[:,:name]))       # 1086 names
+M2M4_inchikeys = unique(vcat(M2M4_plus[:,:INCHIKEY],M2M4_minus[:,:INCHIKEY]))       # 1035 Inchikeys
 unique(M2M4_minus,1)            # 335 
 unique(M2M4_minus,8)            # 331
 unique(M2M4_plus,1)             # 880
 unique(M2M4_plus,8)             # 841
 
-v1_inchi = intersect(Vector(amide_raw[:,:INCHIKEY]),M2M4_inchikeys)
-v1_name = intersect(Vector(amide_raw[:,:NAME]),M2M4_names)
+v1_inchi = intersect(Vector(amide_raw[:,:INCHIKEY]),M2M4_inchikeys)     #25
+v1_name = intersect(Vector(amide_raw[:,:NAME]),M2M4_names)              #11
 v2_inchi = intersect(Vector(norman_raw[:,:INCHIKEY]),M2M4_inchikeys)
 v2_name = intersect(Vector(norman_raw[:,:NAME]),M2M4_names)
 common_inchikeys = unique(vcat(v1_inchi,v2_inchi))                      # Common InChiKeys between the CNL and IE datasets
 
 unique(amide_raw, :NAME)                # 133 compounds in the amide dataset
+unique(amide_raw, :INCHIKEY)                # 133 compounds in the amide dataset
+
 unique(norman_raw, :INCHIKEY)               # 3217 compounds in the NORMAN dataset
 
 function createCNLIEdataset(mode=:sum)
@@ -163,3 +165,4 @@ end
 z_df_sorted_plus = optim(data_plus[:,3],+1)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", z_df_sorted_plus)
 
+# We need to keep every entry as is, without combining.
