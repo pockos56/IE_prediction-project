@@ -176,34 +176,8 @@ end
 
 
 
-pH_investigation(-1)
+pH_minus = pH_investigation(-1)
+pH_plus = pH_investigation(+1)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Cross Validation
-CV = cross_val_score(reg, X_train, y_train, cv=5)
-CV_mean = mean(CV)

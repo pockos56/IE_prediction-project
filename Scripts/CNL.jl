@@ -5,164 +5,151 @@ using Plots
 using Statistics
 using DataFrames
 using CSV
-#using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
 
 ## load files ##
 M2M4_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_w_inchikey.csv", DataFrame)
-# What is going on with this? # M2M4_minus_2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_minus_12_w_inchikey2.csv", DataFrame)
 M2M4_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_plus_12_w_inchikey.csv", DataFrame)
-amide_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Amide_CNLs.csv", DataFrame)
-norman_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs.csv", DataFrame)
 
 # Preprocessing
-norman_original = norman_raw        #Keeping the original Norman dataset
-select!(norman_raw, Not([:leverage, :Pred_RTI_Pos_ESI, :Pred_RTI_Neg_ESI])) #Changing the norman dataset to the Amide format
-
-
-# Find differences in M2M4_minus with and without inchikey
-vec1 = M2M4_minus[:,1]
-vec2 = M2M4_minus_2[:,1]
-i = 1
-while i <= min(length(vec1), length(vec2))
-    if vec1[i] != vec2[i]
-        println("First non-matching element found at index ", i)
-        break
-    end
-    i += 1
-end
-M2M4_minus_2[1210,:]      # Here is the difference
-
-# Extract the CNL from the raw files (Note: not all of these are CNLs)
-
-#CNL_amide = amide_raw[:,8:100008]
-#CNL_norman = norman_raw[:,9:100009]
-sulfa = norman_raw_0[norman_raw_0[:,2] .== "Sulfamoxole",:]
-sulfa[1,:] .== sulfa[2,:]
-
-# Find similar elements in CNL dataset and IE dataset to create a CNL-IE training set for the models
-M2M4_names = unique(vcat(M2M4_plus[:,:name],M2M4_minus[:,:name]))       # 1086 names
-M2M4_inchikeys = unique(vcat(M2M4_plus[:,:INCHIKEY],M2M4_minus[:,:INCHIKEY]))       # 1035 Inchikeys
-unique(M2M4_minus,1)            # 335 
-unique(M2M4_minus,8)            # 331
-unique(M2M4_plus,1)             # 880
-unique(M2M4_plus,8)             # 841
-
-v1_inchi = intersect(Vector(amide_raw[:,:INCHIKEY]),M2M4_inchikeys)     #25
-v1_name = intersect(Vector(amide_raw[:,:NAME]),M2M4_names)              #11
-v2_inchi = intersect(Vector(norman_raw[:,:INCHIKEY]),M2M4_inchikeys)
-v2_name = intersect(Vector(norman_raw[:,:NAME]),M2M4_names)
-common_inchikeys = unique(vcat(v1_inchi,v2_inchi))                      # Common InChiKeys between the CNL and IE datasets
-
-unique(amide_raw, :NAME)                # 133 compounds in the amide dataset
-unique(amide_raw, :INCHIKEY)                # 133 compounds in the amide dataset
-
-unique(norman_raw, :INCHIKEY)               # 3217 compounds in the NORMAN dataset
-
-function createCNLIEdataset(mode=:sum)
-    #z = zeros(length(common_inchikeys),size(amide_raw,2))
-    if mode != :sum
-        error("Please use :sum or ... for the mode argument!")
-    end
-
-    for i = 1:length(common_inchikeys)
-        key = common_inchikeys[i]
-        amide = amide_raw[amide_raw[:,:INCHIKEY] .== key, :]
-        norman = norman_raw[norman_raw[:,:INCHIKEY] .== key,:]
-        CNL_set_temp = vcat(amide,norman)
-        if size(CNL_set_temp,1) == 0
-            error("Compound with INCHIKEY at index $i has no match")
-        elseif size(CNL_set_temp,1) == 1
-            z = CNL_set_temp[:,1:100008]
-        elseif size(CNL_set_temp,1) > 1
-            if mode == :sum
-                cnl_first_row = CNL_set_temp[1,1:100008]
-                cnl_only = CNL_set_temp[:,8:100008]
-                sum_row = sum(Matrix(cnl_only), dims=1)
-                cnl_first_row[8:end] = sum_row
-                z = cnl_first_row
-            end
+# Changing the MassBank dataset to the Amide format
+function MB_df(input)
+    function vector_to_fingerprint(str::String,precursor::Float64)
+        # Convert string to vector{float64}
+        str = replace(str, r"Any(\[.*?\])" => s"\1")
+        val_vec = eval(Meta.parse(str))
+        # Define the range and step size for the fingerprint
+        fingerprint_range = 0:0.01:1000
+        # Initialize the fingerprint dictionary
+        fingerprint_dict = Dict([(x, 0) for x in fingerprint_range])
+        # Loop over the values and update the fingerprint dictionary
+        for v in val_vec
+            # Find the nearest index in the fingerprint_range
+            idx = findmin(abs.(fingerprint_range .- v))[2]
+            # Increment the count for that index in the fingerprint dictionary
+            fingerprint_dict[fingerprint_range[idx]] = 1
         end
-
-        # Finding the IE in the IE dataset
-        minus = M2M4_minus[M2M4_minus[:,:INCHIKEY] .== key, :]
-        plus = M2M4_plus[M2M4_plus[:,:INCHIKEY] .== key, :]
-        IE_set_temp = vcat(minus,plus)
-
-        z[3] = 
-
-
-        # Recording
-        if i == 1           
-
-        elseif i > 1
-
-            if i ==length(common_inchikeys)
-                rename!(z, :RI_pred => :logIE)
-            end
-        end
-        return z
+        # Convert the fingerprint dictionary to a DataFrame
+        dict_str = Dict(string(k) => v for (k, v) in fingerprint_dict)
+        fingerprint_df = DataFrame(dict_str)
+        # Change all values higher than the precursor ion to -1
+        idx_precursor = findmin(abs.(fingerprint_range .- precursor))[2]
+        fingerprint_df[:,idx_precursor+1:end] .= -1
+        return fingerprint_df
     end
+    
+    df = DataFrame()
+    for i = 1:size(input,1)
+         df_temp_CNL = DataFrame(Matrix(vector_to_fingerprint(input[i,:neutral_loss], input[i,:precursor_ion])),names(amide_raw[2,8:100008]))
+         info_temp = (hcat(hcat(hcat(hcat(i,input[i,:name]),hcat(0,input[i,:INCHIKEY])),hcat(input[i,:SMILES],input[i,:formula])),input[i,:exact_mass]))
+         df_temp_info = DataFrame(info_temp,names(amide_raw[2,1:7]))
+         df_temp = hcat(df_temp_info, df_temp_CNL)
+         append!(df, df_temp)
+        println("Compound $i out of $(size(input,1))")
+    end
+    return df
 end
-
-
-target = 3
-sum(sum(Matrix(cnl_only[:,8:end]) .== target, dims=1))
-
-# 94 ones, 1241758 minus ones, 
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ??Padel fingerprints optimization ##
-function optim(output, ESI, iterations=50)
-    leaf_r = collect(4:2:10)
-    tree_r = vcat(collect(50:50:300),collect(400:100:1000))
-    itr = iterations
+function create_CNLIE_dataset_MB(ESI)
     if ESI == -1
-        ESI_name = "minus"
+        ESI_name = "NEG"
+        IE_raw = M2M4_minus
     elseif ESI == 1
-        ESI_name = "plus"
+        ESI_name = "POS"
+        IE_raw = M2M4_plus
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
 
-    z = zeros(itr*13,6)
-    for i = 0:12
-        FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_$(ESI_name)_$i.csv", DataFrame))[:,2:end]
-        for j = 1:itr
-            leaf = rand(leaf_r)
-            tree = rand(tree_r)
-            state = rand(1:3)
-            MaxFeat = Int64(ceil(size(FP1,2)/3))
-        ## Regression ##
-            X_train, X_test, y_train, y_test = train_test_split(FP1, output, test_size=0.20, random_state=state);
-            reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
-            fit!(reg, X_train, y_train)
-            z[(i*itr+j),1] = leaf
-            z[(i*itr+j),2] = tree
-            z[(i*itr+j),3] = i
-            z[(i*itr+j),4] = state
-            z[(i*itr+j),5] = score(reg, X_train, y_train)
-            z[(i*itr+j),6] = score(reg, X_test, y_test)
+    MB = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\MassBankSpec_$ESI_name.csv", DataFrame)
+    dataset_whole = DataFrame()
+    chunk_size = 15
+    for chunk = 1:chunk_size
+        range = Int64.(round.(LinRange(1,size(MB,1),(chunk_size+1))))
+        MB_temp = MB_df(MB[range[chunk]:range[chunk+1],:])
+        # For each Inchikey of the IE dataset, find the ones in all CNL datasets. The dataframe should contain all these entries (hcat)ed with the IE value
+        dataset = DataFrame()
+        for i = 1:size(IE_raw,1)
+            key = IE_raw[i,:INCHIKEY]           # That's the inchikey of compound i
+            CNL_set_temp = MB_temp[MB_temp[:,:INCHIKEY] .== key, :]# That's the CNLs of compound i
+            CNL_set_temp[:,:RI_pred] .= IE_raw[i,:logIE]        # That's the IE of compound i
+            append!(dataset, CNL_set_temp)
+            println("MB part $chunk/$(chunk_size) : Compound $i/$(size(IE_raw,1))")
         end
-        println("End of $i FP type (see descriptors.xml)")
-    end    
-    z_df = DataFrame(leaves = z[:,1], trees = z[:,2], FP_type = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
-    z_df_sorted = sort(z_df, :accuracy_test, rev=true)
-    return z_df_sorted
+        rename!(dataset, :RI_pred => :logIE)
+        append!(dataset_whole,dataset)
+    end
+    return dataset_whole
+end
+function create_CNLIE_dataset_amide(ESI)
+    if ESI == -1
+        ESI_name = "minus"
+        IE_raw = M2M4_minus
+    elseif ESI == 1
+        ESI_name = "plus"
+        IE_raw = M2M4_plus
+    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+    end
+
+    amide_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Amide_CNLs.csv", DataFrame)
+    dataset_whole = DataFrame()
+    chunk_size = 5
+    for chunk = 1:chunk_size
+        range = Int64.(round.(LinRange(1,size(amide_raw,1),(chunk_size+1))))
+        amide_temp = amide_raw[range[chunk]:range[chunk+1],:]
+        # For each Inchikey of the IE dataset, find the ones in all CNL datasets. The dataframe should contain all these entries (hcat)ed with the IE value
+        for i = 1:size(IE_raw,1)
+            key = IE_raw[i,:INCHIKEY]           # That's the inchikey of compound i
+            CNL_set_temp = amide_temp[amide_temp[:,:INCHIKEY] .== key, 1:100008] # That's the CNLs of compound i
+            CNL_set_temp[:,:RI_pred] .= IE_raw[i,:logIE]        # That's the IE of compound i
+            append!(dataset_whole, CNL_set_temp)
+            println("Amide part $chunk/$(chunk_size) : Compound $i/$(size(IE_raw,1))")
+        end
+        rename!(dataset, :RI_pred => :logIE)
+        append!(dataset_whole,dataset)
+    end
+    return dataset_whole
+end
+function create_CNLIE_dataset_norman(ESI)
+    if ESI == -1
+        ESI_name = "minus"
+        IE_raw = M2M4_minus
+    elseif ESI == 1
+        ESI_name = "plus"
+        IE_raw = M2M4_plus
+    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+    end
+
+    dataset_whole = DataFrame()
+    for filename = 1:12
+        norman_temp = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Norman_CNLs.$filename", DataFrame)
+        select!(norman_temp, Not([:leverage, :Pred_RTI_Pos_ESI, :Pred_RTI_Neg_ESI]))
+        # For each Inchikey of the IE dataset, find the ones in all CNL datasets. The dataframe should contain all these entries (hcat)ed with the IE value
+        dataset = DataFrame()
+        for i = 1:size(IE_raw,1)
+            key = IE_raw[i,:INCHIKEY]           # That's the inchikey of compound i
+            CNL_set_temp = norman_temp[norman_temp[:,:INCHIKEY] .== key, 1:100008] # That's the CNLs of compound i
+            CNL_set_temp[:,:RI_pred] .= IE_raw[i,:logIE]        # That's the IE of compound i
+            append!(dataset, CNL_set_temp)
+            println("Norman part $filename/12 : Compound $i/$(size(IE_raw,1))")
+        end
+        rename!(dataset, :RI_pred => :logIE)
+        append!(dataset_whole,dataset)
+    end
+    return dataset_whole
 end
 
-z_df_sorted_plus = optim(data_plus[:,3],+1)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", z_df_sorted_plus)
+# To run tonight 18-Mar-2023
+MB_POS = create_CNLIE_dataset_MB(+1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNLIE_MB_POS.csv", MB_POS)
+MB_NEG = create_CNLIE_dataset_MB(-1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNLIE_MB_NEG.csv", MB_NEG)
+amide_POS = create_CNLIE_dataset_amide(+1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNLIE_amide_POS.csv", amide_POS)
+amide_NEG = create_CNLIE_dataset_amide(-1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNLIE_amide_NEG.csv", amide_NEG)
+norman_POS = create_CNLIE_dataset_norman(+1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNLIE_norman_POS.csv", norman_POS)
+norman_NEG = create_CNLIE_dataset_norman(-1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNLIE_norman_NEG.csv", norman_NEG)
 
 # We need to keep every entry as is, without combining.
