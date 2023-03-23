@@ -180,4 +180,5 @@ pH_minus = pH_investigation(-1)
 pH_plus = pH_investigation(+1)
 
 
-
+# Heatmap, pred. logIE, pH, 
+# Correlation coefficient to see how different FPs affect pH
