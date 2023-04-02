@@ -65,35 +65,3 @@ plus_raw[stable_plus,:]
 X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), FP[!,:logIE], test_size=0.20, random_state=2);
 reg = RandomForestClassifier(n_estimators=300, min_samples_leaf=4, max_features=0, n_jobs=-1, oob_score =true, random_state=2)
 fit!(reg, X_train, y_train)
-
-
-
-
-
-
-
-
-
-
-
-
-
-####### Meeting notes #######
-## DONE ##
-# Morgan Fingerprints (if time)
-# Positive mode
-# Residuals + plots
-
-## IN PROGRESS ##
-# Importance --> WRITE IN TABLE
-
-## TO DO ##
-# Inter-Correlation
-# Find abnormalities to show model strengths and weaknesses
-# Different types of models (CATBOOST, XgBoost)
-# CATBOOST -> Learning rate, LU1_reg, LU2_reg
-# XgBoost -> Learning rate & RandomForestRegressor
-
-## CNL ##
-# InChI keys creation
-# Talk with Denice

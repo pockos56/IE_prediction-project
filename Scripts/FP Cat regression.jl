@@ -9,18 +9,18 @@ using ScikitLearn.CrossValidation: cross_val_score
 using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
-#using JLD
+using LaTeXStrings
 cat = pyimport("catboost")
 
-## Importance for Padel-12 ##
+## Importance for FP-12 ##
 function parameter(ESI; allowplots=false, allowsave=false, showph=false)
     if ESI == -1
-        ESI_name = "minus"
+        ESI_name = "neg"
     elseif ESI == 1
-        ESI_name = "plus"
+        ESI_name = "pos"
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
     FP1 = hcat(FP[!,:pH_aq],FP[!,9:end])
     n_trees = 600
     learn_rate = 0.1
@@ -48,8 +48,10 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
         plot1 = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI $(ESI_name)- IEs from FP", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)")
         scatter!(y_test,z5,label="Test set", color=:orange)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2)
+        annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
+        annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: R^2=$(round(z3, digits=3))"),:right)  
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Regression_M2M4_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Regression_M2M4_$ESI_name.png")
         end
 
         plot2 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual")
@@ -59,7 +61,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
         plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2) #-3 sigma
 
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Residuals_M2M4_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Residuals_M2M4_$ESI_name.png")
         end
         display(plot1)
         display(plot2)
@@ -77,7 +79,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
             scatter!(y_test[:,2],z5,label="Test set", marker_z = y_test[:,1] , markershape = :rect,color=:jet)
             plot!([minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))],[minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))], label="1:1 line",width=2)
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Regression_pHcolor_M2M4_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Regression_pHcolor_M2M4_$ESI_name.png")
             end
 
             plot_pH_res = scatter(y_train[:,2],z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals",markershape=:circle, marker_z=y_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual")
@@ -87,7 +89,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
             plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2) #-3 sigma
     
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_Residuals_pHcolor_M2M4_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Residuals_pHcolor_M2M4_$ESI_name.png")
             end
             display(plot_pH)
             display(plot_pH_res)
@@ -96,33 +98,33 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
 return z1,z2,z3,z4,z5,z6,z7
 end
 
-importance_minus, accuracy_tr_minus, accuracy_te_minus, y_hat_train_minus, y_hat_test_minus, res_train_minus, res_test_minus = parameter(-1, allowplots=false, allowsave=true,showph=false);
-importance_plus, accuracy_tr_plus, accuracy_te_plus, y_hat_train_plus, y_hat_test_plus, res_train_plus, res_test_plus = parameter(+1, allowplots=false, allowsave=true, showph=false);
-importance_minus
-importance_plus
+importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = parameter(-1, allowplots=true, allowsave=true,showph=true);
+importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = parameter(+1, allowplots=true, allowsave=true, showph=true);
+importance_neg
+importance_pos
 
 
 ## pH distribution
-histogram(data_plus[:,:pH_aq], bins=20 ,label = "ESI -",xlims=(0,14))
+histogram(data_pos[:,:pH_aq], bins=20 ,label = "ESI -",xlims=(0,14))
 savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_pH distribution ESI+.png")
-histogram(data_minus[:,:pH_aq], bins=20 ,label = "ESI +",xlims=(0,14))
+histogram(data_neg[:,:pH_aq], bins=20 ,label = "ESI +",xlims=(0,14))
 savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_pH distribution ESI-.png")
 
 # Upper and lower boundaries for different pHs
 # Find the pH for maximum IE
-BSON.@load "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\Cat_model_minus.bson" reg
-BSON.@load "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\Cat_model_plus.bson" cat_plus
+BSON.@load "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\Cat_model_neg.bson" reg
+BSON.@load "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\Cat_model_pos.bson" cat_pos
 
 
 function pH_investigation(ESI; allowplots=false, allowsave=false)
     if ESI == -1
-        ESI_name = "minus"
+        ESI_name = "neg"
     elseif ESI == 1
-        ESI_name = "plus"
+        ESI_name = "pos"
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
     # Create the model
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
     FP1 = hcat(FP[!,:pH_aq],FP[!,9:end])
     n_trees = 600
     learn_rate = 0.1
@@ -174,10 +176,24 @@ function pH_investigation(ESI; allowplots=false, allowsave=false)
     return results
 end
 
+pH_neg = pH_investigation(-1)
+pH_pos = pH_investigation(+1)
+
+names(pH_neg)
+
+heatmap(pH_neg[:,:best_pH], pH_neg[:,:original_IE],pH_neg[:,:name])
+sort(pH_neg[:,:best_pH])
+IE_range = pH_neg[:,:highest_IE] - pH_neg[:,:lowest_IE]
+df = DataFrame(pH = pH_neg[:,:pH_aq], Range = IE_range)
 
 
-pH_minus = pH_investigation(-1)
-pH_plus = pH_investigation(+1)
+using StatsPlots
+issame = pH_neg[:,:best_pH] .== pH_neg[:,:pH_aq]
+histo1 = histogram(pH_neg[issame.==1,:original_IE], pH_neg[issame.==1,:pH_aq],c=1, bins=20, alpha=0.4)
+histo2 = histogram!(pH_neg[issame.==0,:original_IE], pH_neg[issame.==0,:pH_aq],c=2, bins=20, alpha =0.4)
+plot(histo1,histo2)
+
+boxplot(Matrix(df)[:,1])
 
 
 # Heatmap, pred. logIE, pH, 

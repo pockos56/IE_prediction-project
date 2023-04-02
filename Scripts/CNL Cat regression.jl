@@ -14,19 +14,20 @@ using LaTeXStrings
 using Random
 cat = pyimport("catboost")
 
-function CNL_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2, random_state::Int=666)
+# CNL
+function CNL_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
     if ESI == -1
         ESI_name = "NEG"
         n_trees = 800
-        learn_rate = 0.07
-        state = 2
-        leaf = 6    
+        learn_rate = 0.14
+        state = 3
+        leaf = 10    
     elseif ESI == 1
         ESI_name = "POS"
-        n_trees = 900
-        learn_rate = 0.4
+        n_trees = 800
+        learn_rate = 0.05
         state = 2
-        leaf = 4
+        leaf = 10
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
 
@@ -40,6 +41,19 @@ function CNL_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::B
     MaxFeat = Int64(ceil(size(variables,2)/3))
 
     # Split
+    #New splitting
+    classes = unique(data_whole[:,3])
+    test_set_inchikeys = classes[randperm(MersenneTwister(state),length(classes))[1:Int(round(split_size*length(classes)))]]
+    train_set_inchikeys = classes[randperm(MersenneTwister(state),length(classes))[1+(Int(round(split_size*length(classes)))):end]]
+    test_set_indices = findall(x -> x in test_set_inchikeys, data_whole[:,:INCHIKEY])
+    train_set_indices = findall(x -> x in train_set_inchikeys, data_whole[:,:INCHIKEY])
+
+    X_train = variables[train_set_indices,:]
+    X_test = variables[test_set_indices,:]
+    y_train =  data_whole[train_set_indices,:logIE]
+    y_test = data_whole[test_set_indices,:logIE]
+
+    #=Old Splitting
     classes = unique(data_whole[:,3])
     Random.seed!(random_state)
     test_set_indices = findall(x -> x in classes[rand(1:length(classes),Int(round(split_size * length(classes))))], data_whole[:,:INCHIKEY])
@@ -48,7 +62,12 @@ function CNL_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::B
     X_test = variables[test_set_indices,:]
     y_train =  data_whole[train_set_indices,:logIE]
     y_test = data_whole[test_set_indices,:logIE]
-    #X_train, X_test, y_train, y_test = train_test_split(variables, data_whole[!,:logIE], test_size=0.20, random_state=state);
+    
+    (y_test[y_test.<-2.9])
+    (y_train[y_train.<-2.9])
+    sus_ind =findall(x->x.==-3.0,data_whole[:,:logIE])
+    df = data_whole[sus_ind,:]
+    =#
 
     ## Regression ##
     reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_seed=state, grow_policy=:Lossguide, min_data_in_leaf=leaf,verbose=false)
@@ -114,10 +133,13 @@ function CNL_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::B
     return z1,z2,z3,z4,z5,z6,z7
 end
 
-importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = CNL_model(-1, allowplots=true, allowsave=false,showph=true, random_state=20);
+importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = CNL_model(-1, allowplots=true, allowsave=true,showph=true);
+importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = CNL_model(+1, allowplots=true, allowsave=true,showph=true);
 
-importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = CNL_model(+1, allowplots=true, allowsave=true,showph=true, random_state=1);
 
+
+
+# Mass & pH
 function mass_pH_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2, random_state::Int=666)
     if ESI == -1
         ESI_name = "NEG"
@@ -135,13 +157,12 @@ function mass_pH_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showp
     end
 
     # Load data files
-    amide = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_amide_$(ESI_name)_selectedCNLs.CSV", DataFrame)
-    norman = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_norman_$(ESI_name)_selectedCNLs.CSV", DataFrame)
-    MB = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_MB_$(ESI_name)_selectedCNLs.CSV", DataFrame)
+    amide = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_amide_$(ESI_name)_selectedCNLs.CSV", DataFrame)[:,1:8]
+    norman = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_norman_$(ESI_name)_selectedCNLs.CSV", DataFrame)[:,1:8]
+    MB = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_MB_$(ESI_name)_selectedCNLs.CSV", DataFrame)[:,1:8]
     data_whole = vcat(vcat(norman, amide), MB)
     variables_df = data_whole[!,[:pH_aq, :MONOISOMASS]]
     variables = Matrix(variables_df)
-    MaxFeat = 2
 
     # Split
     classes = unique(data_whole[:,3])
@@ -217,7 +238,5 @@ function mass_pH_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showp
     end
     return z1,z2,z3,z4,z5,z6,z7
 end
-
-importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = mass_pH_model(-1, allowplots=true, allowsave=true,showph=true, random_state=20);
+importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = mass_pH_model(-1, allowplots=true, allowsave=false,showph=false, random_state=1, split_size=0.25);
 importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = mass_pH_model(+1, allowplots=true, allowsave=true,showph=true, random_state=1);
-

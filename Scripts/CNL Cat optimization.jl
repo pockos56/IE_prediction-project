@@ -12,8 +12,7 @@ using Conda
 using Random
 cat = pyimport("catboost")
 
-function CNL_optim(ESI; iterations=100, split_size=0.2)
-
+function CNL_optim(ESI; iterations::Int=100, split_size::Float64=0.2)
     if ESI == -1
         ESI_name = "NEG"
     elseif ESI == 1
@@ -40,16 +39,18 @@ function CNL_optim(ESI; iterations=100, split_size=0.2)
             tree = rand(tree_r)
             random_seed = rand(1:3)
             learn_rate = rand(learn_r)
-            MaxFeat = Int64(ceil(size(variables,2)/3))
-        # Split
-            Random.seed!(random_seed)
-            classes = unique(data_whole[:,3])
-            test_set_indices = findall(x -> x in classes[rand(1:length(classes),Int(round(split_size * length(classes))))], data_whole[:,:INCHIKEY])
-            train_set_indices = setdiff(collect(1:size(data_whole,1)),test_set_indices)
-            X_train = variables[train_set_indices,:]
-            X_test = variables[test_set_indices,:]
-            y_train =  data_whole[train_set_indices,:logIE]
-            y_test = data_whole[test_set_indices,:logIE]
+            #MaxFeat = Int64(ceil(size(variables,2)/3))
+        #New splitting
+        classes = unique(data_whole[:,3])
+        test_set_inchikeys = classes[randperm(MersenneTwister(random_seed),length(classes))[1:Int(round(split_size*length(classes)))]]
+        train_set_inchikeys = classes[randperm(MersenneTwister(random_seed),length(classes))[1+(Int(round(split_size*length(classes)))):end]]
+        test_set_indices = findall(x -> x in test_set_inchikeys, data_whole[:,:INCHIKEY])
+        train_set_indices = findall(x -> x in train_set_inchikeys, data_whole[:,:INCHIKEY])
+
+        X_train = variables[train_set_indices,:]
+        X_test = variables[test_set_indices,:]
+        y_train =  data_whole[train_set_indices,:logIE]
+        y_test = data_whole[test_set_indices,:logIE]
             #X_train, X_test, y_train, y_test = train_test_split(variables, data_whole[!,:logIE], test_size=0.20, random_state=state);
             println("$j / $iterations: Train/Test set split")
 
@@ -58,7 +59,7 @@ function CNL_optim(ESI; iterations=100, split_size=0.2)
             fit!(reg, X_train, y_train)
             z[j,1] = leaf
             z[j,2] = tree
-            z[j,3] = state
+            z[j,3] = random_seed
             z[j,4] = learn_rate
             z[j,5] = score(reg, X_train, y_train)
             z[j,6] = score(reg, X_test, y_test)
@@ -71,5 +72,5 @@ function CNL_optim(ESI; iterations=100, split_size=0.2)
 end
 optimization_df_neg = CNL_optim(-1)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_Cat_HyperparameterOptimization_NEG.CSV", optimization_df_neg)
-optimization_df_pos = CNL_optim(1, iterations=20)
+optimization_df_pos = CNL_optim(+1)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_Cat_HyperparameterOptimization_POS.CSV", optimization_df_pos)
