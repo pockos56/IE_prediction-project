@@ -60,3 +60,5 @@ data/CNL datasets/Norman_CNLs.1
 data/CNL datasets/MassBankSpec_POS.csv
 data/CNL datasets/MassBankSpec_NEG.csv
 data/CNL datasets/Amide_CNLs.csv
+data/CNL-IE datasets/CNLIE_NIST_NEG_selectedCNLs.csv
+data/CNL-IE datasets/CNLIE_NIST_POS_selectedCNLs.csv

@@ -1,5 +1,5 @@
 ## import packages ##
-using ScikitLearn
+#using ScikitLearn
 using BSON
 using Plots
 using Statistics
@@ -12,6 +12,11 @@ using Conda
 using LaTeXStrings
 cat = pyimport("catboost")
 
+#To delete
+FP[:,:INCHIKEY]
+unique_vals = unique(FP[:,:INCHIKEY])
+
+#
 ## Importance for FP-12 ##
 function parameter(ESI; allowplots=false, allowsave=false, showph=false)
     if ESI == -1
@@ -27,7 +32,68 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
     state = 3
     min_samples_per_leaf = 4
     
-    X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), FP[!,:logIE], test_size=0.20, random_state=state);
+
+    # Old way  
+   # X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), FP[!,:logIE], test_size=0.20, random_state=state);
+    # New way
+    function split_classes(ESI; random_state::Int=1312)
+        if ESI == -1
+            ESI_name = "neg"
+        elseif ESI == 1
+            ESI_name = "pos"
+        else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+        end
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+        classes = unique(FP[:,:INCHIKEY])
+        indices = Int.(zeros(length(classes)))
+        for i = 1:length(classes)
+            inchi_temp = classes[i]
+            indices[i] = Int(findfirst(x->x .== inchi_temp, FP[:,:INCHIKEY]))
+        end
+        unique_comps_fps = Matrix(FP[indices,9:end])
+
+        function leverage_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                x = Norman[j,:]
+                lev[j] = transpose(x) * z * x
+                println(j)
+            end
+            return lev
+        end
+        
+        function cityblock_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                lev[j] = sqrt(sum(sqrt.(colwise(cityblock,Norman[j,:],z))))
+                println(j)
+            end
+            return lev
+        end
+
+        AD_projection = leverage_dist(unique_comps_fps,unique_comps_fps)
+        #AD_cityblock = cityblock_dist(unique_comps_fps,unique_comps_fps)       # Implement in the future
+        
+        AD = AD_projection
+        inchi_train, inchi_test = train_test_split(classes, test_size=0.20, random_state=random_state,stratify = round.(AD,digits = 1))
+
+        indices_train = findall(x->x in inchi_train, FP[:,:INCHIKEY])
+        indices_test = findall(x->x in inchi_test, FP[:,:INCHIKEY])
+        FP1 = hcat(FP[!,:pH_aq],FP[!,9:end])
+
+        X_train = hcat(FP[indices_train,:pH_aq],FP[indices_train,9:end])
+        X_test = hcat(FP[indices_test,:pH_aq],FP[indices_test,9:end])
+        y_train = FP[indices_train,:logIE]
+        y_test = FP[indices_test,:logIE]
+        
+
+        return X_train, X_test, y_train, y_test
+    end
+    X_train, X_test, y_train, y_test = split_classes(ESI)
+
+    # Modeling
     reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf,verbose=false)
     fit!(reg, X_train, y_train)
         if allowsave == true
