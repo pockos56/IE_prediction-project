@@ -20,14 +20,21 @@ best_CNLs = sort(JLD.load("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\d
 # Changing the MassBank dataset to the Amide format
 function create_CNLIE_dataset_MB(ESI)
     function MB_df(input)
-        function cnl_to_fingerprint(str::String, precursor::Float64; threshold::Float64=0.01)
+        function cnl_to_fingerprint(str::String, precursor::Float64, ESI::Int; threshold::Float64=0.01)
             # Convert string to vector{float64}
             str = replace(str, r"Any(\[.*?\])" => s"\1")
             val_vec = eval(Meta.parse(str))
             # Define the range and step size for the fingerprint
                 #fingerprint_range = 0:0.01:1000
-            fingerprint_range = best_CNLs
-                
+                fingerprint_range = []
+                if ESI == -1
+                    fingerprint_range = best_CNLs_neg
+                elseif ESI == +1
+                    fingerprint_range = best_CNLs_pos
+                else
+                    error("Put ESI to +1/-1")
+                end
+                    
             # Initialize the fingerprint dictionary
             fingerprint_dict = sort(Dict([(x, 0) for x in fingerprint_range]))
             # Loop over the values and update the fingerprint dictionary
@@ -96,12 +103,15 @@ function create_CNLIE_dataset_MB(ESI)
     return dataset
 end
 function create_CNLIE_dataset_amide(ESI)
+    best_CNLs = []
     if ESI == -1
         ESI_name = "neg"
         IE_raw = M2M4_neg
+        best_CNLs = best_CNLs_neg
     elseif ESI == 1
         ESI_name = "pos"
         IE_raw = M2M4_pos
+        best_CNLs = best_CNLs_pos
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
 
@@ -134,9 +144,12 @@ function create_CNLIE_dataset_norman(ESI)
     if ESI == -1
         ESI_name = "neg"
         IE_raw = M2M4_neg
+        best_CNLs = best_CNLs_neg
     elseif ESI == 1
         ESI_name = "pos"
         IE_raw = M2M4_pos
+        best_CNLs = best_CNLs_pos
+
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
 

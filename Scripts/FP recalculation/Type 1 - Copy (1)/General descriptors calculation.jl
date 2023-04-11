@@ -6,13 +6,14 @@ using CSV
 using PyCall
 using Conda
 using Plots
+using DataStructures
 pcp = pyimport("pubchempy")
 pd = pyimport("padelpy")
 alc = pyimport("rdkit.Chem.AllChem")
 pwd()
 
 ## 5-Apr-2023 ##
-function padel_fp(ESI::Int, FP::String ; allowsave=true)
+function padel_fp(ESI::Int, FP::String)
     if ESI==-1
         ESI_name = "neg"
     elseif ESI==+1
@@ -39,49 +40,48 @@ function padel_fp(ESI::Int, FP::String ; allowsave=true)
         end
     end
     return joined
-    if allowsave==true
-        CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Scripts\\FP recalculation\\Results\\padel_M2M4_$(ESI_name)_$FP.csv", joined)
-    end
 end
-
-padel_neg = padel_fp(-1,"01", allowsave=true)
-padel_pos = padel_fp(+1,"01", allowsave=true)
-
-
-
+padel_neg = padel_fp(-1,"13")
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Scripts\\FP recalculation\\Results\\padel_M2M4_neg_13.csv", padel_neg)
+padel_pos = padel_fp(+1,"13")
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Scripts\\FP recalculation\\Results\\padel_M2M4_pos_13.csv", padel_pos)
 
 
 
+## Morgan FP BitVector##    
+function morgan(ESI; num_bits::Int=1024)
+    if ESI==-1
+        ESI_name = "neg"
+    elseif ESI==+1
+        ESI_name = "pos"
+    else error("ESI should be +1 or -1")
+    end
+    
+    rep = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)[:,1:8]
 
-
-
-
-## Morgan FP ##    
-function morgan(rep)
-    results = pcp.get_compounds(rep[1,1], "name")[1]
+    results = pcp.get_compounds(rep[1,:INCHIKEY], "inchikey")[1]
     m1 = alc.MolFromSmiles(results.isomeric_smiles)
-    fp = alc.GetMorganFingerprintAsBitVect(m1,2,nBits=1024)
-    fp_vector = (ones(1024).*1821)'
-    for i = 1:1024
+    fp = alc.GetMorganFingerprintAsBitVect(m1,2,nBits=num_bits)
+    fp_vector = Int.(ones(num_bits).*3)'
+    for i = 1:num_bits
         fp_vector[i] = fp[i]
     end
+    full_vector = hcat(DataFrame(rep[1,:]), DataFrame(fp_vector,:auto))
     for j = 2:size(rep,1)
-        results = pcp.get_compounds(rep[j,1], "name")[1]
+        results = pcp.get_compounds(rep[j,:INCHIKEY], "inchikey")[1]
         m1 = alc.MolFromSmiles(results.isomeric_smiles)
-        fp = alc.GetMorganFingerprintAsBitVect(m1,2,nBits=1024)
-        fp_vector_temp = (ones(1024).*1821)'
-        for i = 1:1024
+        fp = alc.GetMorganFingerprintAsBitVect(m1,2,nBits=num_bits)
+        fp_vector_temp = Int.(ones(num_bits).*3)'
+        for i = 1:num_bits
             fp_vector_temp[i] = fp[i]
         end
-        fp_vector = vcat(fp_vector,fp_vector_temp)
-        println("End of $j compound")
+        full_vector_temp = hcat(DataFrame(rep[j,:]), DataFrame(fp_vector_temp,:auto))
+        full_vector = append!(full_vector, full_vector_temp)
+        println("End of $j/$(size(rep,1)) compound")
     end    
-return fp_vector
+return full_vector
 end
-morgan_minus = morgan(data_minus)
-morgan_plus = morgan(data_plus)
-
-morgan_minus_ = DataFrame(hcat(data_minus[:,1], morgan_minus), :auto)
-morgan_plus_ = DataFrame(hcat(data_plus[:,1], morgan_plus), :auto)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\morgan_minus.csv", morgan_minus_)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\morgan_plus.csv", morgan_plus_)
+morgan_neg = morgan(-1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Scripts\\FP recalculation\\Results\\padel_M2M4_neg_14.csv", morgan_neg)
+morgan_pos = morgan(+1)
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Scripts\\FP recalculation\\Results\\padel_M2M4_pos_14.csv", morgan_pos)
