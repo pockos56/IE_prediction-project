@@ -8,6 +8,7 @@ using CSV
 using ScikitLearn.CrossValidation: cross_val_score
 using ScikitLearn.CrossValidation: train_test_split
 using PyCall
+using LinearAlgebra
 using Conda
 
 @sk_import ensemble: RandomForestRegressor
@@ -28,20 +29,80 @@ data_M2_plus = data4[!,[:name,:pH_aq,:logIE,:instrument,:source,:solvent,:doi]]
 data_minus = vcat(data_M4_minus, data_M2_minus)
 data_plus = vcat(data_M4_plus, data_M2_plus)
 
+
+ESI=-1
 ## Importance for Padel-12 ##
-function parameter(ESI; allowplots=false, allowsave=false, showph=false)
+function Stratified_FP_model(ESI; allowplots=false, allowsave=false, showph=false, random_seed::Int = 2539)
+
+    function split_classes(ESI, classes; random_state::Int=1312, split_size::Float64=0.2)
+        if ESI == -1
+            ESI_name = "neg"
+        elseif ESI == 1
+            ESI_name = "pos"
+        else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+        end
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+        #classes = unique(FP[:,:INCHIKEY])
+        indices = Int.(zeros(length(classes)))
+        for i = 1:length(classes)
+            inchi_temp = classes[i]
+            indices[i] = Int(findfirst(x->x .== inchi_temp, FP[:,:INCHIKEY]))
+        end
+        unique_comps_fps = Matrix(FP[indices,9:end])
+    
+        function leverage_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                x = Norman[j,:]
+                lev[j] = transpose(x) * z * x
+                #println(j)
+            end
+            return lev
+        end
+        
+        function cityblock_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                lev[j] = sqrt(sum(sqrt.(colwise(cityblock,Norman[j,:],z))))
+                #println(j)
+            end
+            return lev
+        end
+    
+        AD = leverage_dist(unique_comps_fps,unique_comps_fps)
+        #AD_cityblock = cityblock_dist(unique_comps_fps,unique_comps_fps)       # Implement in the future
+        
+        inchi_train, inchi_test = train_test_split(classes, test_size=split_size, random_state=random_state,stratify = round.(AD,digits = 1))
+    
+        return inchi_train, inchi_test
+    end
+
+
     if ESI == -1
-        ESI_name = "minus"
+        ESI_name = "neg"
         output = data_minus[:,:logIE]
     elseif ESI == 1
-        ESI_name = "plus"
+        ESI_name = "pos"
         output = data_plus[:,:logIE]
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12_new.csv", DataFrame)
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
     FP1 = hcat(FP[!,:pH_aq],FP[!,8:end])
 
-    X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), FP[!,:logIE], test_size=0.20, random_state=2);
+        # Stratified splitting
+        classes = unique(FP[:,:INCHIKEY])
+        train_set_inchikeys,test_set_inchikeys = split_classes(ESI, classes; random_state=random_seed)
+
+        test_set_indices = findall(x -> x in test_set_inchikeys, FP[:,:INCHIKEY])
+        train_set_indices = findall(x -> x in train_set_inchikeys, FP[:,:INCHIKEY])
+
+        X_train = FP1[train_set_indices,:]
+        X_test = FP1[test_set_indices,:]
+        y_train =  FP[train_set_indices,:logIE]
+        y_test = FP[test_set_indices,:logIE]
+    
     reg = RandomForestRegressor(n_estimators=300, min_samples_leaf=4, max_features=(Int64(ceil(size(Matrix(FP1),2)/3))), n_jobs=-1, oob_score =true, random_state=2)
     fit!(reg, X_train, y_train)
     importance = 100 .* sort(reg.feature_importances_, rev=true)

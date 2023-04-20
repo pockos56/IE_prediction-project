@@ -70,12 +70,12 @@
         <Descriptor name="WHIM" value="true"/>
     </Group>
     <Group name="Fingerprint">
-        <Descriptor name="Fingerprinter" value="true"/>
+        <Descriptor name="Fingerprinter" value="false"/>
         <Descriptor name="ExtendedFingerprinter" value="false"/>
         <Descriptor name="EStateFingerprinter" value="false"/>
         <Descriptor name="GraphOnlyFingerprinter" value="false"/>
         <Descriptor name="MACCSFingerprinter" value="false"/>
-        <Descriptor name="PubchemFingerprinter" value="false"/>
+        <Descriptor name="PubchemFingerprinter" value="true"/>
         <Descriptor name="SubstructureFingerprinter" value="false"/>
         <Descriptor name="SubstructureFingerprintCount" value="false"/>
         <Descriptor name="KlekotaRothFingerprinter" value="false"/>

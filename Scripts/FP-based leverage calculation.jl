@@ -108,19 +108,12 @@ function split_classes(ESI; random_state::Int=1312)
         return lev
     end
 
-    AD_projection = leverage_dist(unique_comps_fps,unique_comps_fps)
+    AD = leverage_dist(unique_comps_fps,unique_comps_fps)
     #AD_cityblock = cityblock_dist(unique_comps_fps,unique_comps_fps)       # Implement in the future
     
-    AD = AD_projection
     inchi_train, inchi_test = train_test_split(classes, test_size=0.20, random_state=random_state,stratify = round.(AD,digits = 1))
 
-    indices_train = findall(x->x in inchi_train, FP[:,:INCHIKEY])
-    indices_test = findall(x->x in inchi_test, FP[:,:INCHIKEY])
-
-    X_train = FP[indices_train,:]
-    X_test = FP[indices_test,:]
-
-    return X_train, X_test
+    return inchi_train, inchi_test
 end
 
 X_train_neg, X_test_neg = split_classes(-1)

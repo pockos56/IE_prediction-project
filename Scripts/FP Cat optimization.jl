@@ -11,87 +11,55 @@ using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
 cat = pyimport("catboost")
-## load files ##
 
 ## Type-12 fingerprints optimization ##
-function optim_type12(ESI; iterations::Int=100, grow = :Lossguide)
+function optim_type12(ESI; itr::Int=100, grow = :Lossguide)
     leaf_r = vcat(collect(4:2:10),15)
     tree_r = vcat(collect(20:20:100), vcat(collect(150:50:400),collect(500:100:1000)))
     learn_r = vcat(collect(0.01:0.02:0.15), collect(0.2:0.1:0.8))
-    itr = iterations
     if ESI == -1
         ESI_name = "neg"
     elseif ESI == 1
         ESI_name = "pos"
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
-    function split_classes(ESI; random_state::Int=1312)
-        if ESI == -1
-            ESI_name = "neg"
-        elseif ESI == 1
-            ESI_name = "pos"
-        else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
-        end
-        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+
+    function split_classes(FP; random_state::Int=1312, split_size::Float64=0.2)
         classes = unique(FP[:,:INCHIKEY])
         indices = Int.(zeros(length(classes)))
         for i = 1:length(classes)
             inchi_temp = classes[i]
             indices[i] = Int(findfirst(x->x .== inchi_temp, FP[:,:INCHIKEY]))
         end
-        unique_comps_fps = Matrix(FP[indices,9:end])
-
-        function leverage_dist(unique_comps_fps, Norman)
-            stable = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+        unique_comps_FPs = Matrix(FP[indices,9:end])
+    
+        function leverage_dist(unique_comps_FPs, Norman)
+            ZZ = pinv(transpose(unique_comps_FPs) * unique_comps_FPs)
             lev = zeros(size(Norman,1))
             for j = 1:size(Norman,1)
                 x = Norman[j,:]
-                lev[j] = transpose(x) * stable * x
-                println(j)
+                lev[j] = transpose(x) * ZZ * x
             end
             return lev
         end
-        
-        function cityblock_dist(unique_comps_fps, Norman)
-            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
-            lev = zeros(size(Norman,1))
-            for j = 1:size(Norman,1)
-                lev[j] = sqrt(sum(sqrt.(colwise(cityblock,Norman[j,:],z))))
-                println(j)
-            end
-            return lev
-        end
-
-        AD_projection = leverage_dist(unique_comps_fps,unique_comps_fps)
-        #AD_cityblock = cityblock_dist(unique_comps_fps,unique_comps_fps)       # Implement in the future
-        
-        AD = AD_projection
-        inchi_train, inchi_test = train_test_split(classes, test_size=0.20, random_state=random_state,stratify = round.(AD,digits = 1))
-
-        indices_train = findall(x->x in inchi_train, FP[:,:INCHIKEY])
-        indices_test = findall(x->x in inchi_test, FP[:,:INCHIKEY])
-        FP1 = hcat(FP[!,:pH_aq],FP[!,9:end])
-
-        X_train = Matrix(hcat(FP[indices_train,:pH_aq],FP[indices_train,9:end]))
-        X_test = Matrix(hcat(FP[indices_test,:pH_aq],FP[indices_test,9:end]))
-        y_train = FP[indices_train,:logIE]
-        y_test = FP[indices_test,:logIE]
-        
-
-        return X_train, X_test, y_train, y_test
+            
+        AD = leverage_dist(unique_comps_FPs,unique_comps_FPs)
+   
+        inchi_train, inchi_test = train_test_split(classes, test_size=split_size, random_state=random_state,stratify = round.(AD,digits = 1))
+        return inchi_train, inchi_test
     end
 
-
-    z = zeros(itr,7)
         FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
         FP1 = Matrix(hcat(FP[!,:pH_aq],FP[!,9:end]))
+        z = zeros(itr,7)
+
         for j = 1:itr
             leaf = rand(leaf_r)
             tree = rand(tree_r)
             state = rand(1:3)
             learn_rate = rand(learn_r)
             MaxFeat = Int64(ceil(size(FP1,2)/3))
-            X_train, X_test, y_train, y_test = split_classes(ESI)
+            X_train, X_test, y_train, y_test = split_classes(FP; random_state=state)
 
                 # Old way  
             # X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), FP[!,:logIE], test_size=0.20, random_state=state);
@@ -298,3 +266,33 @@ CSV.write("/media/saer/Elements SE/Data Alex/IE_prediction/results/models/FP_Cat
 CSV.write("/media/saer/Elements SE/Data Alex/IE_prediction/results/models/FP_Cat_HyperparameterOptimization_NoRSM_neg.csv", optimization_neg)
 
 
+
+# Find best optimized models for all the different types of fingerprints
+neg1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_NoRSM_neg.csv", DataFrame)
+neg2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_RSM0.3_neg.csv", DataFrame)
+neg1[:,:RSM] .= NaN
+neg2[:,:RSM] .= 0.3
+neg = vcat(neg1,neg2)
+
+pos1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_NoRSM_pos.csv", DataFrame)
+pos2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_RSM0.3_pos.csv", DataFrame)
+pos1[:,:RSM] .= NaN
+pos2[:,:RSM] .= 0.3
+pos = vcat(pos1,pos2)
+
+function find_max_per_unique(data)
+    max_results = DataFrame()
+    for i in unique(data[:,:FP_type])
+        filtered_temp = filter(:FP_type => ==(i), data)
+        max_row_temp = DataFrame(sort(filtered_temp,[:accuracy_test], rev=true)[1,:])
+        append!(max_results,max_row_temp)
+    end
+    return max_results
+end
+
+
+best_neg = find_max_per_unique(neg)
+display(best_neg)
+
+best_pos = find_max_per_unique(pos)
+display(best_pos)

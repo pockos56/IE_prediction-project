@@ -29,109 +29,166 @@ data_minus = vcat(data_M4_minus, data_M2_minus)
 data_plus = vcat(data_M4_plus, data_M2_plus)
 
 ## Custom FP parameter optimization ##
-coarseness_r = vcat(collect(100:100:1000), collect(1200:300:3000))
-leaf_r = collect(4:2:12)
-tree_r = vcat(collect(50:50:300),collect(400:100:1000))
-itr = 50
-z = zeros(itr*length(coarseness_r),6)
-for i = 1:length(coarseness_r)
-    coarseness = coarseness_r[i]
-    FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\FP_minus_$coarseness.csv", DataFrame))
-    for j = 1:itr
-        leaf = rand(leaf_r)
-        tree = rand(tree_r)
-        state = rand(1:3)
-        MaxFeat = Int64(ceil(coarseness/3))
-
-    ## Regression ##
-        X_train, X_test, y_train, y_test = train_test_split(FP1, data_minus[1:end,3], test_size=0.20, random_state=state);
-        reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
-        fit!(reg, X_train, y_train)
-        z[((i-1)*itr+j),1] = leaf
-        z[((i-1)*itr+j),2] = tree
-        z[((i-1)*itr+j),3] = coarseness
-        z[((i-1)*itr+j),4] = state
-        z[((i-1)*itr+j),5] = score(reg, X_train, y_train)
-        z[((i-1)*itr+j),6] = score(reg, X_test, y_test)
-end
-    println("End of $coarseness coarseness")
-end    
-
-z_df = DataFrame(leaves = z[:,1], trees = z[:,2], coarseness = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
-z_df_sorted_minus = sort(z_df, :accuracy_test, rev=true)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\z_df_sorted_minus", z_df_sorted_minus)
-
-scatter(z_df_sorted_minus[:,:coarseness],z_df_sorted_minus[:,:accuracy_test], ylims =(0.5,0.6))
-
-
-## Padel fingerprints optimization ##
-function optim(output, ESI, iterations=50)
-    leaf_r = collect(4:2:10)
+    coarseness_r = vcat(collect(100:100:1000), collect(1200:300:3000))
+    leaf_r = collect(4:2:12)
     tree_r = vcat(collect(50:50:300),collect(400:100:1000))
-    itr = iterations
-    if ESI == -1
-        ESI_name = "minus"
-    elseif ESI == 1
-        ESI_name = "plus"
-    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
-    end
-
-    z = zeros(itr*13,6)
-    for i = 0:12
-        FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_$(ESI_name)_$i.csv", DataFrame))[:,2:end]
+    itr = 50
+    z = zeros(itr*length(coarseness_r),6)
+    for i = 1:length(coarseness_r)
+        coarseness = coarseness_r[i]
+        FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\FP_minus_$coarseness.csv", DataFrame))
         for j = 1:itr
             leaf = rand(leaf_r)
             tree = rand(tree_r)
             state = rand(1:3)
-            MaxFeat = Int64(ceil(size(FP1,2)/3))
+            MaxFeat = Int64(ceil(coarseness/3))
+
         ## Regression ##
-            X_train, X_test, y_train, y_test = train_test_split(FP1, output, test_size=0.20, random_state=state);
+            X_train, X_test, y_train, y_test = train_test_split(FP1, data_minus[1:end,3], test_size=0.20, random_state=state);
             reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
             fit!(reg, X_train, y_train)
-            z[(i*itr+j),1] = leaf
-            z[(i*itr+j),2] = tree
-            z[(i*itr+j),3] = i
-            z[(i*itr+j),4] = state
-            z[(i*itr+j),5] = score(reg, X_train, y_train)
-            z[(i*itr+j),6] = score(reg, X_test, y_test)
-        end
-        println("End of $i FP type (see descriptors.xml)")
+            z[((i-1)*itr+j),1] = leaf
+            z[((i-1)*itr+j),2] = tree
+            z[((i-1)*itr+j),3] = coarseness
+            z[((i-1)*itr+j),4] = state
+            z[((i-1)*itr+j),5] = score(reg, X_train, y_train)
+            z[((i-1)*itr+j),6] = score(reg, X_test, y_test)
+    end
+        println("End of $coarseness coarseness")
     end    
-    z_df = DataFrame(leaves = z[:,1], trees = z[:,2], FP_type = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
-    z_df_sorted = sort(z_df, :accuracy_test, rev=true)
-    return z_df_sorted
-end
 
-z_df_sorted_plus = optim(data_plus[:,3],+1)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", z_df_sorted_plus)
+    z_df = DataFrame(leaves = z[:,1], trees = z[:,2], coarseness = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
+    z_df_sorted_minus = sort(z_df, :accuracy_test, rev=true)
+    CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\z_df_sorted_minus", z_df_sorted_minus)
 
-opt_res_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_minus.csv", DataFrame)
-opt_res_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", DataFrame)
+    scatter(z_df_sorted_minus[:,:coarseness],z_df_sorted_minus[:,:accuracy_test], ylims =(0.5,0.6))
 
-scatter(opt_res_minus[:,3], opt_res_minus[:,end])
+
+## Padel fingerprints optimization ##
+    function optim(output, ESI, iterations=50)
+        leaf_r = collect(4:2:10)
+        tree_r = vcat(collect(50:50:300),collect(400:100:1000))
+        itr = iterations
+        if ESI == -1
+            ESI_name = "minus"
+        elseif ESI == 1
+            ESI_name = "plus"
+        else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+        end
+
+        z = zeros(itr*13,6)
+        for i = 0:12
+            FP1 = Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_$(ESI_name)_$i.csv", DataFrame))[:,2:end]
+            for j = 1:itr
+                leaf = rand(leaf_r)
+                tree = rand(tree_r)
+                state = rand(1:3)
+                MaxFeat = Int64(ceil(size(FP1,2)/3))
+            ## Regression ##
+                X_train, X_test, y_train, y_test = train_test_split(FP1, output, test_size=0.20, random_state=state);
+                reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
+                fit!(reg, X_train, y_train)
+                z[(i*itr+j),1] = leaf
+                z[(i*itr+j),2] = tree
+                z[(i*itr+j),3] = i
+                z[(i*itr+j),4] = state
+                z[(i*itr+j),5] = score(reg, X_train, y_train)
+                z[(i*itr+j),6] = score(reg, X_test, y_test)
+            end
+            println("End of $i FP type (see descriptors.xml)")
+        end    
+        z_df = DataFrame(leaves = z[:,1], trees = z[:,2], FP_type = z[:,3], state=z[:,4], accuracy_train = z[:,5], accuracy_test = z[:,6])
+        z_df_sorted = sort(z_df, :accuracy_test, rev=true)
+        return z_df_sorted
+    end
+
+    z_df_sorted_plus = optim(data_plus[:,3],+1)
+    CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", z_df_sorted_plus)
+
+    opt_res_minus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_minus.csv", DataFrame)
+    opt_res_plus = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\General_FP_optimisation_results_plus.csv", DataFrame)
+
+    scatter(opt_res_minus[:,3], opt_res_minus[:,end])
 
 ## Type-12 fingerprints optimization ##
-function optim_type12(ESI, iterations=50)
+function optim_type12(ESI, itr=50)
     leaf_r = collect(4:2:10)
     tree_r = vcat(collect(50:50:400),collect(500:100:1000))
-    itr = iterations
+    state_r = collect(1:3)
     if ESI == -1
-        ESI_name = "minus"
+        ESI_name = "neg"
     elseif ESI == 1
-        ESI_name = "plus"
+        ESI_name = "pos"
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
 
     z = zeros(itr,5)
-        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Fingerprints\\padel_M2M4_$(ESI_name)_12_new.csv", DataFrame)
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
         FP1 = Matrix(hcat(FP[!,:pH_aq],FP[!,8:end]))
         for j = 1:itr
             leaf = rand(leaf_r)
             tree = rand(tree_r)
-            state = rand(1:3)
+            state = rand(state_r)
             MaxFeat = Int64(ceil(size(FP1,2)/3))
+
+            function split_classes(ESI, classes; random_state::Int=1312, split_size::Float64=0.2)
+                if ESI == -1
+                    ESI_name = "neg"
+                elseif ESI == 1
+                    ESI_name = "pos"
+                else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+                end
+                FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+                #classes = unique(FP[:,:INCHIKEY])
+                indices = Int.(zeros(length(classes)))
+                for i = 1:length(classes)
+                    inchi_temp = classes[i]
+                    indices[i] = Int(findfirst(x->x .== inchi_temp, FP[:,:INCHIKEY]))
+                end
+                unique_comps_fps = Matrix(FP[indices,9:end])
+            
+                function leverage_dist(unique_comps_fps, Norman)
+                    z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+                    lev = zeros(size(Norman,1))
+                    for j = 1:size(Norman,1)
+                        x = Norman[j,:]
+                        lev[j] = transpose(x) * z * x
+                        #println(j)
+                    end
+                    return lev
+                end
+                
+                function cityblock_dist(unique_comps_fps, Norman)
+                    z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+                    lev = zeros(size(Norman,1))
+                    for j = 1:size(Norman,1)
+                        lev[j] = sqrt(sum(sqrt.(colwise(cityblock,Norman[j,:],z))))
+                        #println(j)
+                    end
+                    return lev
+                end
+            
+                AD = leverage_dist(unique_comps_fps,unique_comps_fps)
+                #AD_cityblock = cityblock_dist(unique_comps_fps,unique_comps_fps)       # Implement in the future
+                
+                inchi_train, inchi_test = train_test_split(classes, test_size=split_size, random_state=random_state,stratify = round.(AD,digits = 1))
+            
+                return inchi_train, inchi_test
+            end
+            # Stratified splitting
+            classes = unique(data_whole[:,:INCHIKEY])
+            train_set_inchikeys,test_set_inchikeys = split_classes(ESI, classes; random_state=random_seed)
+
+            test_set_indices = findall(x -> x in test_set_inchikeys, data_whole[:,:INCHIKEY])
+            train_set_indices = findall(x -> x in train_set_inchikeys, data_whole[:,:INCHIKEY])
+
+            X_train = variables[train_set_indices,:]
+            X_test = variables[test_set_indices,:]
+            y_train =  data_whole[train_set_indices,:logIE]
+            y_test = data_whole[test_set_indices,:logIE]
         ## Regression ##
-            X_train, X_test, y_train, y_test = train_test_split(FP1, FP[!,:logIE], test_size=0.20, random_state=state);
+        reg = cat.CatBoostRegressor(n_estimators=600, learning_rate=0.05, random_seed=3, grow_policy=:Lossguide, min_data_in_leaf=4, l2_leaf_reg=4, rsm=0.3, verbose=false)
+
             reg = RandomForestRegressor(n_estimators=tree, min_samples_leaf=leaf, max_features=MaxFeat, n_jobs=-1, oob_score =true, random_state=state)
             fit!(reg, X_train, y_train)
             z[j,1] = leaf

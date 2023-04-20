@@ -10,10 +10,55 @@ using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
 using Random
+using LinearAlgebra
 cat = pyimport("catboost")
 
+function Stratified_CNL_optim(ESI; iterations::Int=20, split_size::Float64=0.2)
+    function split_classes(ESI, classes; random_state::Int=1312, split_size::Float64=0.2)
+        if ESI == -1
+            ESI_name = "neg"
+        elseif ESI == 1
+            ESI_name = "pos"
+        else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+        end
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+        #classes = unique(FP[:,:INCHIKEY])
+        indices = Int.(zeros(length(classes)))
+        for i = 1:length(classes)
+            inchi_temp = classes[i]
+            indices[i] = Int(findfirst(x->x .== inchi_temp, FP[:,:INCHIKEY]))
+        end
+        unique_comps_fps = Matrix(FP[indices,9:end])
+    
+        function leverage_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                x = Norman[j,:]
+                lev[j] = transpose(x) * z * x
+                #println(j)
+            end
+            return lev
+        end
+        
+        function cityblock_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                lev[j] = sqrt(sum(sqrt.(colwise(cityblock,Norman[j,:],z))))
+                #println(j)
+            end
+            return lev
+        end
+    
+        AD = leverage_dist(unique_comps_fps,unique_comps_fps)
+        #AD_cityblock = cityblock_dist(unique_comps_fps,unique_comps_fps)       # Implement in the future
+        
+        inchi_train, inchi_test = train_test_split(classes, test_size=split_size, random_state=random_state,stratify = round.(AD,digits = 1))
+    
+        return inchi_train, inchi_test
+    end
 
-function CNL_optim(ESI; iterations::Int=200, split_size::Float64=0.2)
     if ESI == -1
         ESI_name = "NEG"
     elseif ESI == 1
@@ -27,7 +72,6 @@ function CNL_optim(ESI; iterations::Int=200, split_size::Float64=0.2)
     MB = DataFrame(Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_MB_$(ESI_name)_selectedCNLs.CSV", DataFrame)), names(amide))
     NIST = DataFrame(Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_NIST_$(ESI_name)_selectedCNLs.CSV", DataFrame)), names(amide))
     data_whole = vcat(vcat(vcat(norman, amide), MB), NIST)
-
 
     # Set ranges for hyperparameters
     leaf_r = collect(4:2:10)
@@ -45,10 +89,10 @@ function CNL_optim(ESI; iterations::Int=200, split_size::Float64=0.2)
         random_seed = rand(random_seed_r)
         learn_rate = rand(learn_r)
         l2_leaf_reg = rand(l2_leaf_reg_r)
-        # New splitting
-        classes = unique(data_whole[:,3])
-        test_set_inchikeys = classes[randperm(MersenneTwister(random_seed),length(classes))[1:Int(round(split_size*length(classes)))]]
-        train_set_inchikeys = classes[randperm(MersenneTwister(random_seed),length(classes))[1+(Int(round(split_size*length(classes)))):end]]
+        # Stratified splitting
+        classes = unique(data_whole[:,:INCHIKEY])
+        train_set_inchikeys,test_set_inchikeys = split_classes(ESI, classes; random_state=random_seed)
+
         test_set_indices = findall(x -> x in test_set_inchikeys, data_whole[:,:INCHIKEY])
         train_set_indices = findall(x -> x in train_set_inchikeys, data_whole[:,:INCHIKEY])
 
@@ -59,17 +103,9 @@ function CNL_optim(ESI; iterations::Int=200, split_size::Float64=0.2)
         println("$j / $iterations: Train/Test set split")
 
         ## Regression ##
-        reg = cat.CatBoostRegressor(n_estimators=tree, learning_rate=learn_rate, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=leaf,l2_leaf_reg = l2_leaf_reg, rsm=0.3, verbose=false)
-        @time fit!(reg, X_train, y_train)
-        score(reg, X_train, y_train)
+        reg = cat.CatBoostRegressor(n_estimators=tree, learning_rate=learn_rate, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=leaf,l2_leaf_reg = l2_leaf_reg, verbose=false)
+        fit!(reg, X_train, y_train)
 
-
-
-
-
-        
-
-        reg.boosting_type_
         z[j,1] = leaf
         z[j,2] = tree
         z[j,3] = random_seed
@@ -85,7 +121,251 @@ function CNL_optim(ESI; iterations::Int=200, split_size::Float64=0.2)
     return z_df_sorted
 end
 
-optimization_df_neg = CNL_optim(-1)
+optimization_df_neg = Stratified_CNL_optim(-1, iterations=1)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_Cat_HyperparameterOptimization_NEG.CSV", optimization_df_neg)
-optimization_df_pos = CNL_optim(+1)
+optimization_df_pos = Stratified_CNL_optim(+1)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_Cat_HyperparameterOptimization_POS.CSV", optimization_df_pos)
+
+
+# Strategy of multiple Models
+# This was an attempt to do sequential removal and leverage calculation
+
+function split_inchikeys_basedon_leverage(ESI; random_state::Int=1312, split_size::Float64=0.2)
+    if ESI == -1
+        ESI_name = "neg"
+    elseif ESI == 1
+        ESI_name = "pos"
+    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+    end
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+    classes = unique(FP[:,:INCHIKEY])
+    indices = Int.(zeros(length(classes)))
+    for i = 1:length(classes)
+        inchi_temp = classes[i]
+        indices[i] = Int(findfirst(x->x .== inchi_temp, FP[:,:INCHIKEY]))
+    end
+    unique_comps_fps = Matrix(FP[indices,9:end])
+
+    function leverage_dist(unique_comps_fps, Norman)
+        ZZ = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+        lev = zeros(size(Norman,1))
+        for j = 1:size(Norman,1)
+            x = Norman[j,:]
+            lev[j] = transpose(x) * ZZ * x
+            #println(j)
+        end
+        return lev
+    end
+    
+    #= This was an attempt to do sequential removal and leverage calculation
+    first_threshold  = 0.3
+    AD_first = DataFrame(INCHIKEY=FP[indices,:INCHIKEY],lev=leverage_dist(unique_comps_fps,unique_comps_fps))
+    reliable_first_inchikeys = AD_first[(AD_first[:,:lev] .<= first_threshold),:INCHIKEY]
+    reliable_first_indices = findall(x -> x in reliable_first_inchikeys, FP[indices,:INCHIKEY])
+    unreliable_first_indices = findall(x -> x in (AD_first[(AD_first[:,:lev] .> first_threshold),:INCHIKEY]), FP[indices,:INCHIKEY])
+    histogram(AD_first[:,:lev], bins=55)
+
+    unique_comps_fps_second = Matrix(FP[unreliable_first_indices, 9:end])
+    AD_second = DataFrame(INCHIKEY=FP[unreliable_first_indices,:INCHIKEY],lev=leverage_dist(unique_comps_fps_second,unique_comps_fps_second))
+    histogram(AD_second[:,:lev], bins=55)
+    display(AD_second)
+    =#
+
+
+
+
+
+
+    sort!(AD,[:lev])
+    histogram(AD, bins=50)
+
+    
+    inchi_train, inchi_test = train_test_split(classes, test_size=split_size, random_state=random_state,stratify = round.(AD,digits = 1))
+    return inchi_train, inchi_test
+end
+
+
+ESI = +1
+# Just cutting the predicted IE in three Models
+function Stratified_CNL_model(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
+    function leverage_dist(unique_comps_fps, Norman)
+        z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+        lev = zeros(size(Norman,1))
+        for j = 1:size(Norman,1)
+            x = Norman[j,:]
+            lev[j] = transpose(x) * z * x
+            println("Leverage: $j/$(size(Norman,1))")
+        end
+        return lev
+    end
+
+    function split_classes(ESI, classes; random_state::Int=1312, split_size::Float64=0.2)
+        if ESI == -1
+            ESI_name = "neg"
+        elseif ESI == 1
+            ESI_name = "pos"
+        else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+        end
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+        #classes = unique(FP[:,:INCHIKEY])
+        indices = Int.(zeros(length(classes)))
+        for i = 1:length(classes)
+            inchi_temp = classes[i]
+            indices[i] = Int(findfirst(x->x .== inchi_temp, FP[:,:INCHIKEY]))
+        end
+        unique_comps_fps = Matrix(FP[indices,9:end])
+    
+        function leverage_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                x = Norman[j,:]
+                lev[j] = transpose(x) * z * x
+                #println(j)
+            end
+            return lev
+        end
+        
+        function cityblock_dist(unique_comps_fps, Norman)
+            z = pinv(transpose(unique_comps_fps) * unique_comps_fps)
+            lev = zeros(size(Norman,1))
+            for j = 1:size(Norman,1)
+                lev[j] = sqrt(sum(sqrt.(colwise(cityblock,Norman[j,:],z))))
+                #println(j)
+            end
+            return lev
+        end
+    
+        AD = leverage_dist(unique_comps_fps,unique_comps_fps)
+        #AD_cityblock = cityblock_dist(unique_comps_fps,unique_comps_fps)       # Implement in the future
+        
+        inchi_train, inchi_test = train_test_split(classes, test_size=split_size, random_state=random_state,stratify = round.(AD,digits = 1))
+    
+        return inchi_train, inchi_test
+    end
+
+    reg = []
+    if ESI == -1
+        ESI_name = "NEG"
+        tree = 1000
+        learn_rate = 0.4
+        random_seed = 3
+        leaf = 8 
+        reg = cat.CatBoostRegressor(n_estimators=1000, learning_rate=0.4, random_seed=3, grow_policy=:Lossguide, min_data_in_leaf=8, verbose=false)
+    elseif ESI == 1
+        ESI_name = "POS"
+        tree = 600
+        learn_rate = 0.05
+        random_seed = 3
+        leaf = 4
+        l2_leaf_reg = 4
+        reg = cat.CatBoostRegressor(n_estimators=600, learning_rate=0.05, random_seed=3, grow_policy=:Lossguide, min_data_in_leaf=4, l2_leaf_reg=4, rsm=0.3, verbose=false)
+    else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
+    end
+
+    # Load data files
+    amide = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_amide_$(ESI_name)_selectedCNLs.CSV", DataFrame)
+    norman = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_norman_$(ESI_name)_selectedCNLs.CSV", DataFrame)
+    MB = DataFrame(Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_MB_$(ESI_name)_selectedCNLs.CSV", DataFrame)), names(amide))
+    NIST = DataFrame(Matrix(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_NIST_$(ESI_name)_Hadducts_selectedCNLs.CSV", DataFrame)), names(amide))
+
+    data_whole = vcat(vcat(vcat(norman, amide), MB), NIST)
+    variables_df = hcat(data_whole[!,:pH_aq],data_whole[!,8:end])
+    variables = Matrix(variables_df)
+    levs = leverage_dist(variables,variables)
+    histogram(levs)
+
+        # Stratified splitting
+        classes = unique(data_whole[:,:INCHIKEY])
+        train_set_inchikeys,test_set_inchikeys = split_classes(ESI, classes; random_state=random_seed)
+
+        test_set_indices = findall(x -> x in test_set_inchikeys, data_whole[:,:INCHIKEY])
+        train_set_indices = findall(x -> x in train_set_inchikeys, data_whole[:,:INCHIKEY])
+
+    X_train = variables[train_set_indices,:]
+    X_test = variables[test_set_indices,:]
+    y_train =  data_whole[train_set_indices,:logIE]
+    y_test = data_whole[test_set_indices,:logIE]
+
+    ## Regression ##
+    fit!(reg, X_train, y_train)
+
+    z1 = names(variables_df[:,:])[significant_columns]   # Most important descriptors
+    z2 = score(reg, X_train, y_train)   # Train set accuracy
+    z3 = score(reg, X_test, y_test)      # Test set accuracy
+    z4 = predict(reg, X_train)     # y_hat_train
+    z5 = predict(reg, X_test)   # y_hat_test
+    z6 = z4 - y_train      # Train set residual
+    z7 = z5 - y_test        # Test set residual
+
+    # Plots
+    if allowplots == true
+        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI $(ESI_name)- IEs from CNL", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)")
+        scatter!(y_test,z5,label="Test set", color=:orange)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2)
+        annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
+        annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: R^2=$(round(z3, digits=3))"),:right)
+        p2 = scatter(y_train,z4,legend=false,ticks=false,color = :magenta)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=2)
+        p3 = scatter(y_test,z5,legend=false,ticks=false, color=:orange)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=2)
+
+        p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
+        if allowsave == true
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Regression_$ESI_name.png")
+        end
+
+        p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual")
+        scatter!(y_test,z7, label="Test set",color=:orange)
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[0,0],label="pred = exp",width=2) # 1:1 line
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2) # +3 sigma
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2) #-3 sigma
+        p5 = scatter(y_train,z6, legend=false, ticks=false, color = :magenta)
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[0,0],width=2) # 1:1 line
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],linecolor ="grey",width=2) # +3 sigma
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],linecolor ="grey",width=2) #-3 sigma
+        p6 = scatter(y_test,z7, label="Test set",color=:orange,legend=false, ticks=false)
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[0,0],width=2) # 1:1 line
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],linecolor ="grey",width=2) # +3 sigma
+        plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],linecolor ="grey",width=2) #-3 sigma
+
+        p456 = plot(p4,p5,p6,layout= @layout [a{0.7w} [b; c]])
+        if allowsave == true
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Residuals_$ESI_name.png")
+        end
+        display(p123)
+        display(p456)
+        if showph == true           
+            plot_pH = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI $(ESI_name)- IEs from CNL", markershape = :circle, marker_z = X_train[:,1] , xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet)
+            scatter!(y_test,z5,label="Test set", marker_z = X_test[:,1] , markershape = :rect,color=:jet)
+            plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))], label="1:1 line",width=2)
+            annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
+            annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: R^2=$(round(z3, digits=3))"),:right)  
+                if allowsave == true
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Regression_pHcolor_$ESI_name.png")
+            end
+
+            plot_pH_res = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals",markershape=:circle, marker_z=X_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual")
+            scatter!(y_test,z7, markershape=:rect,marker_z=X_test[:,1], label="Test set",color=:jet)
+            plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[0,0],label="1:1 line",width=2) # 1:1 line
+            plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2) # +3 sigma
+            plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2) #-3 sigma
+    
+            if allowsave == true
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Residuals_pHcolor_$ESI_name.png")
+            end
+            display(plot_pH)
+            display(plot_pH_res)
+        end
+    end
+    return z1,z2,z3,z4,z5,z6,z7
+end
+
+
+
+
+
+
+
+
+

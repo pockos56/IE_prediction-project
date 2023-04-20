@@ -1,23 +1,22 @@
 ## import packages ##
-#using ScikitLearn
+using ScikitLearn
 using BSON
 using Plots
 using Statistics
 using DataFrames
 using CSV
-using ScikitLearn.CrossValidation: cross_val_score
 using ScikitLearn.CrossValidation: train_test_split
 using PyCall
 using Conda
+using JLD
 using LaTeXStrings
+using LinearAlgebra
+using Random
 cat = pyimport("catboost")
 
-#To delete
-FP[:,:INCHIKEY]
-unique_vals = unique(FP[:,:INCHIKEY])
 
 #
-## Importance for FP-12 ##
+## Importance for FP-6 ##
 function parameter(ESI; allowplots=false, allowsave=false, showph=false)
     if ESI == -1
         ESI_name = "neg"
@@ -25,7 +24,7 @@ function parameter(ESI; allowplots=false, allowsave=false, showph=false)
         ESI_name = "pos"
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_6.csv", DataFrame)
     FP1 = hcat(FP[!,:pH_aq],FP[!,9:end])
     n_trees = 600
     learn_rate = 0.1

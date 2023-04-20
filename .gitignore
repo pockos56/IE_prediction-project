@@ -71,3 +71,8 @@ data/CNL-IE datasets/Obsolete/CNLIE_MB_POS_selectedCNLs.csv
 data/CNL-IE datasets/CNLIE_MB_POS_selectedCNLs.csv
 data/CNL-IE datasets/CNLIE_MB_POS_selectedCNLs.csv
 data/CNL-IE datasets/CNLIE_MB_POS_selectedCNLs.csv
+data/CNL-IE datasets/CNLIE_NIST_POS_Hadducts_selectedCNLs.csv
+data/CNL-IE datasets/Obsolete - 1000 variables, all adducts/CNLIE_amide_POS_selectedCNLs.csv
+data/CNL-IE datasets/Obsolete - 1000 variables, all adducts/CNLIE_NIST_POS_selectedCNLs.csv
+data/CNL-IE datasets/Obsolete - 1000 variables, all adducts/CNLIE_MB_POS_selectedCNLs.csv
+FP recalculation/Results/padel_M2M4_pos_13.csv
