@@ -87,7 +87,6 @@ function optim_type12(ESI; itr::Int=100, grow = :Lossguide)
     return z_df_sorted
 end
 
-
 hyperparameter_neg_loss = optim_type12(-1, grow = :Lossguide)     # Default
 hyperparameter_neg_sym = optim_type12(-1, grow = :SymmetricTree)     
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP_Cat_hyperparameter_neg_loss.csv", hyperparameter_neg_loss)
@@ -205,7 +204,6 @@ function optim_type12(ESI; iterations::Int=100, grow = :Lossguide)
     return z_df_sorted
 end
 
-
 function FP_optim(ESI; iterations::Int=50, split_size::Float64=0.2)
     if ESI == -1
         ESI_name = "neg"
@@ -270,12 +268,16 @@ CSV.write("/media/saer/Elements SE/Data Alex/IE_prediction/results/models/FP_Cat
 # Find best optimized models for all the different types of fingerprints
 neg1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_NoRSM_neg.csv", DataFrame)
 neg2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_RSM0.3_neg.csv", DataFrame)
+neg3 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_In-Stratified_neg.csv", DataFrame)
+
 neg1[:,:RSM] .= NaN
 neg2[:,:RSM] .= 0.3
 neg = vcat(neg1,neg2)
 
 pos1 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_NoRSM_pos.csv", DataFrame)
 pos2 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_RSM0.3_pos.csv", DataFrame)
+pos3 = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP models\\FP_Cat_HyperparameterOptimization_In-Stratified_pos.csv", DataFrame)
+
 pos1[:,:RSM] .= NaN
 pos2[:,:RSM] .= 0.3
 pos = vcat(pos1,pos2)
@@ -291,8 +293,11 @@ function find_max_per_unique(data)
 end
 
 
-best_neg = find_max_per_unique(neg)
+best_neg = find_max_per_unique(neg3)
 display(best_neg)
 
-best_pos = find_max_per_unique(pos)
+best_pos = find_max_per_unique(pos3)
 display(best_pos)
+best_pos[:,:accuracy_test]
+hcat(best_pos[:,:accuracy_test], best_neg[:,:accuracy_test])
+

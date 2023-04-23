@@ -130,4 +130,3 @@ NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Datab
 positive_set, negative_set = filtering_IonMode(first_filtering(NIST))
 CNLmax_neg = CNLs_list(av_spectra(negative_set),threshold=15)[1]
 CNLmax_pos = CNLs_list(av_spectra(positive_set),threshold=80)[1]
-

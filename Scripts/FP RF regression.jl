@@ -89,7 +89,7 @@ function Stratified_FP_model(ESI; allowplots=false, allowsave=false, showph=fals
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
     FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
-    FP1 = hcat(FP[!,:pH_aq],FP[!,8:end])
+    FP1 = hcat(FP[!,:pH_aq],FP[!,9:end])
 
         # Stratified splitting
         classes = unique(FP[:,:INCHIKEY])
@@ -98,8 +98,8 @@ function Stratified_FP_model(ESI; allowplots=false, allowsave=false, showph=fals
         test_set_indices = findall(x -> x in test_set_inchikeys, FP[:,:INCHIKEY])
         train_set_indices = findall(x -> x in train_set_inchikeys, FP[:,:INCHIKEY])
 
-        X_train = FP1[train_set_indices,:]
-        X_test = FP1[test_set_indices,:]
+        X_train = Matrix(FP1[train_set_indices,:])
+        X_test = Matrix(FP1[test_set_indices,:])
         y_train =  FP[train_set_indices,:logIE]
         y_test = FP[test_set_indices,:logIE]
     
@@ -108,11 +108,21 @@ function Stratified_FP_model(ESI; allowplots=false, allowsave=false, showph=fals
     importance = 100 .* sort(reg.feature_importances_, rev=true)
     importance_index = sortperm(reg.feature_importances_, rev=true)
     significant_columns = importance_index[importance .>=1]
+    function R2_Sklearn(y_hat_,y_)
+        u = sum((y_ - y_hat_) .^2)
+        v = sum((y_ .- mean(y_)) .^ 2)
+        r2_result = 1 - (u/v)
+        return r2_result
+    end
+
     z1 = names(FP1[:,:])[significant_columns]   # Most important descriptors
     z2 = score(reg, X_train, y_train)   # Train set accuracy
     z3 = score(reg, X_test, y_test)      # Test set accuracy
     z4 = predict(reg,X_train)     # y_hat_train
     z5 = predict(reg,X_test)   # y_hat_test
+    z2__ = R2_Sklearn(z4,y_train)
+    z3__ = R2_Sklearn(z5,y_test)
+    
     z6 = z4 - y_train      # Train set residual
     z7 = z5 - y_test        # Test set residual
     
