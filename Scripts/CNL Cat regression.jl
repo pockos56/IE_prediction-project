@@ -16,7 +16,6 @@ using Random
 @sk_import linear_model: LinearRegression
 cat = pyimport("catboost")
 
-ESI=+1
 # CNL
 function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
 
@@ -68,6 +67,7 @@ function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=fa
     reg = []
     if ESI == -1
         ESI_name = "NEG"
+        ESI_symbol = "-"
         tree = 1400
         learn_rate = 0.6
         random_seed = 3
@@ -75,6 +75,7 @@ function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=fa
         reg = cat.CatBoostRegressor(n_estimators=tree, learning_rate=learn_rate, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=leaf, verbose=false)
     elseif ESI == 1
         ESI_name = "POS"
+        ESI_symbol = "+"
         tree = 100
         learn_rate = 0.03
         random_seed = 2
@@ -142,7 +143,7 @@ function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=fa
 
     # Plots
     if allowplots == true
-        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI $(ESI_name)- IEs from CNL", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)")
+        p1 = scatter(y_train,z4,label="Training set", legend=:best, title="ESI$(ESI_symbol) IEs from CNL", color = :magenta, xlabel="Experimental log(IE)", ylabel = "Predicted log(IE)")
         scatter!(y_test,z5,label="Test set", color=:orange)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2)
         annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
@@ -157,7 +158,7 @@ function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=fa
             savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Regression_$ESI_name.png")
         end
 
-        p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual")
+        p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI$(ESI_symbol) Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual")
         scatter!(y_test,z7, label="Test set",color=:orange)
         plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[0,0],label="pred = exp",width=2) # 1:1 line
         plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2) # +3 sigma
@@ -178,7 +179,7 @@ function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=fa
         display(p123)
         display(p456)
         if showph == true           
-            plot_pH = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI $(ESI_name)- IEs from CNL", markershape = :circle, marker_z = X_train[:,1] , xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet)
+            plot_pH = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI$(ESI_symbol) IEs from CNL", markershape = :circle, marker_z = X_train[:,1] , xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet)
             scatter!(y_test,z5,label="Test set", marker_z = X_test[:,1] , markershape = :rect,color=:jet)
             plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))], label="1:1 line",width=2)
             annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
@@ -187,7 +188,7 @@ function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=fa
                 savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Regression_pHcolor_$ESI_name.png")
             end
 
-            plot_pH_res = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals",markershape=:circle, marker_z=X_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual")
+            plot_pH_res = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI$(ESI_symbol) Regression residuals",markershape=:circle, marker_z=X_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual")
             scatter!(y_test,z7, markershape=:rect,marker_z=X_test[:,1], label="Test set",color=:jet)
             plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[0,0],label="1:1 line",width=2) # 1:1 line
             plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2) # +3 sigma
@@ -211,7 +212,7 @@ accuracy_te_neg
 importance_pos
 
 # 20-Apr-2023 Linear model based on residuals of Catboost
-ESI=1
+ESI = +1
 function Stratified_CNL_model_LM_of_residuals(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
 
     function split_classes(ESI, classes; random_state::Int=1312, split_size::Float64=0.2)
@@ -257,7 +258,7 @@ function Stratified_CNL_model_LM_of_residuals(ESI; allowplots::Bool=false, allow
         random_seed = 3
         leaf = 10
         reg = cat.CatBoostRegressor(n_estimators=tree, learning_rate=learn_rate, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=leaf, verbose=false)
-    elseif ESI == 1
+    elseif ESI == +1
         ESI_name = "POS"
         tree = 100
         learn_rate = 0.03
@@ -314,10 +315,10 @@ function Stratified_CNL_model_LM_of_residuals(ESI; allowplots::Bool=false, allow
         res_test = y_hat_test_CAT - y_test
 
         LinModel = LinearRegression(n_jobs=-1)      # Linear model
-        ScikitLearn.fit!(LinModel, reshape(y_hat_train_CAT,:,1), res_train)
+        ScikitLearn.fit!(LinModel, reshape(y_train,:,1), res_train)
+
         res_train_hat_LM = LinModel.predict(reshape(y_hat_train_CAT,:,1))
         res_test_hat_LM = LinModel.predict(reshape(y_hat_test_CAT,:,1))
-
         y_train_hat_LM = y_hat_train_CAT - res_train_hat_LM
         y_test_hat_LM = y_hat_test_CAT - res_test_hat_LM
         
@@ -325,7 +326,6 @@ function Stratified_CNL_model_LM_of_residuals(ESI; allowplots::Bool=false, allow
         #R2_test = LinModel.score(reshape(y_test_hat_LM,:,1),y_test)
         R2_train = R2_Sklearn(y_train_hat_LM, y_train)
         R2_test = R2_Sklearn(y_test_hat_LM, y_test)
-
 
         LM_plot_1 = scatter(y_hat_train_CAT, res_train, c=:green, xaxis ="Predicted logIE", yaxis="Residuals", label="Training set residual")
         scatter!(y_hat_test_CAT, res_test, c=:orange, label="Test set residual" )
@@ -421,9 +421,8 @@ importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_ne
 importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = Stratified_CNL_model_LM_of_residuals(+1, allowplots=true, allowsave=true,showph=true);
 
 # 23-Apr-2023 Multiple models approach
-ESI=1
+ESI = +1
 function Stratified_CNL_model_multiple(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
-
     function split_classes(ESI, classes; random_state::Int=1312, split_size::Float64=0.2)
         if ESI == -1
             ESI_name = "neg"
@@ -502,64 +501,96 @@ function Stratified_CNL_model_multiple(ESI; allowplots::Bool=false, allowsave::B
     y_train =  data_whole[train_set_indices,:logIE]
 
     classes_train = unique(X_train[:,:INCHIKEY])
+    scatter(X_train[:,:INCHIKEY], y_train,size=(1200,800))
+
+    avg_IEs_perINCHIKEY = sort(combine(groupby(DataFrame(INCHIKEY = X_train[:,:INCHIKEY], logIE = y_train), :INCHIKEY), :logIE => mean => :logIE_mean), [:logIE_mean])
+
+    cutoff_A = 0.4
+    modelA_inchikeys = avg_IEs_perINCHIKEY[1:Int(round(cutoff_A*(size(avg_IEs_perINCHIKEY,1)))),:INCHIKEY]
+    modelC_inchikeys = avg_IEs_perINCHIKEY[end-Int(round(cutoff_A*(size(avg_IEs_perINCHIKEY,1)))):end,:INCHIKEY]
+    modelB_inchikeys = avg_IEs_perINCHIKEY[Int(round((size(avg_IEs_perINCHIKEY,1)/2) - (cutoff_A*(size(avg_IEs_perINCHIKEY,1))/2))):Int(round((size(avg_IEs_perINCHIKEY,1)/2) + (cutoff_A*(size(avg_IEs_perINCHIKEY,1))/2))) ,:INCHIKEY]
+
+    train_set_A_indices = findall(x -> x in modelA_inchikeys, data_whole[:,:INCHIKEY])
+    train_set_B_indices = findall(x -> x in modelB_inchikeys, data_whole[:,:INCHIKEY])
+    train_set_C_indices = findall(x -> x in modelC_inchikeys, data_whole[:,:INCHIKEY])
+
+    X_train_A = hcat(data_whole[train_set_A_indices,[:INCHIKEY,:pH_aq]], data_whole[train_set_A_indices,8:end])
+    y_train_A =  data_whole[train_set_A_indices,:logIE]
+    X_train_B = hcat(data_whole[train_set_B_indices,[:INCHIKEY,:pH_aq]], data_whole[train_set_B_indices,8:end])
+    y_train_B =  data_whole[train_set_B_indices,:logIE]
+    X_train_C = hcat(data_whole[train_set_C_indices,[:INCHIKEY,:pH_aq]], data_whole[train_set_C_indices,8:end])
+    y_train_C =  data_whole[train_set_C_indices,:logIE]
+
+    function leverage_test(zz, Norman)
+            x = Norman[j,:]
+            lev = transpose(x) * zz * x
+        return lev
+    end
+    function R2_eq(y_hat_,y_)
+        u = sum((y_ - y_hat_) .^2)
+        v = sum((y_ .- mean(y_)) .^ 2)
+        r2_result = 1 - (u/v)
+        return r2_result
+    end
+
+    reg_A = cat.CatBoostRegressor(verbose=false)
+    reg_B = cat.CatBoostRegressor(verbose=false)
+    reg_C = cat.CatBoostRegressor(verbose=false)
+
+    reg_A.fit(Matrix(X_train_A[:,2:end]), y_train_A)
+    reg_B.fit(Matrix(X_train_B[:,2:end]), y_train_B)
+    reg_C.fit(Matrix(X_train_C[:,2:end]), y_train_C)
+
+    y_train_hat_A = reg_A.predict(Matrix(X_train_A[:,2:end]))
+    y_train_hat_B = reg_B.predict(Matrix(X_train_B[:,2:end]))
+    y_train_hat_C = reg_C.predict(Matrix(X_train_C[:,2:end]))
+
+    r2score_train_A = R2_eq(y_train_hat_A, y_train_A)
+    r2score_train_B = R2_eq(y_train_hat_B, y_train_B)
+    r2score_train_C = R2_eq(y_train_hat_C, y_train_C)
+
+    zz_A = pinv(transpose(Int.(round.(Matrix(X_train_A[:,2:end])))) * (Int.(round.(Matrix(X_train_A[:,2:end])))))     # Maybe we can save and load those with a CSV file
+    BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Leverage matrices\\zz_A", zz_A)
+    zz_B = pinv(transpose(Int.(round.(Matrix(X_train_B[:,2:end])))) * (Int.(round.(Matrix(X_train_B[:,2:end])))))     # Maybe we can save and load those with a CSV file
+    BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Leverage matrices\\zz_B", zz_B)
+    zz_C = pinv(transpose(Int.(round.(Matrix(X_train_C[:,2:end])))) * (Int.(round.(Matrix(X_train_C[:,2:end])))))     # Maybe we can save and load those with a CSV file
+    BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Leverage matrices\\zz_C", zz_C)
+
+    # Approach: The test set are classified in the models independently (ie. the same compound can be in different models, depending on the CNLs)
+    leverages = DataFrame(logIE = y_test, lev_test_A = ones(length(y_test)), lev_test_B = ones(length(y_test)), lev_test_C = ones(length(y_test)))
+    categories = 4 .* ones(length(y_test))
+    for i = 1:length(y_test)
+        leverages[i,:lev_test_A] = transpose(X_test[i,:]) * zz_A * X_test[i,:]
+        leverages[i,:lev_test_B] = transpose(X_test[i,:]) * zz_B * X_test[i,:]
+        leverages[i,:lev_test_C] = transpose(X_test[i,:]) * zz_C * X_test[i,:]
+        categories[i] = argmin([leverages[i,:lev_test_A], leverages[i,:lev_test_B], leverages[i,:lev_test_C]])
+        println("$i/$(length(y_test))")
+    end
+
+    BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Leverage matrices\\categories", categories)
+    X_test_set_A_indices = findall(x->x in "A", categories)
+    X_test_set_B_indices = findall(x->x in "B", categories)
+    X_test_set_C_indices = findall(x->x in "C", categories)
+
+    y_test_hat_A = reg_A.predict(X_test[X_test_set_A_indices,:])
+    y_test_hat_B = reg_B.predict(X_test[X_test_set_B_indices,:])
+    y_test_hat_C = reg_C.predict(X_test[X_test_set_C_indices,:])
+    y_test_A = y_test[X_test_set_A_indices]
+    y_test_B = y_test[X_test_set_B_indices]
+    y_test_C = y_test[X_test_set_C_indices]
+
+    r2score_test_A = R2_eq(y_test_hat_A, y_test_A)
+    r2score_test_B = R2_eq(y_test_hat_B, y_test_B)
+    r2score_test_C = R2_eq(y_test_hat_C, y_test_C)
 
 
 
-
-
-
-
-
-
-
-    ## Cat Regression ##
-    reg.fit(X_train, y_train)
     importance = sort(reg.feature_importances_, rev=true)
     importance_index = sortperm(reg.feature_importances_, rev=true)
     significant_columns = importance_index[importance .>=1.5]
 
     ## Linear regression model ##
     if ESI == +1 
-        function R2_Sklearn(y_hat_,y_)
-            u = sum((y_ - y_hat_) .^2)
-            v = sum((y_ .- mean(y_)) .^ 2)
-            r2_result = 1 - (u/v)
-            return r2_result
-        end
-    
-        y_hat_train_CAT = reg.predict(X_train)     # y_hat_train
-        y_hat_test_CAT = reg.predict(X_test)       # y_hat_test
-        score_r2equation_train = R2_Sklearn(y_hat_train_CAT, y_train)
-        score_r2equation_test = R2_Sklearn(y_hat_test_CAT, y_test)
-        #score_catboost_train = reg.score(X_train, y_train)
-        #score_catboost_test = reg.score(X_test, y_test)
-
-        res_train = y_hat_train_CAT - y_train
-        res_test = y_hat_test_CAT - y_test
-
-        LinModel = LinearRegression(n_jobs=-1)      # Linear model
-        ScikitLearn.fit!(LinModel, reshape(y_hat_train_CAT,:,1), res_train)
-        res_train_hat_LM = LinModel.predict(reshape(y_hat_train_CAT,:,1))
-        res_test_hat_LM = LinModel.predict(reshape(y_hat_test_CAT,:,1))
-
-        y_train_hat_LM = y_hat_train_CAT - res_train_hat_LM
-        y_test_hat_LM = y_hat_test_CAT - res_test_hat_LM
-        
-        #R2_train = LinModel.score(reshape(y_train_hat_LM,:,1),y_train)
-        #R2_test = LinModel.score(reshape(y_test_hat_LM,:,1),y_test)
-        R2_train = R2_Sklearn(y_train_hat_LM, y_train)
-        R2_test = R2_Sklearn(y_test_hat_LM, y_test)
-
-
-        LM_plot_1 = scatter(y_hat_train_CAT, res_train, c=:green, xaxis ="Predicted logIE", yaxis="Residuals", label="Training set residual")
-        scatter!(y_hat_test_CAT, res_test, c=:orange, label="Test set residual" )
-        scatter!(y_train, res_train_hat_LM, c=:white, label="Training set predicted residual")
-        scatter!(y_test, res_test_hat_LM, c=:yellow, label="Test set residual")
-        display(LM_plot_1)
-        p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI $(ESI_name)- Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual")
-        scatter!(y_test,z7, label="Test set",color=:orange)
-
-
         z1 = names(variables_df[:,:])[significant_columns]   # Most important descriptors
         z2 = R2_train   # Train set accuracy
         z3 = R2_test      # Test set accuracy
