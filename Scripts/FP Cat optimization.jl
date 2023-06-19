@@ -233,7 +233,7 @@ function FP_optim(ESI; iterations::Int=50, split_size::Float64=0.2)
             random_seed = rand(random_seed_r)
             learn_rate = rand(learn_r)
             l2_leaf_reg = rand(l2_leaf_reg_r)
-            #New splitting
+            # New splitting
             classes = unique(data_whole[:,:INCHIKEY])
             test_set_inchikeys = classes[randperm(MersenneTwister(random_seed),length(classes))[1:Int(round(split_size*length(classes)))]]
             train_set_inchikeys = classes[randperm(MersenneTwister(random_seed),length(classes))[1+(Int(round(split_size*length(classes)))):end]]

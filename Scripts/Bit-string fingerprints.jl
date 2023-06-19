@@ -61,18 +61,3 @@ for i = 1:length(coarseness_r)
     FP_df = DataFrame(FP1, :auto)
     CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\FP_$(coarseness)_plus.csv", FP_df)
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
