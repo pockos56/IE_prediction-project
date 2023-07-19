@@ -336,10 +336,9 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
     reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, verbose=false)
     fit!(reg, X_train, y_train)
 
-    importance = 100 .* sort(reg.feature_importances_, rev=true)
+    importance = sort(reg.feature_importances_, rev=true)
     importance_index = sortperm(reg.feature_importances_, rev=true)
-    significant_columns = importance_index[importance .>=1]
-    z1 = names(FP1[:,:])[significant_columns]   # Most important descriptors
+    z1 = names(FP1[:,:])[importance_index[importance .>=1]]   # Most important descriptors
     z2 = score(reg, X_train, y_train)   # Train set accuracy
     z3 = score(reg, X_test, y_test)      # Test set accuracy
     z4 = predict(reg,X_train)     # y_hat_train
@@ -414,8 +413,9 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
             display(plot_pH_res)
         end
     end
-    return z1,z2,z3,z4,z5,z6,z7
+    return importance,z1,z2,z3,z4,z5,z6,z7
 end
 
-importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = FP_Cat_model_2(-1, allowplots=true, allowsave=true,showph=true);
-importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = FP_Cat_model_2(+1, allowplots=true, allowsave=true,showph=true);
+importance_percentage_neg, importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = FP_Cat_model_2(-1, allowplots=true, allowsave=false,showph=true);
+importance_percentage_pos, importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = FP_Cat_model_2(+1, allowplots=true, allowsave=true,showph=true);
+

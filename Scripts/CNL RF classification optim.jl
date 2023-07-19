@@ -584,6 +584,7 @@ for i = 1:length(min_CNLs_R)
     end
 end
 
+CSV.write("/media/emcms/Elements SE/Data Alex/IE_prediction/Figures/")
 #=
 X_train = rand(1:10:100,5,2)
 y_train = rand(["Yes","No"],5)
