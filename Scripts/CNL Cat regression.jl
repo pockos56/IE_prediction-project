@@ -208,10 +208,6 @@ end
 importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = Stratified_CNL_model_LM(-1, allowplots=true, allowsave=true,showph=true);
 importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = Stratified_CNL_model_LM(+1, allowplots=true, allowsave=true,showph=true);
 
-importance_neg
-accuracy_te_neg
-importance_pos
-
 # 20-Apr-2023 Linear model based on residuals of Catboost
 ESI = +1
 function Stratified_CNL_model_LM_of_residuals(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
@@ -860,15 +856,28 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
     ScikitLearn.fit!(reg, X_train, y_train)
     importance = sort(reg.feature_importances_, rev=true)
     importance_index = sortperm(reg.feature_importances_, rev=true)
-    significant_columns = importance_index[importance .>=1]
-
-    z1 = names(variables_df[:,:])[significant_columns]   # Most important descriptors
+    z1 = names(variables_df[:,:])[importance_index[importance .>=1]]   # Most important descriptors
     z2 = ScikitLearn.score(reg, X_train, y_train)   # Train set accuracy
     z3 = ScikitLearn.score(reg, X_test, y_test)      # Test set accuracy
     z4 = ScikitLearn.predict(reg, X_train)     # y_hat_train
     z5 = ScikitLearn.predict(reg, X_test)   # y_hat_test
-    z6 = z4 - y_train      # Train set residual
-    z7 = z5 - y_test        # Test set residual
+    z6 = z4 .- y_train    # Train set residual
+    z7 = z5 .- y_test     # Test set residual
+
+    #To delete
+    train_high_residuals = sortperm(abs.(z6),rev=true)
+    Vector(data_train[train_high_residuals[1],:])
+    Vector(data_train[train_high_residuals[2],:])
+    Vector(data_train[train_high_residuals[3],:])
+    Vector(data_train[train_high_residuals[4],:])
+        
+    test_high_residuals = sortperm(abs.(z7),rev=true)
+    Matrix(data_whole_filtered[test_set_indices,:])[test_high_residuals[1],:]
+    Matrix(data_whole_filtered[test_set_indices,:])[test_high_residuals[2],:]
+    Matrix(data_whole_filtered[test_set_indices,:])[test_high_residuals[3],:]
+    Matrix(data_whole_filtered[test_set_indices,:])[test_high_residuals[4],:]
+    #
+        
 
 
     # Plots
@@ -931,9 +940,19 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
             display(plot_pH_res)
         end
     end
-    return z1,z2,z3,z4,z5,z6,z7
+    return importance, z1,z2,z3,z4,z5,z6,z7
 end
-importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(-1, min_CNLs=0, consensus_threshold=0.2, allowplots=true,allowsave=true, random_seed=3, removeminusones=true, showph=true) # ESI-
-importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(+1, min_CNLs=1, consensus_threshold=0.2, allowplots=true, allowsave=true,random_seed = 3,showph=true) # ESI+
 
-importance_neg
+importance_percentage_neg, importance_feat_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(-1, min_CNLs=0, consensus_threshold=0.2, allowplots=true,allowsave=false, random_seed=3, removeminusones=true, showph=true) # ESI-
+importance_percentage_pos, importance_feat_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(+1, min_CNLs=1, consensus_threshold=0.2, allowplots=true, allowsave=false,random_seed = 3,showph=true) # ESI+
+
+meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)
+meanRes_train_pos = round(10^(mean(abs.(sort(res_train_pos)))), digits=3)
+
+meanRes_test_neg = round(10^(mean(abs.(sort(res_test_neg)))), digits=3)
+meanRes_test_pos =round(10^(mean(abs.(sort(res_test_pos)))), digits=3)
+
+meanRes_train_neg = round((mean(abs.(res_train_neg))), digits=3)
+meanRes_test_neg = round((mean(abs.(res_test_neg))), digits=3)
+meanRes_train_pos = round((mean(abs.(res_train_pos))), digits=3)
+meanRes_test_pos = round((mean(abs.(res_test_pos))), digits=3)

@@ -343,8 +343,22 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
     z3 = score(reg, X_test, y_test)      # Test set accuracy
     z4 = predict(reg,X_train)     # y_hat_train
     z5 = predict(reg,X_test)   # y_hat_test
-    z6 = z4 - y_train      # Train set residual
-    z7 = z5 - y_test        # Test set residual
+    z6 = ((10 .^ z4) - (10 .^ y_train)) ./ (10 .^ z4)    # Train set residual
+    z7 = ((10 .^ z5) - (10 .^ y_test)) ./ (10 .^ z5)        # Test set residual
+
+    #To delete
+    train_high_residuals = sortperm(abs.(z6),rev=true)
+    Matrix(FP[train_set_indices,:])[train_high_residuals[end],:]
+    Matrix(FP[train_set_indices,:])[train_high_residuals[2],:]
+    Matrix(FP[train_set_indices,:])[train_high_residuals[3],:]
+    Matrix(FP[train_set_indices,:])[train_high_residuals[4],:]
+
+    test_high_residuals = sortperm(abs.(z7),rev=true)
+    Matrix(FP[test_set_indices,:])[test_high_residuals[1],:]
+    Matrix(FP[test_set_indices,:])[test_high_residuals[2],:]
+    Matrix(FP[test_set_indices,:])[test_high_residuals[3],:]
+    Matrix(FP[test_set_indices,:])[test_high_residuals[4],:]
+    #
     
     if allowplots == true
         p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI$(ESI_symbol) IEs from FP", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
@@ -416,6 +430,15 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
     return importance,z1,z2,z3,z4,z5,z6,z7
 end
 
-importance_percentage_neg, importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = FP_Cat_model_2(-1, allowplots=true, allowsave=false,showph=true);
-importance_percentage_pos, importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = FP_Cat_model_2(+1, allowplots=true, allowsave=true,showph=true);
+importance_percentage_neg, importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = FP_Cat_model_2(-1, allowplots=true, allowsave=false,showph=false);
+importance_percentage_pos, importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = FP_Cat_model_2(+1, allowplots=true, allowsave=false,showph=false);
 
+meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)
+meanRes_test_neg = round(10^(mean(abs.(sort(res_test_neg)))), digits=3)
+meanRes_train_pos = round(10^(mean(abs.(sort(res_train_pos)))), digits=3)
+meanRes_test_pos =round(10^(mean(abs.(sort(res_test_pos)))), digits=3)
+
+meanRes_train_neg = round((mean(abs.(res_train_neg))), digits=3)
+meanRes_test_neg = round((mean(abs.(res_test_neg))), digits=3)
+meanRes_train_pos = round((mean(abs.(res_train_pos))), digits=3)
+meanRes_test_pos = round((mean(abs.(res_test_pos))), digits=3)
