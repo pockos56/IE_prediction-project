@@ -77,3 +77,11 @@ data/CNL-IE datasets/Obsolete - 1000 variables, all adducts/CNLIE_amide_POS_sele
 data/CNL-IE datasets/Obsolete - 1000 variables, all adducts/CNLIE_NIST_POS_selectedCNLs.csv
 data/CNL-IE datasets/Obsolete - 1000 variables, all adducts/CNLIE_MB_POS_selectedCNLs.csv
 FP recalculation/Results/padel_M2M4_pos_13.csv
+catboost_info/catboost_training.json
+catboost_info/learn/events.out.tfevents
+catboost_info/learn_error.tsv
+catboost_info/time_left.tsv
+Scripts/catboost_info/catboost_training.json
+Scripts/catboost_info/learn/events.out.tfevents
+Scripts/catboost_info/learn_error.tsv
+Scripts/catboost_info/time_left.tsv
