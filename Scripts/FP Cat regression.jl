@@ -343,8 +343,11 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
     z3 = score(reg, X_test, y_test)      # Test set accuracy
     z4 = predict(reg,X_train)     # y_hat_train
     z5 = predict(reg,X_test)   # y_hat_test
-    z6 = ((10 .^ z4) - (10 .^ y_train)) ./ (10 .^ z4)    # Train set residual
-    z7 = ((10 .^ z5) - (10 .^ y_test)) ./ (10 .^ z5)        # Test set residual
+    #z6 = ((10 .^ z4) - (10 .^ y_train)) ./ (10 .^ z4)    # Train set residual
+    #z7 = ((10 .^ z5) - (10 .^ y_test)) ./ (10 .^ z5)        # Test set residual
+    z6 = z4 .- y_train    # Train set residual
+    z7 = z5 .- y_test     # Test set residual
+
 
     #To delete
     train_high_residuals = sortperm(abs.(z6),rev=true)
@@ -442,3 +445,8 @@ meanRes_train_neg = round((mean(abs.(res_train_neg))), digits=3)
 meanRes_test_neg = round((mean(abs.(res_test_neg))), digits=3)
 meanRes_train_pos = round((mean(abs.(res_train_pos))), digits=3)
 meanRes_test_pos = round((mean(abs.(res_test_pos))), digits=3)
+
+RMSE_train_neg = round(sqrt(mean(res_train_neg.^2)), digits=3)
+RMSE_test_neg = round(sqrt(mean(res_test_neg.^2)), digits=3)
+RMSE_train_pos = round(sqrt(mean(res_train_pos.^2)), digits=3)
+RMSE_test_pos = round(sqrt(mean(res_test_pos.^2)), digits=3)
