@@ -16,6 +16,7 @@ using Random
 using StatsBase
 @sk_import linear_model: LinearRegression
 cat = pyimport("catboost")
+jblb = pyimport("joblib")
 
 # CNL
 function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
@@ -418,7 +419,8 @@ importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_ne
 importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = Stratified_CNL_model_LM_of_residuals(+1, allowplots=true, allowsave=true,showph=true);
 
 # 23-Apr-2023 Multiple models approach
-ESI = +1
+ESI = -1
+min_CNLs = 1
 function Stratified_CNL_model_multiple(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
     function split_classes(ESI, classes; random_state::Int=1312, split_size::Float64=0.2)
         if ESI == -1
@@ -940,15 +942,15 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
             display(plot_pH_res)
         end
     end
-    return importance, z1,z2,z3,z4,z5,z6,z7
+    return reg, importance, z1,z2,z3,z4,z5,z6,z7
 end
 
-importance_percentage_neg, importance_feat_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(-1, min_CNLs=0, consensus_threshold=0.2, allowplots=true,allowsave=false, random_seed=3, removeminusones=true, showph=true) # ESI-
-importance_percentage_pos, importance_feat_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(+1, min_CNLs=1, consensus_threshold=0.2, allowplots=true, allowsave=false,random_seed = 3,showph=true) # ESI+
+reg_neg, importance_percentage_neg, importance_feat_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(-1, min_CNLs=0, consensus_threshold=0.2, allowplots=true,allowsave=false, random_seed=3, removeminusones=true, showph=true) # ESI-
+reg_pos, importance_percentage_pos, importance_feat_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(+1, min_CNLs=1, consensus_threshold=0.2, allowplots=true, allowsave=false,random_seed = 3,showph=true) # ESI+
 
+# Residuals
 meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)
 meanRes_train_pos = round(10^(mean(abs.(sort(res_train_pos)))), digits=3)
-
 meanRes_test_neg = round(10^(mean(abs.(sort(res_test_neg)))), digits=3)
 meanRes_test_pos =round(10^(mean(abs.(sort(res_test_pos)))), digits=3)
 
@@ -962,3 +964,7 @@ RMSE_train_neg = round(sqrt(mean(res_train_neg.^2)), digits=3)
 RMSE_test_neg = round(sqrt(mean(res_test_neg.^2)), digits=3)
 RMSE_train_pos = round(sqrt(mean(res_train_pos.^2)), digits=3)
 RMSE_test_pos = round(sqrt(mean(res_test_pos.^2)), digits=3)
+
+# Saving the models (joblib)
+jblb.dump(reg_neg,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_reg_neg.joblib")
+jblb.dump(reg_pos,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_reg_pos.joblib")

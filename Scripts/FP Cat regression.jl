@@ -13,7 +13,7 @@ using LaTeXStrings
 using LinearAlgebra
 using Random
 cat = pyimport("catboost")
-
+jblb = pyimport("joblib")
 
 #
 ## Importance for FP-6 ##
@@ -174,18 +174,10 @@ importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_po
 importance_neg
 importance_pos
 
-
-## pH distribution
-histogram(data_pos[:,:pH_aq], bins=20 ,label = "ESI -",xlims=(0,14))
-savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_pH distribution ESI+.png")
-histogram(data_neg[:,:pH_aq], bins=20 ,label = "ESI +",xlims=(0,14))
-savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Cat_pH distribution ESI-.png")
-
 # Upper and lower boundaries for different pHs
 # Find the pH for maximum IE
 BSON.@load "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\Cat_model_neg.bson" reg
 BSON.@load "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\Cat_model_pos.bson" cat_pos
-
 
 function pH_investigation(ESI; allowplots=false, allowsave=false)
     if ESI == -1
@@ -257,7 +249,6 @@ sort(pH_neg[:,:best_pH])
 IE_range = pH_neg[:,:highest_IE] - pH_neg[:,:lowest_IE]
 df = DataFrame(pH = pH_neg[:,:pH_aq], Range = IE_range)
 
-
 using StatsPlots
 issame = pH_neg[:,:best_pH] .== pH_neg[:,:pH_aq]
 histo1 = histogram(pH_neg[issame.==1,:original_IE], pH_neg[issame.==1,:pH_aq],c=1, bins=20, alpha=0.4)
@@ -279,7 +270,6 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
         learn_rate = 0.14
         state = 1312 #3
         min_samples_per_leaf = 4
-    
     elseif ESI == 1
         ESI_name = "pos"
         ESI_symbol = "+"
@@ -329,7 +319,7 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
 
     X_train = Matrix(FP1[train_set_indices,:])
     X_test = Matrix(FP1[test_set_indices,:])
-    y_train =  FP[train_set_indices,:logIE]
+    y_train = FP[train_set_indices,:logIE]
     y_test = FP[test_set_indices,:logIE]
 
     # Modeling
@@ -347,21 +337,6 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
     #z7 = ((10 .^ z5) - (10 .^ y_test)) ./ (10 .^ z5)        # Test set residual
     z6 = z4 .- y_train    # Train set residual
     z7 = z5 .- y_test     # Test set residual
-
-
-    #To delete
-    train_high_residuals = sortperm(abs.(z6),rev=true)
-    Matrix(FP[train_set_indices,:])[train_high_residuals[end],:]
-    Matrix(FP[train_set_indices,:])[train_high_residuals[2],:]
-    Matrix(FP[train_set_indices,:])[train_high_residuals[3],:]
-    Matrix(FP[train_set_indices,:])[train_high_residuals[4],:]
-
-    test_high_residuals = sortperm(abs.(z7),rev=true)
-    Matrix(FP[test_set_indices,:])[test_high_residuals[1],:]
-    Matrix(FP[test_set_indices,:])[test_high_residuals[2],:]
-    Matrix(FP[test_set_indices,:])[test_high_residuals[3],:]
-    Matrix(FP[test_set_indices,:])[test_high_residuals[4],:]
-    #
     
     if allowplots == true
         p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "ESI$(ESI_symbol) IEs from FP", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
@@ -430,23 +405,28 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
             display(plot_pH_res)
         end
     end
-    return importance,z1,z2,z3,z4,z5,z6,z7
+    return reg,importance,z1,z2,z3,z4,z5,z6,z7
 end
 
-importance_percentage_neg, importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = FP_Cat_model_2(-1, allowplots=true, allowsave=false,showph=false);
-importance_percentage_pos, importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = FP_Cat_model_2(+1, allowplots=true, allowsave=false,showph=false);
+reg_neg, importance_percentage_neg, importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = FP_Cat_model_2(-1, allowplots=true, allowsave=false,showph=false);
+reg_pos, importance_percentage_pos, importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = FP_Cat_model_2(+1, allowplots=true, allowsave=false,showph=false);
 
+# Residuals
 meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)
 meanRes_test_neg = round(10^(mean(abs.(sort(res_test_neg)))), digits=3)
 meanRes_train_pos = round(10^(mean(abs.(sort(res_train_pos)))), digits=3)
 meanRes_test_pos =round(10^(mean(abs.(sort(res_test_pos)))), digits=3)
-
+#
 meanRes_train_neg = round((mean(abs.(res_train_neg))), digits=3)
 meanRes_test_neg = round((mean(abs.(res_test_neg))), digits=3)
 meanRes_train_pos = round((mean(abs.(res_train_pos))), digits=3)
 meanRes_test_pos = round((mean(abs.(res_test_pos))), digits=3)
-
+#
 RMSE_train_neg = round(sqrt(mean(res_train_neg.^2)), digits=3)
 RMSE_test_neg = round(sqrt(mean(res_test_neg.^2)), digits=3)
 RMSE_train_pos = round(sqrt(mean(res_train_pos.^2)), digits=3)
 RMSE_test_pos = round(sqrt(mean(res_test_pos.^2)), digits=3)
+
+# Saving the models (joblib)
+jblb.dump(reg_neg,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP_reg_neg.joblib")
+jblb.dump(reg_pos,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP_reg_pos.joblib")
