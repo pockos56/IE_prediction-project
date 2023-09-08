@@ -6,13 +6,9 @@ using DataFrames
 using PyCall
 using Conda
 using DataStructures
-using PkgTemplates
 jblb = pyimport("joblib")
 pcp = pyimport("pubchempy")
 pd = pyimport("padelpy")
-#using BSON
-#using CSV
-#using Plots
 
 # Loading models
 CNL_reg_neg = jblb.load("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_reg_neg.joblib")
@@ -23,7 +19,7 @@ best_CNLs_neg = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\da
 best_CNLs_pos = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNLmax_Hadducts_pos.CSV", DataFrame)[1:500,1]
 
 # Creating the two functions
-function IE_from_InChIKey(INCHIKEY::String, ESI_mode::String, pH)
+function logIE_from_InChIKey(INCHIKEY::String, ESI_mode::String, pH)
     if pH > 14 || pH < 0 
         error("Set pH to a valid value between 0 and 14")
     end
@@ -47,7 +43,7 @@ function IE_from_InChIKey(INCHIKEY::String, ESI_mode::String, pH)
     return IE_pred        
 end
 
-function IE_from_SMILES(SMILES::String, ESI_mode::String, pH)
+function logIE_from_SMILES(SMILES::String, ESI_mode::String, pH)
     if pH > 14 || pH < 0 
         error("Set pH to a valid value between 0 and 14")
     end
@@ -70,7 +66,7 @@ function IE_from_SMILES(SMILES::String, ESI_mode::String, pH)
     return IE_pred        
 end
 
-function IE_from_MS(fragments_list::Vector, precursor_ion_mz::Float64, ESI_mode::String, pH)
+function logIE_from_MS(fragments_list::Vector, precursor_ion_mz::Float64, ESI_mode::String, pH)
     function mz_to_fingerprint(CNL_vec, precursor; threshold=0.02)
         # Convert string to vector{float64}
         #df_input = DataFrame(df_row)
@@ -143,39 +139,16 @@ function IE_from_MS(fragments_list::Vector, precursor_ion_mz::Float64, ESI_mode:
     return IE_pred        
 end
 
-# Testing #TO DELETE#
-
-    ESI_mode = "negative"
-    pH = 6
-
-    INCHIKEY = "AOJJSUZBOXZQNB-TZSSRYMLSA-N"
-    IE_from_InChIKey(INCHIKEY, ESI_mode, 0)
-
-    SMILES = "C[C@H]1[C@H]([C@H](C[C@@H](O1)O[C@H]2C[C@@](CC3=C2C(=C4C(=C3O)C(=O)C5=C(C4=O)C(=CC=C5)OC)O)(C(=O)CO)O)N)O"
-    IE_from_SMILES(SMILES, ESI_mode, pH)
-
-    
-    fragments_list = [33.11]
-
-    precursor_ion_mz = 100.1
-    IE_from_MS(fragments_list, precursor_ion_mz, "negative", 5)
-
-
-
-#
-
-
 # Creating the jl file
+using PkgTemplates
 t= Template(;
-    user="alex_",
-    dir="C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Packages",
+    user="pockos56",
+    dir="C:\\Users\\alex_\\Documents\\GitHub\\",
     authors=["Alexandros Nikolopoulos", "Env Modeling & Computational Mass Spec Lab (EMCMS)"],
     julia=v"1.8.5",
     plugins=[
         License(; name="MIT"),
-        Git(; manifest=true, ssh=true),
-        #TravisCI(),
-        #Codecov(),
+        Git(; manifest=true, ssh=false),
         AppVeyor(),
     ],
 )
