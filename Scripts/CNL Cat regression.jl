@@ -16,7 +16,13 @@ using Random
 using StatsBase
 @sk_import linear_model: LinearRegression
 cat = pyimport("catboost")
+
+# Try saving models with joblib
 jblb = pyimport("joblib")
+
+# Try without PyCall
+using PyCallJLD
+#Pkg.add(PackageSpec(url="https://github.com/JuliaPy/PyCallJLD.jl", rev="master"))
 
 # CNL
 function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
@@ -691,7 +697,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
             ESI_name = "pos"
         else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
         end
-        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Fingerprints\\padel_M2M4_$(ESI_name)_12_w_inchikey.csv", DataFrame)
         #classes = unique(FP[:,:INCHIKEY])
         indices = Int.(zeros(length(classes)))
         for i = 1:length(classes)
@@ -736,10 +742,10 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
     end
 
     # Load data files
-    amide = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_amide_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
-    norman = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_norman_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
-    MB = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_MB_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
-    NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\CNL-IE datasets\\CNLIE_NIST_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
+    amide = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL-IE datasets\\CNLIE_amide_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
+    norman = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL-IE datasets\\CNLIE_norman_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
+    MB = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL-IE datasets\\CNLIE_MB_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
+    NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL-IE datasets\\CNLIE_NIST_$(ESI_name)_selectedCNLs_20mDabin.csv", DataFrame)
     data_whole_raw = vcat(vcat(vcat(norman, amide), MB), NIST)
 
     # Scaling
@@ -896,7 +902,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
 
         p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Regression_Consensus_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\CNL\\CNL_Cat_Regression_Consensus_$ESI_name.png")
         end
 
         p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI$(ESI_symbol) Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -915,7 +921,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
 
         p456 = plot(p4,p5,p6,layout= @layout [a{0.7w} [b; c]])
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Residuals_Consensus_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\CNL\\CNL_Cat_Residuals_Consensus_$ESI_name.png")
         end
         display(p123)
         display(p456)
@@ -926,7 +932,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
             annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
             annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: R^2=$(round(z3, digits=3))"),:right)  
                 if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Regression_pHcolor_Consensus_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\CNL\\CNL_Cat_Regression_pHcolor_Consensus_$ESI_name.png")
             end
 
             plot_pH_res = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI$(ESI_symbol) Regression residuals",markershape=:circle, marker_z=X_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -936,7 +942,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered(ESI; consen
             plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
     
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\CNL\\CNL_Cat_Residuals_pHcolor_Consensus_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\CNL\\CNL_Cat_Residuals_pHcolor_Consensus_$ESI_name.png")
             end
             display(plot_pH)
             display(plot_pH_res)
@@ -966,5 +972,15 @@ RMSE_train_pos = round(sqrt(mean(res_train_pos.^2)), digits=3)
 RMSE_test_pos = round(sqrt(mean(res_test_pos.^2)), digits=3)
 
 # Saving the models (joblib)
-jblb.dump(reg_neg,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_reg_neg.joblib")
-jblb.dump(reg_pos,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\CNL_reg_pos.joblib")
+jblb.dump(reg_neg,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Models\\CNL_reg_neg.joblib")
+jblb.dump(reg_pos,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Models\\CNL_reg_pos.joblib")
+
+# Saving the models (JLD)
+using JLD, PyCall, PyCallJLD
+
+save("CNL_reg_neg.jld","mods", reg_neg)
+JLD.save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Models\\CNL_reg_pos.jld", "mods", reg_pos)
+
+# Saving the models (JSON)
+reg_neg.save_model("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Models\\CNL_reg_neg.json", format="json")
+reg_pos.save_model("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Models\\CNL_reg_pos.json", format="json")

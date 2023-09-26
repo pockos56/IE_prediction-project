@@ -12,6 +12,7 @@ using JLD
 using LaTeXStrings
 using LinearAlgebra
 using Random
+#using CatBoost
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
@@ -279,7 +280,7 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
         min_samples_per_leaf = 6
     else error("Set ESI to -1 or +1 for ESI- and ESI+ accordingly")
     end
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\FP recalculation\\Results\\padel_M2M4_$(ESI_name)_12.csv", DataFrame)
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\FP recalculation\\Results\\padel_M2M4_$(ESI_name)_12.csv", DataFrame)
     FP1 = hcat(FP[!,:pH_aq],FP[!,9:end])
     
     # New way
@@ -352,7 +353,7 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
         p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
         display(p123)
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Regression_M2M4_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\Fingerprints\\CatBoost\\Cat_Regression_M2M4_$ESI_name.png")
         end
 
         p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "ESI$(ESI_symbol) Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -372,7 +373,7 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
         p456 = plot(p4,p5,p6,layout= @layout [a{0.7w} [b; c]])
 
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Residuals_M2M4_$ESI_name.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\Fingerprints\\CatBoost\\Cat_Residuals_M2M4_$ESI_name.png")
         end
         display(p456)
         if showph == true
@@ -389,7 +390,7 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
             scatter!(y_test[:,2],z5,label="Test set", marker_z = y_test[:,1] , markershape = :rect,color=:jet,dpi=300)
             plot!([minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))],[minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))], label="1:1 line",width=2,dpi=300)
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Regression_pHcolor_M2M4_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\Fingerprints\\CatBoost\\Cat_Regression_pHcolor_M2M4_$ESI_name.png")
             end
 
             plot_pH_res = scatter(y_train[:,2],z6,label="Training set", legend=:best, title = "ESI$(ESI_symbol) Regression residuals",markershape=:circle, marker_z=y_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -399,7 +400,7 @@ function FP_Cat_model_2(ESI; allowplots=false, allowsave=false, showph=false)
             plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
     
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Graphs\\Fingerprints\\CatBoost\\Cat_Residuals_pHcolor_M2M4_$ESI_name.png")
+                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\Fingerprints\\CatBoost\\Cat_Residuals_pHcolor_M2M4_$ESI_name.png")
             end
             display(plot_pH)
             display(plot_pH_res)
@@ -430,3 +431,7 @@ RMSE_test_pos = round(sqrt(mean(res_test_pos.^2)), digits=3)
 # Saving the models (joblib)
 jblb.dump(reg_neg,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP_reg_neg.joblib")
 jblb.dump(reg_pos,"C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\Models\\FP_reg_pos.joblib")
+
+# Saving the models (BSON)
+BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Models\\FP_reg_neg.bson", reg_neg)
+BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Models\\FP_reg_pos.bson", reg_pos)
