@@ -86,4 +86,6 @@ Scripts/catboost_info/learn/events.out.tfevents
 Scripts/catboost_info/learn_error.tsv
 Scripts/catboost_info/time_left.tsv
 FP recalculation/
-FP recalculation_/
+catboost_info/
+catboost_info_/
+
