@@ -70,17 +70,17 @@
         <Descriptor name="WHIM" value="true"/>
     </Group>
     <Group name="Fingerprint">
-        <Descriptor name="Fingerprinter" value="false"/>
-        <Descriptor name="ExtendedFingerprinter" value="false"/>
-        <Descriptor name="EStateFingerprinter" value="false"/>
-        <Descriptor name="GraphOnlyFingerprinter" value="false"/>
-        <Descriptor name="MACCSFingerprinter" value="false"/>
+        <Descriptor name="Fingerprinter" value="true"/>
+        <Descriptor name="ExtendedFingerprinter" value="true"/>
+        <Descriptor name="EStateFingerprinter" value="true"/>
+        <Descriptor name="GraphOnlyFingerprinter" value="true"/>
+        <Descriptor name="MACCSFingerprinter" value="true"/>
         <Descriptor name="PubchemFingerprinter" value="true"/>
-        <Descriptor name="SubstructureFingerprinter" value="false"/>
-        <Descriptor name="SubstructureFingerprintCount" value="false"/>
-        <Descriptor name="KlekotaRothFingerprinter" value="false"/>
-        <Descriptor name="KlekotaRothFingerprintCount" value="false"/>
-        <Descriptor name="AtomPairs2DFingerprinter" value="false"/>
-        <Descriptor name="AtomPairs2DFingerprintCount" value="false"/>
+        <Descriptor name="SubstructureFingerprinter" value="true"/>
+        <Descriptor name="SubstructureFingerprintCount" value="true"/>
+        <Descriptor name="KlekotaRothFingerprinter" value="true"/>
+        <Descriptor name="KlekotaRothFingerprintCount" value="true"/>
+        <Descriptor name="AtomPairs2DFingerprinter" value="true"/>
+        <Descriptor name="AtomPairs2DFingerprintCount" value="true"/>
     </Group>
 </Root>
