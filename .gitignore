@@ -89,3 +89,7 @@ FP recalculation/
 catboost_info/
 catboost_info_/
 
+Unified/data/Fingerprints/FP10.CSV
+Unified/data/Fingerprints/FP13.csv
+Unified/data/data_w_all_FPs.csv
+Unified/data/filtered_FPs.csv
