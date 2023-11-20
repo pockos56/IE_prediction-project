@@ -185,15 +185,6 @@ padel_pos = padel_fp(+1,"01", allowsave=true)
 
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Fingerprints\\padel_M2M4_neg_01.csv", padel_neg)
 
-
-
-
-
-
-
-
-
-
 ## Morgan FP ##    
 function morgan(rep)
     results = pcp.get_compounds(rep[1,1], "name")[1]

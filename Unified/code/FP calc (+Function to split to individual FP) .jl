@@ -198,3 +198,13 @@ AC_FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Un
 morgan_FP = morgan(AC_FP[:,1:9])
 morgan_whole =hcat(AC_FP[:,1:9], DataFrame(morgan_FP,:auto))
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP15.csv", morgan_whole)
+
+## Frankenstein FP ## 
+frank_colnames = names(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Fingerprints\\Sanne.All_non-hashed_combined.csv", DataFrame))[2:end]
+faulty_names = frank_colnames[contains.(frank_colnames," ")]
+frank_colnames[contains.(frank_colnames,"EState ")] = replace.(frank_colnames[contains.(frank_colnames,"EState ")], "EState " => "EStateFP")
+#frank_colnames[contains.(frank_colnames," ")] = replace.(frank_colnames[contains.(frank_colnames," ")], " " => "")
+
+all_FPs = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP13.csv", DataFrame)
+FP_16 = hcat(all_FPs[:,1:9], all_FPs[:,frank_colnames])
+CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP16.csv", FP_16)
