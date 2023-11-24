@@ -1,28 +1,9 @@
 ## import packages ##
-using ScikitLearn
-using BSON
-using Plots
-using Statistics
-using DataFrames
-using CSV
-using ScikitLearn.CrossValidation: cross_val_score
+using ScikitLearn, BSON, Plots, Statistics, DataFrames, CSV, PyCall, Conda, JLD, LaTeXStrings, LinearAlgebra, Random, StatsBase
 using ScikitLearn.CrossValidation: train_test_split
-using PyCall
-using Conda
-using JLD
-using LaTeXStrings
-using LinearAlgebra
-using Random
-using StatsBase
 @sk_import linear_model: LinearRegression
 cat = pyimport("catboost")
-
-# Try saving models with joblib
 jblb = pyimport("joblib")
-
-# Try without PyCall
-using PyCallJLD
-#Pkg.add(PackageSpec(url="https://github.com/JuliaPy/PyCallJLD.jl", rev="master"))
 
 # CNL
 function Stratified_CNL_model_LM(ESI; allowplots::Bool=false, allowsave::Bool=false, showph::Bool=false, split_size::Float64=0.2)
