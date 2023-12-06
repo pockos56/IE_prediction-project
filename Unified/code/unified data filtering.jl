@@ -63,3 +63,29 @@ missing_SMILES = findall(x -> ismissing(x),from_inchi_data[:,:SMILES_cor])      
 missing_INCHIKEYs = findall(x -> ismissing(x),from_inchi_data[:,:INCHIKEY])            # There are still missing INCHIKEYs
 
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\filtered_data.csv", from_inchi_data)
+
+#Loading data for min, max, mean IE creation
+data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\filtered_data.csv", DataFrame)
+names(data)
+unique(data[:,"INCHIKEY"])          # 1163 INCHIKEYs
+unique(data[:,"SMILES_cor"])        # 1163 SMILES
+
+# This is a list with the most frequent INCHIKEYs
+ordered_inchikeys = names(sort(freqtable(data[:,"INCHIKEY"]),rev=true))[1]
+
+difference(x) = maximum(x) - minimum(x)
+MinMaxDifference = groupby(data, "INCHIKEY") |> x -> combine(x, :unified_IEs => difference => :MinMaxDifference)
+scatter(sort(MinMaxDifference[:,2],rev=true),label=false,xlabel="Unique compounds",ylabel= "Max(logIE)-Min(logIE)")
+
+data.MinMaxDifference .= 0.0
+for i in ProgressBar(1:size(MinMaxDifference,1))
+    data[findall(x->x .== MinMaxDifference[i,1], data[:,"INCHIKEY"]),"MinMaxDifference"] .= MinMaxDifference[i,2]
+end
+scatter(sort(data[:,"MinMaxDifference"],rev=true),label=false,xlabel="Compounds",ylabel= "Max(logIE)-Min(logIE)")
+
+using StatsPlots
+boxplot(data[findall(x->x .== ordered_inchikeys[1], (data[:,"INCHIKEY"])),"unified_IEs"])
+
+p1 = scatter(data[findall(x->x .== ordered_inchikeys[1], (data[:,"INCHIKEY"])),"pH.aq."],data[findall(x->x .== ordered_inchikeys[1], (data[:,"INCHIKEY"])),"unified_IEs"], label = data[findall(x->x .== ordered_inchikeys[1], (data[:,"INCHIKEY"])),"name"][1], xlabel="pH", ylabel="logIE")
+p2 = scatter(data[findall(x->x .== ordered_inchikeys[2], (data[:,"INCHIKEY"])),"pH.aq."],data[findall(x->x .== ordered_inchikeys[2], (data[:,"INCHIKEY"])),"unified_IEs"], label = data[findall(x->x .== ordered_inchikeys[2], (data[:,"INCHIKEY"])),"name"][2], xlabel="pH", ylabel="logIE")
+p3 = scatter(data[findall(x->x .== ordered_inchikeys[3], (data[:,"INCHIKEY"])),"pH.aq."],data[findall(x->x .== ordered_inchikeys[3], (data[:,"INCHIKEY"])),"unified_IEs"], label = data[findall(x->x .== ordered_inchikeys[3], (data[:,"INCHIKEY"])),"name"][3], xlabel="pH", ylabel="logIE")

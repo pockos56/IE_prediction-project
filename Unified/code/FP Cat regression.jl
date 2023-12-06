@@ -151,9 +151,8 @@ function FP_Cat_model_2(;ESI::Int = +1, allowplots=false, allowsave=false, showp
     end
     return reg,importance,z1,z2,z3,z4,z5,z6,z7
 end
-#reg_neg, importance_percentage_neg, importance_neg, accuracy_tr_neg, accuracy_te_neg, y_hat_train_neg, y_hat_test_neg, res_train_neg, res_test_neg = FP_Cat_model_2(-1, allowplots=true, allowsave=false,showph=false);
-#reg_pos, importance_percentage_pos, importance_pos, accuracy_tr_pos, accuracy_te_pos, y_hat_train_pos, y_hat_test_pos, res_train_pos, res_test_pos = FP_Cat_model_2(+1, allowplots=true, allowsave=false,showph=false);
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = FP_Cat_model_2(allowplots=true, allowsave=true,showph=true);
+
+reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = FP_Cat_model_mode(allowplots=true, allowsave=true,showph=true);
 
 # Residuals
 meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)

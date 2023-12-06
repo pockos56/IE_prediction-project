@@ -16,10 +16,6 @@ best_CNLs_pos = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-pro
 #amide_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL datasets\\Amide_CNLs.csv", DataFrame)
 
 # 11-May-2023 Binning and consensus spectra
-#DELETE
-ESI=1
-input = NIST_ESI[1:5,:]
-#
 function create_CNLIE_dataset_NIST_Unified(;ESI=+1, threshold=0.02, HiValSetToZero::Bool=true, chunk_size=10)
     function NIST_df(input)
         function mz_to_fingerprint(str::String, precursor::Float64, ESI::Int; threshold)

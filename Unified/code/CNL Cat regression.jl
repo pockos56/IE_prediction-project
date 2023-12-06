@@ -9,6 +9,7 @@ jblb = pyimport("joblib")
 opt_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_expanded_1.csv", DataFrame),"accuracy_test",rev=true)
 opt_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_expanded_2.csv", DataFrame),"accuracy_test",rev=true)
 opt_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_expanded_3.csv", DataFrame),"accuracy_test",rev=true)
+opt_4 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_expanded_4.csv", DataFrame),"accuracy_test",rev=true)
 
 ## CNL model ##
 function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(; allowplots=false, allowsave=false, showph=false)
@@ -64,11 +65,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(; 
     consensus_algorithm = "replacement"
     min_CNLs = 0
     random_seed = 3
-    tree = 400  
-    learn_rate = 0.05
-    leaf = 4
-    random_strength = 1.2
-    max_depth = 3
+    reg = cat.CatBoostRegressor(n_estimators=600, learning_rate=0.01, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=4, verbose=false)
 
     # Load data files
     data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_after_expansion.csv",DataFrame)
@@ -166,7 +163,9 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(; 
 
     ## Regression ##
     #reg = cat.CatBoostRegressor(n_estimators=tree, learning_rate=learn_rate, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=leaf, verbose=false)
-    reg = cat.CatBoostRegressor(n_estimators=tree, learning_rate=learn_rate, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=leaf, random_strength=random_strength, max_depth=max_depth, verbose=false)
+    #delete
+    reg = cat.CatBoostRegressor(n_estimators=600, learning_rate=0.01, random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=4, verbose=false,per_float_feature_quantization=["1:border_count=1024","2:border_count=1024"])
+    #
     ScikitLearn.fit!(reg, X_train, y_train)
     importance = sort(reg.feature_importances_, rev=true)
     significant_columns = sortperm(reg.feature_importances_, rev=true)[importance .>=1]
@@ -213,38 +212,30 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(; 
         p456 = plot(p4,p5,p6,layout= @layout [a{0.7w} [b; c]])
 
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_1.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_1_exp.png")
         end
         display(p456)
-        if showph == true
-            X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), Matrix(FP[!,["pH.aq.","unified_IEs"]]), test_size=0.20, random_state=state);
-            reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf,verbose=false)
-            ScikitLearn.fit!(reg, X_train, y_train[:,2])
-            z4 = ScikitLearn.predict(reg,X_train)     # y_hat_train
-            z5 = ScikitLearn.predict(reg,X_test)   # y_hat_test  
-            z6 = z4 - y_train[:,2]      # Train set residual
-            z7 = z5 - y_test[:,2]        # Test set residual
-           
-            
-            plot_pH = scatter(y_train[:,2],z4,label="Training set", legend=:best, title = "IEs from CNL", markershape = :circle, marker_z = y_train[:,1] , xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
-            scatter!(y_test[:,2],z5,label="Test set", marker_z = y_test[:,1] , markershape = :rect,color=:jet,dpi=300)
-            plot!([minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))],[minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))], label="1:1 line",width=2,dpi=300)
-            if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_pH_1.png")
-            end
+        p7 = scatter(z4,z6,label="Training set", legend=:best, title = "Regression residuals", color = :magenta, xlabel = "Predicted log(IE)", ylabel = "Residual",dpi=300)
+        scatter!(z5,z7, label="Test set",color=:orange,dpi=300)
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[0,0],label="pred = exp",width=2,dpi=300) # 1:1 line
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
+        p8 = scatter(z4,z6, legend=false, ticks=false, color = :magenta,dpi=300)
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[0,0],width=2) # 1:1 line
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) # +3 sigma
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) #-3 sigma
+        p9 = scatter(z5,z7, label="Test set",color=:orange,legend=false, ticks=false,dpi=300)
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[0,0],width=2,dpi=300) # 1:1 line
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) # +3 sigma
+        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) #-3 sigma
 
-            plot_pH_res = scatter(y_train[:,2],z6,label="Training set", legend=:best, title = "Regression residuals",markershape=:circle, marker_z=y_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
-            scatter!(y_test[:,2],z7, markershape=:rect,marker_z=y_test[:,1], label="Test set",color=:jet,dpi=300)
-            plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[0,0],label="1:1 line",width=2,dpi=300) # 1:1 line
-            plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
-            plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
-    
-            if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_pH_1.png")
-            end
-            display(plot_pH)
-            display(plot_pH_res)
+        p789 = plot(p7,p8,p9,layout= @layout [a{0.7w} [b; c]])
+
+        if allowsave == true
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_1_pred.png")
         end
+        display(p789)
+
     end
 
     return reg,importance,z1,z2,z3,z4,z5,z6,z7
