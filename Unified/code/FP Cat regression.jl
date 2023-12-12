@@ -1,7 +1,6 @@
 ## import packages ##
 using ScikitLearn, BSON, Plots, Statistics, DataFrames, CSV, PyCall, Conda,LaTeXStrings, LinearAlgebra, Random
 using ScikitLearn.CrossValidation: train_test_split
-using CatBoost
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
 

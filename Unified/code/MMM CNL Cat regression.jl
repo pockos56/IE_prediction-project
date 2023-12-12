@@ -1,19 +1,26 @@
 ## import packages ##
-using ScikitLearn, Plots, Statistics, DataFrames, CSV, PyCall, Conda, LaTeXStrings, LinearAlgebra, Random
+using ScikitLearn, Plots, Statistics, DataFrames, CSV, PyCall, Conda, LaTeXStrings, LinearAlgebra, Random, StatsBase
 using ScikitLearn.CrossValidation: train_test_split
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
 #Loading optimal hyperparameters for CNL model
-optim_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_1.csv", DataFrame),"accuracy_test",rev=true)
-optim_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_1.csv", DataFrame),"accuracy_test",rev=true)
-optim_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_1.csv", DataFrame),"accuracy_test",rev=true)
-optim = reduce(vcat,[DataFrame(optim_min[1,:]), DataFrame(optim_mean[1,:]), DataFrame(optim_max[1,:])])
+optim_min_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_1.csv", DataFrame),"accuracy_test",rev=true)
+optim_min_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_2.csv", DataFrame),"accuracy_test",rev=true)
+optim_min_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_3.csv", DataFrame),"accuracy_test",rev=true)
 
+optim_mean_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_1.csv", DataFrame),"accuracy_test",rev=true)
+optim_mean_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_2.csv", DataFrame),"accuracy_test",rev=true)
+optim_mean_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_3.csv", DataFrame),"accuracy_test",rev=true)
 
-mode = "mean"
+optim_max_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_1.csv", DataFrame),"accuracy_test",rev=true)
+optim_max_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_2.csv", DataFrame),"accuracy_test",rev=true)
+optim_max_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_3.csv", DataFrame),"accuracy_test",rev=true)
+
+optim_whole = reduce(vcat,[DataFrame(optim_min_3[1,:]), DataFrame(optim_mean_3[1,:]), DataFrame(optim_max_3[1,:])])
+data_mode="max"
 ## CNL model ##
-function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(mode; allowplots=false, allowsave=false, showph=false)
+function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_mode; allowplots=false, allowsave=false)
     function split_classes(classes; random_state::Int=random_seed, split_size=0.2)
         FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Internal_pubchem_FPs_dict.csv", DataFrame)
         indices = [Int(findfirst(x->x .== classes[i], FP[:,:INCHIKEY])) for i in 1:length(classes)]
@@ -38,23 +45,22 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(mo
         end  
         return inchi_train, inchi_test
     end
-
     # Load data files
-    if mode == "min"
-        optim = optim_min
-    elseif mode == "mean"
-        optim = optim_mean
-    elseif mode == "max"
-        optim = optim_max
+    if data_mode == "min"
+        optim = optim_whole[1,:]
+    elseif data_mode == "mean"
+        optim = optim_whole[2,:]
+    elseif data_mode == "max"
+        optim = optim_whole[3,:]
     else error("Please set mode to min, mean, or max")
     end
 
-    data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_$mode.csv",DataFrame)
-    consensus_threshold = optim[1,"consensus_thres"]
-    consensus_algorithm = optim[1,"consensus_alg"]
-    min_CNLs = optim[1,"min_CNLs"]
-    random_seed = optim[1,"random_seed"]
-    reg = cat.CatBoostRegressor(n_estimators=optim[1,"tree"], learning_rate=optim[1,"learn_rate"], random_seed=random_seed, grow_policy=:Lossguide, depth=optim[1,"depth"], verbose=false)
+    data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_$data_mode.csv",DataFrame)
+    consensus_threshold = optim["consensus_thres"]
+    consensus_algorithm = optim["consensus_alg"]
+    min_CNLs = optim["min_CNLs"]
+    random_seed = optim["random_seed"]
+    reg = cat.CatBoostRegressor(n_estimators=optim["tree"], learning_rate=optim["learn_rate"], min_data_in_leaf=optim["leaves"],random_seed=random_seed, grow_policy=:Lossguide, depth=optim["depth"], subsample=optim["subsample"], colsample_bylevel=optim["colsample_bylevel"],verbose=false)
 
     # Scaling
     data_whole_raw[:,"MONOISOMASS"] .= (data_whole_raw[:,"MONOISOMASS"]) ./ 1000
@@ -153,16 +159,19 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(mo
     importance = sort(reg.feature_importances_, rev=true)
     significant_columns = sortperm(reg.feature_importances_, rev=true)[importance .>=1]
 
-    z1 = names(variables_df[:,:])[significant_columns]   # Most important descriptors
+    z1 = names(variables_df[:,:])[significant_columns]   # Most important variables
     z2 = ScikitLearn.score(reg, X_train, y_train)   # Train set accuracy
     z3 = ScikitLearn.score(reg, X_test, y_test)      # Test set accuracy
     z4 = ScikitLearn.predict(reg, X_train)     # y_hat_train
     z5 = ScikitLearn.predict(reg, X_test)   # y_hat_test
     z6 = z4 - y_train      # Train set residual
     z7 = z5 - y_test        # Test set residual
+    y_hat_df_train = DataFrame("INCHIKEY"=>data_train[:,"INCHIKEY"], "pH_aq"=>14*data_train[:,"pH_aq"], "IE"=>data_train[:,"logIE"], "IE_hat_CNL"=>ScikitLearn.predict(reg, X_train), "class_CNL"=>"train")
+    y_hat_df_test = DataFrame("INCHIKEY"=>data_whole_filtered[test_set_indices,"INCHIKEY"], "pH_aq"=>14*data_whole_filtered[test_set_indices,"pH_aq"], "IE"=>data_whole_filtered[test_set_indices,"logIE"], "IE_hat_CNL"=>ScikitLearn.predict(reg, X_test), "class_CNL"=>"test")
+
 
     if allowplots == true
-        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "$mode IEs from CNL", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
+        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "$data_mode IEs from CNL", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
         scatter!(y_test,z5,label="Test set", color=:orange,dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2,dpi=300)
         annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
@@ -175,7 +184,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(mo
         p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
         display(p123)
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_$(mode)_1.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_$(data_mode)_1.png")
         end
 
         p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -195,36 +204,20 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(mo
         p456 = plot(p4,p5,p6,layout= @layout [a{0.7w} [b; c]])
 
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_$(mode)_1.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_$(data_mode)_1.png")
         end
         display(p456)
-        p7 = scatter(z4,z6,label="Training set", legend=:best, title = "Regression residuals", color = :magenta, xlabel = "Predicted log(IE)", ylabel = "Residual",dpi=300)
-        scatter!(z5,z7, label="Test set",color=:orange,dpi=300)
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[0,0],label="pred = exp",width=2,dpi=300) # 1:1 line
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
-        p8 = scatter(z4,z6, legend=false, ticks=false, color = :magenta,dpi=300)
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[0,0],width=2) # 1:1 line
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) # +3 sigma
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) #-3 sigma
-        p9 = scatter(z5,z7, label="Test set",color=:orange,legend=false, ticks=false,dpi=300)
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[0,0],width=2,dpi=300) # 1:1 line
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) # +3 sigma
-        plot!([minimum(vcat(z5,z4)),maximum(vcat(z5,z4))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],linecolor ="grey",width=2,dpi=300) #-3 sigma
-
-        p789 = plot(p7,p8,p9,layout= @layout [a{0.7w} [b; c]])
-
-        if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_1_pred.png")
-        end
-        display(p789)
-
     end
-
+    if allowsave == true
+        y_hat_df = append!(y_hat_df_train,y_hat_df_test)
+        CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_CNL_$data_mode.csv", y_hat_df)
+    end
     return reg,importance,z1,z2,z3,z4,z5,z6,z7
 end
 
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_expanded(allowplots=true, allowsave=false,showph=false);
+reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("min",allowplots=true, allowsave=true);
+reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("mean",allowplots=true, allowsave=true);
+reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("max",allowplots=true, allowsave=true);
 
 # Residuals
 meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)

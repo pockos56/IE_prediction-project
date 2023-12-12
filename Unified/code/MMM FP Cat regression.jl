@@ -1,7 +1,6 @@
 ## import packages ##
 using ScikitLearn, Plots, Statistics, DataFrames, CSV, PyCall, Conda, LaTeXStrings, LinearAlgebra, Random
 using ScikitLearn.CrossValidation: train_test_split
-#using CatBoost
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
@@ -33,7 +32,6 @@ best_parameters_mean = hcat(DataFrame(optim_mean[findfirst(x->x.== best_fp, opti
 best_parameters_max = hcat(DataFrame(optim_max[findfirst(x->x.== best_fp, optim_max[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 3))
 best_parameters_MMM = vcat(vcat(best_parameters_min,best_parameters_mean),best_parameters_max)
 
-
 function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, showph=false)
     if mode == "mean"
         n_trees = best_parameters_mean[1,"trees"]
@@ -61,7 +59,6 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_$mode.csv", DataFrame)
     FP1 = hcat(FP[!,"pH.aq."],FP[!,10:end])
     
-    # New way
     function split_classes(FP; random_state::Int, split_size::Float64=0.2)
         classes = unique(FP[:,:INCHIKEY])
         indices = Int.(zeros(length(classes)))
@@ -104,6 +101,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     X_test = Matrix(FP1[test_set_indices,:])
     y_train = FP[train_set_indices,:unified_IEs]
     y_test = FP[test_set_indices,:unified_IEs]
+    y_hat_df = DataFrame("INCHIKEY" => FP[:,"INCHIKEY"], "pH_aq" => FP[:,"pH.aq."], "IE" => FP[:,"unified_IEs"], "IE_hat_fp" => -Inf*ones(length(FP[:,"INCHIKEY"])), "class_fp" => "tbd")
 
     # Modeling
     ScikitLearn.fit!(reg, X_train, y_train)
@@ -111,15 +109,19 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     importance = sort(reg.feature_importances_, rev=true)
     importance_index = sortperm(reg.feature_importances_, rev=true)
     z1 = names(FP1[:,:])[importance_index[importance .>=1]]   # Most important descriptors
-    z2 = score(reg, X_train, y_train)   # Train set accuracy
-    z3 = score(reg, X_test, y_test)      # Test set accuracy
+    z2 = ScikitLearn.score(reg, X_train, y_train)   # Train set accuracy
+    z3 = ScikitLearn.score(reg, X_test, y_test)      # Test set accuracy
     z4 = ScikitLearn.predict(reg,X_train)     # y_hat_train
     z5 = ScikitLearn.predict(reg,X_test)   # y_hat_test
     #z6 = ((10 .^ z4) - (10 .^ y_train)) ./ (10 .^ z4)    # Train set residual
     #z7 = ((10 .^ z5) - (10 .^ y_test)) ./ (10 .^ z5)        # Test set residual
     z6 = z4 .- y_train    # Train set residual
     z7 = z5 .- y_test     # Test set residual
-    
+    y_hat_df[train_set_indices, "IE_hat_fp"] = ScikitLearn.predict(reg,X_train)
+    y_hat_df[test_set_indices, "IE_hat_fp"] = ScikitLearn.predict(reg,X_test)
+    y_hat_df[train_set_indices, "class_fp"] .= "train"
+    y_hat_df[test_set_indices, "class_fp"] .= "test"
+
     if allowplots == true
         p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "$mode IEs from FP", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
         scatter!(y_test,z5,label="Test set", color=:orange,dpi=300)
@@ -191,13 +193,15 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     if allowsave == true
         # Saving the models (joblib)
         jblb.dump(reg, "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\FP_reg_$mode.joblib")
+        # Saving the models (joblib)
+        CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_FP_$mode.csv", y_hat_df)
     end
-    return reg,importance,z1,z2,z3,z4,z5,z6,z7
+    return reg,importance,z1,z2,z3,z4,z5,z6,z7, y_hat_df
 end
 
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = FP_Cat_model_mode("min", allowplots=true, allowsave=true,showph=false);
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = FP_Cat_model_mode("mean", allowplots=true, allowsave=true,showph=false);
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test = FP_Cat_model_mode("max", allowplots=true, allowsave=true,showph=false);
+reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_min = FP_Cat_model_mode("min", allowplots=true, allowsave=true,showph=false);
+reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_mean = FP_Cat_model_mode("mean", allowplots=true, allowsave=true,showph=false);
+reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_max = FP_Cat_model_mode("max", allowplots=true, allowsave=true,showph=false);
 
 # Residuals
 meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)
