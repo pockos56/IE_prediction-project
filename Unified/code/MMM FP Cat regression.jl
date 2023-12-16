@@ -27,33 +27,43 @@ MMM = hcat(hcat(highest_accuracies_mean, highest_accuracies_min, makeunique=true
 average_MMM = DataFrame("average_R2" => (mean(hcat(hcat(MMM[:,2],MMM[:,4]),MMM[:,6]),dims=2))[:])
 best_fp = argmax(Matrix(average_MMM)[:])        # The fingerprint type with the highest average test set score
 
-best_parameters_min = hcat(DataFrame(optim_min[findfirst(x->x.== best_fp, optim_min[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 6))
-best_parameters_mean = hcat(DataFrame(optim_mean[findfirst(x->x.== best_fp, optim_mean[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 3))
-best_parameters_max = hcat(DataFrame(optim_max[findfirst(x->x.== best_fp, optim_max[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 3))
+best_parameters_min_obsolete = hcat(DataFrame(optim_min[findfirst(x->x.== best_fp, optim_min[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 6))
+best_parameters_mean_obsolete = hcat(DataFrame(optim_mean[findfirst(x->x.== best_fp, optim_mean[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 3))
+best_parameters_max_obsolete = hcat(DataFrame(optim_max[findfirst(x->x.== best_fp, optim_max[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 3))
 best_parameters_MMM = vcat(vcat(best_parameters_min,best_parameters_mean),best_parameters_max)
+# With collimit and featurelimit
+best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_6(2).csv", DataFrame),"accuracy_test", rev=true)
+best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_6(2).csv", DataFrame),"accuracy_test", rev=true)
+best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_6(2).csv", DataFrame),"accuracy_test", rev=true)
 
 function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, showph=false)
-    if mode == "mean"
-        n_trees = best_parameters_mean[1,"trees"]
-        learn_rate = best_parameters_mean[1,"learn_rate"]
-        state = best_parameters_mean[1,"state"]
-        min_samples_per_leaf = best_parameters_mean[1,"leaves"]
-        l2_leaf_reg = best_parameters_mean[1,"l2_leaf_reg"]
-        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf,l2_leaf_reg=l2_leaf_reg, verbose=false)
-    elseif mode == "min"
+    if mode == "min"
+        min_samples_per_leaf = best_parameters_min[1,"leaves"]
         n_trees = best_parameters_min[1,"trees"]
         learn_rate = best_parameters_min[1,"learn_rate"]
         state = best_parameters_min[1,"state"]
-        min_samples_per_leaf = best_parameters_min[1,"leaves"]
-        l2_leaf_reg = best_parameters_min[1,"l2_leaf_reg"]
-        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, l2_leaf_reg=l2_leaf_reg, verbose=false)
+        depth = best_parameters_min[1,"depth"]
+        subsample = best_parameters_min[1,"subsample"]
+        colsample_bylevel = best_parameters_min[1,"colsample_bylevel"]
+        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, depth=depth,colsample_bylevel=colsample_bylevel, subsample=subsample, verbose=false)
+    elseif mode == "mean"
+        min_samples_per_leaf = best_parameters_mean[1,"leaves"]
+        n_trees = best_parameters_mean[1,"trees"]
+        learn_rate = best_parameters_mean[1,"learn_rate"]
+        state = best_parameters_mean[1,"state"]
+        depth = best_parameters_mean[1,"depth"]
+        subsample = best_parameters_mean[1,"subsample"]
+        colsample_bylevel = best_parameters_mean[1,"colsample_bylevel"]
+        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, depth=depth,colsample_bylevel=colsample_bylevel, subsample=subsample, verbose=false)
     elseif mode == "max"
+        min_samples_per_leaf = best_parameters_max[1,"leaves"]
         n_trees = best_parameters_max[1,"trees"]
         learn_rate = best_parameters_max[1,"learn_rate"]
         state = best_parameters_max[1,"state"]
-        min_samples_per_leaf = best_parameters_max[1,"leaves"]
-        l2_leaf_reg = best_parameters_max[1,"l2_leaf_reg"]
-        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, l2_leaf_reg=l2_leaf_reg, verbose=false)
+        depth = best_parameters_max[1,"depth"]
+        subsample = best_parameters_max[1,"subsample"]
+        colsample_bylevel = best_parameters_max[1,"colsample_bylevel"]
+        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, depth=depth,colsample_bylevel=colsample_bylevel, subsample=subsample, verbose=false)
     else error("Set mode to min, max, or mean")
     end
     FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_$mode.csv", DataFrame)
@@ -193,7 +203,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     if allowsave == true
         # Saving the models (joblib)
         jblb.dump(reg, "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\FP_reg_$mode.joblib")
-        # Saving the models (joblib)
+        # Saving the predicted IEs
         CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_FP_$mode.csv", y_hat_df)
     end
     return reg,importance,z1,z2,z3,z4,z5,z6,z7, y_hat_df
@@ -218,9 +228,3 @@ RMSE_train_neg = round(sqrt(mean(res_train_neg.^2)), digits=3)
 RMSE_test_neg = round(sqrt(mean(res_test_neg.^2)), digits=3)
 RMSE_train_pos = round(sqrt(mean(res_train_pos.^2)), digits=3)
 RMSE_test_pos = round(sqrt(mean(res_test_pos.^2)), digits=3)
-
-# Saving the models (joblib)
-jblb.dump(reg, "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\FP_reg_$mode.joblib")
-
-# Saving the models (BSON)
-BSON.@save("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\FP_reg.bson", reg)
