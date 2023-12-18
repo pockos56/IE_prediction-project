@@ -209,6 +209,10 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
         display(p456)
     end
     if allowsave == true
+        # Saving the models (joblib)
+        jblb.dump(reg, "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\CNL_reg_$data_mode.joblib")
+
+        # Save the predicted IEs
         y_hat_df = append!(y_hat_df_train,y_hat_df_test)
         CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_CNL_$data_mode.csv", y_hat_df)
     end

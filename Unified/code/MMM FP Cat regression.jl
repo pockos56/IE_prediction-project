@@ -123,8 +123,6 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     z3 = ScikitLearn.score(reg, X_test, y_test)      # Test set accuracy
     z4 = ScikitLearn.predict(reg,X_train)     # y_hat_train
     z5 = ScikitLearn.predict(reg,X_test)   # y_hat_test
-    #z6 = ((10 .^ z4) - (10 .^ y_train)) ./ (10 .^ z4)    # Train set residual
-    #z7 = ((10 .^ z5) - (10 .^ y_test)) ./ (10 .^ z5)        # Test set residual
     z6 = z4 .- y_train    # Train set residual
     z7 = z5 .- y_test     # Test set residual
     y_hat_df[train_set_indices, "IE_hat_fp"] = ScikitLearn.predict(reg,X_train)
