@@ -8,17 +8,29 @@ jblb = pyimport("joblib")
 optim_min_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_1.csv", DataFrame),"accuracy_test",rev=true)
 optim_min_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_2.csv", DataFrame),"accuracy_test",rev=true)
 optim_min_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_3.csv", DataFrame),"accuracy_test",rev=true)
+optim_min_4 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_4.csv", DataFrame),"accuracy_test",rev=true)
+optim_min_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_5.csv", DataFrame),"accuracy_test",rev=true)
+optim_min_6 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_6.csv", DataFrame),"accuracy_test",rev=true)
 
 optim_mean_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_1.csv", DataFrame),"accuracy_test",rev=true)
 optim_mean_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_2.csv", DataFrame),"accuracy_test",rev=true)
 optim_mean_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_3.csv", DataFrame),"accuracy_test",rev=true)
+optim_mean_4 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_4.csv", DataFrame),"accuracy_test",rev=true)
+optim_mean_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_5.csv", DataFrame),"accuracy_test",rev=true)
+optim_mean_6 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_6.csv", DataFrame),"accuracy_test",rev=true)
 
 optim_max_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_1.csv", DataFrame),"accuracy_test",rev=true)
 optim_max_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_2.csv", DataFrame),"accuracy_test",rev=true)
 optim_max_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_3.csv", DataFrame),"accuracy_test",rev=true)
+optim_max_4 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_4.csv", DataFrame),"accuracy_test",rev=true)
+optim_max_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_5.csv", DataFrame),"accuracy_test",rev=true)
+optim_max_6 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_6.csv", DataFrame),"accuracy_test",rev=true)
 
 optim_whole = reduce(vcat,[DataFrame(optim_min_3[1,:]), DataFrame(optim_mean_3[1,:]), DataFrame(optim_max_3[1,:])])
-data_mode="max"
+optim_whole = reduce(vcat,[DataFrame(optim_min_4[1,:]), DataFrame(optim_mean_4[1,:]), DataFrame(optim_max_4[1,:])])
+optim_whole = reduce(vcat,[DataFrame(optim_min_5[1,:]), DataFrame(optim_mean_5[1,:]), DataFrame(optim_max_5[1,:])])
+#optim_whole = reduce(vcat,[DataFrame(optim_min_6[1,:]), DataFrame(optim_mean_6[1,:]), DataFrame(optim_max_6[1,:])])
+
 ## CNL model ##
 function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_mode; allowplots=false, allowsave=false)
     function split_classes(classes; random_state::Int=random_seed, split_size=0.2)
@@ -56,11 +68,15 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     end
 
     data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_$data_mode.csv",DataFrame)
+    # Filter validation set compounds
+    validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Validation_set_inchikeys.csv", DataFrame)
+    deleteat!(data_whole_raw, findall(x -> x in validation_inchikeys.INCHIKEY, data_whole_raw.INCHIKEY))
+    # Load optimized hyperparameters
     consensus_threshold = optim["consensus_thres"]
     consensus_algorithm = optim["consensus_alg"]
     min_CNLs = optim["min_CNLs"]
     random_seed = optim["random_seed"]
-    reg = cat.CatBoostRegressor(n_estimators=optim["tree"], learning_rate=optim["learn_rate"], min_data_in_leaf=optim["leaves"],random_seed=random_seed, grow_policy=:Lossguide, depth=optim["depth"], subsample=optim["subsample"], colsample_bylevel=optim["colsample_bylevel"],verbose=false)
+    reg = cat.CatBoostRegressor(n_estimators=optim["tree"], learning_rate=optim["learn_rate"], random_seed=random_seed, grow_policy=:Lossguide, min_data_in_leaf=optim["leaves"], depth=optim["depth"], subsample=optim["subsample"], colsample_bylevel=optim["colsample_bylevel"], verbose=false)
 
     # Scaling
     data_whole_raw[:,"MONOISOMASS"] .= (data_whole_raw[:,"MONOISOMASS"]) ./ 1000
