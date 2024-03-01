@@ -72,11 +72,13 @@ for i in ProgressBar(1:size(data,1))
     data[i,"logIE_from_cnl_max"] = logIE_from_CNLs(mz_vec, data[i,"precursor_ion"], data[i,"pH_aq"], "max")
 end
 # Results
-results = data[:,Not(:inchi,:SMILES,:ion_mode,:pH_aq,:measmass,:precursor_ion)]
+results = data[:,Not(:inchi,:ion_mode,:pH_aq,:measmass,:precursor_ion)]
+results = data[:,Not(:inchi)]
+
 unique(results[:,"name"])
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Predicted_IEs_validation_set.csv", data)
 # Plots
 using Plots
 mode = "mean"
 histogram(data[:,"logIE_from_inchi_$mode"], bins=20, alpha=0.7, title="Validation set - $mode", label="Structure-based prediction", xlabel="logIE",legend=:topleft, xlims=(0.8,5))
-histogram!(data[:,"logIE_from_cnl_$mode"], bins=10, alpha=0.7,label="MS-based prediction")
+histogram!(data[:,"logIE_from_cnl_$mode"], bins=15, alpha=0.7,label="MS-based prediction")

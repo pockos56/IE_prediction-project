@@ -1,6 +1,6 @@
 using CSV, DataFrames, Plots, PyCall, Conda, ProgressBars, DataStructures, FreqTables
 
-# Create a shorter (filtered) Internal database with only the relevant compounds
+## Create a shorter (filtered) Internal database with only the relevant compounds
 data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\filtered_data.csv", DataFrame)
 Internal_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_2022-11-17.csv", DataFrame)
 Internal_filtered = Internal_raw[findall(x -> x in unique(data[:,"INCHIKEY"]), Internal_raw[:,:INCHIKEY]),:]

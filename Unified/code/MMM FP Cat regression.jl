@@ -1,10 +1,11 @@
 ## import packages ##
-using ScikitLearn, Plots, Statistics, DataFrames, CSV, PyCall, Conda, LaTeXStrings, LinearAlgebra, Random
+using ScikitLearn, Plots, Statistics, DataFrames, CSV, PyCall, Conda, LaTeXStrings, LinearAlgebra, Random, ProgressBars
 using ScikitLearn.CrossValidation: train_test_split
+pcp = pyimport("pubchempy")
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
-#Loading optimal hyperparameters for FP model
+#=Loading optimal hyperparameters for FP model
 optim_min = sort(vcat(vcat(vcat(
     CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_1_16.csv", DataFrame),
     CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_13.csv", DataFrame)),
@@ -35,7 +36,7 @@ best_parameters_MMM = vcat(vcat(best_parameters_min,best_parameters_mean),best_p
 #best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_6(2).csv", DataFrame),"accuracy_test", rev=true)
 #best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_6(2).csv", DataFrame),"accuracy_test", rev=true)
 #best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_6(2).csv", DataFrame),"accuracy_test", rev=true)
-
+=#
 best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_6(3).csv", DataFrame),"accuracy_test", rev=true)
 best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_6(3).csv", DataFrame),"accuracy_test", rev=true)
 best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_6(3).csv", DataFrame),"accuracy_test", rev=true)
@@ -111,7 +112,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     test_set_indices = findall(x -> x in test_set_inchikeys, FP[:,:INCHIKEY])
     train_set_indices = findall(x -> x in train_set_inchikeys, FP[:,:INCHIKEY])
 
-    if allowsave == true
+    if allowsave
         training_set_to_save = FP[train_set_indices,:]
         unique(FP[train_set_indices,:INCHIKEY])
         CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_model_training set_$mode.csv", training_set_to_save)
@@ -139,7 +140,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     y_hat_df[train_set_indices, "class_fp"] .= "train"
     y_hat_df[test_set_indices, "class_fp"] .= "test"
 
-    if allowplots == true
+    if allowplots
         p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "$mode IEs from FP", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
         scatter!(y_test,z5,label="Test set", color=:orange,dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2,dpi=300)
@@ -177,27 +178,23 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
         end
         display(p456)
         if showph == true
-            X_train, X_test, y_train, y_test = train_test_split(Matrix(FP1), Matrix(FP[!,["pH.aq.","unified_IEs"]]), test_size=0.20, random_state=state);
-            reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf,verbose=false)
-            ScikitLearn.fit!(reg, X_train, y_train[:,2])
-            z4 = ScikitLearn.predict(reg,X_train)     # y_hat_train
-            z5 = ScikitLearn.predict(reg,X_test)   # y_hat_test  
-            z6 = z4 - y_train[:,2]      # Train set residual
-            z7 = z5 - y_test[:,2]        # Test set residual
-           
-            
-            plot_pH = scatter(y_train[:,2],z4,label="Training set", legend=:best, title = "$mode IEs from FP", markershape = :circle, marker_z = y_train[:,1] , xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
-            scatter!(y_test[:,2],z5,label="Test set", marker_z = y_test[:,1] , markershape = :rect,color=:jet,dpi=300)
-            plot!([minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))],[minimum(vcat(y_train[:,2],y_test[:,2])),maximum(vcat(y_train[:,2],y_test[:,2]))], label="1:1 line",width=2,dpi=300)
+            # Regression pH plot
+            train_ind = findall(x->x .== "train", y_hat_df[:,"class_fp"])        
+            test_ind = findall(x->x .== "test", y_hat_df[:,"class_fp"])        
+            plot_pH = scatter(y_hat_df[train_ind,"IE"], y_hat_df[train_ind,"IE_hat_fp"],label="Training set", legend=:best, title = "$mode IEs from FP", markershape = :circle, marker_z = y_hat_df[train_ind,"pH_aq"], xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
+            scatter!(y_hat_df[test_ind,"IE"], y_hat_df[test_ind,"IE_hat_fp"],label="Test set", marker_z = y_hat_df[test_ind,"pH_aq"], markershape = :rect,color=:jet,dpi=300)
+            plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])], label="1:1 line",width=2,dpi=300)
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Regression_pH_FP6_$mode.png")
+                #savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Regression_pH_FP6_$mode.png")
             end
+            # Residual pH plot
+            residuals_vec = y_hat_df[:,"IE_hat_fp"] - y_hat_df[:,"IE"]
 
-            plot_pH_res = scatter(y_train[:,2],z6,label="Training set", legend=:best, title = "Regression residuals",markershape=:circle, marker_z=y_train[:,1],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
-            scatter!(y_test[:,2],z7, markershape=:rect,marker_z=y_test[:,1], label="Test set",color=:jet,dpi=300)
-            plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[0,0],label="1:1 line",width=2,dpi=300) # 1:1 line
-            plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
-            plot!([minimum(vcat(y_test[:,2],y_train[:,2])),maximum(vcat(y_test[:,2],y_train[:,2]))],[-3*std(vcat(z6,z7)),-3*std(vcat(z6,z7))],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
+            plot_pH_res = scatter(y_hat_df[train_ind,"IE"],residuals_vec[train_ind],label="Training set", legend=:best, title = "Residuals - $mode FP model",markershape=:circle, marker_z=y_hat_df[train_ind,"pH_aq"],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
+            scatter!(y_hat_df[test_ind,"IE"],residuals_vec[test_ind], markershape=:rect,marker_z=y_hat_df[test_ind,"pH_aq"], label="Test set",color=:jet,dpi=300)
+            plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[0,0],label="1:1 line",width=2,dpi=300) # 1:1 line
+            plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[3*std(residuals_vec),3*std(residuals_vec)],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
+            plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[-3*std(residuals_vec),-3*std(residuals_vec)],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
     
             if allowsave == true
                 savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Residuals_pH_FP6_$mode.png")
@@ -216,22 +213,76 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     return reg,importance,z1,z2,z3,z4,z5,z6,z7, y_hat_df
 end
 
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_min = FP_Cat_model_mode("min", allowplots=true, allowsave=true,showph=false);
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_mean = FP_Cat_model_mode("mean", allowplots=true, allowsave=true,showph=false);
-reg, importance_percentage, importance, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_max = FP_Cat_model_mode("max", allowplots=true, allowsave=true,showph=false);
+reg, importance_percentage_min, importance_min, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_min = FP_Cat_model_mode("min", allowplots=true, allowsave=true,showph=true);
+reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_mean = FP_Cat_model_mode("mean", allowplots=true, allowsave=true,showph=true);
+reg, importance_percentage_max, importance_max, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_max = FP_Cat_model_mode("max", allowplots=true, allowsave=true,showph=true);
 
 # Residuals
-meanRes_train_neg = round(10^(mean(abs.(sort(res_train_neg)))), digits=3)
-meanRes_test_neg = round(10^(mean(abs.(sort(res_test_neg)))), digits=3)
-meanRes_train_pos = round(10^(mean(abs.(sort(res_train_pos)))), digits=3)
-meanRes_test_pos =round(10^(mean(abs.(sort(res_test_pos)))), digits=3)
+meanRes_train = round((mean(abs.(res_train))), digits=2)
+meanRes_test = round((mean(abs.(res_test))), digits=2)
+RMSE_train = round(sqrt(mean(res_train.^2)), digits=2)
+RMSE_test = round(sqrt(mean(res_test.^2)), digits=2)
 #
-meanRes_train_neg = round((mean(abs.(res_train_neg))), digits=3)
-meanRes_test_neg = round((mean(abs.(res_test_neg))), digits=3)
-meanRes_train_pos = round((mean(abs.(res_train_pos))), digits=3)
-meanRes_test_pos = round((mean(abs.(res_test_pos))), digits=3)
+# Importance tables
+importance_min_df  = DataFrame(import_col_min=importance_min, importance_min=round.(importance_percentage_min[1:length(importance_min)],digits=1))[1:10,:]
+importance_mean_df  = DataFrame(import_col_mean=importance_mean, importance_mean=round.(importance_percentage_mean[1:length(importance_mean)],digits=1))[1:10,:]
+importance_max_df  = DataFrame(import_col_max=importance_max, importance_max=round.(importance_percentage_max[1:length(importance_max)],digits=1))[1:10,:]
 #
-RMSE_train_neg = round(sqrt(mean(res_train_neg.^2)), digits=3)
-RMSE_test_neg = round(sqrt(mean(res_test_neg.^2)), digits=3)
-RMSE_train_pos = round(sqrt(mean(res_train_pos.^2)), digits=3)
-RMSE_test_pos = round(sqrt(mean(res_test_pos.^2)), digits=3)
+# Which compounds show the highest prediction errors?
+y_hat_df_mean.residual = abs.(y_hat_df_mean.IE - y_hat_df_mean.IE_hat_fp)
+y_hat_df_mean = sort(y_hat_df_mean, "residual",rev=true)
+
+# Is there a correlation between prediction errors and MW?
+y_hat_df_mean.MW .= 0.0
+for i in ProgressBar(1:size(y_hat_df_mean,1))
+    try
+        y_hat_df_mean.MW[i] = parse(Float64, pcp.get_compounds(y_hat_df_mean[i,"INCHIKEY"], "inchikey")[1].molecular_weight)
+    catch
+        continue
+    end
+end
+y_hat_df_mean.MW = MW
+scatter(y_hat_df_mean.residual, y_hat_df_mean.MW, ylabel="Residual (in log units)", xlabel="Molecular weight")
+cor(y_hat_df_mean.MW, y_hat_df_mean.residual)
+# i =1
+# Is there a correlation between prediction errors and molecular complexity?
+y_hat_df_mean.complexity .= 0.0
+for i in ProgressBar(1:size(y_hat_df_mean,1))
+    try
+        y_hat_df_mean.complexity[i] = convert(Float64, pcp.get_compounds(y_hat_df_mean[i,"INCHIKEY"], "inchikey")[1].complexity)
+    catch
+        continue
+    end
+end
+complexity_mean = mean(y_hat_df_mean.complexity)
+complexity_median = median(y_hat_df_mean.complexity)
+complexity_of_highest_error_comps_in_CNL_mean = [203, 501, 132, 92.9, 105, 303, 577, 403, 371, 97]
+
+using StatsPlots
+boxplot(y_hat_df_mean.complexity)
+scatter!(complexity_of_highest_error_comps_in_CNL_mean)
+violin!(complexity_of_highest_error_comps_in_CNL_mean)
+#
+# Is there a correlation between prediction errors and H donor count?
+y_hat_df_mean.H_donor .= 0.0
+y_hat_df_mean.H_donor[1] = 
+(pcp.get_compounds(y_hat_df_mean[1,"INCHIKEY"], "inchikey")[1]).listkey
+y_hat_df_mean.H_donor[1] = (pcp.get_compounds(y_hat_df_mean[1,"INCHIKEY"], "inchikey")[1]).Hbondacceptorcount
+pcp.get_compounds(y_hat_df_mean[1,"INCHIKEY"], "inchikey")[1].record
+for i in ProgressBar(1:size(y_hat_df_mean,1))
+    try
+        y_hat_df_mean.complexity[i] = convert(Float64, pcp.get_compounds(y_hat_df_mean[i,"INCHIKEY"], "inchikey")[1].complexity)
+    catch
+        continue
+    end
+end
+complexity_mean = mean(y_hat_df_mean.complexity)
+complexity_median = median(y_hat_df_mean.complexity)
+complexity_of_highest_error_comps_in_CNL_mean = [203, 501, 132, 92.9, 105, 303, 577, 403, 371, 97]
+
+using StatsPlots
+boxplot(y_hat_df_mean.complexity)
+scatter!(complexity_of_highest_error_comps_in_CNL_mean)
+violin!(complexity_of_highest_error_comps_in_CNL_mean)
+#
+
