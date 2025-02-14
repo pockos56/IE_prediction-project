@@ -2,7 +2,7 @@ using CSV, DataFrames, ProgressBars, IE_prediction, PyCall
 pcp = pyimport("pubchempy")
 pd = pyimport("padelpy")
 
-#sing Pkg
+#using Pkg
 #Pkg.add(url="https://github.com/pockos56/IE_prediction.jl")
 # Load files
 harry = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\data_for_Alex_from_Harry.csv",DataFrame)
