@@ -172,9 +172,19 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
 
     ## Regression ##
     ScikitLearn.fit!(reg, X_train, y_train)
+   
+    # Feature importance
     importance = sort(reg.feature_importances_, rev=true)
     significant_columns = sortperm(reg.feature_importances_, rev=true)[importance .>=1]
+    
+    #=
+    feature_names = names(hcat(data_train[:,"pH_aq"],data_train[:,8:end]))
+    importance = reg.feature_importances_
+    importance_ = reg.get_feature_importance(type="Interaction", prettified=true)
+    [feature_names[i] for i in (1 .+ parse.(Int,collect(importance_["Feature Id"])))]
+    =#
 
+    # Results
     z1 = names(variables_df[:,:])[significant_columns]   # Most important variables
     z2 = ScikitLearn.score(reg, X_train, y_train)   # Train set accuracy
     z3 = ScikitLearn.score(reg, X_test, y_test)      # Test set accuracy
@@ -192,6 +202,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     sort!(highest_errors, "diff_abs",rev=true)
     highest_errors = highest_errors[[findfirst(x->x in unique(highest_errors[:,:INCHIKEY])[i,:], highest_errors[:,:INCHIKEY]) for i in 1:10],:]
 
+    # Plots
     if allowplots
         p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "$data_mode IEs from CNL", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
         scatter!(y_test,z5,label="Test set", color=:orange,dpi=300)

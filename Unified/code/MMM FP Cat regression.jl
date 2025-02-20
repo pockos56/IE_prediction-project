@@ -280,9 +280,17 @@ complexity_mean = mean(y_hat_df_mean.complexity)
 complexity_median = median(y_hat_df_mean.complexity)
 complexity_of_highest_error_comps_in_CNL_mean = [203, 501, 132, 92.9, 105, 303, 577, 403, 371, 97]
 
+
 using StatsPlots
 boxplot(y_hat_df_mean.complexity)
 scatter!(complexity_of_highest_error_comps_in_CNL_mean)
 violin!(complexity_of_highest_error_comps_in_CNL_mean)
 #
 
+# Plots for pH distribution
+using FreqTables
+pH = (freqtable(round.(FP[:,"pH.aq."], digits=1)))
+pH_freq = [values(pH)[i] for i in (1:length(pH))]
+pH_values = names(pH)[1]
+bar(pH_values, pH_freq, xlabel="pH", label="n=$(size(FP,1))", dpi=500)
+savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\pH distribution.png")

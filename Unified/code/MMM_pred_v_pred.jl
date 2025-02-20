@@ -1,4 +1,4 @@
-using CSV, DataFrames, ProgressBars, Plots
+using CSV, DataFrames, ProgressBars, Plots, LaTeXStrings
 
 function create_df_mode(data_mode::String; allowplots::Bool=false, allowsave::Bool=false)
     if data_mode == "min"
@@ -38,15 +38,26 @@ function create_df_mode(data_mode::String; allowplots::Bool=false, allowsave::Bo
     
     #Plots
     if allowplots
-        p1 = scatter(df_mode[:,"IE_hat_FP"],df_mode[:,"IE_hat_CNL"],label=false, alpha=0.7, xlabel="Structure-based predicted logIE", ylabel="MS-based predicted logIE", legend=:best, c="magenta", xlims=(-0.7,5.7),ylims=(-0.3,5.3),dpi=300)
-        plot!([minimum(df_mode[:,"IE_hat_FP"]),maximum(df_mode[:,"IE_hat_FP"])],[minimum(df_mode[:,"IE_hat_FP"]),maximum(df_mode[:,"IE_hat_FP"])],label="1:1 line",width=1,dpi=300, c="green")
+        lim_x_min = -0.7
+        lim_x_max = 5.7
+        lim_y_min = -0.8
+        lim_y_max = 5.8
+
+        p1 = scatter(df_mode[:,"IE_hat_FP"],df_mode[:,"IE_hat_CNL"],label=false, alpha=0.7, xlabel="Structure-based predicted logIE", ylabel=L"MS$^2$-based predicted logIE", legend=:best, c="magenta", xlims=(lim_x_min,lim_x_max),ylims=(lim_y_min,lim_y_max),dpi=300)
+        plot!([lim_x_min, lim_x_max],[lim_x_min, lim_x_max],label="1:1 line",width=1.5,dpi=300, c="green")
         display(p1)
         if allowsave
             savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\FPpred_v_CNLpred$(data_mode).png")
         end
-        p2 = scatter(df_mode_residuals_FP, df_mode_residuals_CNL,label=false, alpha=0.7, xlabel="Structure-based predicted logIE residuals", ylabel="MS-based predicted logIE residuals", legend=:best, c="magenta", xlims=(-2.5,2.8), ylims=(-2.4,3.4), dpi=300)
-        plot!([0,0],[minimum(df_mode_residuals_CNL),maximum(df_mode_residuals_CNL)],label=false,width=1,dpi=300, c="black")
-        plot!([minimum(df_mode_residuals_FP),maximum(df_mode_residuals_FP)],[0,0],label=false,width=1,dpi=300, c="black")
+
+        lim_x_min = -2.5
+        lim_x_max = 2.8
+        lim_y_min = -2.8
+        lim_y_max = 3.6
+
+        p2 = scatter(df_mode_residuals_FP, df_mode_residuals_CNL,label=false, alpha=0.7, xlabel="Structure-based predicted logIE residuals", ylabel=L"MS$^2$-based predicted logIE residuals", legend=:best, c="magenta", xlims=(lim_x_min, lim_x_max), ylims=(lim_y_min, lim_y_max), dpi=300)
+        plot!([0,0],[lim_y_min, lim_y_max],label=false,width=1,dpi=300, c="black")
+        plot!([lim_x_min, lim_x_max],[0,0],label=false,width=1,dpi=300, c="black")
         display(p2)
         if allowsave
             savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\FPpred_v_CNLpred_$(data_mode)_residuals.png")
