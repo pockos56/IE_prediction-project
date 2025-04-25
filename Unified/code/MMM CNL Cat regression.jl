@@ -204,11 +204,11 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
 
     # Plots
     if allowplots
-        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "$data_mode IEs from CNL", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
+        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "CNL model", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
         scatter!(y_test,z5,label="Test set", color=:orange,dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2,dpi=300)
         annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
-        annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: R^2=$(round(z3, digits=3))"),:right)
+        annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: Q^2=$(round(z3, digits=3))"),:right)
         p2 = scatter(y_train,z4,legend=false,ticks=false,color = :magenta,dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=2,dpi=300)
         p3 = scatter(y_test,z5,legend=false,ticks=false, color=:orange,dpi=300)
