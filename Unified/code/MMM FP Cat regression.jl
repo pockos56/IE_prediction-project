@@ -4,7 +4,6 @@ using ScikitLearn.CrossValidation: train_test_split
 pcp = pyimport("pubchempy")
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
-
 #=Loading optimal hyperparameters for FP model
 optim_min = sort(vcat(vcat(vcat(
     CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_1_16.csv", DataFrame),
@@ -181,7 +180,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
             # Regression pH plot
             train_ind = findall(x->x .== "train", y_hat_df[:,"class_fp"])        
             test_ind = findall(x->x .== "test", y_hat_df[:,"class_fp"])        
-            plot_pH = scatter(y_hat_df[train_ind,"IE"], y_hat_df[train_ind,"IE_hat_fp"],label="Training set", legend=:best, title = "$mode IEs from FP", markershape = :circle, marker_z = y_hat_df[train_ind,"pH_aq"], xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
+            plot_pH = scatter(y_hat_df[train_ind,"IE"], y_hat_df[train_ind,"IE_hat_fp"],label="Training set", legend=:best, title = "FP model", markershape = :circle, marker_z = y_hat_df[train_ind,"pH_aq"], xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
             scatter!(y_hat_df[test_ind,"IE"], y_hat_df[test_ind,"IE_hat_fp"],label="Test set", marker_z = y_hat_df[test_ind,"pH_aq"], markershape = :rect,color=:jet,dpi=300)
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])], label="1:1 line",width=2,dpi=300)
             if allowsave == true
@@ -190,7 +189,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
             # Residual pH plot
             residuals_vec = y_hat_df[:,"IE_hat_fp"] - y_hat_df[:,"IE"]
 
-            plot_pH_res = scatter(y_hat_df[train_ind,"IE"],residuals_vec[train_ind],label="Training set", legend=:best, title = "Residuals - $mode FP model",markershape=:circle, marker_z=y_hat_df[train_ind,"pH_aq"],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
+            plot_pH_res = scatter(y_hat_df[train_ind,"IE"],residuals_vec[train_ind],label="Training set", legend=:best, title = "Residuals - FP model",markershape=:circle, marker_z=y_hat_df[train_ind,"pH_aq"],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
             scatter!(y_hat_df[test_ind,"IE"],residuals_vec[test_ind], markershape=:rect,marker_z=y_hat_df[test_ind,"pH_aq"], label="Test set",color=:jet,dpi=300)
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[0,0],label="1:1 line",width=2,dpi=300) # 1:1 line
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[3*std(residuals_vec),3*std(residuals_vec)],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
