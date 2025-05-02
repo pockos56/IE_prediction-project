@@ -4,38 +4,8 @@ using ScikitLearn.CrossValidation: train_test_split
 pcp = pyimport("pubchempy")
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
-#=Loading optimal hyperparameters for FP model
-optim_min = sort(vcat(vcat(vcat(
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_1_16.csv", DataFrame),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_13.csv", DataFrame)),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_14_16.csv", DataFrame)),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_6(1).csv", DataFrame)),"accuracy_test", rev=true)
-optim_mean = sort(vcat(vcat(vcat(
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_1_16.csv", DataFrame),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_13.csv", DataFrame)),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_14_16.csv", DataFrame)),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_6(1).csv", DataFrame)),"accuracy_test", rev=true)
-optim_max = sort(vcat(vcat(vcat(
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_1_12.csv", DataFrame),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_13.csv", DataFrame)),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_14_16.csv", DataFrame)),
-    CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_6(1).csv", DataFrame)),"accuracy_test", rev=true)
-highest_accuracies_min = groupby(optim_min, :FP_type) |> x -> combine(x, :accuracy_test => maximum => :Highest_TestSet_R2)
-highest_accuracies_mean = groupby(optim_mean, :FP_type) |> x -> combine(x, :accuracy_test => maximum => :Highest_TestSet_R2)
-highest_accuracies_max = groupby(optim_max, :FP_type) |> x -> combine(x, :accuracy_test => maximum => :Highest_TestSet_R2)
-MMM = hcat(hcat(highest_accuracies_mean, highest_accuracies_min, makeunique=true),highest_accuracies_max, makeunique=true)
-average_MMM = DataFrame("average_R2" => (mean(hcat(hcat(MMM[:,2],MMM[:,4]),MMM[:,6]),dims=2))[:])
-best_fp = argmax(Matrix(average_MMM)[:])        # The fingerprint type with the highest average test set score
 
-best_parameters_min_obsolete = hcat(DataFrame(optim_min[findfirst(x->x.== best_fp, optim_min[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 6))
-best_parameters_mean_obsolete = hcat(DataFrame(optim_mean[findfirst(x->x.== best_fp, optim_mean[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 3))
-best_parameters_max_obsolete = hcat(DataFrame(optim_max[findfirst(x->x.== best_fp, optim_max[:,"FP_type"]),:]),DataFrame("l2_leaf_reg"=> 3))
-best_parameters_MMM = vcat(vcat(best_parameters_min,best_parameters_mean),best_parameters_max)
-# With collimit and featurelimit
-#best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_6(2).csv", DataFrame),"accuracy_test", rev=true)
-#best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_6(2).csv", DataFrame),"accuracy_test", rev=true)
-#best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_6(2).csv", DataFrame),"accuracy_test", rev=true)
-=#
+#Loading optimal hyperparameters for FP model
 best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_6(3).csv", DataFrame),"accuracy_test", rev=true)
 best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_6(3).csv", DataFrame),"accuracy_test", rev=true)
 best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_6(3).csv", DataFrame),"accuracy_test", rev=true)
@@ -140,23 +110,25 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     y_hat_df[test_set_indices, "class_fp"] .= "test"
 
     if allowplots
-        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "FP model", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
-        scatter!(y_test,z5,label="Test set", color=:orange,dpi=300)
-        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2,dpi=300)
-        annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
-        annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: Q^2=$(round(z3, digits=3))"),:right)
-        p2 = scatter(y_train,z4,legend=false,ticks=false,color = :magenta,dpi=300)
-        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=2,dpi=300)
-        p3 = scatter(y_test,z5,legend=false,ticks=false, color=:orange,dpi=300)
-        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=2,dpi=300)
+        p1 = scatter(y_train,z4,label="Training set", legend=:bottomright, title = "FP model", color = :lightblue1, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", markerstrokewidth=0.1, dpi=300)
+        scatter!(y_test,z5,label="Test set", color=:orange, markerstrokewidth=0.1, dpi=300)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=1.5,dpi=300)
+        #annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
+        #annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: Q^2=$(round(z3, digits=3))"),:right)
+
+        p2 = scatter(y_train,z4, legend=false, ticks=false, color = :lightblue1, alpha=0.8, markerstrokewidth=0.1, dpi=300)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=1.5,dpi=300)
+        p3 = scatter(y_test,z5,legend=false,ticks=false, color=:orange, alpha=0.8, markerstrokewidth=0.1,dpi=300)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=1.5,dpi=300, c=:lightblue1)
 
         p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
         display(p123)
         if allowsave == true
             savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Regression_FP6_$mode.png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Regression_FP6_$mode.pdf")
         end
 
-        p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
+        p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "Regression residuals", color = :lightblue1, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
         scatter!(y_test,z7, label="Test set",color=:orange,dpi=300)
         plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[0,0],label="pred = exp",width=2,dpi=300) # 1:1 line
         plot!([minimum(vcat(y_test,y_train)),maximum(vcat(y_test,y_train))],[3*std(vcat(z6,z7)),3*std(vcat(z6,z7))],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
@@ -213,7 +185,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
 end
 
 reg, importance_percentage_min, importance_min, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_min = FP_Cat_model_mode("min", allowplots=true, allowsave=true,showph=true);
-reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_mean = FP_Cat_model_mode("mean", allowplots=true, allowsave=true,showph=true);
+reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_mean = FP_Cat_model_mode("mean", allowplots=true, allowsave=false,showph=false);
 reg, importance_percentage_max, importance_max, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_max = FP_Cat_model_mode("max", allowplots=true, allowsave=true,showph=true);
 
 # Residuals

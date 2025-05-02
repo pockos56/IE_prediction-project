@@ -5,31 +5,10 @@ cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
 #Loading optimal hyperparameters for CNL model
-#optim_min_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_1.csv", DataFrame),"accuracy_test",rev=true)
-#optim_min_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_2.csv", DataFrame),"accuracy_test",rev=true)
-#optim_min_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_3.csv", DataFrame),"accuracy_test",rev=true)
-#optim_min_4 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_4.csv", DataFrame),"accuracy_test",rev=true)
 optim_min_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_5.csv", DataFrame),"accuracy_test",rev=true)
-#optim_min_6 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_6.csv", DataFrame),"accuracy_test",rev=true)
-
-#optim_mean_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_1.csv", DataFrame),"accuracy_test",rev=true)
-#optim_mean_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_2.csv", DataFrame),"accuracy_test",rev=true)
-#optim_mean_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_3.csv", DataFrame),"accuracy_test",rev=true)
-#optim_mean_4 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_4.csv", DataFrame),"accuracy_test",rev=true)
 optim_mean_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_5.csv", DataFrame),"accuracy_test",rev=true)
-#optim_mean_6 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_6.csv", DataFrame),"accuracy_test",rev=true)
-
-#optim_max_1 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_1.csv", DataFrame),"accuracy_test",rev=true)
-#optim_max_2 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_2.csv", DataFrame),"accuracy_test",rev=true)
-#optim_max_3 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_3.csv", DataFrame),"accuracy_test",rev=true)
-#optim_max_4 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_4.csv", DataFrame),"accuracy_test",rev=true)
 optim_max_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_5.csv", DataFrame),"accuracy_test",rev=true)
-#optim_max_6 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_6.csv", DataFrame),"accuracy_test",rev=true)
-
-#optim_whole = reduce(vcat,[DataFrame(optim_min_3[1,:]), DataFrame(optim_mean_3[1,:]), DataFrame(optim_max_3[1,:])])
-#optim_whole = reduce(vcat,[DataFrame(optim_min_4[1,:]), DataFrame(optim_mean_4[1,:]), DataFrame(optim_max_4[1,:])])
 optim_whole = reduce(vcat,[DataFrame(optim_min_5[1,:]), DataFrame(optim_mean_5[1,:]), DataFrame(optim_max_5[1,:])])
-#optim_whole = reduce(vcat,[DataFrame(optim_min_6[1,:]), DataFrame(optim_mean_6[1,:]), DataFrame(optim_max_6[1,:])])
 
 ## CNL model ##
 function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_mode; allowplots=false, showph=false, allowsave=false)
@@ -177,13 +156,6 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     importance = sort(reg.feature_importances_, rev=true)
     significant_columns = sortperm(reg.feature_importances_, rev=true)[importance .>=1]
     
-    #=
-    feature_names = names(hcat(data_train[:,"pH_aq"],data_train[:,8:end]))
-    importance = reg.feature_importances_
-    importance_ = reg.get_feature_importance(type="Interaction", prettified=true)
-    [feature_names[i] for i in (1 .+ parse.(Int,collect(importance_["Feature Id"])))]
-    =#
-
     # Results
     z1 = names(variables_df[:,:])[significant_columns]   # Most important variables
     z2 = ScikitLearn.score(reg, X_train, y_train)   # Train set accuracy
@@ -200,24 +172,26 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     highest_errors.diff = highest_errors.IE_hat_CNL - highest_errors.IE
     highest_errors.diff_abs = abs.(highest_errors.IE_hat_CNL - highest_errors.IE)
     sort!(highest_errors, "diff_abs",rev=true)
-    highest_errors = highest_errors[[findfirst(x->x in unique(highest_errors[:,:INCHIKEY])[i,:], highest_errors[:,:INCHIKEY]) for i in 1:10],:]
+    highest_errors = highest_errors[[findfirst(x->x in unique(highest_errors[:,:INCHIKEY])[i,:], highest_errors[:,:INCHIKEY]) for i in 1:20],:]
 
     # Plots
     if allowplots
-        p1 = scatter(y_train,z4,label="Training set", legend=:best, title = "CNL model", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", dpi=300)
-        scatter!(y_test,z5,label="Test set", color=:orange,dpi=300)
-        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=2,dpi=300)
-        annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
-        annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: Q^2=$(round(z3, digits=3))"),:right)
-        p2 = scatter(y_train,z4,legend=false,ticks=false,color = :magenta,dpi=300)
-        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=2,dpi=300)
-        p3 = scatter(y_test,z5,legend=false,ticks=false, color=:orange,dpi=300)
-        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=2,dpi=300)
+        p1 = scatter(y_train,z4,label="Training set", legend=:bottomright, title = "CNL model", color = :lightblue1, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", markerstrokewidth=0.1, dpi=300)
+        scatter!(y_test,z5,label="Test set", color=:orange, markerstrokewidth=0.1, dpi=300)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=1.5,dpi=300)
+        #annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
+        #annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: Q^2=$(round(z3, digits=3))"),:right)
+
+        p2 = scatter(y_train,z4,legend=false,ticks=false,color=:lightblue1,markerstrokewidth=0.1,alpha=0.8, dpi=300)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=1.5,dpi=300)
+        p3 = scatter(y_test,z5,legend=false,ticks=false, color=:orange, markerstrokewidth=0.1, alpha=0.8, dpi=300)
+        plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=1.5, c=:lightblue1, dpi=300)
 
         p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
         display(p123)
         if allowsave
             savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_CNL_$(data_mode).png")
+            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_CNL_$(data_mode).pdf")
         end
 
         p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -243,7 +217,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
         if showph
             train_ind = findall(x->x .== "train", y_hat_df[:,"class_CNL"])        
             test_ind = findall(x->x .== "test", y_hat_df[:,"class_CNL"])        
-            plot_pH = scatter(y_hat_df[train_ind,"IE"], y_hat_df[train_ind,"IE_hat_CNL"],label="Training set", legend=:best, title = "$data_mode IEs from CNL", markershape = :circle, marker_z = y_hat_df[train_ind,"pH_aq"], xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
+            plot_pH = scatter(y_hat_df[train_ind,"IE"], y_hat_df[train_ind,"IE_hat_CNL"],label="Training set", legend=:best, title = "CNL model", markershape = :circle, marker_z = y_hat_df[train_ind,"pH_aq"], xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
             scatter!(y_hat_df[test_ind,"IE"], y_hat_df[test_ind,"IE_hat_CNL"],label="Test set", marker_z = y_hat_df[test_ind,"pH_aq"], markershape = :rect,color=:jet,dpi=300)
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])], label="1:1 line",width=2,dpi=300)
             if allowsave
@@ -253,7 +227,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
             residuals_vec = y_hat_df[:,"IE_hat_CNL"] - y_hat_df[:,"IE"]
 
 
-            plot_pH_res = scatter(y_hat_df[train_ind,"IE"],residuals_vec[train_ind],label="Training set", legend=:best, title = "Residuals - $(data_mode) CNL model",markershape=:circle, marker_z=y_hat_df[train_ind,"pH_aq"],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
+            plot_pH_res = scatter(y_hat_df[train_ind,"IE"],residuals_vec[train_ind],label="Training set", legend=:best, title = "Residuals - CNL model",markershape=:circle, marker_z=y_hat_df[train_ind,"pH_aq"],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
             scatter!(y_hat_df[test_ind,"IE"],residuals_vec[test_ind], markershape=:rect,marker_z=y_hat_df[test_ind,"pH_aq"], label="Test set",color=:jet,dpi=300)
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[0,0],label="1:1 line",width=2,dpi=300) # 1:1 line
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[3*std(residuals_vec),3*std(residuals_vec)],label="+/- 3 std",linecolor ="grey",width=2,dpi=300) # +3 sigma
@@ -273,11 +247,11 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
         # Save the predicted IEs
         CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_CNL_$data_mode.csv", y_hat_df)
     end
-    return reg,importance,z1,z2,z3,z4,z5,z6,z7, highest_errors
+    return reg,importance,z1,z2,z3,z4,z5,z6,z7, highest_errors, y_hat_df
 end
 
 reg, importance_percentage_min, importance_min, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, high_error_comps_min = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("min",allowplots=true, allowsave=false, showph=true);
-reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, high_error_comps_mean = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("mean",allowplots=true, allowsave=true, showph=true);
+reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, high_error_comps_mean, y_hat_df_CNL = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("mean",allowplots=true, allowsave=false, showph=false);
 reg, importance_percentage_max, importance_max, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, high_error_comps_max = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("max",allowplots=true, allowsave=true, showph=true);
 
 # Importance tables

@@ -118,27 +118,19 @@ function create_boxplots(df_min, df_mean, df_max; allowsave=false)
     println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
 end
 
-df_min, failed_min, MAE_min, RMSE_min = create_comparison_plots("min", allowplots=true, allowsave=true)
-df_mean, failed_mean, MAE_mean, RMSE_mean = create_comparison_plots("mean", allowplots=true, allowsave=true)
-df_max, failed_max, MAE_max, RMSE_max = create_comparison_plots("max", allowplots=true, allowsave=true)
+df_min, failed_min, MAE_min, RMSE_min = create_comparison_plots("min", allowplots=true, allowsave=false)
+df_mean, failed_mean, MAE_mean, RMSE_mean = create_comparison_plots("mean", allowplots=true, allowsave=false)
+df_max, failed_max, MAE_max, RMSE_max = create_comparison_plots("max", allowplots=true, allowsave=false)
 create_boxplots(df_min, df_mean, df_max, allowsave=true)
 
 # Training and test subset => different boxplots.
 
-function create_boxplots_train_test(df_min, df_mean, df_max; allowsave=false)
-    df_min_train = df_min[df_min.class_CNL .== "train",:]
-    df_mean_train = df_mean[df_mean.class_CNL .== "train",:]
-    df_max_train = df_max[df_max.class_CNL .== "train",:]
-    df_min_test = df_min[df_min.class_CNL .== "test",:]
-    df_mean_test = df_mean[df_mean.class_CNL .== "test",:]
-    df_max_test = df_max[df_max.class_CNL .== "test",:]
 
-    df_min_train.INCHIKEY .= "min"
+function create_boxplots_train_test(df_min, df_mean, df_max; allowsave=false)
+    df_mean_train = df_mean[df_mean.class_CNL .== "train",:]
+    df_mean_test = df_mean[df_mean.class_CNL .== "test",:]
     df_mean_train.INCHIKEY .= "mean"
-    df_max_train.INCHIKEY .= "max"
-    df_min_test.INCHIKEY .= "min"
     df_mean_test.INCHIKEY .= "mean"
-    df_max_test.INCHIKEY .= "max"
 
     p4 = boxplot(df_min_train.INCHIKEY, df_min_train[:,"CNL_hat_FP_hat_residual"], legend=false,alpha=0.7, dpi=300, ylabel = "logIE residual")
     boxplot!(df_mean_train.INCHIKEY, df_mean_train[:,"CNL_hat_FP_hat_residual"], alpha=0.7, dpi=300)
@@ -175,6 +167,40 @@ function create_boxplots_train_test(df_min, df_mean, df_max; allowsave=false)
         savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\Residual_violin_boxplot.png")
     end
     =#
+    under1_ratio_mean = sum(df_mean[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_mean[:,"CNL_hat_FP_hat_residual"])
+    println("Less than 1: min: $(round(under1_ratio_min, digits=3)), mean: $under1_ratio_mean, max: $under1_ratio_max")
+    quantile_metric = round(quantile(abs.(df_mean[:,"CNL_hat_FP_hat_residual"]),0.95), digits=3)
+
+    println("95th quantile: mean $(quantile_metric)")
+    println("80th quantile (10^): min: $(10^(min_80)), mean $(10^(mean_80)), max $(10^(max_80))")
+    
+    println("MAE: min: $MAE_min, mean: $MAE_mean, max: $MAE_max")
+    println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
+end
+
+
+function create_boxplots_train_test_only_mean(df_mean; allowsave=false)
+    df_mean_train = df_mean[df_mean.class_CNL .== "train",:]
+    df_mean_test = df_mean[df_mean.class_CNL .== "test",:]
+    df_mean_train.INCHIKEY .= "mean"
+    df_mean_test.INCHIKEY .= "mean"
+
+    p4 = boxplot(df_mean_train.INCHIKEY, df_mean_train[:,"CNL_hat_FP_hat_residual"], legend=false,alpha=0.7, dpi=300, ylabel = "logIE residual")
+    boxplot!(df_mean_test.INCHIKEY, df_mean_test[:,"CNL_hat_FP_hat_residual"],alpha=0.7, dpi=300)
+
+    display(p4)
+    if allowsave
+        savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\Residual_boxplot_train-test.png")
+    end
+
+    p5 = violin(df_mean_train.INCHIKEY, df_mean_train[:,"CNL_hat_FP_hat_residual"], ylabel = "logIE residual", dpi=300, alpha=0.6, c=:yellow3, side=:left, xtickfont=16, xaxis=false, legend=false, size=(400,400))
+    violin!(df_mean_test.INCHIKEY, df_mean_test[:,"CNL_hat_FP_hat_residual"], dpi=300,alpha=0.6, c=:pink2, side=:right)
+        
+    display(p5)
+    if allowsave
+        savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\Residual_violin_train-test_mean_only.png")
+    end
+
     under1_ratio_min = sum(df_min[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_min[:,"CNL_hat_FP_hat_residual"])
     under1_ratio_mean = sum(df_mean[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_mean[:,"CNL_hat_FP_hat_residual"])
     under1_ratio_max = sum(df_max[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_max[:,"CNL_hat_FP_hat_residual"])
@@ -189,7 +215,6 @@ function create_boxplots_train_test(df_min, df_mean, df_max; allowsave=false)
     println("MAE: min: $MAE_min, mean: $MAE_mean, max: $MAE_max")
     println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
 end
-
 
 #=
 df_min_train, df_min_test, failed_min, MAE_min, RMSE_min = create_comparison_plots_test_only("min", allowplots=true, allowsave=true)

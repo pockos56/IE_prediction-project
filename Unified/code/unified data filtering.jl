@@ -5,9 +5,38 @@ pd = pyimport("padelpy")
 raw_data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\all_datasets_unified_IEs_20221121.csv", DataFrame)
 #Internal = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_2022-11-17.csv", DataFrame)
 
-short_data = raw_data[:,["name","SMILES","inchi","pH.aq.","unified_IEs","instrument","source"]]
+short_data = raw_data[:,["name","SMILES","inchi","pH.aq.","unified_IEs","instrument","source", "dataset"]]
 what_is_this = raw_data[:,["in_model_190714","SPLIT","logIE_pred","inchi","source_brand","unified_IEs"]]
-IE_data = raw_data[:,["name","pH_aq","logIE","logIE_pred","unified_IEs"]]
+IE_data = raw_data[:,["name","pH_aq","logIE","logIE_pred","unified_IEs", "error_abs"]]
+
+# Investigate FP outliers (how many there are in the original data)
+a = findall(x->x .== "CCN(CC)C(=S)SSC(=S)N(CC)CC" , short_data[:,:SMILES])
+IE_data[a,:]
+b = findall(x-> contains.(x, "C27H33O9P") , short_data[:,:inchi])
+IE_data[b,:]
+c = findall(x-> contains.(x, "C7H9NO2") , short_data[:,:inchi])
+IE_data[c,:]
+d = findall(x-> contains.(x, "C16H13N") , short_data[:,:inchi])
+IE_data[d,:]
+e = findall(x-> contains.(x, "C17H18Cl2N2O2S") , short_data[:,:inchi])
+short_data[e,:]
+f = findall(x-> contains.(x, "C17H19ClN2") , short_data[:,:inchi])[1]
+short_data[f,:]
+g = findall(x-> contains.(x, "C2H2N4O2") , short_data[:,:inchi])[1]
+short_data[g,:]
+h = findall(x-> contains.(x, "C6H10O4") , short_data[:,:inchi])[1]
+short_data[h,:]
+i = findall(x-> contains.(x, "C22H25NO3") , short_data[:,:inchi])[1]
+short_data[i,:]
+j = findall(x-> contains.(x, "C10H14N2O") , short_data[:,:inchi])[1]
+IE_data[j,:]
+# 4/10 outliers are from dataset 5, and 5/10 are from dataset 1
+freqtable(short_data, :dataset)
+
+# Check the highest error compounds for original study
+NA_idx = findall(x->x .== "NA", raw_data[:,:error_abs])
+Not_NA_raw_data = raw_data[Not(NA_idx),:]
+sort(Not_NA_raw_data[:,5:end], :error_abs, rev=true)[15:30,:]
 
 # Insert INCHIKEY and SMILES cols
 from_name_data = deepcopy(short_data)
