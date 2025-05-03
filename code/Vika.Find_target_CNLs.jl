@@ -3,14 +3,6 @@ import StatsPlots as sp
 using ProgressBars
 using Distributions
 
-#include("function getVec(matStr).jl")
-data_set = NIST
-i=1
-k=1
-
-str = data_set[Indeces[k][i],:MZ_VALUES]
-average_spectra = spectra
-
 function first_filtering(data_set)
     #filtering N/A and missing values of InCIkeys and Resolution columns
     data_set = data_set[.!ismissing.(data_set[!,:INCHIKEY]),:]
@@ -19,7 +11,6 @@ function first_filtering(data_set)
     
     data_set = data_set[.!ismissing.(data_set[!,:MZ_VALUES]),:]
     data_set = data_set[(data_set[!,:MZ_VALUES].!= "[]"),:]
-    
  
 
     #filtering resolution < 5000
@@ -126,7 +117,17 @@ function CNLs_list(average_spectra; threshold::Int=80)
     return CNLmax,P_CNL
 end
 
-NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction\\data\\Database_INTERNAL_2022-11-17.csv", DataFrame)
+NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_2022-11-17.csv", DataFrame)
 positive_set, negative_set = filtering_IonMode(first_filtering(NIST))
 CNLmax_neg = CNLs_list(av_spectra(negative_set),threshold=15)[1]
 CNLmax_pos = CNLs_list(av_spectra(positive_set),threshold=80)[1]
+
+for i = 1:nrow(average_spectra)
+    if sort(average_spectra[:,:CNLs][i], rev=true)[1] > 1000
+        println(i)
+    end
+end
+
+average_spectra[2158,:]
+average_spectra[2178,:]
+findall(x->x in average_spectra[:,:CNLs], "1200")

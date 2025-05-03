@@ -1,7 +1,7 @@
 using CSV, DataFrames, ProgressBars, DataStructures, FreqTables, Statistics
 
 # Create a shorter (filtered) Internal database with only the relevant compounds
-data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\filtered_data.csv", DataFrame)
+data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\filtered_data.csv", DataFrame)
 Internal_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_2022-11-17.csv", DataFrame)
 Internal_filtered = Internal_raw[findall(x -> x in unique(data[:,"INCHIKEY"]), Internal_raw[:,:INCHIKEY]),:]
 common_INCHIKEYS_indx = findall(x -> x in unique(data[:,"INCHIKEY"]), Internal_filtered[:,:INCHIKEY])
@@ -9,8 +9,8 @@ CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\
 Internal_filtered = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Database_INTERNAL_filtered.csv", DataFrame)
 
 # Load data
-data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\filtered_data.csv", DataFrame)
-Internal_filtered = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Database_INTERNAL_filtered.csv", DataFrame)
+data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\filtered_data.csv", DataFrame)
+Internal_filtered = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_filtered.csv", DataFrame)
 best_CNLs_neg = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNLmax_Hadducts_neg.CSV", DataFrame)[1:500,1]
 best_CNLs_pos = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNLmax_Hadducts_pos.CSV", DataFrame)[1:500,1]
 #mode = "mean"
@@ -84,7 +84,7 @@ function create_CNLIE_dataset_NIST_Unified_mode(mode::String ;ESI=+1, threshold=
     end
 
     data_mode = DataFrame()
-    data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\filtered_data.csv", DataFrame)
+    data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\filtered_data.csv", DataFrame)
     insertcols!(data, 5, "rounded_pH" => round.(data[:,"pH.aq."]))
     for unique_inchikey in unique(data[:,"INCHIKEY"])
     data_comp = data[findall(x->x .== unique_inchikey, data[:,"INCHIKEY"]),:]
@@ -105,7 +105,7 @@ function create_CNLIE_dataset_NIST_Unified_mode(mode::String ;ESI=+1, threshold=
     end
     data_mode = data_mode[:,Not("rounded_pH")]
 
-    NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Database_INTERNAL_filtered.csv", DataFrame)
+    NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_filtered.csv", DataFrame)
     NIST_ESI = ()
     unique(Vector(NIST[:,:ION_MODE]))
     if ESI == -1
@@ -144,11 +144,5 @@ function create_CNLIE_dataset_NIST_Unified_mode(mode::String ;ESI=+1, threshold=
     return dataset
 end
 
-CNL_IE_unified_zero_min = create_CNLIE_dataset_NIST_Unified_mode("min", HiValSetToZero=true)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_min.csv", CNL_IE_unified_zero_min)
-CNL_IE_unified_zero_max = create_CNLIE_dataset_NIST_Unified_mode("max", HiValSetToZero=true)
-CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_max.csv", CNL_IE_unified_zero_max)
 CNL_IE_unified_zero_mean = create_CNLIE_dataset_NIST_Unified_mode("mean", HiValSetToZero=true)
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_mean.csv", CNL_IE_unified_zero_mean)
-
-

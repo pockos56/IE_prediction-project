@@ -5,9 +5,9 @@ cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
 #Loading optimal hyperparameters for CNL model
-optim_min_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_min_5.csv", DataFrame),"accuracy_test",rev=true)
-optim_mean_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_mean_5.csv", DataFrame),"accuracy_test",rev=true)
-optim_max_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL_optimization_max_5.csv", DataFrame),"accuracy_test",rev=true)
+optim_min_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\CNL_optimization_min_5.csv", DataFrame),"accuracy_test",rev=true)
+optim_mean_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\CNL_optimization_mean_5.csv", DataFrame),"accuracy_test",rev=true)
+optim_max_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\CNL_optimization_max_5.csv", DataFrame),"accuracy_test",rev=true)
 optim_whole = reduce(vcat,[DataFrame(optim_min_5[1,:]), DataFrame(optim_mean_5[1,:]), DataFrame(optim_max_5[1,:])])
 
 ## CNL model ##
@@ -46,7 +46,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     else error("Please set mode to min, mean, or max")
     end
 
-    data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_$data_mode.csv",DataFrame)
+    data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL-IE\\CNL_IE_unified_zero_$data_mode.csv",DataFrame)
     # Filter validation set compounds
     validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Validation_set_inchikeys.csv", DataFrame)
     deleteat!(data_whole_raw, findall(x -> x in validation_inchikeys.INCHIKEY, data_whole_raw.INCHIKEY))
@@ -265,3 +265,4 @@ meanRes_test = round((mean(abs.(res_test))), digits=2)
 RMSE_train = round(sqrt(mean(res_train.^2)), digits=2)
 RMSE_test = round(sqrt(mean(res_test.^2)), digits=2)
 #
+sort(parse.(Float64, names(data_whole_raw[:,9:end])))

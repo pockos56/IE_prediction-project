@@ -99,3 +99,5 @@ Unified/data/CNL-IE/CNL_IE_after_expansion.csv
 .vscode/settings.json
 data/data_w_all_FPs.csv
 data/filtered_FPs.csv
+/code/.vscode
+data/Database_INTERNAL_filtered.csv
