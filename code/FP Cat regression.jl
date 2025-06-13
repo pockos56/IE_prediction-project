@@ -6,9 +6,9 @@ cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
 #Loading optimal hyperparameters for FP model
-best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_min_6(3).csv", DataFrame),"accuracy_test", rev=true)
-best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_mean_6(3).csv", DataFrame),"accuracy_test", rev=true)
-best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_optimization_max_6(3).csv", DataFrame),"accuracy_test", rev=true)
+best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\FP_optimization_min_6(3).csv", DataFrame),"accuracy_test", rev=true)
+best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\FP_optimization_mean_6(3).csv", DataFrame),"accuracy_test", rev=true)
+best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\FP_optimization_max_6(3).csv", DataFrame),"accuracy_test", rev=true)
 
 function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, showph=false)
     if mode == "min"
@@ -41,9 +41,9 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     else error("Set mode to min, max, or mean")
     end
 
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_$mode.csv", DataFrame)
+    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Fingerprints\\FP6_$mode.csv", DataFrame)
     # Filter validation set compounds
-    validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Validation_set_inchikeys.csv", DataFrame)
+    validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Validation_set_inchikeys.csv", DataFrame)
     deleteat!(FP, findall(x -> x in validation_inchikeys.INCHIKEY, FP.INCHIKEY))
     
     FP1 = hcat(FP[!,"pH.aq."],FP[!,10:end])
@@ -184,9 +184,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     return reg,importance,z1,z2,z3,z4,z5,z6,z7, y_hat_df
 end
 
-reg, importance_percentage_min, importance_min, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_min = FP_Cat_model_mode("min", allowplots=true, allowsave=true,showph=true);
 reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_mean = FP_Cat_model_mode("mean", allowplots=true, allowsave=false,showph=false);
-reg, importance_percentage_max, importance_max, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_max = FP_Cat_model_mode("max", allowplots=true, allowsave=true,showph=true);
 
 # Residuals
 meanRes_train = round((mean(abs.(res_train))), digits=2)
@@ -251,7 +249,6 @@ complexity_mean = mean(y_hat_df_mean.complexity)
 complexity_median = median(y_hat_df_mean.complexity)
 complexity_of_highest_error_comps_in_CNL_mean = [203, 501, 132, 92.9, 105, 303, 577, 403, 371, 97]
 
-
 using StatsPlots
 boxplot(y_hat_df_mean.complexity)
 scatter!(complexity_of_highest_error_comps_in_CNL_mean)
@@ -263,5 +260,8 @@ using FreqTables
 pH = (freqtable(round.(FP[:,"pH.aq."], digits=1)))
 pH_freq = [values(pH)[i] for i in (1:length(pH))]
 pH_values = names(pH)[1]
-bar(pH_values, pH_freq, xlabel="pH", label="n=$(size(FP,1))", dpi=500)
-savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\pH distribution.png")
+bar(pH_values, pH_freq, xlabel="pH", label="n=$(size(FP,1))", bars=sqrt(sum(pH_freq)), dpi=500)
+savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\pH distribution.png")
+
+a = 450
+FP[a:a+20,:]

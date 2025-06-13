@@ -13,7 +13,7 @@ optim_whole = reduce(vcat,[DataFrame(optim_min_5[1,:]), DataFrame(optim_mean_5[1
 ## CNL model ##
 function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_mode; allowplots=false, showph=false, allowsave=false)
     function split_classes(classes; random_state::Int=random_seed, split_size=0.2)
-        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Internal_pubchem_FPs_dict.csv", DataFrame)
+        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Internal_pubchem_FPs_dict.csv", DataFrame)
         indices = [Int(findfirst(x->x .== classes[i], FP[:,:INCHIKEY])) for i in 1:length(classes)]
         unique_comps_fps = Matrix(FP[indices,2:end])
     
@@ -48,7 +48,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
 
     data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL-IE\\CNL_IE_unified_zero_$data_mode.csv",DataFrame)
     # Filter validation set compounds
-    validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Validation_set_inchikeys.csv", DataFrame)
+    validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Validation_set_inchikeys.csv", DataFrame)
     deleteat!(data_whole_raw, findall(x -> x in validation_inchikeys.INCHIKEY, data_whole_raw.INCHIKEY))
     # Load optimized hyperparameters
     consensus_threshold = optim["consensus_thres"]
@@ -250,9 +250,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     return reg,importance,z1,z2,z3,z4,z5,z6,z7, highest_errors, y_hat_df
 end
 
-reg, importance_percentage_min, importance_min, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, high_error_comps_min = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("min",allowplots=true, allowsave=false, showph=true);
 reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, high_error_comps_mean, y_hat_df_CNL = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("mean",allowplots=true, allowsave=false, showph=false);
-reg, importance_percentage_max, importance_max, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, high_error_comps_max = Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode("max",allowplots=true, allowsave=true, showph=true);
 
 # Importance tables
 importance_min_df  = DataFrame(import_col_min=importance_min, importance_min=round.(importance_percentage_min[1:length(importance_min)],digits=1))[1:10,:]
