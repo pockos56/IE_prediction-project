@@ -1,3 +1,6 @@
+########################################################################
+## Goal: Create the CNL-IE dataset
+
 using CSV, DataFrames, ProgressBars, DataStructures, FreqTables, Statistics
 
 # Create a shorter (filtered) Internal database with only the relevant compounds
@@ -11,11 +14,9 @@ Internal_filtered = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction
 # Load data
 data = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\filtered_data.csv", DataFrame)
 Internal_filtered = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_filtered.csv", DataFrame)
-best_CNLs_neg = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNLmax_Hadducts_neg.CSV", DataFrame)[1:500,1]
 best_CNLs_pos = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNLmax_Hadducts_pos.CSV", DataFrame)[1:500,1]
-#mode = "mean"
 
-# 1-Dec-2023 Binning and consensus spectra for MMM 
+# Binning and consensus spectra for MMM 
 function create_CNLIE_dataset_NIST_Unified_mode(mode::String ;ESI=+1, threshold=0.02, HiValSetToZero::Bool=true, chunk_size=10)
     function NIST_df(input)
         function mz_to_fingerprint(str::String, precursor::Float64, ESI::Int; threshold)

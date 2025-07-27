@@ -1,4 +1,6 @@
-## import packages ##
+########################################################################
+## Goal: Train the fingerprint model
+
 using ScikitLearn, Plots, Statistics, DataFrames, CSV, PyCall, Conda, LaTeXStrings, LinearAlgebra, Random, ProgressBars
 using ScikitLearn.CrossValidation: train_test_split
 pcp = pyimport("pubchempy")
@@ -6,10 +8,9 @@ cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
 #Loading optimal hyperparameters for FP model
-best_parameters_min = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\FP_optimization_min_6(3).csv", DataFrame),"accuracy_test", rev=true)
 best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\FP_optimization_mean_6(3).csv", DataFrame),"accuracy_test", rev=true)
-best_parameters_max = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\FP_optimization_max_6(3).csv", DataFrame),"accuracy_test", rev=true)
 
+# Function to train the FP model and provide accuracy metrics
 function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, showph=false)
     if mode == "min"
         min_samples_per_leaf = best_parameters_min[1,"leaves"]
@@ -184,6 +185,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     return reg,importance,z1,z2,z3,z4,z5,z6,z7, y_hat_df
 end
 
+# Train model
 reg, importance_percentage_mean, importance_mean, accuracy_tr, accuracy_te, y_hat_train, y_hat_test, res_train, res_test, y_hat_df_mean = FP_Cat_model_mode("mean", allowplots=true, allowsave=false,showph=false);
 
 # Residuals
@@ -191,77 +193,18 @@ meanRes_train = round((mean(abs.(res_train))), digits=2)
 meanRes_test = round((mean(abs.(res_test))), digits=2)
 RMSE_train = round(sqrt(mean(res_train.^2)), digits=2)
 RMSE_test = round(sqrt(mean(res_test.^2)), digits=2)
-#
-# Importance tables
-importance_min_df  = DataFrame(import_col_min=importance_min, importance_min=round.(importance_percentage_min[1:length(importance_min)],digits=1))[1:10,:]
+
+# Variable mportance
 importance_mean_df  = DataFrame(import_col_mean=importance_mean, importance_mean=round.(importance_percentage_mean[1:length(importance_mean)],digits=1))[1:10,:]
-importance_max_df  = DataFrame(import_col_max=importance_max, importance_max=round.(importance_percentage_max[1:length(importance_max)],digits=1))[1:10,:]
-#
+
 # Which compounds show the highest prediction errors?
 y_hat_df_mean.residual = abs.(y_hat_df_mean.IE - y_hat_df_mean.IE_hat_fp)
 y_hat_df_mean = sort(y_hat_df_mean, "residual",rev=true)
 
-# Is there a correlation between prediction errors and MW?
-y_hat_df_mean.MW .= 0.0
-for i in ProgressBar(1:size(y_hat_df_mean,1))
-    try
-        y_hat_df_mean.MW[i] = parse(Float64, pcp.get_compounds(y_hat_df_mean[i,"INCHIKEY"], "inchikey")[1].molecular_weight)
-    catch
-        continue
-    end
-end
-y_hat_df_mean.MW = MW
-scatter(y_hat_df_mean.residual, y_hat_df_mean.MW, ylabel="Residual (in log units)", xlabel="Molecular weight")
-cor(y_hat_df_mean.MW, y_hat_df_mean.residual)
-# i =1
-# Is there a correlation between prediction errors and molecular complexity?
-y_hat_df_mean.complexity .= 0.0
-for i in ProgressBar(1:size(y_hat_df_mean,1))
-    try
-        y_hat_df_mean.complexity[i] = convert(Float64, pcp.get_compounds(y_hat_df_mean[i,"INCHIKEY"], "inchikey")[1].complexity)
-    catch
-        continue
-    end
-end
-complexity_mean = mean(y_hat_df_mean.complexity)
-complexity_median = median(y_hat_df_mean.complexity)
-complexity_of_highest_error_comps_in_CNL_mean = [203, 501, 132, 92.9, 105, 303, 577, 403, 371, 97]
-
-using StatsPlots
-boxplot(y_hat_df_mean.complexity)
-scatter!(complexity_of_highest_error_comps_in_CNL_mean)
-violin!(complexity_of_highest_error_comps_in_CNL_mean)
-#
-# Is there a correlation between prediction errors and H donor count?
-y_hat_df_mean.H_donor .= 0.0
-y_hat_df_mean.H_donor[1] = 
-(pcp.get_compounds(y_hat_df_mean[1,"INCHIKEY"], "inchikey")[1]).listkey
-y_hat_df_mean.H_donor[1] = (pcp.get_compounds(y_hat_df_mean[1,"INCHIKEY"], "inchikey")[1]).Hbondacceptorcount
-pcp.get_compounds(y_hat_df_mean[1,"INCHIKEY"], "inchikey")[1].record
-for i in ProgressBar(1:size(y_hat_df_mean,1))
-    try
-        y_hat_df_mean.complexity[i] = convert(Float64, pcp.get_compounds(y_hat_df_mean[i,"INCHIKEY"], "inchikey")[1].complexity)
-    catch
-        continue
-    end
-end
-complexity_mean = mean(y_hat_df_mean.complexity)
-complexity_median = median(y_hat_df_mean.complexity)
-complexity_of_highest_error_comps_in_CNL_mean = [203, 501, 132, 92.9, 105, 303, 577, 403, 371, 97]
-
-using StatsPlots
-boxplot(y_hat_df_mean.complexity)
-scatter!(complexity_of_highest_error_comps_in_CNL_mean)
-violin!(complexity_of_highest_error_comps_in_CNL_mean)
-#
-
-# Plots for pH distribution
+# Plot for pH distribution
 using FreqTables
 pH = (freqtable(round.(FP[:,"pH.aq."], digits=1)))
 pH_freq = [values(pH)[i] for i in (1:length(pH))]
 pH_values = names(pH)[1]
 bar(pH_values, pH_freq, xlabel="pH", label="n=$(size(FP,1))", bars=sqrt(sum(pH_freq)), dpi=500)
 savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\pH distribution.png")
-
-a = 450
-FP[a:a+20,:]

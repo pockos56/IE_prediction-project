@@ -1,8 +1,11 @@
+########################################################################
+### Goal: Check if the compounds with the highest prediction errors
+
 using Plots, Statistics, DataFrames, CSV, PyCall, Conda, ProgressBars, StatsPlots
 pcp = pyimport("pubchempy")
 alc = pyimport("rdkit.Chem.AllChem")
 
-#Associate INCHIKEY to name
+# Function that associates INCHIKEY to name
 function inchikey_to_names(inchikey_list::Vector)
     FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_mean.csv", DataFrame)
     names_1 = []
@@ -23,36 +26,22 @@ results_fp.diff = results_fp.IE_hat_fp - results_fp.IE
 results_fp.diff_abs = abs.(results_fp.diff)
 results_fp = sort(results_fp, :diff_abs, rev=true)[1:10,:]
 fp_1, fp_2 = inchikey_to_names(results_fp[:,:INCHIKEY])
-
 results_cnl = deepcopy(y_hat_df_CNL)
 cnl_1, cnl_2 = inchikey_to_names(results_cnl[:,:INCHIKEY])
-
-# Combine
 results_fp.name = fp_2
 results_cnl.name = cnl_2
 
-
-# Check intersection of two test sets.
+# Check intersection of two test sets
 unique_comps_fp = unique(results_fp[:,:INCHIKEY])   # 1144
 unique_comps_cnl = unique(results_cnl[:,:INCHIKEY]) # 768
 intersect(unique_comps_cnl, unique_comps_fp)        # 764
-
 unique_comps_fp_test = unique(results_fp[results_fp[:,:class_fp].=="test",:INCHIKEY])   # 229
 unique_comps_cnl_test = unique(results_cnl[results_cnl[:,:class_CNL].=="test",:INCHIKEY])   # 154
 intersect(unique_comps_cnl_test, unique_comps_fp_test)  # 31
 
-# Specific outliers
-idx_1 = findall(x->x .== "AUZONCFQVSMFAP-UHFFFAOYSA-N", y_hat_df_mean[:,:INCHIKEY])
-y_hat_df_mean[idx_1,:]
-
-# Investigate
-data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_mean.csv",DataFrame)
-
-results_fp
-results_cnl[1:10,:]
+# Plots
 scatter(results_cnl[1:10,:resonance])
 scatter!(results_fp[:,:resonance])
-
 boxplot(results_cnl[1:10,:MW])
 boxplot!(results_fp[:,:MW])
 
@@ -75,11 +64,9 @@ for i = 1:length(common_inchikeys)
     fp_temp = fp_test[findall(x->x .== common_inchikey, fp_test[:,:INCHIKEY]), :]
     cnl_temp = cnl_test[findall(x->x .== common_inchikey, cnl_test[:,:INCHIKEY]), :]
     combine(groupby(cnl_temp, :pH_aq), "IE_hat_CNL"=>mean=> "IE_hat_CNL_average")
-    end
+end
 
 # Check if there are a lot of nitro groups =>> Yes indeed there are!
 FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_mean.csv", DataFrame)
-FP[:,5:end]
-
 unique(FP[findall(x->x.==1, FP[:,:PubchemFP558]),:INCHIKEY])
-558
+

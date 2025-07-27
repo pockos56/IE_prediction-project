@@ -1,5 +1,9 @@
+########################################################################
+## Goal: Evaluate the CNL predictions using the FP predictions as baseline
+
 using CSV, DataFrames, ProgressBars, Plots, LaTeXStrings, Statistics, StatsPlots
 
+# Comparison plots
 function create_comparison_plots(data_mode::String; allowplots::Bool=false, allowsave::Bool=false)
     df_FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_FP_$data_mode.csv", DataFrame)
     df_CNL = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_CNL_$data_mode.csv", DataFrame)
@@ -36,7 +40,7 @@ function create_comparison_plots(data_mode::String; allowplots::Bool=false, allo
     R2 = 1 - (sum((df_mode[:,"IE_hat_CNL"] .- df_mode[:,"IE_hat_FP"]).^2) / sum((df_mode[:,"IE_hat_CNL"] .- mean(df_mode[:,"IE_hat_CNL"])).^2))
     #
 
-    #Plots
+    # Plots if allowplots is set to true
     if allowplots
         #  Scatter plot
         lim_x_min = -0.7
@@ -70,62 +74,7 @@ function create_comparison_plots(data_mode::String; allowplots::Bool=false, allo
     return(df_mode, unique(failed_inchikeys), MAE, RMSE)     
 end
 
-function create_boxplots(df_min, df_mean, df_max; allowsave=false)
-    df_min.INCHIKEY .= "min"
-    df_mean.INCHIKEY .= "mean"
-    df_max.INCHIKEY .= "max"
-
-    p4 = boxplot(df_min.INCHIKEY, df_min[:,"CNL_hat_FP_hat_residual"], legend=false, dpi=300, ylabel = "logIE residual")
-    boxplot!(df_mean.INCHIKEY, df_mean[:,"CNL_hat_FP_hat_residual"], dpi=300)
-    boxplot!(df_max.INCHIKEY, df_max[:,"CNL_hat_FP_hat_residual"], dpi=300)
-    display(p4)
-    if allowsave
-        savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\Residual_boxplot.png")
-    end
-
-    p5 = violin(df_min.INCHIKEY, df_min[:,"CNL_hat_FP_hat_residual"], legend=false, dpi=300, ylabel = "logIE residual")
-    violin!(df_mean.INCHIKEY, df_mean[:,"CNL_hat_FP_hat_residual"], dpi=300)
-    violin!(df_max.INCHIKEY, df_max[:,"CNL_hat_FP_hat_residual"], dpi=300)
-    display(p5)
-    if allowsave
-        savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\Residual_violin.png")
-    end
-
-    #=
-    p6 = boxplot(df_min.INCHIKEY, df_min[:,"CNL_hat_FP_hat_residual"], legend=false, dpi=300, outliers=false,alpha=0.6, c="blue2", boxcolor = 0, fillalpha = 0, width=0.1)
-    boxplot!(df_mean.INCHIKEY, df_mean[:,"CNL_hat_FP_hat_residual"], dpi=300, outliers=false, c="orange1")
-    boxplot!(df_max.INCHIKEY, df_max[:,"CNL_hat_FP_hat_residual"], dpi=300, outliers=false, c="green2")
-    violin!(df_min.INCHIKEY, df_min[:,"CNL_hat_FP_hat_residual"], legend=false, dpi=300, c="blue1")
-    violin!(df_mean.INCHIKEY, df_mean[:,"CNL_hat_FP_hat_residual"], dpi=300, c="orange1")
-    violin!(df_max.INCHIKEY, df_max[:,"CNL_hat_FP_hat_residual"], dpi=300, c="green2")
-    display(p6)
-    if allowsave
-        savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\Residual_violin_boxplot.png")
-    end
-    =#
-    under1_ratio_min = sum(df_min[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_min[:,"CNL_hat_FP_hat_residual"])
-    under1_ratio_mean = sum(df_mean[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_mean[:,"CNL_hat_FP_hat_residual"])
-    under1_ratio_max = sum(df_max[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_max[:,"CNL_hat_FP_hat_residual"])
-    println("Less than 1: min: $(round(under1_ratio_min, digits=3)), mean: $under1_ratio_mean, max: $under1_ratio_max")
-    min_80 = round(quantile(abs.(df_min[:,"CNL_hat_FP_hat_residual"]),0.80), digits=3)
-    mean_80 = round(quantile(abs.(df_mean[:,"CNL_hat_FP_hat_residual"]),0.80), digits=3)
-    max_80 = round(quantile(abs.(df_max[:,"CNL_hat_FP_hat_residual"]),0.80), digits=3)
-
-    println("80th quantile: min: $(min_80), mean $(mean_80), max $(max_80)")
-    println("80th quantile (10^): min: $(10^(min_80)), mean $(10^(mean_80)), max $(10^(max_80))")
-    
-    println("MAE: min: $MAE_min, mean: $MAE_mean, max: $MAE_max")
-    println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
-end
-
-df_min, failed_min, MAE_min, RMSE_min = create_comparison_plots("min", allowplots=true, allowsave=false)
-df_mean, failed_mean, MAE_mean, RMSE_mean = create_comparison_plots("mean", allowplots=true, allowsave=false)
-df_max, failed_max, MAE_max, RMSE_max = create_comparison_plots("max", allowplots=true, allowsave=false)
-create_boxplots(df_min, df_mean, df_max, allowsave=true)
-
-# Training and test subset => different boxplots.
-
-
+# Function to plot training and test subset in different boxplots
 function create_boxplots_train_test(df_min, df_mean, df_max; allowsave=false)
     df_mean_train = df_mean[df_mean.class_CNL .== "train",:]
     df_mean_test = df_mean[df_mean.class_CNL .== "test",:]
@@ -201,13 +150,9 @@ function create_boxplots_train_test_only_mean(df_mean; allowsave=false)
         savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL vs FP\\Residual_violin_train-test_mean_only.png")
     end
 
-    under1_ratio_min = sum(df_min[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_min[:,"CNL_hat_FP_hat_residual"])
     under1_ratio_mean = sum(df_mean[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_mean[:,"CNL_hat_FP_hat_residual"])
-    under1_ratio_max = sum(df_max[:,"CNL_hat_FP_hat_residual"] .<= 1)/length(df_max[:,"CNL_hat_FP_hat_residual"])
     println("Less than 1: min: $(round(under1_ratio_min, digits=3)), mean: $under1_ratio_mean, max: $under1_ratio_max")
-    min_80 = round(quantile(abs.(df_min[:,"CNL_hat_FP_hat_residual"]),0.80), digits=3)
     mean_80 = round(quantile(abs.(df_mean[:,"CNL_hat_FP_hat_residual"]),0.80), digits=3)
-    max_80 = round(quantile(abs.(df_max[:,"CNL_hat_FP_hat_residual"]),0.80), digits=3)
 
     println("80th quantile: min: $(min_80), mean $(mean_80), max $(max_80)")
     println("80th quantile (10^): min: $(10^(min_80)), mean $(10^(mean_80)), max $(10^(max_80))")
@@ -216,9 +161,3 @@ function create_boxplots_train_test_only_mean(df_mean; allowsave=false)
     println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
 end
 
-#=
-df_min_train, df_min_test, failed_min, MAE_min, RMSE_min = create_comparison_plots_test_only("min", allowplots=true, allowsave=true)
-df_mean_train, df_mean_test, failed_mean, MAE_mean, RMSE_mean = create_comparison_plots_test_only("mean", allowplots=true, allowsave=true)
-df_max_train, df_mean_test, failed_max, MAE_max, RMSE_max = create_comparison_plots_test_only("max", allowplots=true, allowsave=true)
-create_boxplots(df_min, df_mean, df_max, allowsave=true)
-=#

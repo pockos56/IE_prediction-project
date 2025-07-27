@@ -1,27 +1,32 @@
-## import packages ##
+########################################################################
+### Goal: Check if delocalisation and molecular weight is correlated with the prediction error
 using Plots, Statistics, DataFrames, CSV, PyCall, Conda, ProgressBars
 pcp = pyimport("pubchempy")
 alc = pyimport("rdkit.Chem.AllChem")
 dr = pyimport("rdkit.Chem.Draw")
 
+## Load files
 FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_mean.csv", DataFrame)
 validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Validation_set_inchikeys.csv", DataFrame)
 deleteat!(FP, findall(x -> x in validation_inchikeys.INCHIKEY, FP.INCHIKEY))
 
+## Calculate resonance structures, as a good indicator of delocalisation
 resonance_structures_no = Int.(zeros(size(FP,1)))
 for i in ProgressBar(1:size(FP,1))
     smiles = FP[i,:SMILES]
     resonance_structures_no[i] = Int(length(alc.ResonanceMolSupplier(alc.MolFromSmiles(smiles), alc.ResonanceFlags.UNCONSTRAINED_ANIONS)))
 end
 
-# Taking the y_hat_df_mean from MMM_FP_Cat_regression.jl
-    y_hat_df_mean[:,:Resonance_No] .= resonance_structures_no
-    y_hat_df_mean[:,:Residuals] = y_hat_df_mean[:,:IE_hat_fp] - y_hat_df_mean[:,:IE]
-    y_hat_df_mean[:,:Residuals_abs] = abs.(y_hat_df_mean.Residuals)
-    y_hat_df_mean[:,:Relative_error] = (y_hat_df_mean.Residuals_abs) ./ y_hat_df_mean[:,:IE]
+## Find the prediction error for the FP model
+# Retrieving the y_hat_df_mean variable from FP_regression.jl file
+y_hat_df_mean[:,:Resonance_No] .= resonance_structures_no
+y_hat_df_mean[:,:Residuals] = y_hat_df_mean[:,:IE_hat_fp] - y_hat_df_mean[:,:IE]
+y_hat_df_mean[:,:Residuals_abs] = abs.(y_hat_df_mean.Residuals)
+y_hat_df_mean[:,:Relative_error] = (y_hat_df_mean.Residuals_abs) ./ y_hat_df_mean[:,:IE]
     
-    df_train = y_hat_df_mean[y_hat_df_mean[:,:class_fp].=="train",:]
-    df_test = y_hat_df_mean[y_hat_df_mean[:,:class_fp].=="test",:]
+df_train = y_hat_df_mean[y_hat_df_mean[:,:class_fp].=="train",:]
+df_test = y_hat_df_mean[y_hat_df_mean[:,:class_fp].=="test",:]
+
 # Mean residuals (clean)
     # Group together to de-noise data (True)
     df_train_mean_res = combine(groupby(df_train, :Resonance_No), :Residuals => mean => :AverageResiduals)

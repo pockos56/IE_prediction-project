@@ -1,13 +1,14 @@
-using CSV, DataFrames, JLD, Plots, ScikitLearn, Statistics, Conda, PyCall, BSON
+########################################################################
+## Goal: Filter mass spectra library and extract the most common CNLs
+
+using CSV, DataFrames, JLD, Plots, ScikitLearn, Statistics, Conda, PyCall, BSON, Distributions, ProgressBars
 import StatsPlots as sp
-using ProgressBars
-using Distributions
 
 function first_filtering(data_set)
     #filtering N/A and missing values of InCIkeys and Resolution columns
     data_set = data_set[.!ismissing.(data_set[!,:INCHIKEY]),:]
     data_set = data_set[(data_set[!,:INCHIKEY].!= "N/A"),:]
-    data_set = data_set[(data_set[!,:INCHIKEY].!= "NA"),:]              # Send to Vika for addition
+    data_set = data_set[(data_set[!,:INCHIKEY].!= "NA"),:]             
     
     data_set = data_set[.!ismissing.(data_set[!,:MZ_VALUES]),:]
     data_set = data_set[(data_set[!,:MZ_VALUES].!= "[]"),:]
@@ -15,7 +16,7 @@ function first_filtering(data_set)
 
     #filtering resolution < 5000
     data_set= data_set[.!ismissing.(data_set[!,:RESOLUTION]),:]
-    data_set= data_set[.!isnan.(data_set[!,:RESOLUTION]),:]                     # Send to Vika for addition (IMPORTANT)
+    data_set= data_set[.!isnan.(data_set[!,:RESOLUTION]),:]                    
 
     unique(data_set[!,:RESOLUTION])
     temp =[]
@@ -46,10 +47,10 @@ function filtering_IonMode(data_set)
     #filter positive (H+) and negative modes
     negative_ind = []
     positive_ind = []
-    for i in ProgressBar(1:length(data_set[!,:ION_MODE]))           # Send to Vika for addition
-        if (data_set[i,:ION_MODE] == "POSITIVE" || data_set[i,:ION_MODE] == "P")# && (data_set[i,:PRECURSOR_ION] - data_set[i,:EXACT_MASS] < 1.01)
+    for i in ProgressBar(1:length(data_set[!,:ION_MODE]))         
+        if (data_set[i,:ION_MODE] == "POSITIVE" || data_set[i,:ION_MODE] == "P")
             push!(positive_ind, i)
-        elseif (data_set[i,:ION_MODE] == "NEGATIVE" || data_set[i,:ION_MODE] == "N")# && (data_set[i,:EXACT_MASS] - data_set[i,:PRECURSOR_ION] < 1.01)
+        elseif (data_set[i,:ION_MODE] == "NEGATIVE" || data_set[i,:ION_MODE] == "N")
             push!(negative_ind, i)
         end
     end
@@ -60,7 +61,7 @@ end
 
 function av_spectra(data_set)
     spectra = DataFrame()
-    # find all unique chemicals and their indeces
+    # find all unique chemicals and their indices
     temp1 = unique(data_set[!,:INCHIKEY])
     TV1 = [temp1 [count(==(i),data_set[!,:INCHIKEY]) for i in temp1]]
     TV1 = TV1[TV1[:,2].!=1,:]
@@ -121,13 +122,3 @@ NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\dat
 positive_set, negative_set = filtering_IonMode(first_filtering(NIST))
 CNLmax_neg = CNLs_list(av_spectra(negative_set),threshold=15)[1]
 CNLmax_pos = CNLs_list(av_spectra(positive_set),threshold=80)[1]
-
-for i = 1:nrow(average_spectra)
-    if sort(average_spectra[:,:CNLs][i], rev=true)[1] > 1000
-        println(i)
-    end
-end
-
-average_spectra[2158,:]
-average_spectra[2178,:]
-findall(x->x in average_spectra[:,:CNLs], "1200")
