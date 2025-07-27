@@ -1,6 +1,6 @@
 using CSV, DataFrames, PyCall, Conda, ProgressBars, Statistics, LinearAlgebra, Plots, Random, DataStructures
-#using Pkg
-#Pkg.add(url="https://github.com/pockos56/IE_prediction.jl")
+using Pkg
+Pkg.add(url="https://github.com/pockos56/IE_prediction.jl")
 using IE_prediction
 
 # Load data
@@ -52,33 +52,35 @@ function leverage_dist(training_set_FPs, expansion_set_FPs)
     return lev
 end
 # The CNL_IE_unified is the training set for the CNL model
-CNL_IE_unified_zero = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero.csv", DataFrame)
+CNL_IE_unified_zero_min = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_min.csv", DataFrame)
+CNL_IE_unified_zero_max = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_max.csv", DataFrame)
+CNL_IE_unified_zero_mean = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_mean.csv", DataFrame)
+
 # It has 835 unique compounds
-unique_comps_CNLIE = combine(groupby(CNL_IE_unified_zero, "INCHIKEY")) do group first(group, 1) end
+unique_comps_CNLIE = combine(groupby(CNL_IE_unified_zero_min, "INCHIKEY")) do group first(group, 1) end
 # The Internal_FPs_dict contains the PubChem FPs for all Internal_pos_H compounds
 Internal_FPs_dict = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Internal_pubchem_FPs_dict.csv", DataFrame)
-#We should exclude the ones that are present in the current (prior to expansion) CNL-IE dataset
+# We should exclude the ones that are present in the current (prior to expansion) CNL-IE dataset
 same_comps_ind = findall(x->x in unique_comps_CNLIE[:,"INCHIKEY"], Internal_FPs_dict[:,"INCHIKEY"])
 Internal_FPs_dict_filtered = deepcopy(Internal_FPs_dict)
 deleteat!(Internal_FPs_dict_filtered, same_comps_ind)
 same_comps_ind_verify = findall(x->x in unique_comps_CNLIE[:,"INCHIKEY"], Internal_FPs_dict_filtered[:,"INCHIKEY"])     #Returns nothing. The filtered dict has different comps than the training set comps
 # The FP_training_set contains the PubChem FPs for all comps used in the optimized FP model
-FP_training_set = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_model_training set.csv", DataFrame)
+FP_training_set = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_model_training set_min.csv", DataFrame)
 same_comps_ind = findall(x->x in unique(FP_training_set[:,"INCHIKEY"]), Internal_FPs_dict_filtered[:,"INCHIKEY"])
 deleteat!(Internal_FPs_dict_filtered, same_comps_ind)
 # Calculate the leverage for these comps
 Internal_leverages = leverage_dist(Matrix(FP_training_set[:,10:end]), Matrix(Internal_FPs_dict_filtered[:,2:end]))
 insertcols!(Internal_FPs_dict_filtered, 2, :leverage =>Internal_leverages)
 # Decide the compounds for the expansion
-# CNL_IE has 835 unique INCHIKEYs in 227519 spectra
-unique(CNL_IE_unified_zero[:,"INCHIKEY"])
-CNL_IE_unified_zero
+# CNL_IE has 835 unique INCHIKEYs in 62865 spectra
+unique(CNL_IE_unified_zero_min[:,"INCHIKEY"])
+CNL_IE_unified_zero_min
 # Internal_FPs_dict_filtered has 25376 unique INCHIKEYs in 641682 spectra
 Internal_FPs_dict_filtered
 Internal_pos_H[:,:INCHIKEY]
-        #findall(x->x in Internal_FPs_dict_filtered[:,"INCHIKEY"], Internal_pos_H[:,"INCHIKEY"])
-# First pick 835 comps with stratification and get all spectra (which should be less than 227k)
-Internal_FPs_dict_filtered
+#findall(x->x in Internal_FPs_dict_filtered[:,"INCHIKEY"], Internal_pos_H[:,"INCHIKEY"])
+# First pick 835 comps with stratification and get all spectra (which should be less than 62.8k)
 x = Internal_FPs_dict_filtered[:,["INCHIKEY","leverage"]]
 # Sample every nth INCHIKEY sorted by leverage 
 randomness = 1
@@ -87,32 +89,58 @@ expa_spectra = Internal_pos_H[findall(x->x in expa_comps, Internal_pos_H[:,"INCH
 
 # Predict IEs
 # Choose a pH from the training set pH distribution
-FP_training_set = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_model_training set.csv", DataFrame)
-CNL_IE_unified_zero = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero.csv", DataFrame)
+FP_training_set = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_model_training set_min.csv", DataFrame)
+CNL_IE_unified_zero_min = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_min.csv", DataFrame)
 histogram(FP_training_set[:,"pH.aq."], label="FP train set pH", bins=50)
-histogram(CNL_IE_unified_zero[:,"pH_aq"], label="CNL-IE original pH", bins=50)
+histogram(CNL_IE_unified_zero_min[:,"pH_aq"], label="CNL-IE original pH", bins=50)
 
 # The two distributions are roughly the same, as expected. We choose FP_training_set pH distribution
-# We have 4570 original pH values and need 20988 output values
+# We have 1559 original pH values and need 21154 output values
 pH_vec_original = FP_training_set[:,"pH.aq."]
-pH_vec_1 = pH_vec_original[randperm(MersenneTwister(1), size(pH_vec_original,1))]
-pH_vec_2 = pH_vec_original[randperm(MersenneTwister(2), size(pH_vec_original,1))]
-pH_vec_3 = pH_vec_original[randperm(MersenneTwister(3), size(pH_vec_original,1))]
-pH_vec_4 = pH_vec_original[randperm(MersenneTwister(4), size(pH_vec_original,1))]
-pH_vec_1_4 = vcat(vcat(pH_vec_1,pH_vec_2),vcat(pH_vec_3,pH_vec_4))
-pH_vec_5 = pH_vec_original[randperm(MersenneTwister(5), size(pH_vec_original,1))][1:(size(expa_spectra,1)-length(pH_vec_1_4))]
-pH_vec = vcat(pH_vec_1_4,pH_vec_5)
+pH_vec_99 = reduce(vcat, [pH_vec_original[randperm(MersenneTwister(1), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(2), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(3), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(4), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(5), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(6), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(7), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(8), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(9), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(10), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(11), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(12), size(pH_vec_original,1))]
+    pH_vec_original[randperm(MersenneTwister(13), size(pH_vec_original,1))]])
+pH_vec_1 = pH_vec_original[randperm(MersenneTwister(99), size(pH_vec_original,1))][1:(size(expa_spectra,1)-length(pH_vec_99))]
+pH_vec = vcat(pH_vec_99,pH_vec_1)
 histogram(FP_training_set[:,"pH.aq."], label="FP train set pH", bins=50, alpha=0.7)
 histogram!(pH_vec, label="Expansion pH", bins=50, alpha=0.7)
 # As shown in the histogram, the pH distribution of the expansion set is the same as the pH distribution of the FP training set
 # Last let's shuffle expa_spectra before inserting the pH_vec as an extra step of (reproducible) randomness
 expa_spectra_wpH = expa_spectra[randperm(MersenneTwister(1312), size(expa_spectra,1)),:]
 insertcols!(expa_spectra_wpH, 6, :pH_aq =>pH_vec)
-logIE_vec = ones(size(expa_spectra_wpH,1)) .* -Inf
-insertcols!(expa_spectra_wpH, 7, :logIE =>logIE_vec)
-for i in ProgressBar(1:size(expa_spectra_wpH,1))
+insertcols!(expa_spectra_wpH, 7, :logIE =>ones(size(expa_spectra_wpH,1)) .* -Inf)
+expa_spectra_wpH_min = deepcopy(expa_spectra_wpH)
+expa_spectra_wpH_mean = deepcopy(expa_spectra_wpH)
+expa_spectra_wpH_max = deepcopy(expa_spectra_wpH)
+for i in ProgressBar(1:size(expa_spectra_wpH_min,1))
     try
-    expa_spectra_wpH[i,"logIE"] = ulogIE_from_InChIKey(String(expa_spectra_wpH[i,"INCHIKEY"]), expa_spectra_wpH[i,"pH_aq"])
+        expa_spectra_wpH_min[i,"logIE"] = ulogIE_from_InChIKey(String(expa_spectra_wpH_min[i,"INCHIKEY"]), expa_spectra_wpH_min[i,"pH_aq"], "min")
+    catch
+        error("Comp $i not calculated.")
+        break
+    end
+end
+for i in ProgressBar(1:size(expa_spectra_wpH_mean,1))
+    try
+    expa_spectra_wpH_mean[i,"logIE"] = ulogIE_from_InChIKey(String(expa_spectra_wpH_mean[i,"INCHIKEY"]), expa_spectra_wpH_mean[i,"pH_aq"], "mean")
+    catch
+        error("Comp $i not calculated.")
+        break
+    end
+end
+for i in ProgressBar(1:size(expa_spectra_wpH_max,1))
+    try
+    expa_spectra_wpH_max[i,"logIE"] = ulogIE_from_InChIKey(String(expa_spectra_wpH_max[i,"INCHIKEY"]), expa_spectra_wpH_max[i,"pH_aq"], "max")
     catch
         error("Comp $i not calculated.")
         break
@@ -124,7 +152,8 @@ not_calculated = findall(x->x.==-Inf, expa_spectra_wpH[:,"logIE"])
 CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\Expansion.csv", expa_spectra_wpH)
 
 # Load data for combination of original + expansion
-CNL_IE_unified_zero = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero.csv", DataFrame)
+CNL_IE_unified_zero_min = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\CNL_IE_unified_zero_min.csv", DataFrame)
+
 expansion = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\CNL-IE\\Expansion.csv", DataFrame)
 
 # Checking that everything is according to the requirements for semi-supervision

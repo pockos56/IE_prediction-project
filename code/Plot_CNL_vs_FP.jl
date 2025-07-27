@@ -118,10 +118,14 @@ function create_boxplots(df_min, df_mean, df_max; allowsave=false)
     println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
 end
 
+df_min, failed_min, MAE_min, RMSE_min = create_comparison_plots("min", allowplots=true, allowsave=false)
 df_mean, failed_mean, MAE_mean, RMSE_mean = create_comparison_plots("mean", allowplots=true, allowsave=false)
+df_max, failed_max, MAE_max, RMSE_max = create_comparison_plots("max", allowplots=true, allowsave=false)
 create_boxplots(df_min, df_mean, df_max, allowsave=true)
 
 # Training and test subset => different boxplots.
+
+
 function create_boxplots_train_test(df_min, df_mean, df_max; allowsave=false)
     df_mean_train = df_mean[df_mean.class_CNL .== "train",:]
     df_mean_test = df_mean[df_mean.class_CNL .== "test",:]
@@ -174,6 +178,7 @@ function create_boxplots_train_test(df_min, df_mean, df_max; allowsave=false)
     println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
 end
 
+
 function create_boxplots_train_test_only_mean(df_mean; allowsave=false)
     df_mean_train = df_mean[df_mean.class_CNL .== "train",:]
     df_mean_test = df_mean[df_mean.class_CNL .== "test",:]
@@ -211,3 +216,9 @@ function create_boxplots_train_test_only_mean(df_mean; allowsave=false)
     println("RMSE: min: $RMSE_min, mean: $RMSE_mean, max: $RMSE_max")
 end
 
+#=
+df_min_train, df_min_test, failed_min, MAE_min, RMSE_min = create_comparison_plots_test_only("min", allowplots=true, allowsave=true)
+df_mean_train, df_mean_test, failed_mean, MAE_mean, RMSE_mean = create_comparison_plots_test_only("mean", allowplots=true, allowsave=true)
+df_max_train, df_mean_test, failed_max, MAE_max, RMSE_max = create_comparison_plots_test_only("max", allowplots=true, allowsave=true)
+create_boxplots(df_min, df_mean, df_max, allowsave=true)
+=#
