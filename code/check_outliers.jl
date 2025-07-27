@@ -12,7 +12,7 @@ function inchikey_to_names(inchikey_list::Vector)
         try
             push!(names_2, pcp.get_compounds(i, "inchikey")[1].synonyms[1])
         catch
-        continue
+            continue
         end
     end
     return names_1, names_2
