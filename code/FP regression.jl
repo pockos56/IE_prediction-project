@@ -1,5 +1,5 @@
 ########################################################################
-## Goal: Train the fingerprint model
+## Goal: Train the fingerprint (FP) model
 
 using ScikitLearn, Plots, Statistics, DataFrames, CSV, PyCall, Conda, LaTeXStrings, LinearAlgebra, Random, ProgressBars
 using ScikitLearn.CrossValidation: train_test_split
@@ -7,44 +7,29 @@ pcp = pyimport("pubchempy")
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
+## Paths
+project_path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\"
+path_data = joinpath(project_path, "data")
+path_graphs = joinpath(project_path, "Graphs")
+
 #Loading optimal hyperparameters for FP model
-best_parameters_mean = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\FP_optimization_mean_6(3).csv", DataFrame),"accuracy_test", rev=true)
+best_parameters_mean = sort(CSV.read(joinpath(path_data, "Optimised hyperparameters", "FP_optimization_mean_6(3).csv"), DataFrame),"accuracy_test", rev=true)
 
 # Function to train the FP model and provide accuracy metrics
 function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, showph=false)
-    if mode == "min"
-        min_samples_per_leaf = best_parameters_min[1,"leaves"]
-        n_trees = best_parameters_min[1,"trees"]
-        learn_rate = best_parameters_min[1,"learn_rate"]
-        state = best_parameters_min[1,"state"]
-        depth = best_parameters_min[1,"depth"]
-        subsample = best_parameters_min[1,"subsample"]
-        colsample_bylevel = best_parameters_min[1,"colsample_bylevel"]
-        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, depth=depth,colsample_bylevel=colsample_bylevel, subsample=subsample, verbose=false)
-    elseif mode == "mean"
-        min_samples_per_leaf = best_parameters_mean[1,"leaves"]
-        n_trees = best_parameters_mean[1,"trees"]
-        learn_rate = best_parameters_mean[1,"learn_rate"]
-        state = best_parameters_mean[1,"state"]
-        depth = best_parameters_mean[1,"depth"]
-        subsample = best_parameters_mean[1,"subsample"]
-        colsample_bylevel = best_parameters_mean[1,"colsample_bylevel"]
-        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, depth=depth,colsample_bylevel=colsample_bylevel, subsample=subsample, verbose=false)
-    elseif mode == "max"
-        min_samples_per_leaf = best_parameters_max[1,"leaves"]
-        n_trees = best_parameters_max[1,"trees"]
-        learn_rate = best_parameters_max[1,"learn_rate"]
-        state = best_parameters_max[1,"state"]
-        depth = best_parameters_max[1,"depth"]
-        subsample = best_parameters_max[1,"subsample"]
-        colsample_bylevel = best_parameters_max[1,"colsample_bylevel"]
-        reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, depth=depth,colsample_bylevel=colsample_bylevel, subsample=subsample, verbose=false)
-    else error("Set mode to min, max, or mean")
-    end
+    # Load hyperparameters
+    min_samples_per_leaf = best_parameters_mean[1,"leaves"]
+    n_trees = best_parameters_mean[1,"trees"]
+    learn_rate = best_parameters_mean[1,"learn_rate"]
+    state = best_parameters_mean[1,"state"]
+    depth = best_parameters_mean[1,"depth"]
+    subsample = best_parameters_mean[1,"subsample"]
+    colsample_bylevel = best_parameters_mean[1,"colsample_bylevel"]
+    reg = cat.CatBoostRegressor(n_estimators=n_trees, learning_rate=learn_rate, random_state=state, grow_policy=:Lossguide, min_data_in_leaf=min_samples_per_leaf, depth=depth,colsample_bylevel=colsample_bylevel, subsample=subsample, verbose=false)
 
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Fingerprints\\FP6_$mode.csv", DataFrame)
+    FP = CSV.read(joinpath(path_data, "Fingerprints", "FP6_$mode.csv"), DataFrame)
     # Filter validation set compounds
-    validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Validation_set_inchikeys.csv", DataFrame)
+    validation_inchikeys = CSV.read(joinpath(path_data, "Validation_set_inchikeys.csv"), DataFrame)
     deleteat!(FP, findall(x -> x in validation_inchikeys.INCHIKEY, FP.INCHIKEY))
     
     FP1 = hcat(FP[!,"pH.aq."],FP[!,10:end])
@@ -85,7 +70,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
     if allowsave
         training_set_to_save = FP[train_set_indices,:]
         unique(FP[train_set_indices,:INCHIKEY])
-        CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\FP_model_training set_$mode.csv", training_set_to_save)
+        CSV.write(joinpath(path_data, "FP_model_training set_$mode.csv"), training_set_to_save)
     end
     X_train = Matrix(FP1[train_set_indices,:])
     X_test = Matrix(FP1[test_set_indices,:])
@@ -114,8 +99,6 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
         p1 = scatter(y_train,z4,label="Training set", legend=:bottomright, title = "FP model", color = :lightblue1, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", markerstrokewidth=0.1, dpi=300)
         scatter!(y_test,z5,label="Test set", color=:orange, markerstrokewidth=0.1, dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=1.5,dpi=300)
-        #annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
-        #annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: Q^2=$(round(z3, digits=3))"),:right)
 
         p2 = scatter(y_train,z4, legend=false, ticks=false, color = :lightblue1, alpha=0.8, markerstrokewidth=0.1, dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=1.5,dpi=300)
@@ -125,8 +108,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
         p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
         display(p123)
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Regression_FP6_$mode.png")
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Regression_FP6_$mode.pdf")
+            savefig(joinpath(path_graphs, "Fingerprints", "Cat_Regression_FP6_$mode.pdf"))
         end
 
         p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "Regression residuals", color = :lightblue1, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -146,7 +128,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
         p456 = plot(p4,p5,p6,layout= @layout [a{0.7w} [b; c]])
 
         if allowsave == true
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Residuals_FP6_$mode.png")
+            savefig(joinpath(path_graphs, "Fingerprints", "Cat_Residuals_FP6_$mode.pdf"))
         end
         display(p456)
         if showph == true
@@ -156,9 +138,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
             plot_pH = scatter(y_hat_df[train_ind,"IE"], y_hat_df[train_ind,"IE_hat_fp"],label="Training set", legend=:best, title = "FP model", markershape = :circle, marker_z = y_hat_df[train_ind,"pH_aq"], xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)",color=:jet,dpi=300)
             scatter!(y_hat_df[test_ind,"IE"], y_hat_df[test_ind,"IE_hat_fp"],label="Test set", marker_z = y_hat_df[test_ind,"pH_aq"], markershape = :rect,color=:jet,dpi=300)
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])], label="1:1 line",width=2,dpi=300)
-            if allowsave == true
-                #savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Regression_pH_FP6_$mode.png")
-            end
+
             # Residual pH plot
             residuals_vec = y_hat_df[:,"IE_hat_fp"] - y_hat_df[:,"IE"]
 
@@ -169,7 +149,7 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[-3*std(residuals_vec),-3*std(residuals_vec)],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
     
             if allowsave == true
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Fingerprints\\Cat_Residuals_pH_FP6_$mode.png")
+                savefig(joinpath(path_graphs, "Fingerprints", "Cat_Residuals_pH_FP6_$mode.pdf"))
             end
             display(plot_pH)
             display(plot_pH_res)
@@ -178,9 +158,9 @@ function FP_Cat_model_mode(mode::String; allowplots=false, allowsave=false, show
 
     if allowsave == true
         # Saving the models (joblib)
-        jblb.dump(reg, "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\FP_reg_$mode.joblib")
+        jblb.dump(reg, joinpath(path_data, "models", "FP_reg_$mode.joblib"))
         # Saving the predicted IEs
-        CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_FP_$mode.csv", y_hat_df)
+        CSV.write(joinpath(path_data, "models", "y_hat_df_FP_$mode.csv"), y_hat_df)
     end
     return reg,importance,z1,z2,z3,z4,z5,z6,z7, y_hat_df
 end
@@ -207,4 +187,4 @@ pH = (freqtable(round.(FP[:,"pH.aq."], digits=1)))
 pH_freq = [values(pH)[i] for i in (1:length(pH))]
 pH_values = names(pH)[1]
 bar(pH_values, pH_freq, xlabel="pH", label="n=$(size(FP,1))", bars=sqrt(sum(pH_freq)), dpi=500)
-savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\pH distribution.png")
+savefig(joinpath(path_graphs, "pH distribution.pdf"))

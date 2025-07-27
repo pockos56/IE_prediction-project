@@ -4,9 +4,14 @@
 using Plots, Statistics, DataFrames, CSV, PyCall, Conda, ProgressBars, ScikitLearn
 pcp = pyimport("pubchempy")
 
+## Paths
+project_path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\"
+path_data = joinpath(project_path, "data")
+path_graphs = joinpath(project_path, "Graphs")
+
 # Load data
-FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Fingerprints\\FP6_mean.csv", DataFrame)
-validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Validation_set_inchikeys.csv", DataFrame)
+FP = CSV.read(joinpath(path_data, "Fingerprints", "FP6_mean.csv"), DataFrame)
+validation_inchikeys = CSV.read(joinpath(path_data, "Validation_set_inchikeys.csv"), DataFrame)
 deleteat!(FP, findall(x -> x in validation_inchikeys.INCHIKEY, FP.INCHIKEY))
 groupby(FP, "inchi")
 
@@ -75,7 +80,7 @@ scatter(cumsum(pca.explained_variance_ratio_).*100, size = (1280,720), dpi = 300
 plot!(cumsum(pca.explained_variance_ratio_).*100, size = (1280,720), legend = false, grid = false, xlabel = "Number of PCs",
         ylabel = "Explained Variance (%)", left_margin = 7Plots.mm, bottom_margin = 5Plots.mm, right_margin = 5Plots.mm,
         xlims = (1,8), dpi = 300)
-savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\PCA\\Explained_variance.pdf")
+savefig(joinpath(path_graphs, "PCA", "Explained_variance.pdf"))
 
 #Select an appropiate number of principle components. In our case 3:
 pca = PCA(n_components = 3)
@@ -98,11 +103,11 @@ b3 = bar(loadings[3,:], group = var_names, palette = :tab10, size = (1000,500),
 left_margin = 7Plots.mm, bottom_margin = 7.5Plots.mm, right_margin = 5Plots.mm,
  legendfont = font(5), guidefont = 15, xticks = false, title = "PC 3" , dpi = 300,ylims = (-0.5,0.7),legend_order = legend_order, legend = :false)
 plot(b1,b2,b3, layout = (1,3), dpi = 300)
-savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\PCA\\loadings.pdf")
+savefig(joinpath(path_graphs, "PCA", "loadings.pdf"))
 
 # Calculate the scores for each compound in each PC
 scores = pca.fit_transform(X)
 
 # Plot scores
 scatter(scores[:,1], scores[:,2], scores[:,3], size = (1280, 720), markerstrokewidth = 0.75, alpha = 0.75, left_margin = 7Plots.mm, bottom_margin = 5Plots.mm, right_margin = 5Plots.mm, xtickfont=font(10), ytickfont=font(10), ztickfont=font(10),guidefont=font(12), xlabel = "PC 1($(round(pca.explained_variance_ratio_[1].*100, digits=1)))%", ylabel = "PC 2($(round(pca.explained_variance_ratio_[2].*100, digits=2)))%", zlabel = "PC3($(round(pca.explained_variance_ratio_[3].*100, digits=1)))%", legendfont=font(15), zcolor=FP.unified_IEs, legend=false, colorbar = true, cgrad = :default, dpi=300)
-savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Graphs\\PCA\\scores.pdf")
+savefig(joinpath(path_graphs, "PCA", "scores.pdf"))

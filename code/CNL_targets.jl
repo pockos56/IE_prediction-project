@@ -4,6 +4,11 @@
 using CSV, DataFrames, JLD, Plots, ScikitLearn, Statistics, Conda, PyCall, BSON, Distributions, ProgressBars
 import StatsPlots as sp
 
+## Paths
+project_path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\"
+path_data = joinpath(project_path, "data")
+path_graphs = joinpath(project_path, "Graphs")
+
 function first_filtering(data_set)
     #filtering N/A and missing values of InCIkeys and Resolution columns
     data_set = data_set[.!ismissing.(data_set[!,:INCHIKEY]),:]
@@ -118,7 +123,7 @@ function CNLs_list(average_spectra; threshold::Int=80)
     return CNLmax,P_CNL
 end
 
-NIST = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Database_INTERNAL_2022-11-17.csv", DataFrame)
+NIST = CSV.read(joinpath(path_data,"Database_INTERNAL_2022-11-17.csv"), DataFrame)
 positive_set, negative_set = filtering_IonMode(first_filtering(NIST))
 CNLmax_neg = CNLs_list(av_spectra(negative_set),threshold=15)[1]
 CNLmax_pos = CNLs_list(av_spectra(positive_set),threshold=80)[1]

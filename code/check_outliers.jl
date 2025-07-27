@@ -5,9 +5,14 @@ using Plots, Statistics, DataFrames, CSV, PyCall, Conda, ProgressBars, StatsPlot
 pcp = pyimport("pubchempy")
 alc = pyimport("rdkit.Chem.AllChem")
 
+## Paths
+project_path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\"
+path_data = joinpath(project_path, "data")
+path_graphs = joinpath(project_path, "Graphs")
+
 # Function that associates INCHIKEY to name
 function inchikey_to_names(inchikey_list::Vector)
-    FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_mean.csv", DataFrame)
+    FP = CSV.read(joinpath(path_data,"Fingerprints","FP6_mean.csv"), DataFrame)
     names_1 = []
     names_2 = []
     for i in ProgressBar(inchikey_list)
@@ -65,8 +70,8 @@ for i = 1:length(common_inchikeys)
     cnl_temp = cnl_test[findall(x->x .== common_inchikey, cnl_test[:,:INCHIKEY]), :]
     combine(groupby(cnl_temp, :pH_aq), "IE_hat_CNL"=>mean=> "IE_hat_CNL_average")
 end
-
+joinpath(path_data,"Fingerprints","FP6_mean.csv")
 # Check if there are a lot of nitro groups =>> Yes indeed there are!
-FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_mean.csv", DataFrame)
+FP = CSV.read(joinpath(path_data,"Fingerprints","FP6_mean.csv"), DataFrame)
 unique(FP[findall(x->x.==1, FP[:,:PubchemFP558]),:INCHIKEY])
 

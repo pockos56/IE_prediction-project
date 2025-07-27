@@ -3,11 +3,17 @@
 
 using CSV, DataFrames, Statistics, ProgressBars
 
+## Paths
+project_path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\"
+path_data = joinpath(project_path, "data")
+path_graphs = joinpath(project_path, "Graphs")
+path_fp = joinpath(project_path, "data", "Fingerprints")
+
 # Compute fingerprints
 path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\"
 for i in ProgressBar(1:16)
     FP_mean = DataFrame()
-    FP = CSV.read(path*"FP$i.csv", DataFrame)
+    FP = CSV.read(joinpath(path_fp, "FP$i.csv"), DataFrame)
     insertcols!(FP, 5, "rounded_pH" => round.(FP[:,"pH.aq."]))
     for unique_inchikey in ProgressBar(unique(FP[:,"INCHIKEY"]))
         FP_comp = FP[findall(x->x .== unique_inchikey, FP[:,"INCHIKEY"]),:]
@@ -20,5 +26,5 @@ for i in ProgressBar(1:16)
             FP_mean = append!(FP_mean, FP_mean_temp)
         end
     end
-    CSV.write(path*"FP$(i)_mean.csv",FP_mean[:,Not("rounded_pH")])
+    CSV.write(joinpath(path_fp, "FP$(i)_mean.csv"),FP_mean[:,Not("rounded_pH")])
 end

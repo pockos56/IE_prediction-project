@@ -5,9 +5,14 @@ pcp = pyimport("pubchempy")
 alc = pyimport("rdkit.Chem.AllChem")
 dr = pyimport("rdkit.Chem.Draw")
 
+## Paths
+project_path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\"
+path_data = joinpath(project_path, "data")
+path_graphs = joinpath(project_path, "Graphs")
+
 ## Load files
-FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Fingerprints\\FP6_mean.csv", DataFrame)
-validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\data\\Validation_set_inchikeys.csv", DataFrame)
+FP = CSV.read(joinpath(path_data,"Fingerprints","FP6_mean.csv"), DataFrame)
+validation_inchikeys = CSV.read(joinpath(path_data, "Validation_set_inchikeys.csv"), DataFrame)
 deleteat!(FP, findall(x -> x in validation_inchikeys.INCHIKEY, FP.INCHIKEY))
 
 ## Calculate resonance structures, as a good indicator of delocalisation
@@ -53,7 +58,7 @@ df_test = y_hat_df_mean[y_hat_df_mean[:,:class_fp].=="test",:]
     cor_abs_test = cor(df_test[:,:Resonance_No], df_test[:,:Residuals_abs])     # 0.13
     scatter(df_test[:,:Resonance_No], abs.(df_test[:,:Residuals]), xscale=:log10, xlabel="Number of resonance structures", ylabel="Absolute prediction error", label="All", alpha=0.7)
     scatter(df_test[:,:Resonance_No], df_test[:,:Residuals], xscale=:log10, xlabel="Number of resonance structures", ylabel="Prediction error", label="All data points")
-    savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Resonance\\Raw_absolute_error.pdf")
+    savefig(joinpath(path_graphs,"Resonance", "Raw_absolute_error.pdf"))
 
     # Group together to de-noise data - Residuals_abs (True)
     df_train_mean_res = combine(groupby(df_train, :Resonance_No), :Residuals_abs => mean => :Residuals_abs)
@@ -63,7 +68,7 @@ df_test = y_hat_df_mean[y_hat_df_mean[:,:class_fp].=="test",:]
     cor_mean_test = cor(df_test_mean_res[:,:Resonance_No], df_test_mean_res[:,:Residuals_abs])     # 0.50
 
     scatter!(df_test_mean_res[:,:Resonance_No], abs.(df_test_mean_res[:,:Residuals_abs]), xscale=:log10, xlabel="Number of resonance structures", ylabel="Absolute prediction error", label="Grouped", dpi=300, alpha=0.8)
-    savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\Resonance\\absolute_error_joined.pdf")
+    savefig(joinpath(path_graphs,"Resonance", "absolute_error_joined.pdf"))
     # Relative_error (No)
     cor_mean_train = cor(df_train[:,:Resonance_No], df_train[:,:Relative_error])  # NaN  
     cor_mean_test = cor(df_test[:,:Resonance_No], df_test[:,:Relative_error])     # 0.00
@@ -161,8 +166,7 @@ df_test = y_hat_df_mean[y_hat_df_mean[:,:class_fp].=="test",:]
     cor_mean_test = cor(df_test_mean_res[:,:MW], df_test_mean_res[:,:Residuals_abs])     # r = 0.03
 
     scatter!(df_test_mean_res[:,:MW], abs.(df_test_mean_res[:,:Residuals_abs]), xlabel="Molecular weight", ylabel="Absolute prediction error", label="Grouped", dpi=300, alpha=0.8)
-    savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\MW\\absolute_error_joined.pdf")
-
+    savefig(joinpath(path_graphs,"MW", "absolute_error_joined.pdf"))
 
     MW_Residual_correlation = cor(y_hat_df_mean.MW, y_hat_df_mean.Residuals)       
     MW_Residual_correlation_train = cor(y_hat_df_mean[y_hat_df_mean[:,"class_fp"].=="train",:MW], abs.(y_hat_df_mean[y_hat_df_mean[:,"class_fp"].=="train",:Residuals]))       

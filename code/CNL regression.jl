@@ -6,14 +6,19 @@ using ScikitLearn.CrossValidation: train_test_split
 cat = pyimport("catboost")
 jblb = pyimport("joblib")
 
+## Paths
+project_path = "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\"
+path_data = joinpath(project_path, "data")
+path_graphs = joinpath(project_path, "Graphs")
+
 #Loading optimal hyperparameters for CNL model
-optim_mean_5 = sort(CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Optimised hyperparameters\\CNL_optimization_mean_5.csv", DataFrame),"accuracy_test",rev=true)
+optim_mean_5 = sort(CSV.read(joinpath(path_data, "Optimised hyperparameters", "CNL_optimization_mean_5.csv"), DataFrame),"accuracy_test",rev=true)
 optim_whole = reduce(vcat,[DataFrame(optim_min_5[1,:]), DataFrame(optim_mean_5[1,:]), DataFrame(optim_max_5[1,:])])
 
 # Function to train the CNL model and provide accuracy metrics
 function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_mode; allowplots=false, showph=false, allowsave=false)
     function split_classes(classes; random_state::Int=random_seed, split_size=0.2)
-        FP = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Internal_pubchem_FPs_dict.csv", DataFrame)
+        FP = CSV.read(joinpath(path_data,"Internal_pubchem_FPs_dict.csv"), DataFrame)
         indices = [Int(findfirst(x->x .== classes[i], FP[:,:INCHIKEY])) for i in 1:length(classes)]
         unique_comps_fps = Matrix(FP[indices,2:end])
     
@@ -46,9 +51,9 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     else error("Please set mode to min, mean, or max")
     end
 
-    data_whole_raw = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\CNL-IE\\CNL_IE_unified_zero_$data_mode.csv",DataFrame)
+    data_whole_raw = CSV.read(joinpath(path_data, "CNL-IE", "CNL_IE_unified_zero_$data_mode.csv"),DataFrame)
     # Filter validation set compounds
-    validation_inchikeys = CSV.read("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\data\\Validation_set_inchikeys.csv", DataFrame)
+    validation_inchikeys = CSV.read(joinpath(path_data, "Validation_set_inchikeys.csv"), DataFrame)
     deleteat!(data_whole_raw, findall(x -> x in validation_inchikeys.INCHIKEY, data_whole_raw.INCHIKEY))
     # Load optimized hyperparameters
     consensus_threshold = optim["consensus_thres"]
@@ -179,8 +184,6 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
         p1 = scatter(y_train,z4,label="Training set", legend=:bottomright, title = "CNL model", color = :lightblue1, xlabel = "Experimental log(IE)", ylabel = "Predicted log(IE)", markerstrokewidth=0.1, dpi=300)
         scatter!(y_test,z5,label="Test set", color=:orange, markerstrokewidth=0.1, dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],label="1:1 line",width=1.5,dpi=300)
-        #annotate!(maximum(vcat(y_train,y_test)),0.8+minimum(vcat(y_train,y_test)),latexstring("Training: R^2=$(round(z2, digits=3))"),:right)
-        #annotate!(maximum(vcat(y_train,y_test)),0.3+minimum(vcat(y_train,y_test)),latexstring("Test: Q^2=$(round(z3, digits=3))"),:right)
 
         p2 = scatter(y_train,z4,legend=false,ticks=false,color=:lightblue1,markerstrokewidth=0.1,alpha=0.8, dpi=300)
         plot!([minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],[minimum(vcat(y_train,y_test)),maximum(vcat(y_train,y_test))],width=1.5,dpi=300)
@@ -190,8 +193,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
         p123 = plot(p1,p2,p3,layout= @layout [a{0.7w} [b; c]])
         display(p123)
         if allowsave
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_CNL_$(data_mode).png")
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_CNL_$(data_mode).pdf")
+            savefig(joinpath(path_graphs, "CNL", "Cat_Regression_CNL_$(data_mode).pdf"))
         end
 
         p4 = scatter(y_train,z6,label="Training set", legend=:best, title = "Regression residuals", color = :magenta, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
@@ -211,7 +213,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
         p456 = plot(p4,p5,p6,layout= @layout [a{0.7w} [b; c]])
 
         if allowsave
-            savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_$(data_mode).png")
+            savefig(joinpath(path_graphs, "CNL", "Cat_Residuals_$(data_mode).pdf"))
         end
         display(p456)
         if showph
@@ -221,12 +223,10 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
             scatter!(y_hat_df[test_ind,"IE"], y_hat_df[test_ind,"IE_hat_CNL"],label="Test set", marker_z = y_hat_df[test_ind,"pH_aq"], markershape = :rect,color=:jet,dpi=300)
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])], label="1:1 line",width=2,dpi=300)
             if allowsave
-                #savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Regression_CNL_pH_$(data_mode).png")
+                savefig(joinpath(path_graphs, "CNL", "Cat_Regression_CNL_pH_$(data_mode).pdf"))
             end
             # Residual Plots
             residuals_vec = y_hat_df[:,"IE_hat_CNL"] - y_hat_df[:,"IE"]
-
-
             plot_pH_res = scatter(y_hat_df[train_ind,"IE"],residuals_vec[train_ind],label="Training set", legend=:best, title = "Residuals - CNL model",markershape=:circle, marker_z=y_hat_df[train_ind,"pH_aq"],color = :jet, xlabel = "Experimental log(IE)", ylabel = "Residual",dpi=300)
             scatter!(y_hat_df[test_ind,"IE"],residuals_vec[test_ind], markershape=:rect,marker_z=y_hat_df[test_ind,"pH_aq"], label="Test set",color=:jet,dpi=300)
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[0,0],label="1:1 line",width=2,dpi=300) # 1:1 line
@@ -234,7 +234,7 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
             plot!([minimum(y_hat_df[:,"IE"]),maximum(y_hat_df[:,"IE"])],[-3*std(residuals_vec),-3*std(residuals_vec)],label=false,linecolor ="grey",width=2,dpi=300) #-3 sigma
     
             if allowsave
-                savefig("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\Graphs\\CNL\\Cat_Residuals_CNL_pH_$(data_mode).png")
+                savefig(joinpath(path_graphs, "CNL", "Cat_Residuals_CNL_pH_$(data_mode).pdf"))
             end
             display(plot_pH)
             display(plot_pH_res)
@@ -242,10 +242,10 @@ function Stratified_CNL_model_wFiltering_wConsensus_TestOnlyFiltered_mode(data_m
     end
     if allowsave
         # Saving the models (joblib)
-        jblb.dump(reg, "C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\CNL_reg_$data_mode.joblib")
+        jblb.dump(reg, joinpath(path_data,"data","models", "CNL_reg_$data_mode.joblib"))
 
         # Save the predicted IEs
-        CSV.write("C:\\Users\\alex_\\Documents\\GitHub\\IE_prediction-project\\Unified\\models\\y_hat_df_CNL_$data_mode.csv", y_hat_df)
+        CSV.write(joinpath(path_data,"data","models", "y_hat_df_CNL_$data_mode.csv"), y_hat_df)
     end
     return reg,importance,z1,z2,z3,z4,z5,z6,z7, highest_errors, y_hat_df
 end
